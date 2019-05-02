@@ -64,7 +64,7 @@ h4 {
 
 .highlighted-box {
   margin: 0;
-  background-color: #e9f2f2;
+  background-color: #e8e8e2;
   padding: 4px 15px 3px;
 }
 
@@ -220,13 +220,17 @@ footer.site-footer {
 #main-boxout {
   float: right;
   width: 185px;
-  border: 1px solid #eee;
+  border: 1px solid #e8e8e2;
   margin: 87px 0 0 15px;
   padding: 10px;
 }
 
 #main-boxout p {
   margin-bottom: 5px;
+}
+#main-boxout h2 {
+  font-size: 1.45em;
+  font-weight: bold;
 }
 
 #main-boxout.responsive {
@@ -550,8 +554,8 @@ article.page ul li {
 
 /* Twitter link */
 .call-cta {
-  text-align: center;
-  padding: 0 0 20px;
+  /*text-align: center;*/
+  padding: 0 0 9px;
 }
 
 .call-cta a {
