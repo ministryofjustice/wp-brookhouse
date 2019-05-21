@@ -570,8 +570,9 @@ article.page ul li {
 
 /* Twitter link */
 .call-cta {
-    /*text-align: center;*/
+    text-align: center;
     padding: 0 0 9px;
+    margin-top: 14px;
 }
 
 .call-cta a {

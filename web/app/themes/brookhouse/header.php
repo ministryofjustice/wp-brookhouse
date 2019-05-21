@@ -47,7 +47,7 @@
             <div class="col"></div>
             <div class="col"></div>
             <div class="col">
-                <a href="/talk-to-us" class="button"><span>Talk to us</span></a>
+                <a href="/talk-to-us" class="button"><span><?php _e('Talk to us', 'brookhouse') ?></span></a>
             </div>
         </div>
     </section>
@@ -96,14 +96,36 @@
                         echo "<li class='breadcrumb-child'>" . get_the_title($ancestor) . "</li>";
                     }
                     if (is_archive()) {
-                        echo "<li class='breadcrumb-child'><a href='" . get_post_type_archive_link($wp_query->query['post_type']) . "'>" . post_type_archive_title('',
-                                false) . "</a></li> ";
+                        echo "<li class='breadcrumb-child'><a href='" .
+                            get_post_type_archive_link(
+                                $wp_query->query['post_type']
+                            ) . "'>" .
+                            post_type_archive_title(
+                                '',
+                                false
+                            ) . "</a></li> ";
                         if (is_post_type_archive('evidence') && get_query_var('witness')) {
                             $witness = get_term_by('slug', get_query_var("witness"), "witness");
-                            echo "<li class='breadcrumb-child'><a href='" . get_permalink(get_page_by_title('evidence')) . "?witness=" . get_query_var('witness') . "'> Witness: " . $witness->name . "</a></li>";
+                            echo "<li class='breadcrumb-child'><a href='" .
+                                get_permalink(
+                                    get_page_by_title(
+                                        'evidence'
+                                    )
+                                ) . "?witness=" . get_query_var('witness') . "'> Witness: " . $witness->name . "</a></li>";
                         } elseif (is_post_type_archive('evidence') && get_query_var('hdate')) {
-                            echo "<li class='breadcrumb-child'><a href='" . get_permalink(get_page_by_title('evidence')) . "?hdate=" . get_query_var('hdate') . "'> Date: " . date('l j F Y',
-                                    strtotime($_GET['hdate'])) . "</a></li>";
+                            echo "<li class='breadcrumb-child'><a href='" .
+                                get_permalink(
+                                    get_page_by_title(
+                                        'evidence'
+                                    )
+                                ) . "?hdate=" .
+                                get_query_var(
+                                    'hdate'
+                                ) . "'> Date: " .
+                                date(
+                                    'l j F Y',
+                                    strtotime($_GET['hdate'])
+                                ) . "</a></li>";
                         }
                     } else {
                         if (is_search()) {
