@@ -15,7 +15,7 @@ RUN sed -i 's/fastcgi_intercept_errors off;/fastcgi_intercept_errors on;/' /etc/
 
 # Set execute bit permissions before running build scripts
 RUN chmod +x bin/* && sleep 1 && \
-    make clean && \
+    #make clean && \
     bin/composer-auth.sh && \
     make build && \
     rm -f auth.json

@@ -4,7 +4,7 @@
  *
  * The area of the page that contains both current comments
  * and the comment form. The actual display of comments is
- * handled by a callback to hillsborough_comment() which is
+ * handled by a callback to brookhouse_comment() which is
  * located in the inc/template-tags.php file.
  *
  * @package brookhouse
@@ -42,12 +42,12 @@ if ( post_password_required() )
 		<ol class="comment-list">
 			<?php
 				/* Loop through and list the comments. Tell wp_list_comments()
-				 * to use hillsborough_comment() to format the comments.
+				 * to use brookhouse_comment() to format the comments.
 				 * If you want to override this in a child theme, then you can
-				 * define hillsborough_comment() and that will be used instead.
-				 * See hillsborough_comment() in inc/template-tags.php for more.
+				 * define brookhouse_comment() and that will be used instead.
+				 * See brookhouse_comment() in inc/template-tags.php for more.
 				 */
-				wp_list_comments( array( 'callback' => 'hillsborough_comment' ) );
+				wp_list_comments( array( 'callback' => 'brookhouse_comment' ) );
 			?>
 		</ol><!-- .comment-list -->
 

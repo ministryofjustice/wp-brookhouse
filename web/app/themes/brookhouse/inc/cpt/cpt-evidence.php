@@ -1,6 +1,6 @@
 <?php
 
-function hillsborough_ctp_evidence_init() {
+function brookhouse_ctp_evidence_init() {
     $labels = array(
         'name' => 'Evidence',
         'singular_name' => 'Evidence',
@@ -35,12 +35,12 @@ function hillsborough_ctp_evidence_init() {
     register_post_type('evidence', $args);
 }
 
-add_action('init', 'hillsborough_ctp_evidence_init');
+add_action('init', 'brookhouse_ctp_evidence_init');
 
 /**
  * Initialize the meta boxes. 
  */
-function hillsborough_add_evidence_meta_boxes() {
+function brookhouse_add_evidence_meta_boxes() {
     // Time/date metabox
     $evidence_metabox_hearing = array(
         'id' => 'evidence_metabox_hearing',
@@ -98,4 +98,4 @@ function hillsborough_add_evidence_meta_boxes() {
     ot_register_meta_box($evidence_metabox_media);
 }
 
-add_action('admin_init', 'hillsborough_add_evidence_meta_boxes');
+add_action('admin_init', 'brookhouse_add_evidence_meta_boxes');

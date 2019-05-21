@@ -1,7 +1,7 @@
 <?php
 /* Add Witness taxonomy */
 
-function hillsborough_create_witness_taxonomy() {
+function brookhouse_create_witness_taxonomy() {
     register_taxonomy(
             'witness', array(
         'evidence',
@@ -14,10 +14,10 @@ function hillsborough_create_witness_taxonomy() {
     );
 }
 
-add_action('init', 'hillsborough_create_witness_taxonomy');
+add_action('init', 'brookhouse_create_witness_taxonomy');
 
 /* Add additional field to witness taxonomy */
-function hillsborough_witness_tax_add_meta() {
+function brookhouse_witness_tax_add_meta() {
     ?>
     <div class="form-field">
         <label for="term_meta[letter]"><?php _e('Index Letter', 'brookhouse'); ?></label>
@@ -26,9 +26,9 @@ function hillsborough_witness_tax_add_meta() {
     </div>
     <?php
 }
-add_action('witness_add_form_fields', 'hillsborough_witness_tax_add_meta', 10, 2);
+add_action('witness_add_form_fields', 'brookhouse_witness_tax_add_meta', 10, 2);
 
-function hillsborough_witness_tax_edit_meta($term) {
+function brookhouse_witness_tax_edit_meta($term) {
 	// put the term ID into a variable
 	$t_id = $term->term_id;
  
@@ -43,7 +43,7 @@ function hillsborough_witness_tax_edit_meta($term) {
 	</tr>
 <?php
 }
-add_action( 'witness_edit_form_fields', 'hillsborough_witness_tax_edit_meta', 10, 2 );
+add_action( 'witness_edit_form_fields', 'brookhouse_witness_tax_edit_meta', 10, 2 );
 
 function save_taxonomy_custom_meta( $term_id ) {
 	if ( isset( $_POST['term_meta'] ) ) {

@@ -99,7 +99,7 @@ get_header();
 
         ?>
 
-        <?php //hillsborough_content_nav('nav-below'); ?>
+        <?php //brookhouse_content_nav('nav-below'); ?>
 
     </main><!-- #main -->
 </section><!-- #primary -->

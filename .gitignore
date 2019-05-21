@@ -12,6 +12,9 @@ web/app/languages
 web/app/uploads/*
 !web/app/uploads/.gitkeep
 
+web/app/themes/brookhouse/dist
+web/app/themes/brookhouse/node_modules
+
 # WordPress
 web/wp
 web/.htaccess

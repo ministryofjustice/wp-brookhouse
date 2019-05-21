@@ -1,6 +1,6 @@
 <?php
 
-function hillsborough_ctp_document_init() {
+function brookhouse_ctp_document_init() {
     $labels = array(
         'name' => 'Documents/Rulings',
         'singular_name' => 'Document/Ruling',
@@ -35,12 +35,12 @@ function hillsborough_ctp_document_init() {
     register_post_type('document', $args);
 }
 
-add_action('init', 'hillsborough_ctp_document_init');
+add_action('init', 'brookhouse_ctp_document_init');
 
 /**
  * Initialize the meta boxes. 
  */
-function hillsborough_add_document_meta_boxes() {
+function brookhouse_add_document_meta_boxes() {
     $document_metabox = array(
         'id' => 'document_metabox_hearing',
         'title' => 'Document/Ruling Details',
@@ -79,4 +79,4 @@ function hillsborough_add_document_meta_boxes() {
     ot_register_meta_box($document_metabox);
 }
 
-add_action('admin_init', 'hillsborough_add_document_meta_boxes');
+add_action('admin_init', 'brookhouse_add_document_meta_boxes');

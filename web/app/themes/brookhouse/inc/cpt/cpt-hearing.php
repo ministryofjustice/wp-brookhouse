@@ -1,6 +1,6 @@
 <?php
 
-function hillsborough_ctp_hearing_init() {
+function brookhouse_ctp_hearing_init() {
     $labels = array(
         'name' => 'Hearings',
         'singular_name' => 'Hearing',
@@ -35,12 +35,12 @@ function hillsborough_ctp_hearing_init() {
     register_post_type('hearing', $args);
 }
 
-add_action('init', 'hillsborough_ctp_hearing_init');
+add_action('init', 'brookhouse_ctp_hearing_init');
 
 /**
  * Initialize the meta boxes. 
  */
-function hillsborough_add_hearing_meta_boxes() {
+function brookhouse_add_hearing_meta_boxes() {
     // Time/date metabox
     $hearing_metabox_time = array(
         'id' => 'hearing_metabox_time',
@@ -107,7 +107,7 @@ function hillsborough_add_hearing_meta_boxes() {
     ot_register_meta_box($hearing_metabox_details);
 }
 
-add_action('admin_init', 'hillsborough_add_hearing_meta_boxes');
+add_action('admin_init', 'brookhouse_add_hearing_meta_boxes');
 
 function add_sort_metabox() {
     add_meta_box('hearing_evidence_sort_metabox', 'Custom Evidence Sort Order', 'display_hearing_evidence_sort_metabox', 'hearing', 'normal', 'core');

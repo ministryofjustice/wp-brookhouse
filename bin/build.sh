@@ -14,11 +14,11 @@ composer install
 # Build theme assets
 # ~ enter theme path and uncomment the following commands:
 
-# cd web/app/themes/
-# npm install
-# npm run production
-# rm -rf node_modules
-# cd ../../../..
+cd web/app/themes/brookhouse
+npm install
+npm run production
+rm -rf node_modules
+cd ../../../..
 
 
 # Remove composer auth.json

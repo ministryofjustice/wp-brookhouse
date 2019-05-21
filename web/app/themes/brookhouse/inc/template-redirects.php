@@ -1,6 +1,6 @@
 <?php
 
-function hillsborough_kill_posts() {
+function brookhouse_kill_posts() {
     $isPost = is_single() && get_post_type() == 'post';
     $isCategory = is_category();
 
@@ -19,4 +19,4 @@ function hillsborough_kill_posts() {
         exit;
     }
 }
-add_action('template_redirect', 'hillsborough_kill_posts');
+add_action('template_redirect', 'brookhouse_kill_posts');

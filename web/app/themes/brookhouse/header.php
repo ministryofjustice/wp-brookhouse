@@ -41,6 +41,17 @@
     <body <?php body_class(); ?>>
         <div id="page" class="hfeed site">
             <?php do_action('before'); ?>
+
+            <section id="topbar">
+                <div class="site-branding flex-grid">
+                    <div class="col"></div>
+                    <div class="col"></div>
+                    <div class="col">
+                        <a href="/talk-to-us" class="button"><span>Talk to us</span></a>
+                    </div>
+                </div>
+            </section>
+
             <nav id="site-navigation" class="main-navigation" role="navigation">
                 <h1 class="menu-toggle"></h1>
                 <a class="skip-link screen-reader-text" href="#content"><?php _e('Skip to content', 'brookhouse'); ?></a>
@@ -48,11 +59,30 @@
                 <?php //wp_nav_menu( array( 'theme_location' => 'primary' ) );  ?>
             </nav><!-- #site-navigation -->
             <header id="masthead" class="site-header" role="banner">
-                <div class="site-branding">
-                    <a href="<?php echo esc_url(home_url('/')); ?>" rel="home"><img src="<?php echo get_template_directory_uri(); ?>/img/ppo-logo.svg" alt="<?php bloginfo('name'); ?>"></a>
+                <div class="site-branding flex-grid">
+                    <div class="col shrink-two">
+                        <a href="<?php echo esc_url(home_url('/')); ?>" rel="home"><img src="<?php echo get_template_directory_uri(); ?>/dist/img/ppo-logo.svg" alt="<?php bloginfo('name'); ?>"></a>
+                    </div>
+                    <div class="site-title col grow-five">
+                        <p><?= get_bloginfo(); ?></p>
+                    </div>
+                    <div class="bh-languages col grow-one">
+                        <ul>
+                            <li><a href="#">A link</a></li>
+                            <li><a href="#">A link</a></li>
+                            <li><a href="#">A link</a></li>
+                        </ul>
+                    </div>
                 </div>
             </header><!-- #masthead -->
-            <div id="breadcrumbs-wrapper">
+            <?php if (is_front_page()) { ?>
+            <section id="tagline">
+                <div class="site-branding tagline">
+                    <?= get_bloginfo('description') ?>
+                </div>
+            </section>
+            <?php } ?>
+            <section id="breadcrumbs-wrapper">
                 <div id="breadcrumbs">
                     <ul>
                         <li>
@@ -84,6 +114,6 @@
                         ?>
                     </ul>
                 </div>
-            </div>
+            </section>
 
             <div id="content" class="site-content">

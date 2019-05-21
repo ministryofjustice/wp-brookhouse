@@ -7,11 +7,11 @@
  * @package brookhouse
  */
 
-if ( ! function_exists( 'hillsborough_content_nav' ) ) :
+if ( ! function_exists( 'brookhouse_content_nav' ) ) :
 /**
  * Display navigation to next/previous pages when applicable.
  */
-function hillsborough_content_nav( $nav_id ) {
+function brookhouse_content_nav( $nav_id ) {
 	global $wp_query, $post;
 
 	// Don't print empty markup on single pages if there's nowhere to navigate.
@@ -53,15 +53,15 @@ function hillsborough_content_nav( $nav_id ) {
 	</nav><!-- #<?php echo esc_html( $nav_id ); ?> -->
 	<?php
 }
-endif; // hillsborough_content_nav
+endif; // brookhouse_content_nav
 
-if ( ! function_exists( 'hillsborough_comment' ) ) :
+if ( ! function_exists( 'brookhouse_comment' ) ) :
 /**
  * Template for comments and pingbacks.
  *
  * Used as a callback by wp_list_comments() for displaying the comments.
  */
-function hillsborough_comment( $comment, $args, $depth ) {
+function brookhouse_comment( $comment, $args, $depth ) {
 	$GLOBALS['comment'] = $comment;
 
 	if ( 'pingback' == $comment->comment_type || 'trackback' == $comment->comment_type ) : ?>
@@ -113,13 +113,13 @@ function hillsborough_comment( $comment, $args, $depth ) {
 	<?php
 	endif;
 }
-endif; // ends check for hillsborough_comment()
+endif; // ends check for brookhouse_comment()
 
-if ( ! function_exists( 'hillsborough_posted_on' ) ) :
+if ( ! function_exists( 'brookhouse_posted_on' ) ) :
 /**
  * Prints HTML with meta information for the current post-date/time and author.
  */
-function hillsborough_posted_on() {
+function brookhouse_posted_on() {
 	$time_string = '<time class="entry-date published" datetime="%1$s">%2$s</time>';
 	if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) )
 		$time_string .= '<time class="updated" datetime="%3$s">%4$s</time>';
@@ -147,7 +147,7 @@ endif;
 /**
  * Returns true if a blog has more than 1 category.
  */
-function hillsborough_categorized_blog() {
+function brookhouse_categorized_blog() {
 	if ( false === ( $all_the_cool_cats = get_transient( 'all_the_cool_cats' ) ) ) {
 		// Create an array of all the categories that are attached to posts.
 		$all_the_cool_cats = get_categories( array(
@@ -161,20 +161,20 @@ function hillsborough_categorized_blog() {
 	}
 
 	if ( '1' != $all_the_cool_cats ) {
-		// This blog has more than 1 category so hillsborough_categorized_blog should return true.
+		// This blog has more than 1 category so brookhouse_categorized_blog should return true.
 		return true;
 	} else {
-		// This blog has only 1 category so hillsborough_categorized_blog should return false.
+		// This blog has only 1 category so brookhouse_categorized_blog should return false.
 		return false;
 	}
 }
 
 /**
- * Flush out the transients used in hillsborough_categorized_blog.
+ * Flush out the transients used in brookhouse_categorized_blog.
  */
-function hillsborough_category_transient_flusher() {
+function brookhouse_category_transient_flusher() {
 	// Like, beat it. Dig?
 	delete_transient( 'all_the_cool_cats' );
 }
-add_action( 'edit_category', 'hillsborough_category_transient_flusher' );
-add_action( 'save_post',     'hillsborough_category_transient_flusher' );
+add_action( 'edit_category', 'brookhouse_category_transient_flusher' );
+add_action( 'save_post',     'brookhouse_category_transient_flusher' );

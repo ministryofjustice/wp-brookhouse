@@ -13,11 +13,11 @@
  * @param array $args Configuration arguments.
  * @return array
  */
-function hillsborough_page_menu_args( $args ) {
+function brookhouse_page_menu_args( $args ) {
 	$args['show_home'] = true;
 	return $args;
 }
-add_filter( 'wp_page_menu_args', 'hillsborough_page_menu_args' );
+add_filter( 'wp_page_menu_args', 'brookhouse_page_menu_args' );
 
 /**
  * Adds custom classes to the array of body classes.
@@ -25,14 +25,14 @@ add_filter( 'wp_page_menu_args', 'hillsborough_page_menu_args' );
  * @param array $classes Classes for the body element.
  * @return array
  */
-function hillsborough_body_classes( $classes ) {
+function brookhouse_body_classes( $classes ) {
 	// Adds a class of group-blog to blogs with more than 1 published author.
 	if ( is_multi_author() )
 		$classes[] = 'group-blog';
 
 	return $classes;
 }
-add_filter( 'body_class', 'hillsborough_body_classes' );
+add_filter( 'body_class', 'brookhouse_body_classes' );
 
 /**
  * Filters wp_title to print a neat <title> tag based on what is being viewed.
@@ -41,7 +41,7 @@ add_filter( 'body_class', 'hillsborough_body_classes' );
  * @param string $sep Optional separator.
  * @return string The filtered title.
  */
-function hillsborough_wp_title( $title, $sep ) {
+function brookhouse_wp_title( $title, $sep ) {
 	global $page, $paged;
 
 	if ( is_feed() )
@@ -61,7 +61,7 @@ function hillsborough_wp_title( $title, $sep ) {
 
 	return $title;
 }
-add_filter( 'wp_title', 'hillsborough_wp_title', 10, 2 );
+add_filter( 'wp_title', 'brookhouse_wp_title', 10, 2 );
 
 function sort_hearings_by_hearing_date($postA, $postB, $dateSort = 'asc') {
 	$dateA = get_post_meta($postA->ID, 'hearing_date', true);
