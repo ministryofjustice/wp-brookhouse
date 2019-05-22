@@ -40,7 +40,7 @@
 
 
 // Slide out menu for mobile view
-$(document).on("click", '#site-navigation h1', function(e) {
+$(document).on("click", '#site-navigation h1', function (e) {
     if ($(this).hasClass('toggled')) {
         $('#secondary').removeClass('toggled');
         $('#site-navigation h1').first().removeClass('toggled');
@@ -50,11 +50,11 @@ $(document).on("click", '#site-navigation h1', function(e) {
     }
 });
 
-jQuery(document).ready(function($) {
+jQuery(document).ready(function ($) {
     var isTouchDevice = 'ontouchstart' in document.documentElement;
     if (isTouchDevice) {
         $("body").swipe({
-            swipe: function(event, direction, distance, duration, fingerCount) {
+            swipe: function (event, direction, distance, duration, fingerCount) {
                 if (direction == "right") {
                     $('#secondary').addClass('toggled');
                     $('#site-navigation h1').first().addClass('toggled');
@@ -69,52 +69,52 @@ jQuery(document).ready(function($) {
 });
 
 // Popup for video - enabled site wide so can be used anywhere
-$("a.popup-video").on("click", function(e) {
+$("a.popup-video").on("click", function (e) {
     e.preventDefault();
     if (!$(this).attr("data-video-id"))
         return false;
     $("body").append("<div id='blackout'></div>");
     $("#blackout").animate({opacity: 1}, 500).append('<div id="popup"><div class="close"><a href="#">Close</a></div><iframe width="512" height="288" src="//www.youtube.com/embed/' + $(this).attr("data-video-id") + '?wmode=transparent" frameborder="0" allowfullscreen></iframe></div>');
 });
-$(document).on("click", "#popup .close a, #blackout", function(e) {
+$(document).on("click", "#popup .close a, #blackout", function (e) {
     e.preventDefault();
-    $("#blackout").fadeOut(function() {
+    $("#blackout").fadeOut(function () {
         $(this).remove();
     });
 });
 
 /*  Sub-menu behaviour */
 
-$( document ).ready(function() {
-$('.sub-menu').hide();
-$("li").has("ul.sub-menu").click(function(){
-  $("ul",this).slideDown();
-});
+$(document).ready(function () {
+    $('.sub-menu').hide();
+    $("li").has("ul.sub-menu").click(function () {
+        $("ul", this).slideDown();
+    });
 
-$('#menu-main-nav ul li ul.sub-menu li a').click(function(e){
-  if ($(this).attr('class') != 'active'){
-    $('#menu-main-nav ul li a').removeClass('active');
-    $(this).addClass('active');
-  }
-});
+    $('#menu-main-nav ul li ul.sub-menu li a').click(function (e) {
+        if ($(this).attr('class') != 'active') {
+            $('#menu-main-nav ul li a').removeClass('active');
+            $(this).addClass('active');
+        }
+    });
 
-$('a').filter(function(){
-  return this.href === document.location.href;
-}).addClass('active');
+    $('a').filter(function () {
+        return this.href === document.location.href;
+    }).addClass('active');
 
-$("ul.sub-menu > li > a").each(function () {
-  var currentURL = document.location.href;
-  var thisURL = $(this).attr("href");
-  if (currentURL.indexOf(thisURL) != -1) {
-    $(this).parents("ul.sub-menu").css('display', 'block');
-  }
-});
+    $("ul.sub-menu > li > a").each(function () {
+        var currentURL = document.location.href;
+        var thisURL = $(this).attr("href");
+        if (currentURL.indexOf(thisURL) != -1) {
+            $(this).parents("ul.sub-menu").css('display', 'block');
+        }
+    });
 
-$('#menu-main-nav > ul > li > a').each(function(){
-  var currURL = document.location.href;
-  var myHref= $(this).attr('href');
-  if (currURL.match(myHref)) {
-    $(this).parent().find("ul.sub-menu").css('display', 'block');
-  }
-});
+    $('#menu-main-nav > ul > li > a').each(function () {
+        var currURL = document.location.href;
+        var myHref = $(this).attr('href');
+        if (currURL.match(myHref)) {
+            $(this).parent().find("ul.sub-menu").css('display', 'block');
+        }
+    });
 }); 

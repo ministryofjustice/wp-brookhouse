@@ -7,6 +7,7 @@
 a, a:visited {
     text-decoration: none;
     color: rgb(238, 113, 2);
+    transition: all 0.3s ease;
 }
 
 a:hover {

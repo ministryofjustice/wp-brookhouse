@@ -5,6 +5,7 @@
  *
  * @package brookhouse
  */
+
 /**
  * Set the content width based on the theme's design and stylesheet.
  */
@@ -23,7 +24,6 @@ if (!function_exists('brookhouse_setup')) :
      */
     function brookhouse_setup()
     {
-
         /*
          * Make theme available for translation.
          * Translations can be filed in the /languages/ directory.
@@ -31,6 +31,12 @@ if (!function_exists('brookhouse_setup')) :
          * to change 'brookhouse' to the name of your theme in all the template files
          */
         load_theme_textdomain('brookhouse', get_template_directory() . '/languages');
+        /*$locale = get_locale();
+        $locale_file = get_template_directory() . "/languages/$locale.php";
+
+        if (is_readable($locale_file)) {
+            require_once($locale_file);
+        }*/
 
         // Add default posts and comments RSS feed links to head.
         add_theme_support('automatic-feed-links');
@@ -81,6 +87,7 @@ function moj_get_asset($handle)
         'moment' => '/dist' . $manifest['/js/moment.min.js'],
         'combodate' => '/dist' . $manifest['/js/combodate.min.js'],
         'faq-accordion' => '/dist' . $manifest['/js/faqs.min.js'],
+        'ie8' => '/dist' . $manifest['/js/ie8.js'],
 
         // always use non-protocol URL's
         'jquery' => '//ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js',
@@ -137,6 +144,14 @@ function brookhouse_scripts()
     wp_enqueue_style('g-fonts', moj_get_asset('g-fonts')); // Custom stylesheet
     wp_enqueue_style('bh-style', get_stylesheet_uri()); // Default stylesheet
     wp_enqueue_style('bh-style-custom', moj_get_asset('css'), array('bh-style')); // Custom stylesheet
+
+    wp_enqueue_script(
+        'js',
+        moj_get_asset('js'),
+        array('jquery'),
+        null,
+        true
+    );
 
     /*wp_enqueue_script('jquery-swipe', get_template_directory_uri() . '/js/jquery.touchSwipe.min.js', array('jquery'));
 
@@ -539,3 +554,9 @@ add_action('rest_api_init', function () {
         'callback' => 'moj_wp_version'
     ));
 });
+
+function moj_get_page_uri()
+{
+    global $wp;
+    return home_url($wp->request);
+}

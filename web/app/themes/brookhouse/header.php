@@ -69,10 +69,11 @@
                 <p><?= get_bloginfo(); ?></p>
             </div>
             <div class="bh-languages col grow-one">
-                <ul>
-                    <li><a href="#">A link</a></li>
-                    <li><a href="#">A link</a></li>
-                    <li><a href="#">A link</a></li>
+                <ul data-locale="<?= get_locale() ?>">
+                    <li data-locale="en_GB"><a href="<?= moj_get_page_uri() ?>/?locale=en_GB">English (UK)</a></li>
+                    <li data-locale="es_ES"><a href="<?= moj_get_page_uri() ?>/?locale=es_ES">Español</a></li>
+                    <li data-locale="ur"><a href="<?= moj_get_page_uri() ?>/?locale=ur">اردو</a></li>
+                    <li data-locale="ro_RO"><a href="<?= moj_get_page_uri() ?>/?locale=ro_RO">Românească</a></li>
                 </ul>
             </div>
         </div>
@@ -80,7 +81,7 @@
     <?php if (is_front_page()) { ?>
         <section id="tagline">
             <div class="site-branding tagline">
-                <?= get_bloginfo('description') ?>
+                <?php _e(get_bloginfo('description')) ?>
             </div>
         </section>
     <?php } ?>
