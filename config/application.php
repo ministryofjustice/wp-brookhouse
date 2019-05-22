@@ -32,6 +32,7 @@ if (file_exists($env_config)) {
     require_once $env_config;
 }
 
+
 /**
  * URLs
  */
@@ -75,7 +76,6 @@ define('AUTOMATIC_UPDATER_DISABLED', true);
 define('DISABLE_WP_CRON', true);
 define('DISALLOW_FILE_EDIT', true);
 define('S3_UPLOADS_BASE_URL', getenv('S3_UPLOADS_BASE_URL') ? getenv('S3_UPLOADS_BASE_URL') : false);
-
 
 
 /**
