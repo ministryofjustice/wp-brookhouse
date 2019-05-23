@@ -3,19 +3,19 @@
 function brookhouse_ctp_document_init()
 {
     $labels = array(
-        'name' => 'Documents',
-        'singular_name' => 'Document',
+        'name' => 'Research',
+        'singular_name' => 'Research item',
         'add_new' => 'Add New',
-        'add_new_item' => 'Add New Research',
-        'edit_item' => 'Edit Document',
-        'new_item' => 'New Document',
-        'all_items' => 'All Documents',
-        'view_item' => 'View Document',
-        'search_items' => 'Search Document',
-        'not_found' => 'No documents found',
-        'not_found_in_trash' => 'No documents found in Trash',
+        'add_new_item' => 'Add New',
+        'edit_item' => 'Edit Research Entry',
+        'new_item' => 'New Entry',
+        'all_items' => 'View All Entries',
+        'view_item' => 'View Entries',
+        'search_items' => 'Search Research',
+        'not_found' => 'No entries found',
+        'not_found_in_trash' => 'No research entries found in Bin',
         'parent_item_colon' => '',
-        'menu_name' => 'Documents'
+        'menu_name' => 'Research'
     );
 
     $args = array(
@@ -33,7 +33,7 @@ function brookhouse_ctp_document_init()
         'supports' => array('title')
     );
 
-    register_post_type('document', $args);
+    register_post_type('research', $args);
 }
 
 add_action('init', 'brookhouse_ctp_document_init');
@@ -45,7 +45,7 @@ function brookhouse_add_document_meta_boxes()
 {
     $document_metabox = array(
         'id' => 'document_metabox_hearing',
-        'title' => 'Document Details',
+        'title' => 'Research Details',
         'pages' => array('document'),
         'context' => 'normal',
         'priority' => 'high',
