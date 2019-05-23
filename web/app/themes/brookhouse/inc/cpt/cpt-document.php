@@ -1,20 +1,21 @@
 <?php
 
-function brookhouse_ctp_document_init() {
+function brookhouse_ctp_document_init()
+{
     $labels = array(
-        'name' => 'Documents/Rulings',
-        'singular_name' => 'Document/Ruling',
+        'name' => 'Documents',
+        'singular_name' => 'Document',
         'add_new' => 'Add New',
-        'add_new_item' => 'Add New Document/Ruling',
-        'edit_item' => 'Edit Document/Ruling',
-        'new_item' => 'New Document/Ruling',
-        'all_items' => 'All Documents/Rulings',
-        'view_item' => 'View Document/Ruling',
-        'search_items' => 'Search Document/Ruling',
-        'not_found' => 'No documents/rulings found',
-        'not_found_in_trash' => 'No documents/rulings found in Trash',
+        'add_new_item' => 'Add New Research',
+        'edit_item' => 'Edit Document',
+        'new_item' => 'New Document',
+        'all_items' => 'All Documents',
+        'view_item' => 'View Document',
+        'search_items' => 'Search Document',
+        'not_found' => 'No documents found',
+        'not_found_in_trash' => 'No documents found in Trash',
         'parent_item_colon' => '',
-        'menu_name' => 'Docs/Rulings'
+        'menu_name' => 'Documents'
     );
 
     $args = array(
@@ -38,12 +39,13 @@ function brookhouse_ctp_document_init() {
 add_action('init', 'brookhouse_ctp_document_init');
 
 /**
- * Initialize the meta boxes. 
+ * Initialize the meta boxes.
  */
-function brookhouse_add_document_meta_boxes() {
+function brookhouse_add_document_meta_boxes()
+{
     $document_metabox = array(
         'id' => 'document_metabox_hearing',
-        'title' => 'Document/Ruling Details',
+        'title' => 'Document Details',
         'pages' => array('document'),
         'context' => 'normal',
         'priority' => 'high',

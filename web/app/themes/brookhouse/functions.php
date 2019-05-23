@@ -276,8 +276,6 @@ require get_template_directory() . '/inc/customizer.php';
 require get_template_directory() . '/inc/jetpack.php';
 
 /* Custom Post Type declarations */
-require get_template_directory() . '/inc/cpt/cpt-hearing.php';
-require get_template_directory() . '/inc/cpt/cpt-evidence.php';
 require get_template_directory() . '/inc/cpt/cpt-document.php';
 
 /* Taxonomy declarations */

@@ -1,7 +1,7 @@
 <?php
 /**
  * Template for Documents and Rulings page
- * 
+ *
  * This template has been retained in case it is decided to switch to the alternative
  * format which lists documents and rulings automatically (as opposed to free text)
  *
@@ -14,22 +14,22 @@ get_header();
 <div id="primary" class="content-area">
     <main id="main" class="site-main documents-main" role="main">
 
-        <h1>Rulings</h1>
+        <h1><?php _e('Rulings', 'brookhouse') ?></h1>
 
         <h4>Ruling date</h4>
         <?php
         $rulings = new WP_Query(
-                array(
-            'post_type' => 'document',
-            'orderby' => 'meta_value',
-            'meta_key' => 'document_date',
-            'meta_query' => array(
-                array(
-                    'key' => 'document_type',
-                    'value' => 'ruling'
+            array(
+                'post_type' => 'document',
+                'orderby' => 'meta_value',
+                'meta_key' => 'document_date',
+                'meta_query' => array(
+                    array(
+                        'key' => 'document_type',
+                        'value' => 'ruling'
+                    )
                 )
             )
-                )
         );
         while ($rulings->have_posts()) {
             $rulings->the_post();
@@ -41,13 +41,16 @@ get_header();
                 <div class="results-line">
                     <div class="col-3">
                         <span class="long-date">
-                            <?php echo ($last_date != get_post_meta($post->ID, "document_date", true) ? date('l j F Y', strtotime(get_post_meta($post->ID, "document_date", true))) : "&nbsp;"); ?>
+                            <?php echo($last_date != get_post_meta($post->ID, "document_date", true) ? date('l j F Y',
+                                strtotime(get_post_meta($post->ID, "document_date", true))) : "&nbsp;"); ?>
                         </span>
                         <span class="short-date">
-                            <?php echo ($last_date != get_post_meta($post->ID, "document_date", true) ? date('D j M Y', strtotime(get_post_meta($post->ID, "document_date", true))) : "&nbsp;"); ?>
+                            <?php echo($last_date != get_post_meta($post->ID, "document_date", true) ? date('D j M Y',
+                                strtotime(get_post_meta($post->ID, "document_date", true))) : "&nbsp;"); ?>
                         </span>
                     </div>
-                    <div><?php echo "<a href='" . $document_url . "' target='_blank'>" . get_the_title() . " (" . substr($document_url, -3) . ", " . $evidence_size . "kb)</a>"; ?></div>
+                    <div><?php echo "<a href='" . $document_url . "' target='_blank'>" . get_the_title() . " (" . substr($document_url,
+                                -3) . ", " . $evidence_size . "kb)</a>"; ?></div>
                 </div>
 
                 <?php $last_date = get_post_meta($post->ID, "document_date", true); ?>
@@ -56,22 +59,22 @@ get_header();
         }
         ?>
 
-        <h1>Documents</h1>
+        <h1><?php _e('Research', 'brookhouse') ?></h1>
 
-        <h4>Document date</h4>
+        <h4><?php _e('Research date', 'brookhouse') ?></h4>
         <?php
         $rulings = new WP_Query(
-                array(
-            'post_type' => 'document',
-            'orderby' => 'meta_value',
-            'meta_key' => 'document_date',
-            'meta_query' => array(
-                array(
-                    'key' => 'document_type',
-                    'value' => 'document'
+            array(
+                'post_type' => 'document',
+                'orderby' => 'meta_value',
+                'meta_key' => 'document_date',
+                'meta_query' => array(
+                    array(
+                        'key' => 'document_type',
+                        'value' => 'document'
+                    )
                 )
             )
-                )
         );
         while ($rulings->have_posts()) {
             $rulings->the_post();
@@ -83,13 +86,16 @@ get_header();
                 <div class="results-line">
                     <div class="col-3">
                         <span class="long-date">
-                            <?php echo ($last_date != get_post_meta($post->ID, "document_date", true) ? date('l j F Y', strtotime(get_post_meta($post->ID, "document_date", true))) : "&nbsp;"); ?>
+                            <?php echo($last_date != get_post_meta($post->ID, "document_date", true) ? date('l j F Y',
+                                strtotime(get_post_meta($post->ID, "document_date", true))) : "&nbsp;"); ?>
                         </span>
                         <span class="short-date">
-                            <?php echo ($last_date != get_post_meta($post->ID, "document_date", true) ? date('D j M Y', strtotime(get_post_meta($post->ID, "document_date", true))) : "&nbsp;"); ?>
+                            <?php echo($last_date != get_post_meta($post->ID, "document_date", true) ? date('D j M Y',
+                                strtotime(get_post_meta($post->ID, "document_date", true))) : "&nbsp;"); ?>
                         </span>
                     </div>
-                    <div><?php echo "<a href='" . $document_url . "' target='_blank'>" . get_the_title() . " (" . substr($document_url, -3) . ", " . $evidence_size . "kb)</a>"; ?></div>
+                    <div><?php echo "<a href='" . $document_url . "' target='_blank'>" . get_the_title() . " (" . substr($document_url,
+                                -3) . ", " . $evidence_size . "kb)</a>"; ?></div>
                 </div>
 
                 <?php $last_date = get_post_meta($post->ID, "document_date", true); ?>

@@ -30,7 +30,6 @@
     "wpackagist-plugin/google-analytics-dashboard-for-wp": "*",
     "ministryofjustice/wp-rewrite-media-to-s3": "^0.1.1",
     "acf/advanced-custom-fields-pro": "*",
-    "wpackagist-plugin/wordpress-seo": "*",
     "wpackagist-plugin/classic-editor": "*",
     "wpackagist-plugin/fast-user-switching": "*",
     "ministryofjustice/wp-user-roles": "*"
