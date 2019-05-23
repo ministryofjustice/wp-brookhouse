@@ -81,7 +81,7 @@
     <?php if (is_front_page()) { ?>
         <section id="tagline">
             <div class="site-branding tagline">
-                <?php _e(get_bloginfo('description')) ?>
+                <?php _e('A public investigation around the decisions and circumstances leading to ill-treatment at Brook House', 'brookhouse'); ?>
             </div>
         </section>
     <?php } ?>

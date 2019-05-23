@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: brookhouse\n"
-"POT-Creation-Date: 2019-05-22 18:30+0100\n"
-"PO-Revision-Date: 2019-05-22 18:33+0100\n"
+"POT-Creation-Date: 2019-05-22 20:14+0100\n"
+"PO-Revision-Date: 2019-05-22 20:15+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: ro_RO\n"
@@ -229,6 +229,14 @@ msgstr "Vorbeste cu noi"
 #: header.php:57
 msgid "Skip to content"
 msgstr "Omiteți conținutul"
+
+#: header.php:84
+msgid ""
+"A public investigation around the decisions and circumstances leading to ill-"
+"treatment at Brook House"
+msgstr ""
+"O investigație publică în legătură cu deciziile și circumstanțele care duc "
+"la rele tratamente la Brook House"
 
 #: inc/extras.php:60
 #, php-format
