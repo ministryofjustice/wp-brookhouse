@@ -61,8 +61,8 @@
     <header id="masthead" class="site-header" role="banner">
         <div class="site-branding flex-grid">
             <div class="col shrink-two">
-                <a href="<?php echo esc_url(home_url('/')); ?>" rel="home"><img
-                        src="<?php echo get_template_directory_uri(); ?>/dist/img/ppo-logo.svg"
+                <a href="<?= esc_url(home_url('/')); ?>" rel="home"><img
+                        src="<?= get_template_directory_uri(); ?>/dist/img/ppo-logo.svg"
                         alt="<?php bloginfo('name'); ?>"></a>
             </div>
             <div class="site-title col grow-five">

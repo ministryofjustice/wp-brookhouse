@@ -16,9 +16,9 @@ a:hover {
 }
 
 a.button {
-    display:inline-block;
+    display: inline-block;
     padding: 4px 15px 5px;
-    color:#f1f2f2;
+    color: #f1f2f2;
     background-color: rgb(238, 113, 2);
 }
 
@@ -27,17 +27,6 @@ a.button {
     margin: 0 auto;
 }
 
-#primary {
-    float: none;
-    overflow: hidden;
-    margin-right: 15px;
-}
-
-#secondary {
-    width: 200px;
-    float: left;
-    margin: 10px 15px 0 0;
-}
 
 h1, h2, h3, h4, h5, h6 {
     font-family: 'Montserrat', sans-serif;
@@ -115,60 +104,6 @@ h4 {
     margin-right: 1%;
 }
 
-#breadcrumbs-wrapper {
-    width: 100%;
-    background-color: #efefef;
-    border-top: 10px solid #666;
-    background: #efefef;
-    min-height: 35px;
-    padding: 0;
-    overflow: hidden;
-}
-
-#breadcrumbs {
-    max-width: 990px;
-    margin: 10px auto;
-    font-size: 0.9em;
-    height: 0;
-}
-
-#breadcrumbs ul {
-    padding: 0;
-    margin: 0 17px 10px;
-}
-
-#breadcrumbs ul li {
-    display: inline-block;
-    *display: inline;
-    *zoom: 1;
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-    white-space: nowrap;
-}
-
-#breadcrumbs ul li.breadcrumb-child {
-    /*margin-right: 5px;*/
-}
-
-#breadcrumbs ul li.breadcrumb-child:before {
-    content: "» ";
-    margin-left: 5px;
-}
-
-h1.menu-toggle {
-    position: fixed;
-    left: 0;
-    top: 0;
-    margin: 0;
-    padding: 0;
-    height: 24px;
-    width: 24px;
-    text-align: center;
-    background: url('../img/arrow_two_head_2.png') center center #666 no-repeat;
-    z-index: 10;
-    -webkit-transition: left 0.5s ease;
-}
 
 /* Footer */
 footer.site-footer {
@@ -197,33 +132,6 @@ footer.site-footer {
     font-size: 0.9em;
 }
 
-/* Nav Sidebar */
-#secondary ul {
-    padding: 0;
-    list-style: none;
-    margin: 10px 0 20px;
-}
-
-#secondary ul li a {
-    display: block;
-    background-color: #666;
-    padding: 12px 15px 12px 15px;
-    margin-bottom: 2px;
-    color: #f1f2f2;
-}
-
-#secondary ul li.current-menu-item a {
-    background-color: #666;
-    color: #fff;
-}
-
-#secondary ul.sub-menu {
-    margin: 0 0 0 20px;
-}
-
-.menu-item-home {
-    display: none;
-}
 
 /* Homepage */
 #main-content p {

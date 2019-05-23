@@ -14,5 +14,5 @@
             020 7633 4149
         </a>
     </div>
-    <?php wp_nav_menu(array('theme_location' => 'primary', 'depth' => 1)); ?>
+    <?php wp_nav_menu(array('theme_location' => 'primary', 'depth' => 0)); ?>
 </div><!-- #secondary -->

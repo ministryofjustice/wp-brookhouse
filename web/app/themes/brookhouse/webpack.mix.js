@@ -19,6 +19,7 @@ mix_.setPublicPath('./dist')
     .styles([
         _asset + 'css/flex.css',
         _asset + 'css/header.css',
+        _asset + 'css/navigation.css',
         _asset + 'css/custom.css'
     ], 'dist/css/custom.min.css')
     .styles(_asset + 'css/custom-admin.css', 'dist/css/custom-admin.min.css')

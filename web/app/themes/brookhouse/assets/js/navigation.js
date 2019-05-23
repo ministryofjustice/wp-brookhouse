@@ -86,10 +86,6 @@ $(document).on("click", "#popup .close a, #blackout", function (e) {
 /*  Sub-menu behaviour */
 
 $(document).ready(function () {
-    $('.sub-menu').hide();
-    $("li").has("ul.sub-menu").click(function () {
-        $("ul", this).slideDown();
-    });
 
     $('#menu-main-nav ul li ul.sub-menu li a').click(function (e) {
         if ($(this).attr('class') != 'active') {
