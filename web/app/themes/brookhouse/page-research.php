@@ -14,11 +14,11 @@ get_header();
 <div id="primary" class="content-area">
     <main id="main" class="site-main documents-main" role="main">
 
-        <h1><?php _e('Rulings', 'brookhouse') ?></h1>
+        <!--<h1><?php /*_e('Rulings', 'brookhouse') */?></h1>
 
         <h4>Ruling date</h4>
         <?php
-        $rulings = new WP_Query(
+/*        $rulings = new WP_Query(
             array(
                 'post_type' => 'document',
                 'orderby' => 'meta_value',
@@ -37,31 +37,31 @@ get_header();
             if ($document_url) {
                 $evidence_id = get_attachment_id_from_src($document_url);
                 $evidence_size = round(filesize(get_attached_file($evidence_id)) / 1024);
-                ?>
+                */?>
                 <div class="results-line">
                     <div class="col-3">
                         <span class="long-date">
-                            <?php echo($last_date != get_post_meta($post->ID, "document_date", true) ? date('l j F Y',
-                                strtotime(get_post_meta($post->ID, "document_date", true))) : "&nbsp;"); ?>
+                            <?php /*echo($last_date != get_post_meta($post->ID, "document_date", true) ? date('l j F Y',
+                                strtotime(get_post_meta($post->ID, "document_date", true))) : "&nbsp;"); */?>
                         </span>
                         <span class="short-date">
-                            <?php echo($last_date != get_post_meta($post->ID, "document_date", true) ? date('D j M Y',
-                                strtotime(get_post_meta($post->ID, "document_date", true))) : "&nbsp;"); ?>
+                            <?php /*echo($last_date != get_post_meta($post->ID, "document_date", true) ? date('D j M Y',
+                                strtotime(get_post_meta($post->ID, "document_date", true))) : "&nbsp;"); */?>
                         </span>
                     </div>
-                    <div><?php echo "<a href='" . $document_url . "' target='_blank'>" . get_the_title() . " (" . substr($document_url,
-                                -3) . ", " . $evidence_size . "kb)</a>"; ?></div>
+                    <div><?php /*echo "<a href='" . $document_url . "' target='_blank'>" . get_the_title() . " (" . substr($document_url,
+                                -3) . ", " . $evidence_size . "kb)</a>"; */?></div>
                 </div>
 
-                <?php $last_date = get_post_meta($post->ID, "document_date", true); ?>
-                <?php
-            }
+                <?php /*$last_date = get_post_meta($post->ID, "document_date", true); */?>
+                --><?php
+/*            }
         }
-        ?>
+        */?>
 
         <h1><?php _e('Research', 'brookhouse') ?></h1>
 
-        <h4><?php _e('Research date', 'brookhouse') ?></h4>
+        <h4><?php _e('Document date', 'brookhouse') ?></h4>
         <?php
         $rulings = new WP_Query(
             array(
@@ -82,6 +82,7 @@ get_header();
             if ($document_url) {
                 $evidence_id = get_attachment_id_from_src($document_url);
                 $evidence_size = round(filesize(get_attached_file($evidence_id)) / 1024);
+                $last_date = "-";
                 ?>
                 <div class="results-line">
                     <div class="col-3">
