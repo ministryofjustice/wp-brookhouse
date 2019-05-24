@@ -17,7 +17,7 @@ function acf_json_save_point($path)
     return $path;
 }
 
-add_filter('acf/settings/save_json', __NAMESPACE__ . '\\acf_json_save_point');
+add_filter('acf/settings/save_json', __NAMESPACE__ . '\\acf_json_save_point', 99);
 
 /**
  * ACF schema now loaded from /mu-plugins/moj/acf-json
@@ -37,4 +37,4 @@ function acf_json_load_point($paths)
     return $paths;
 }
 
-add_filter('acf/settings/load_json', __NAMESPACE__ . '\\acf_json_load_point');
+add_filter('acf/settings/load_json', __NAMESPACE__ . '\\acf_json_load_point', 99);

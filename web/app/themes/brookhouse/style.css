@@ -556,7 +556,20 @@ a:active {
 .page-content,
 .entry-content,
 .entry-summary {
-    margin: -1.5em 0 0;
+    margin: -2.6em 0 0;
+}
+
+.page-content h2,
+.entry-content h2,
+.entry-summary h2 {
+    margin-top: 45px;
+}
+
+.page-content li,
+.entry-content li,
+.entry-summary li {
+    line-height: 1.4em;
+    margin-bottom: 10px;
 }
 
 .page-links {
