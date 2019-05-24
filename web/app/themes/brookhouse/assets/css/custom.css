@@ -503,6 +503,22 @@ article.page ul li {
     float: left;
 }
 
+.external-link {
+    position:relative;
+}
+.external-link:before {
+    content: " ";
+    background-image: url('../img/external-link-alt.png');
+    -webkit-background-size: contain;
+    background-size: contain;
+    width: 15px;
+    height: 15px;
+    display: inline-block;
+    position: absolute;
+    top: 2px;
+    right: -20px;
+}
+
 /* Search form */
 #secondary .search-form {
     margin: 10px 5px;

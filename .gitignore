@@ -11,6 +11,7 @@ web/app/languages
 web/app/uploads/*
 !web/app/plugins/.gitkeep
 !web/app/uploads/.gitkeep
+!web/app/mu-plugins/moj/
 
 web/app/themes/brookhouse/dist
 web/app/themes/brookhouse/node_modules

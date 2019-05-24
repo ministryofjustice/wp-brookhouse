@@ -81,7 +81,7 @@
     <?php if (is_front_page()) { ?>
         <section id="tagline">
             <div class="site-branding tagline">
-                <?php _e('A public investigation around the decisions and circumstances leading to ill-treatment at Brook House', 'brookhouse'); ?>
+                <?php _e('An independent investigation into the potential mistreatment of detainees at Brook House IRC in 2017', 'brookhouse'); ?>
             </div>
         </section>
     <?php } ?>
@@ -93,8 +93,8 @@
                 </li>
                 <?php
                 if (!is_home()) {
-                    foreach (get_post_ancestors($post->ID) as $ancestor) {
-                        echo "<li class='breadcrumb-child'>" . get_the_title($ancestor) . "</li>";
+                    foreach (get_post_ancestors($post->ID) as $ancestor_id) {
+                        echo "<li class='breadcrumb-child'><a href='" . get_permalink($ancestor_id) . "'>" . get_the_title($ancestor_id) . "</a></li>";
                     }
                     if (is_archive()) {
                         echo "<li class='breadcrumb-child'><a href='" .

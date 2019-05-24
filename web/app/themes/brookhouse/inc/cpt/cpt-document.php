@@ -9,7 +9,7 @@ function brookhouse_ctp_document_init()
         'add_new_item' => 'Add New',
         'edit_item' => 'Edit Research Entry',
         'new_item' => 'New Entry',
-        'all_items' => 'View All Entries',
+        'all_items' => 'View All Research',
         'view_item' => 'View Entries',
         'search_items' => 'Search Research',
         'not_found' => 'No entries found',
@@ -46,7 +46,7 @@ function brookhouse_add_document_meta_boxes()
     $document_metabox = array(
         'id' => 'document_metabox_hearing',
         'title' => 'Research Details',
-        'pages' => array('document'),
+        'pages' => array('research'),
         'context' => 'normal',
         'priority' => 'high',
         'fields' => array(
@@ -81,4 +81,4 @@ function brookhouse_add_document_meta_boxes()
     ot_register_meta_box($document_metabox);
 }
 
-add_action('admin_init', 'brookhouse_add_document_meta_boxes');
+//add_action('admin_init', 'brookhouse_add_document_meta_boxes');
