@@ -83,10 +83,10 @@ get_header();
                 $last_date = "-";
                 ?>
                 <div class="results-line">
-                    <div class="col-3">
+                    <div class="col col-1">
                         <?= get_field('research_document_description', get_the_ID()) ?>
                     </div>
-                    <div>
+                    <div class="col col-2">
                         <?php
                         $pdf_size = $ex_link = "";
                         if ($evidence_size > 0) {
