@@ -22,7 +22,7 @@ $moj_the_slug = str_replace('-', '_', $post->post_name);
                 <div class="locale-updates">
                     <h2><?= do_shortcode('[ttu_use_our_form]') ?></h2>
                 </div>
-                <?= do_shortcode('[contact-form-7 id="122" title="Talk to Us Form"]') ?>
+                <?= do_shortcode('[contact-form-7 id="127" title="Talk to Us Form"]') ?>
             </div>
             <div class="col grow-two">
                 <div class="locale-updates">
@@ -36,7 +36,7 @@ $moj_the_slug = str_replace('-', '_', $post->post_name);
                         E14 4PU
                     </address>
                     <h2><?= do_shortcode('[ttu_email_us_on_text]') ?></h2>
-                    <p><a href="mailto:brookhousespecialinvestigation@ppo.gov.uk">BrookHouseSpecialInvestigation@ppo.gov.uk</a></p>
+                    <p><a href="mailto:brookhousespecialinvestigation@ppo.gov.uk" class="locale-text-normal">BrookHouseSpecialInvestigation@ppo.gov.uk</a></p>
                     <h2><?= do_shortcode('[ttu_call_us_on_text]') ?></h2>
                     <p><a href="tel:02076334149">020 7633 4149</a></p>
                     <h2><?= do_shortcode('[ttu_text_us_on_text]') ?></h2>
