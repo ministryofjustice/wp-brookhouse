@@ -38,7 +38,7 @@
     <?php } ?>
 </head>
 
-<body <?php body_class(); ?>>
+<body <?php body_class('locale-' . get_locale()); ?>>
 <div id="page" class="hfeed site">
     <?php do_action('before'); ?>
 

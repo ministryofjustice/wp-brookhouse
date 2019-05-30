@@ -30,6 +30,10 @@
     flex-grow: 5;
 }
 
+.flex-grid .col > div {
+    padding:10px;
+}
+
 
 @media (max-width: 400px) {
     .flex-grid {

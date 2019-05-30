@@ -297,8 +297,21 @@ add_filter('wp_unique_post_slug', 'hearing_unique_post_slug', 10, 4);
 function hearing_unique_post_slug($slug, $post_ID, $post_status, $post_type)
 {
     if ('hearing' == $post_type) {
-        $slug = date('Y-m-d', strtotime(get_post_meta($post_ID, 'hearing_date', true))) . get_post_meta($post_ID,
-                'hearing_session', true);
+        $slug = date(
+                'Y-m-d',
+                strtotime(
+                    get_post_meta(
+                        $post_ID,
+                        'hearing_date',
+                        true
+                    )
+                )
+            )
+            . get_post_meta(
+                $post_ID,
+                'hearing_session',
+                true
+            );
     }
     return $slug;
 }
@@ -315,8 +328,17 @@ function change_title($data, $postarr)
 
     // Change title if post type is hearing
     if (isset($_POST['post_type']) && $_POST['post_type'] == 'hearing') {
-        $title = date('l j F Y',
-                strtotime($postarr['hearing_date'])) . " " . strtoupper($postarr['hearing_session']) . " Session";
+        $title = date(
+                'l j F Y',
+                strtotime(
+                    $postarr['hearing_date']
+                )
+            )
+            . " "
+            . strtoupper(
+                $postarr['hearing_session']
+            ) . " Session";
+
         $data['post_title'] = $title;
 
         $slug = date('Y-m-d', strtotime($postarr['hearing_date'])) . $postarr['hearing_session'];
@@ -558,3 +580,5 @@ function moj_get_page_uri()
     global $wp;
     return home_url($wp->request);
 }
+
+include('inc/locale-shortcodes.php');

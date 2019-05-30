@@ -32,6 +32,7 @@
     "acf/advanced-custom-fields-pro": "*",
     "wpackagist-plugin/classic-editor": "*",
     "wpackagist-plugin/fast-user-switching": "*",
+    "wpackagist-plugin/contact-form-7": "*",
     "ministryofjustice/wp-user-roles": "*"
   },
   "require-dev": {

@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: brookhouse\n"
-"POT-Creation-Date: 2019-05-22 20:10+0100\n"
-"PO-Revision-Date: 2019-05-22 20:11+0100\n"
+"POT-Creation-Date: 2019-05-29 16:56+0100\n"
+"PO-Revision-Date: 2019-05-29 16:57+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: es_ES\n"
@@ -219,6 +219,43 @@ msgstr "Menú de pie de página"
 msgid "Sidebar"
 msgstr "Barra lateral"
 
+#: functions.php:595
+msgid "Residents"
+msgstr "Residentes"
+
+#: functions.php:606
+msgid "Members of Staff"
+msgstr "Miembros del personal"
+
+#: functions.php:617
+msgid "Press and Other"
+msgstr "Prensa y otros"
+
+#: functions.php:628 functions.php:634 functions.php:641
+msgid ""
+"This is the intro we can use to explain to our audience how to use the form "
+"and how to interact with the communication offerings"
+msgstr ""
+"Esta es la introducción que podemos utilizar para explicar a nuestra "
+"audiencia cómo usar el formulario y cómo interactuar con las ofertas de "
+"comunicación."
+
+#: functions.php:657
+msgid "Name"
+msgstr "Nombre"
+
+#: functions.php:668
+msgid "Contact number or email"
+msgstr "Número de contacto o correo electrónico"
+
+#: functions.php:679
+msgid "Enter your email address"
+msgstr "Ingrese su dirección de correo electrónico"
+
+#: functions.php:690
+msgid "What can you tell us?"
+msgstr "¿Qué nos puedes decir?"
+
 #: header.php:50
 msgid "Talk to us"
 msgstr "Hable con nosotros"
@@ -229,11 +266,11 @@ msgstr "Saltar al contenido"
 
 #: header.php:84
 msgid ""
-"A public investigation around the decisions and circumstances leading to ill-"
-"treatment at Brook House"
+"An independent investigation into the potential mistreatment of detainees at "
+"Brook House IRC in 2017"
 msgstr ""
-"Una investigación pública sobre las decisiones y circunstancias que llevaron "
-"a malos tratos en Brook House."
+"Una investigación independiente sobre el maltrato potencial de los detenidos "
+"en Brook House IRC en 2017"
 
 #: inc/extras.php:60
 #, php-format
@@ -2534,6 +2571,14 @@ msgstr "Guardar estilos"
 msgid "Reset Options"
 msgstr "Restablecer opciones"
 
+#: page-research.php:62
+msgid "Research"
+msgstr ""
+
+#: page-research.php:66
+msgid "Available publications"
+msgstr ""
+
 #: search.php:16
 #, php-format
 msgid "Search Results for: %s"
@@ -2573,3 +2618,14 @@ msgstr ""
 #. Author URI of the plugin/theme
 msgid "http://blogs.justice.gov.uk/digital/"
 msgstr ""
+
+#. Template Name of the plugin/theme
+msgid "Contact-Talk-to-us"
+msgstr ""
+
+#~ msgid ""
+#~ "A public investigation around the decisions and circumstances leading to "
+#~ "ill-treatment at Brook House"
+#~ msgstr ""
+#~ "Una investigación pública sobre las decisiones y circunstancias que "
+#~ "llevaron a malos tratos en Brook House."

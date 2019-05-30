@@ -4,10 +4,15 @@
 */
 
 /* General */
+
 a, a:visited {
     text-decoration: none;
     color: rgb(238, 113, 2);
     transition: all 0.3s ease;
+}
+
+a:focus, a:active, button:focus, button:active {
+    outline: 2px solid #02c4ed;
 }
 
 a:hover {
@@ -423,9 +428,11 @@ article.page ul li {
     -o-transition: background-color 0.3s ease;
     transition: background-color 0.3s ease;
 }
+
 .results-line:hover {
     background-color: #FFFFE0;
 }
+
 .results-line:last-child {
     border: none;
 }
