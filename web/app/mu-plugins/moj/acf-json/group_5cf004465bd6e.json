@@ -1,0 +1,63 @@
+{
+    "key": "group_5cf004465bd6e",
+    "title": "Press Contact Options",
+    "fields": [
+        {
+            "key": "field_5cf00456c7272",
+            "label": "Press: Phone number",
+            "name": "press_phone_number",
+            "type": "text",
+            "instructions": "Enter a number the press can contact us on",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_5cf004b304b6f",
+            "label": "Press: Email address",
+            "name": "press_email_address",
+            "type": "email",
+            "instructions": "Enter an email address the press can use to contact us",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "page",
+                "operator": "==",
+                "value": "32"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": [
+        "the_content"
+    ],
+    "active": 1,
+    "description": "",
+    "modified": 1559233754
+}
