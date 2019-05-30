@@ -18,11 +18,11 @@ $moj_the_slug = str_replace('-', '_', $post->post_name);
         </div>
 
         <div class="flex-grid">
-            <div class="col">
+            <div class="col the-form">
                 <div class="locale-updates">
                     <h2><?= do_shortcode('[ttu_use_our_form]') ?></h2>
                 </div>
-                <?= do_shortcode('[contact-form-7 id="127" title="Talk to Us Form"]') ?>
+                <?= do_shortcode(get_field('form_shortcode')) ?>
             </div>
             <div class="col grow-two">
                 <div class="locale-updates">
