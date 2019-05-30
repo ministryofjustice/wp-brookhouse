@@ -1,70 +1,9 @@
 <?php
 
-/**
- * Page titles
- *************************************/
 
-/**
- * Get the translation for the residents page title
- * @return string
- */
-function get_ttu_residents_title()
-{
-    return __('Residents', 'brookhouse');
-}
-
-add_shortcode('ttu_residents_title', 'get_ttu_residents_title');
-
-/**
- * Get the translation for the member of staff page title
- * @return string
- */
-function get_ttu_members_of_staff_title()
-{
-    return __('Members of Staff', 'brookhouse');
-}
-
-add_shortcode('ttu_members_of_staff_title', 'get_ttu_members_of_staff_title');
-
-/**
- * Get the translation for the press and other page title
- * @return string
- */
-function get_ttu_press_and_other_title()
-{
-    return __('Press and Other', 'brookhouse');
-}
-
-add_shortcode('ttu_press_and_other_title', 'get_ttu_press_and_other_title');
-
-
-/**
- * Form encouragement
- *************************************/
-function get_ttu_residents_page_intro()
-{
-    return __('This is the intro we can use to explain to our audience how to use the form and how to interact with the communication offerings', 'brookhouse');
-}
-
-add_shortcode('ttu_residents_page_intro', 'get_ttu_residents_page_intro');
-function get_ttu_members_of_staff_page_intro()
-{
-    return __('This is the intro we can use to explain to our audience how to use the form and how to interact with the communication offerings', 'brookhouse');
-}
-
-add_shortcode('ttu_members_of_staff_page_intro', 'get_ttu_members_of_staff_page_intro');
-
-function get_ttu_press_and_other_page_intro()
-{
-    return __('This is the intro we can use to explain to our audience how to use the form and how to interact with the communication offerings', 'brookhouse');
-}
-
-add_shortcode('ttu_press_and_other_page_intro', 'get_ttu_press_and_other_page_intro');
-
-
-/**
- * Form labels
- *************************************/
+include_once('locale/resident-shortcodes.php');
+include_once('locale/staff-shortcodes.php');
+include_once('locale/press-shortcodes.php');
 
 /**
  * Get the translation for the form input: Name
@@ -109,6 +48,63 @@ function get_ttu_contact_detail()
 }
 
 add_shortcode('ttu_contact_detail', 'get_ttu_contact_detail');
+
+/**
+ * Get the translation for the form textarea: what can you tell us
+ * @return string
+ */
+function get_ttu_contact_submit_text()
+{
+    return __('Send', 'brookhouse');
+}
+
+add_shortcode('ttu_contact_submit_text', 'get_ttu_contact_submit_text');
+
+
+
+
+/**
+ * Contact methods
+ *************************************/
+
+function get_ttu_use_our_form()
+{
+    return __('Complete our form', 'brookhouse');
+}
+
+add_shortcode('ttu_use_our_form', 'get_ttu_use_our_form');
+
+function get_ttu_write_to_us_text()
+{
+    return __('Write to us', 'brookhouse');
+}
+
+add_shortcode('ttu_write_to_us_text', 'get_ttu_write_to_us_text');
+
+function get_ttu_email_us_on_text()
+{
+    return __('Email us on', 'brookhouse');
+}
+
+add_shortcode('ttu_email_us_on_text', 'get_ttu_email_us_on_text');
+
+function get_ttu_call_us_on_text()
+{
+    return __('Call us on', 'brookhouse');
+}
+
+add_shortcode('ttu_call_us_on_text', 'get_ttu_call_us_on_text');
+
+function get_ttu_text_us_on_text()
+{
+    return __('Text us on', 'brookhouse');
+}
+
+add_shortcode('ttu_text_us_on_text', 'get_ttu_text_us_on_text');
+
+
+
+
 
 /**
  * Adds a modification filter to CF7 that permits outside shortcode processing

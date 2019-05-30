@@ -1,3 +1,32 @@
+.parent-pageid-18 h2 {
+    border-bottom: 2px solid #666666;
+    margin-bottom: 10px;
+    font-weight: 600;
+    font-size: 1.3em;
+}
+
 .locale-ur .locale-updates {
     direction: rtl;
+}
+
+.locale-updates .locale-text {
+
+}
+
+.locale-ur .locale-updates:not(label):not(h1):not(.locale-text-normal),
+.locale-ur label.locale-updates .locale-text,
+.locale-text-enlarge {
+    font-size: 1.2em
+}
+
+.locale-ur .locale-text-normal {
+    font-size: 0.8em;
+}
+
+.locale-ur label.locale-updates {
+    display: inline-block;
+}
+
+.locale-ur label.locale-updates input {
+    font-size: 1em;
 }

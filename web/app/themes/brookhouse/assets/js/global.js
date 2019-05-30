@@ -12,7 +12,7 @@ jQuery(document).ready(function ($) {
     // set the active language
     languages.find('li').each(function (key, list_item) {
         if ($(list_item).data('locale') === locale) {
-            $(list_item).addClass('active').find('a').click(_preventDefault);
+            $(list_item).addClass('active').find('a').click(_preventDefault).prop('tabindex', '-1');
             return false;
         }
     });

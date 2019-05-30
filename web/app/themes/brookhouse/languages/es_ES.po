@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: brookhouse\n"
-"POT-Creation-Date: 2019-05-29 16:56+0100\n"
-"PO-Revision-Date: 2019-05-29 16:57+0100\n"
+"POT-Creation-Date: 2019-05-30 09:40+0100\n"
+"PO-Revision-Date: 2019-05-30 15:29+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: es_ES\n"
@@ -219,43 +219,6 @@ msgstr "Menú de pie de página"
 msgid "Sidebar"
 msgstr "Barra lateral"
 
-#: functions.php:595
-msgid "Residents"
-msgstr "Residentes"
-
-#: functions.php:606
-msgid "Members of Staff"
-msgstr "Miembros del personal"
-
-#: functions.php:617
-msgid "Press and Other"
-msgstr "Prensa y otros"
-
-#: functions.php:628 functions.php:634 functions.php:641
-msgid ""
-"This is the intro we can use to explain to our audience how to use the form "
-"and how to interact with the communication offerings"
-msgstr ""
-"Esta es la introducción que podemos utilizar para explicar a nuestra "
-"audiencia cómo usar el formulario y cómo interactuar con las ofertas de "
-"comunicación."
-
-#: functions.php:657
-msgid "Name"
-msgstr "Nombre"
-
-#: functions.php:668
-msgid "Contact number or email"
-msgstr "Número de contacto o correo electrónico"
-
-#: functions.php:679
-msgid "Enter your email address"
-msgstr "Ingrese su dirección de correo electrónico"
-
-#: functions.php:690
-msgid "What can you tell us?"
-msgstr "¿Qué nos puedes decir?"
-
 #: header.php:50
 msgid "Talk to us"
 msgstr "Hable con nosotros"
@@ -276,6 +239,48 @@ msgstr ""
 #, php-format
 msgid "Page %s"
 msgstr "Página %s"
+
+#: inc/locale-shortcodes.php:13
+msgid "Residents"
+msgstr "Residentes"
+
+#: inc/locale-shortcodes.php:24
+msgid "Members of Staff"
+msgstr "Miembros del personal"
+
+#: inc/locale-shortcodes.php:35
+msgid "Press and Other"
+msgstr "Prensa y otros"
+
+#: inc/locale-shortcodes.php:46 inc/locale-shortcodes.php:52
+#: inc/locale-shortcodes.php:59
+msgid ""
+"This is the intro we can use to explain to our audience how to use the form "
+"and how to interact with the communication offerings"
+msgstr ""
+"Esta es la introducción que podemos utilizar para explicar a nuestra "
+"audiencia cómo usar el formulario y cómo interactuar con las ofertas de "
+"comunicación."
+
+#: inc/locale-shortcodes.php:75
+msgid "Name"
+msgstr "Nombre"
+
+#: inc/locale-shortcodes.php:86
+msgid "Contact number or email"
+msgstr "Número de contacto o correo electrónico"
+
+#: inc/locale-shortcodes.php:97
+msgid "Enter your email address"
+msgstr "Ingrese su dirección de correo electrónico"
+
+#: inc/locale-shortcodes.php:108
+msgid "What can you tell us?"
+msgstr "¿Qué nos puedes decir?"
+
+#: inc/locale-shortcodes.php:119
+msgid "Send"
+msgstr "Enviar"
 
 #: inc/tax/tax-witness.php:10
 msgid "Witnesses"

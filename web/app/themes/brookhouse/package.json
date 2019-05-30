@@ -35,6 +35,6 @@
         "resolve-url-loader": "^2.3.1",
         "url-search-params-polyfill": "^4.0.0",
         "vue-template-compiler": "^2.6.8",
-        "webpack": "^4.29.6"
+        "webpack": "^4.32.2"
     }
 }
