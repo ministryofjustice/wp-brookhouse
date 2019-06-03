@@ -35,8 +35,14 @@
 }
 
 
+@media (max-width: 769px) {
+    .flex-grid {
+        flex-direction: column;
+    }
+}
+
 @media (max-width: 400px) {
     .flex-grid {
-        display: block;
+        flex-direction: column;
     }
 }

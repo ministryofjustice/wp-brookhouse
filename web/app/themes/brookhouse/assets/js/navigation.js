@@ -54,16 +54,15 @@ $(document).on("click", '#site-navigation div.menu-toggle', function (e) {
     }
 });
 
-/*
 jQuery(document).ready(function ($) {
     var isTouchDevice = 'ontouchstart' in document.documentElement;
     if (isTouchDevice) {
-        $("body").swipe({
-            swipe: function (event, direction, distance, duration, fingerCount) {
-                if (direction == "right") {
+        $("body").tap({
+            tap: function (event, direction, distance, duration, fingerCount) {
+                if (direction === "right") {
                     $('#secondary').addClass('toggled');
                     $('#site-navigation div.menu-toggle').first().addClass('toggled');
-                } else if (direction == "left") {
+                } else if (direction === "left") {
                     $('#secondary').removeClass('toggled');
                     $('#site-navigation div.menu-toggle').first().removeClass('toggled');
                 }
@@ -72,7 +71,6 @@ jQuery(document).ready(function ($) {
         });
     }
 });
-*/
 
 // Popup for video - enabled site wide so can be used anywhere
 $("a.popup-video").on("click", function (e) {
