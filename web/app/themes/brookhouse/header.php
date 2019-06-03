@@ -70,7 +70,7 @@
                         alt="<?php bloginfo('name'); ?>"></a>
             </div>
             <div class="site-title col grow-five">
-                <p><?= get_bloginfo(); ?></p>
+                <p><a href="<?= esc_url(home_url('/')); ?>" rel="home"><?= get_bloginfo(); ?></a></p>
             </div>
             <div class="bh-languages col grow-one">
                 <ul data-locale="<?= get_locale() ?>">

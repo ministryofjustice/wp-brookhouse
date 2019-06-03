@@ -34,7 +34,6 @@
     padding:10px;
 }
 
-
 @media (max-width: 769px) {
     .flex-grid {
         flex-direction: column;
@@ -44,5 +43,11 @@
 @media (max-width: 400px) {
     .flex-grid {
         flex-direction: column;
+    }
+}
+
+@media screen and (max-width: 350px) {
+    .flex-grid {
+        display: block;
     }
 }
