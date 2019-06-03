@@ -54,6 +54,7 @@ $(document).on("click", '#site-navigation div.menu-toggle', function (e) {
     }
 });
 
+/*
 jQuery(document).ready(function ($) {
     var isTouchDevice = 'ontouchstart' in document.documentElement;
     if (isTouchDevice) {
@@ -71,6 +72,7 @@ jQuery(document).ready(function ($) {
         });
     }
 });
+*/
 
 // Popup for video - enabled site wide so can be used anywhere
 $("a.popup-video").on("click", function (e) {
