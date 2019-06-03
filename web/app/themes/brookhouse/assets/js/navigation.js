@@ -38,15 +38,19 @@
 //    };
 //})();
 
-
+$(document).ready(function () {
+    $('#nav-icon').click(function () {
+        $(this).toggleClass('open');
+    });
+});
 // Slide out menu for mobile view
-$(document).on("click", '#site-navigation h1', function (e) {
+$(document).on("click", '#site-navigation div.menu-toggle', function (e) {
     if ($(this).hasClass('toggled')) {
         $('#secondary').removeClass('toggled');
-        $('#site-navigation h1').first().removeClass('toggled');
+        $('#site-navigation div.menu-toggle').first().removeClass('toggled');
     } else {
         $('#secondary').addClass('toggled');
-        $('#site-navigation h1').first().addClass('toggled');
+        $('#site-navigation div.menu-toggle').first().addClass('toggled');
     }
 });
 
@@ -57,10 +61,10 @@ jQuery(document).ready(function ($) {
             swipe: function (event, direction, distance, duration, fingerCount) {
                 if (direction == "right") {
                     $('#secondary').addClass('toggled');
-                    $('#site-navigation h1').first().addClass('toggled');
+                    $('#site-navigation div.menu-toggle').first().addClass('toggled');
                 } else if (direction == "left") {
                     $('#secondary').removeClass('toggled');
-                    $('#site-navigation h1').first().removeClass('toggled');
+                    $('#site-navigation div.menu-toggle').first().removeClass('toggled');
                 }
             },
             allowPageScroll: "vertical"
@@ -71,11 +75,15 @@ jQuery(document).ready(function ($) {
 // Popup for video - enabled site wide so can be used anywhere
 $("a.popup-video").on("click", function (e) {
     e.preventDefault();
-    if (!$(this).attr("data-video-id"))
+
+    if (!$(this).attr("data-video-id")) {
         return false;
+    }
+
     $("body").append("<div id='blackout'></div>");
     $("#blackout").animate({opacity: 1}, 500).append('<div id="popup"><div class="close"><a href="#">Close</a></div><iframe width="512" height="288" src="//www.youtube.com/embed/' + $(this).attr("data-video-id") + '?wmode=transparent" frameborder="0" allowfullscreen></iframe></div>');
 });
+
 $(document).on("click", "#popup .close a, #blackout", function (e) {
     e.preventDefault();
     $("#blackout").fadeOut(function () {
@@ -113,4 +121,4 @@ $(document).ready(function () {
             $(this).parent().find("ul.sub-menu").css('display', 'block');
         }
     });
-}); 
+});
