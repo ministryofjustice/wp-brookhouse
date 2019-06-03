@@ -64,15 +64,13 @@
     </nav><!-- #site-navigation -->
     <header id="masthead" class="site-header" role="banner">
         <div class="site-branding flex-grid">
-            <div class="col shrink-two">
+            <div class="col grow-three">
                 <a href="<?= esc_url(home_url('/')); ?>" rel="home"><img
                         src="<?= get_template_directory_uri(); ?>/dist/img/ppo-logo.svg"
                         alt="<?php bloginfo('name'); ?>"></a>
+                <a href="<?= esc_url(home_url('/')); ?>" rel="home" class="site-title"><?= get_bloginfo(); ?></a>
             </div>
-            <div class="site-title col grow-five">
-                <p><a href="<?= esc_url(home_url('/')); ?>" rel="home"><?= get_bloginfo(); ?></a></p>
-            </div>
-            <div class="bh-languages col grow-one">
+            <div class="bh-languages col">
                 <ul data-locale="<?= get_locale() ?>">
                     <li data-locale="en_GB"><a href="<?= moj_get_page_uri() ?>/?locale=en_GB">English (UK)</a></li>
                     <li data-locale="ar"><a href="<?= moj_get_page_uri() ?>/?locale=ar" class="locale-text-enlarge">عربى</a></li>

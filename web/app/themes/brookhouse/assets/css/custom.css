@@ -95,31 +95,6 @@ h4 {
     float: left;
 }
 
-/* Header */
-#masthead {
-    width: 100%;
-    background-color: #e8e8e2;
-    padding: 55px 0 15px 0;
-    border-bottom: 20px solid #333;
-}
-
-.home #masthead {
-    border-bottom-width: 10px;
-}
-
-.site-branding {
-    max-width: 990px;
-    margin: 5px auto 0;
-}
-
-.site-branding img {
-    max-width: 98%;
-    float: left;
-    margin-left: 1%;
-    margin-right: 1%;
-}
-
-
 /* Footer */
 footer.site-footer {
     width: 100%;

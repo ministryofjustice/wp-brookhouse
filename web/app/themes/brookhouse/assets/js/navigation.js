@@ -38,25 +38,20 @@
 //    };
 //})();
 
-$(document).ready(function () {
-    $('#nav-icon').click(function () {
-        $(this).toggleClass('open');
-    });
-});
 // Slide out menu for mobile view
-$(document).on("click", '#site-navigation div.menu-toggle', function (e) {
-    if ($(this).hasClass('toggled')) {
-        $('#secondary').removeClass('toggled');
-        $('#site-navigation div.menu-toggle').first().removeClass('toggled');
-    } else {
-        $('#secondary').addClass('toggled');
-        $('#site-navigation div.menu-toggle').first().addClass('toggled');
-    }
+$(document).on("click", '#nav-icon', function (e) {
+    $('#secondary').toggleClass('toggled');
+    $('#site-navigation div.menu-toggle').first().toggleClass('toggled');
 });
 
 jQuery(document).ready(function ($) {
     var isTouchDevice = 'ontouchstart' in document.documentElement;
-    if (isTouchDevice) {
+
+    $('#nav-icon').click(function () {
+        $(this).toggleClass('open');
+    });
+
+    /*if (isTouchDevice) {
         $("body").tap({
             tap: function (event, direction, distance, duration, fingerCount) {
                 if (direction === "right") {
@@ -69,7 +64,7 @@ jQuery(document).ready(function ($) {
             },
             allowPageScroll: "vertical"
         });
-    }
+    }*/
 });
 
 // Popup for video - enabled site wide so can be used anywhere
@@ -92,7 +87,6 @@ $(document).on("click", "#popup .close a, #blackout", function (e) {
 });
 
 /*  Sub-menu behaviour */
-
 $(document).ready(function () {
 
     $('#menu-main-nav ul li ul.sub-menu li a').click(function (e) {
