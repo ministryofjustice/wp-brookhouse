@@ -102,6 +102,10 @@
     font-family: Montserrat, cursive;
     padding: 15px;
 }
+.site-title span {
+    display: block;
+    padding-left: 15px
+}
 
 #tagline {
     background: -moz-linear-gradient(251deg, #02c4ed 0%, #0084a1 100%); /* ff3.6+ */
@@ -125,30 +129,57 @@
 }
 
 
-@media screen and (min-width: 450px) {
+@media screen and (max-width: 649px) {
     .site-title {
-        font-size: 1.5em;
+        font-size: 1.9em;
+    }
+
+    .tagline {
+        font-size: 1.7em;
+        padding: 25px 25px 35px;
     }
 }
+
 @media screen and (min-width: 650px) {
     .site-title {
         font-size: 1.8em;
     }
+
+    .tagline {
+        font-size: 1.8em;
+        padding: 25px 65px 35px;
+    }
 }
+
 @media screen and (min-width: 769px) {
     .site-title {
         font-size: 1.5em;
     }
+
+    .tagline {
+        font-size: 1.9em;
+        padding: 25px 100px 35px;
+    }
 }
+
 @media screen and (min-width: 830px) {
     .site-title {
         font-size: 1.7em;
+    }
+
+    .tagline {
+        font-size: 2em;
+        padding: 25px 100px 35px;
     }
 }
 
 @media screen and (min-width: 1000px) {
     .site-title {
         font-size: 2em;
+    }
+
+    .tagline {
+        padding: 25px 100px 35px;
     }
 }
 

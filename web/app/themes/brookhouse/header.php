@@ -68,7 +68,7 @@
                 <a href="<?= esc_url(home_url('/')); ?>" rel="home"><img
                         src="<?= get_template_directory_uri(); ?>/dist/img/ppo-logo.svg"
                         alt="<?php bloginfo('name'); ?>"></a>
-                <a href="<?= esc_url(home_url('/')); ?>" rel="home" class="site-title"><?= get_bloginfo(); ?></a>
+                <a href="<?= esc_url(home_url('/')); ?>" rel="home" class="site-title"><span><?= get_bloginfo(); ?></span></a>
             </div>
             <div class="bh-languages col">
                 <ul data-locale="<?= get_locale() ?>">
