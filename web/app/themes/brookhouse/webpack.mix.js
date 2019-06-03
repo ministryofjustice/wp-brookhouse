@@ -26,7 +26,7 @@ mix_.setPublicPath('./dist')
     ], 'dist/css/custom.min.css')
     .styles(_asset + 'css/custom-admin.css', 'dist/css/custom-admin.min.css')
     .styles(_asset + 'css/jquery-ui.css', 'dist/css/jquery-ui.min.css')
-    .styles('style.css', 'style.min.css')
+    .styles('style.css', 'dist/css/style.min.css')
     .copy(_asset + 'img/*', 'dist/img/');
 
 

@@ -59,7 +59,7 @@ get_header();
                 }
                 */ ?>
 
-        <h1><?php _e('Research', 'brookhouse') ?></h1>
+        <h1><?php _e('Relevant Materials', 'brookhouse') ?></h1>
 
         <p><?= get_field('research_page_intro_text') ?></p>
 

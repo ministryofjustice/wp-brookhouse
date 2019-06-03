@@ -1,8 +1,4 @@
 <?php
-/**
- * Page Name: Contact-Talk-to-us
- **/
-
 get_header();
 get_sidebar();
 global $post;

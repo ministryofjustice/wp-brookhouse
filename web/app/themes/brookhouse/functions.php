@@ -79,8 +79,8 @@ function moj_get_asset($handle)
     $manifest = json_decode($get_assets, true);
 
     $assets = array(
-        'ccss' => '/dist' . $manifest['/css/custom.min.css'],
-        'css' => '/dist' . $manifest['/css/custom.min.css'],
+        'bh-css' => '/dist' . $manifest['/css/style.min.css'],
+        'custom-css' => '/dist' . $manifest['/css/custom.min.css'],
         'jquery-ui' => '/dist' . $manifest['/css/jquery-ui.min.css'],
         'js' => '/dist' . $manifest['/js/main.min.js'],
         'admin-js' => '/dist' . $manifest['/js/custom-admin.min.js'],
@@ -121,7 +121,7 @@ function moj_get_asset($handle)
 function get_min_stylesheet_uri()
 {
     $stylesheet_dir_uri = get_stylesheet_directory_uri();
-    return $stylesheet_dir_uri . '/style.min.css';
+    return $stylesheet_dir_uri . '/dist/css/style.min.css';
 }
 
 // source the minified stylesheet instead
@@ -160,8 +160,8 @@ function brookhouse_scripts()
     wp_register_style('jquery-ui', moj_get_asset('jquery-ui'));
 
     wp_enqueue_style('g-fonts', moj_get_asset('g-fonts')); // Custom stylesheet
-    wp_enqueue_style('bh-style', get_stylesheet_uri()); // Default stylesheet
-    wp_enqueue_style('bh-style-custom', moj_get_asset('ccss'), array('bh-style')); // Custom stylesheet
+    wp_enqueue_style('bh-style', moj_get_asset('bh-css')); // Default stylesheet
+    wp_enqueue_style('bh-style-custom', moj_get_asset('custom-css'), array('bh-style')); // Custom stylesheet
 
     wp_enqueue_script(
         'js',
@@ -316,20 +316,20 @@ function hearing_unique_post_slug($slug, $post_ID, $post_status, $post_type)
 {
     if ('hearing' == $post_type) {
         $slug = date(
-                'Y-m-d',
-                strtotime(
-                    get_post_meta(
-                        $post_ID,
-                        'hearing_date',
-                        true
-                    )
+            'Y-m-d',
+            strtotime(
+                get_post_meta(
+                    $post_ID,
+                    'hearing_date',
+                    true
                 )
             )
-            . get_post_meta(
-                $post_ID,
-                'hearing_session',
-                true
-            );
+        )
+        . get_post_meta(
+            $post_ID,
+            'hearing_session',
+            true
+        );
     }
     return $slug;
 }
@@ -347,15 +347,15 @@ function change_title($data, $postarr)
     // Change title if post type is hearing
     if (isset($_POST['post_type']) && $_POST['post_type'] == 'hearing') {
         $title = date(
-                'l j F Y',
-                strtotime(
-                    $postarr['hearing_date']
-                )
+            'l j F Y',
+            strtotime(
+                $postarr['hearing_date']
             )
-            . " "
-            . strtoupper(
-                $postarr['hearing_session']
-            ) . " Session";
+        )
+        . " "
+        . strtoupper(
+            $postarr['hearing_session']
+        ) . " Session";
 
         $data['post_title'] = $title;
 
@@ -369,18 +369,17 @@ function change_title($data, $postarr)
 function get_attachment_id_from_src($image_src)
 {
     global $wpdb;
-    $query = "SELECT ID FROM {$wpdb->posts} WHERE guid='$image_src'";
-    $id = $wpdb->get_var($query);
+    $id = $wpdb->get_var("SELECT ID FROM {$wpdb->posts} WHERE guid='$image_src'");
     return $id;
 }
 
 // Add new vars to possible query vars
-add_filter('query_vars', 'brookhouse_queryvars');
+add_filter('query_vars', 'brookhouse_query_vars');
 
-function brookhouse_queryvars($qvars)
+function brookhouse_query_vars($q_vars)
 {
-    $qvars[] = 'hdate';
-    return $qvars;
+    $q_vars[] = 'hdate';
+    return $q_vars;
 }
 
 // Filter evidence by date from query_var
