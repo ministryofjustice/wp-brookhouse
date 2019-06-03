@@ -13,7 +13,7 @@ if (!isset($content_width)) {
     $content_width = 640;
 } /* pixels */
 
-if (!function_exists('brookhouse_setup')) :
+if (!function_exists('brookhouse_setup')) {
 
     /**
      * Sets up theme defaults and registers support for various WordPress features.
@@ -62,8 +62,8 @@ if (!function_exists('brookhouse_setup')) :
             'default-image' => '',
         )));
     }
+}
 
-endif; // brookhouse_setup
 add_action('after_setup_theme', 'brookhouse_setup');
 
 /**
@@ -79,6 +79,7 @@ function moj_get_asset($handle)
     $manifest = json_decode($get_assets, true);
 
     $assets = array(
+        'ccss' => '/dist' . $manifest['/css/custom.min.css'],
         'css' => '/dist' . $manifest['/css/custom.min.css'],
         'jquery-ui' => '/dist' . $manifest['/css/jquery-ui.min.css'],
         'js' => '/dist' . $manifest['/js/main.min.js'],
@@ -108,6 +109,23 @@ function moj_get_asset($handle)
 
     return false;
 }
+
+/**
+ * Retrieves the URI of current theme, minified, stylesheet.
+ *
+ * The stylesheet file name is 'style.min.css' which is appended to the stylesheet directory URI path.
+ * See get_stylesheet_directory_uri().
+ *
+ * @return string
+ */
+function get_min_stylesheet_uri()
+{
+    $stylesheet_dir_uri = get_stylesheet_directory_uri();
+    return $stylesheet_dir_uri . '/style.min.css';
+}
+
+// source the minified stylesheet instead
+add_filter('stylesheet_uri', 'get_min_stylesheet_uri');
 
 /**
  * Register widgetized area and update sidebar with default widgets.
@@ -143,7 +161,7 @@ function brookhouse_scripts()
 
     wp_enqueue_style('g-fonts', moj_get_asset('g-fonts')); // Custom stylesheet
     wp_enqueue_style('bh-style', get_stylesheet_uri()); // Default stylesheet
-    wp_enqueue_style('bh-style-custom', moj_get_asset('css'), array('bh-style')); // Custom stylesheet
+    wp_enqueue_style('bh-style-custom', moj_get_asset('ccss'), array('bh-style')); // Custom stylesheet
 
     wp_enqueue_script(
         'js',

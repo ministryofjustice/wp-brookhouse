@@ -1,6 +1,7 @@
 <?php
 
 
+include_once('locale/talk-to-us-shortcodes.php');
 include_once('locale/resident-shortcodes.php');
 include_once('locale/staff-shortcodes.php');
 include_once('locale/press-shortcodes.php');

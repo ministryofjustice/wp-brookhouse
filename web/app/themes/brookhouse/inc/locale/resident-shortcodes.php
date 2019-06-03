@@ -20,6 +20,13 @@ function get_ttu_residents_title()
 
 add_shortcode('ttu_residents_title', 'get_ttu_residents_title');
 
+function get_ttu_resident_title()
+{
+    return __('Resident', 'brookhouse');
+}
+
+add_shortcode('ttu_resident_title', 'get_ttu_resident_title');
+
 function get_ttu_residents_page_text($atts)
 {
     $a = shortcode_atts(array(

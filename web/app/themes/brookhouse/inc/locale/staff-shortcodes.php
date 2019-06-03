@@ -12,10 +12,17 @@
  */
 function get_ttu_members_of_staff_title()
 {
-    return __('Members of Staff', 'brookhouse');
+    return __('Staff Members', 'brookhouse');
 }
 
 add_shortcode('ttu_members_of_staff_title', 'get_ttu_members_of_staff_title');
+
+function get_ttu_member_of_staff_title()
+{
+    return __('Staff Member', 'brookhouse');
+}
+
+add_shortcode('ttu_member_of_staff_title', 'get_ttu_member_of_staff_title');
 
 function get_ttu_members_of_staff_page_text($atts)
 {

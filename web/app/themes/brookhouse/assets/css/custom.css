@@ -27,6 +27,16 @@ a.button {
     background-color: rgb(238, 113, 2);
 }
 
+a.button.large {
+    font-size:1.6em;
+    padding: 10px 15px;
+}
+
+.full-width-button a.button {
+    text-align: center;
+    width: 90%;
+}
+
 #content {
     max-width: 990px;
     margin: 0 auto;
