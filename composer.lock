@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "6e280499b73deffef5792e9db8d472c8",
+    "content-hash": "aee292de32a176846260bfc1cbcc2beb",
     "packages": [
         {
             "name": "acf/advanced-custom-fields-pro",
@@ -687,6 +687,26 @@
             },
             "type": "wordpress-plugin",
             "homepage": "https://wordpress.org/plugins/google-analytics-dashboard-for-wp/"
+        },
+        {
+            "name": "wpackagist-plugin/wp-accessibility",
+            "version": "1.6.10",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/wp-accessibility/",
+                "reference": "tags/1.6.10"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/wp-accessibility.1.6.10.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/wp-accessibility/"
         }
     ],
     "packages-dev": [
