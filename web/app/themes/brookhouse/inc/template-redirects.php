@@ -1,6 +1,7 @@
 <?php
 
-function brookhouse_kill_posts() {
+function brookhouse_kill_posts()
+{
     $isPost = is_single() && get_post_type() == 'post';
     $isCategory = is_category();
 
@@ -19,4 +20,5 @@ function brookhouse_kill_posts() {
         exit;
     }
 }
+
 add_action('template_redirect', 'brookhouse_kill_posts');

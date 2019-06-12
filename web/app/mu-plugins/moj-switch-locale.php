@@ -9,6 +9,14 @@ Author URI: https://www.justice.gov.uk/
 Text Domain: brookhouse
 */
 
+
+$moj_storage = [
+    'type' => '',
+    'engine' => [],
+    'set' => false
+];
+
+
 /**
  * Sets the locale from a post querystring value
  *
@@ -24,27 +32,77 @@ Text Domain: brookhouse
  */
 function moj_switch_locale($locale)
 {
-    if (session_status() !== 2) {
-        session_start();
+    global $moj_storage;
+
+    if ($locale === $moj_storage['engine']['moj_locale']) {
+        return $locale;
     }
 
+    return $moj_storage['engine']['moj_locale'];
+}
+
+function moj_switch_locale_start_storage()
+{
+    global $moj_storage;
+
+    if ($moj_storage['set'] === false) {
+        if (isset($_COOKIE)) {
+            $moj_storage['type'] = 'cookie';
+            $moj_storage['engine'] = $_COOKIE;
+        }
+
+        if ($moj_storage['type'] === '') {
+            if (session_status() !== 2) {
+                session_start();
+            }
+
+            $moj_storage['type'] = 'session';
+            $moj_storage['engine'] = $_SESSION;
+        }
+
+        // cookies on or off?
+        if (count($moj_storage['engine']) === 0) {
+            //header('Location: ' . WP_HOME . '/no-cookies');
+            // too many redirects
+        }
+
+        $moj_storage['set'] = moj_switch_get_locale();
+    }
+}
+
+function moj_switch_get_locale()
+{
+    global $moj_storage;
     $get_global = $_GET;
 
-    if (!isset($_SESSION['moj_locale'])) {
-        $_SESSION['moj_locale'] = $locale;
+    // is it already set?
+    if (!isset($get_global['locale']) && isset($moj_storage['engine']['moj_locale'])) {
+        return true;
     }
 
-    $new_locale = $get_global['locale'] ?? $_SESSION['moj_locale'];
+    $locale = (isset($get_global['locale']) ? $get_global['locale'] : $moj_storage['engine']['moj_locale'] ?? 'en_GB');
 
-    if (in_array($new_locale, get_available_languages(get_template_directory() . '/languages'))) {
-        $_SESSION['moj_locale'] = $new_locale;
-        return $new_locale;
+    $moj_storage['engine']['moj_locale'] = $locale;
+
+    if ($moj_storage['type'] === 'cookie') {
+        return setcookie(
+            'moj_locale',
+            $locale,
+            time() + 7200,
+            COOKIEPATH,
+            COOKIE_DOMAIN
+        );
     }
 
-    return $locale;
+    return true;
 }
 
 /**
  * Set the default locale
  */
-add_filter('locale', 'moj_switch_locale');
+add_action('registered_post_type', 'moj_switch_locale_start_storage', 99);
+
+/**
+ * Set the default locale
+ */
+add_filter('locale', 'moj_switch_locale', 99);
