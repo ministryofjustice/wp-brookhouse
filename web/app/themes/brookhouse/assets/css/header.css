@@ -101,6 +101,7 @@
 .site-title {
     font-family: Montserrat, cursive;
     padding: 15px;
+    display:inline-block;
 }
 .site-title span {
     display: block;
