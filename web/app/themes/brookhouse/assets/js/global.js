@@ -49,15 +49,13 @@ if (!moj.getCookie('moj_locale')) {
 }
 
 
-
 /**
  * Prevent the default execution of an event
  * @param event
  * @returns {boolean}
  * @private
  */
-function _preventDefault(event)
-{
+function _preventDefault(event) {
     event.preventDefault();
     return false;
 }
