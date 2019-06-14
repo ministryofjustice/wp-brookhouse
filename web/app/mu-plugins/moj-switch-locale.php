@@ -96,15 +96,15 @@ function moj_switch_get_locale()
 
     $moj_locale_storage['engine']['moj_locale'] = $locale;
 
-    if ($moj_locale_storage['type'] === 'cookie') {
+    /*if ($moj_locale_storage['type'] === 'cookie') {
         return setcookie(
             'moj_locale',
             $locale,
             time() + 7200,
-            COOKIEPATH,
+            '/',
             COOKIE_DOMAIN
         );
-    }
+    }*/
 
     return true;
 }
