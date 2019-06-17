@@ -10,7 +10,7 @@ jQuery(document).ready(function ($) {
     languages.find('li.active a').click(_preventDefault);
 
     languages.find('li a').click(function () {
-        moj.setCookie('moj_locale', $(this).data('locale'));
+        moj.setCookie('moj_locale', $(this).parent().data('locale'));
     });
 
     // set the active language

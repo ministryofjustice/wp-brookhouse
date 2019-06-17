@@ -44,20 +44,35 @@ function moj_switch_locale($locale)
     return $locale ?? 'en_GB';
 }
 
+function moj_switch_locale_start_storage()
+{
+    global $moj_locale_storage;
+
+    if (isset($_COOKIE)) {
+        $moj_locale_storage['type'] = 'cookie';
+        $moj_locale_storage['engine'] = $_COOKIE;
+    }
+
+    moj_switch_get_locale();
+}
+
 function moj_switch_get_locale()
 {
+    global $moj_locale_storage;
     $get_global = $_GET;
 
     // is it already set?
-    if (!isset($get_global['locale']) && isset($_COOKIE['moj_locale'])) {
+    if (!isset($get_global['locale']) && isset($moj_locale_storage['engine']['moj_locale'])) {
         return true;
     }
 
     $locale = (
         isset($get_global['locale'])
             ? $get_global['locale']
-            : $_COOKIE['moj_locale'] ?? 'en_GB'
+            : $moj_locale_storage['engine']['moj_locale'] ?? 'en_GB'
     );
+
+    $moj_locale_storage['engine']['moj_locale'] = $locale;
 
     setcookie(
         'moj_locale',
@@ -73,9 +88,9 @@ function moj_switch_get_locale()
 /**
  * Set the default locale
  */
-add_action('registered_post_type', 'moj_switch_get_locale', 99);
+add_action('registered_post_type', 'moj_switch_locale_start_storage', 99);
 
 /**
- * Set the default locale
+ * Return the default locale
  */
 add_filter('locale', 'moj_switch_locale', 1);

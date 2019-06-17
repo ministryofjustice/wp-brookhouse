@@ -26,7 +26,15 @@ $moj_the_slug = str_replace('-', '_', $post->post_name);
                 </div>
             </div>
             <br><br>
-            <?= do_shortcode('[ttu__page_text section=press]') ?>
+
+            <?php
+            if (have_posts()) {
+                while (have_posts()) {
+                    the_post();
+                    the_content();
+                }
+            }
+            ?>
         </div>
     </main>
 </section>

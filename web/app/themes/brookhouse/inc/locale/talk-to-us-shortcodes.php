@@ -64,7 +64,7 @@ function get_ttu__page_text($atts)
 
     if ($a['section'] === 'press') {
         return __(
-            '<p class="locale-section-press">For press related queries or any other requests please <a href="/talk-to-us/press-and-other/">visit the Press page</a>.</p>',
+            '',
             'brookhouse'
         );
     }
