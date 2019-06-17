@@ -60,7 +60,7 @@ function moj_switch_locale_start_storage()
         if (isset($_COOKIE)) {
             $moj_locale_storage['type'] = 'cookie';
             $moj_locale_storage['engine'] = $_COOKIE;
-            echo '<pre>' . print_r(__FUNCTION__ . ': on line ' . __LINE__ . ' - storage is COOKIE', true) . '</pre>';
+            //echo '<pre>' . print_r(__FUNCTION__ . ': on line ' . __LINE__ . ' - storage is COOKIE', true) . '</pre>';
         }
 
         if ($moj_locale_storage['type'] === '') {
@@ -70,7 +70,7 @@ function moj_switch_locale_start_storage()
 
             $moj_locale_storage['type'] = 'session';
             $moj_locale_storage['engine'] = $_SESSION;
-            echo '<pre>' . print_r(__FUNCTION__ . ': on line ' . __LINE__ . ' - storage is SESSION', true) . '</pre>';
+            //echo '<pre>' . print_r(__FUNCTION__ . ': on line ' . __LINE__ . ' - storage is SESSION', true) . '</pre>';
         }
 
         $moj_locale_storage['set'] = moj_switch_get_locale();
