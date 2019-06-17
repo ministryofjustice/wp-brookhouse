@@ -33,14 +33,6 @@ $moj_locale_storage = [
 function moj_switch_locale($locale)
 {
     global $moj_locale_storage;
-/*
-    if ($locale !== $moj_locale_storage['engine']['moj_locale']) {
-        echo '<pre>' . print_r(__FUNCTION__ . ': on line ' . __LINE__ . ' - default locale was NOT the same: ' . $locale . ' + ' . $moj_locale_storage['engine']['moj_locale'], true) . '</pre>';
-
-    } else {
-        echo '<pre>' . print_r(__FUNCTION__ . ': on line ' . __LINE__ . ' - default locale was the same: ' . $locale . ' + ' . $moj_locale_storage['engine']['moj_locale'], true) . '</pre>';
-        return $locale;
-    }*/
 
     if (in_array(
         $moj_locale_storage['engine']['moj_locale'],
@@ -52,59 +44,28 @@ function moj_switch_locale($locale)
     return $locale ?? 'en_GB';
 }
 
-function moj_switch_locale_start_storage()
-{
-    global $moj_locale_storage;
-
-    if ($moj_locale_storage['set'] === false) {
-        if (isset($_COOKIE)) {
-            $moj_locale_storage['type'] = 'cookie';
-            $moj_locale_storage['engine'] = $_COOKIE;
-            //echo '<pre>' . print_r(__FUNCTION__ . ': on line ' . __LINE__ . ' - storage is COOKIE', true) . '</pre>';
-        }
-
-        if ($moj_locale_storage['type'] === '') {
-            if (session_status() !== 2) {
-                session_start();
-            }
-
-            $moj_locale_storage['type'] = 'session';
-            $moj_locale_storage['engine'] = $_SESSION;
-            //echo '<pre>' . print_r(__FUNCTION__ . ': on line ' . __LINE__ . ' - storage is SESSION', true) . '</pre>';
-        }
-
-        $moj_locale_storage['set'] = moj_switch_get_locale();
-    }
-}
-
 function moj_switch_get_locale()
 {
-    global $moj_locale_storage;
     $get_global = $_GET;
 
     // is it already set?
-    if (!isset($get_global['locale']) && isset($moj_locale_storage['engine']['moj_locale'])) {
-        echo '<pre>' . print_r(__FUNCTION__ . ': on line ' . __LINE__ . ' - storage was already set to ' . $moj_locale_storage['engine']['moj_locale'], true) . '</pre>';
+    if (!isset($get_global['locale']) && isset($_COOKIE['moj_locale'])) {
         return true;
     }
 
     $locale = (
         isset($get_global['locale'])
             ? $get_global['locale']
-            : $moj_locale_storage['engine']['moj_locale'] ?? 'en_GB'
+            : $_COOKIE['moj_locale'] ?? 'en_GB'
     );
 
-    $moj_locale_storage['engine']['moj_locale'] = $locale;
-
-    /*if ($moj_locale_storage['type'] === 'cookie') {
-        return setcookie(
-            'moj_locale',
-            $locale,
-            time() + 7200,
-            '/',
-            COOKIE_DOMAIN
-        );
-    }*/
+    setcookie(
+        'moj_locale',
+        $locale,
+        time() + 7200,
+        '/',
+        COOKIE_DOMAIN
+    );
 
     return true;
 }
@@ -112,7 +73,7 @@ function moj_switch_get_locale()
 /**
  * Set the default locale
  */
-add_action('registered_post_type', 'moj_switch_locale_start_storage', 99);
+add_action('registered_post_type', 'moj_switch_get_locale', 99);
 
 /**
  * Set the default locale

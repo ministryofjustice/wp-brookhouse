@@ -5,12 +5,12 @@ jQuery(document).ready(function ($) {
 
     // manage language interactions
     var languages = $('.bh-languages ul'),
-        locale = languages.data('locale');
+        locale = moj.getCookie('moj_locale');
 
     languages.find('li.active a').click(_preventDefault);
 
     languages.find('li a').click(function () {
-        moj.setCookie('moj_locale', $(this).parent().data('locale'));
+        moj.setCookie('moj_locale', $(this).data('locale'));
     });
 
     // set the active language
@@ -55,7 +55,8 @@ if (!moj.getCookie('moj_locale')) {
  * @returns {boolean}
  * @private
  */
-function _preventDefault(event) {
+function _preventDefault(event)
+{
     event.preventDefault();
     return false;
 }
