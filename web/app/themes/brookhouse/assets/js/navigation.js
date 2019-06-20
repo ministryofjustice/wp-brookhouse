@@ -44,6 +44,7 @@ $(document).on("click", '#nav-icon', function (e) {
     $('#site-navigation div.menu-toggle').first().toggleClass('toggled');
 });
 
+
 jQuery(document).ready(function ($) {
     var isTouchDevice = 'ontouchstart' in document.documentElement;
 
@@ -51,46 +52,17 @@ jQuery(document).ready(function ($) {
         $(this).toggleClass('open');
     });
 
-    /*if (isTouchDevice) {
-        $("body").tap({
-            tap: function (event, direction, distance, duration, fingerCount) {
-                if (direction === "right") {
-                    $('#secondary').addClass('toggled');
-                    $('#site-navigation div.menu-toggle').first().addClass('toggled');
-                } else if (direction === "left") {
-                    $('#secondary').removeClass('toggled');
-                    $('#site-navigation div.menu-toggle').first().removeClass('toggled');
-                }
-            },
-            allowPageScroll: "vertical"
-        });
-    }*/
-});
+    $("body").click(function () {
+        $(this).toggleClass('open');
+    });
 
-// Popup for video - enabled site wide so can be used anywhere
-$("a.popup-video").on("click", function (e) {
-    e.preventDefault();
-
-    if (!$(this).attr("data-video-id")) {
-        return false;
+    if (isTouchDevice) {
+        console.log('This is a touch device!')
     }
 
-    $("body").append("<div id='blackout'></div>");
-    $("#blackout").animate({opacity: 1}, 500).append('<div id="popup"><div class="close"><a href="#">Close</a></div><iframe width="512" height="288" src="//www.youtube.com/embed/' + $(this).attr("data-video-id") + '?wmode=transparent" frameborder="0" allowfullscreen></iframe></div>');
-});
-
-$(document).on("click", "#popup .close a, #blackout", function (e) {
-    e.preventDefault();
-    $("#blackout").fadeOut(function () {
-        $(this).remove();
-    });
-});
-
-/*  Sub-menu behaviour */
-$(document).ready(function () {
-
+    // submenu
     $('#menu-main-nav ul li ul.sub-menu li a').click(function (e) {
-        if ($(this).attr('class') != 'active') {
+        if ($(this).attr('class') !== 'active') {
             $('#menu-main-nav ul li a').removeClass('active');
             $(this).addClass('active');
         }
@@ -116,3 +88,23 @@ $(document).ready(function () {
         }
     });
 });
+
+// Popup for video - enabled site wide so can be used anywhere
+$("a.popup-video").on("click", function (e) {
+    e.preventDefault();
+
+    if (!$(this).attr("data-video-id")) {
+        return false;
+    }
+
+    $("body").append("<div id='blackout'></div>");
+    $("#blackout").animate({opacity: 1}, 500).append('<div id="popup"><div class="close"><a href="#">Close</a></div><iframe width="512" height="288" src="//www.youtube.com/embed/' + $(this).attr("data-video-id") + '?wmode=transparent" frameborder="0" allowfullscreen></iframe></div>');
+});
+
+$(document).on("click", "#popup .close a, #blackout", function (e) {
+    e.preventDefault();
+    $("#blackout").fadeOut(function () {
+        $(this).remove();
+    });
+});
+

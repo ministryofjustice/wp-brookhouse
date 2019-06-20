@@ -3,6 +3,8 @@
 ##
 # CONFIGURE COMPOSER AUTHENTICATION
 #
+# This works only on AWS environments - be on the MoJ Wifi to access locally
+#
 # This script will create an `auth.json` file, which is used by composer for
 # HTTP basic auth access to the private composer repository composer.wp.dsd.io.
 #
