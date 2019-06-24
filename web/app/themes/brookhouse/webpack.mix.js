@@ -29,7 +29,6 @@ mix_.setPublicPath('./dist')
     .styles('style.css', 'dist/css/style.min.css')
     .copy(_asset + 'img/*', 'dist/img/');
 
-
 if (mix_.inProduction()) {
     mix_.version();
 } else {
