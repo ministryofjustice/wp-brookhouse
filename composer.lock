@@ -8,12 +8,12 @@
     "packages": [
         {
             "name": "acf/advanced-custom-fields-pro",
-            "version": "5.7.13",
+            "version": "5.8.1",
             "dist": {
                 "type": "zip",
-                "url": "https://composer.wp.dsd.io/dist/acf/advanced-custom-fields-pro/acf-advanced-custom-fields-pro-5.7.13.zip",
+                "url": "https://composer.wp.dsd.io/dist/acf/advanced-custom-fields-pro/acf-advanced-custom-fields-pro-5.8.1.zip",
                 "reference": null,
-                "shasum": "b6995bd0a83e52d67551929b5fa141b157911d18"
+                "shasum": "1ba6174e31db0d3c2728d7bd5258c621d8eb9391"
             },
             "type": "wordpress-plugin"
         },
@@ -734,17 +734,17 @@
         },
         {
             "name": "ministryofjustice/wp-user-roles",
-            "version": "0.2.2",
+            "version": "0.2.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/ministryofjustice/wp-user-roles.git",
-                "reference": "3f4ac2c1102eb242bb5dc81c380d128c3c5a8429"
+                "reference": "9d5aca411e54d7cf837afe4805485915db6bf16e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://composer.wp.dsd.io/dist/ministryofjustice/wp-user-roles/ministryofjustice-wp-user-roles-3f4ac2c1102eb242bb5dc81c380d128c3c5a8429-zip-3fb4cf.zip",
-                "reference": "3f4ac2c1102eb242bb5dc81c380d128c3c5a8429",
-                "shasum": "3a8da26bb86d60fedad60e07364f1d644efb48e9"
+                "url": "https://composer.wp.dsd.io/dist/ministryofjustice/wp-user-roles/ministryofjustice-wp-user-roles-9d5aca411e54d7cf837afe4805485915db6bf16e-zip-ca1a90.zip",
+                "reference": "9d5aca411e54d7cf837afe4805485915db6bf16e",
+                "shasum": "7a6ab5d4ecf7e2a729775d82601cb73cdcafc850"
             },
             "require": {
                 "composer/installers": "^1.0"
@@ -766,10 +766,10 @@
             ],
             "description": "A WordPress plugin to create user roles typically required by a MOJDigital WordPress site",
             "support": {
-                "source": "https://github.com/ministryofjustice/wp-user-roles/tree/0.2.2",
+                "source": "https://github.com/ministryofjustice/wp-user-roles/tree/0.2.3",
                 "issues": "https://github.com/ministryofjustice/wp-user-roles/issues"
             },
-            "time": "2019-04-24T13:17:19+00:00"
+            "time": "2019-06-27T13:57:39+00:00"
         },
         {
             "name": "monolog/monolog",
