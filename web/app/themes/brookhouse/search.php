@@ -9,7 +9,7 @@ get_header();
 <?php get_sidebar(); ?>
 <?php $s = get_search_query(); ?>
 
-<section id="primary" class="content-area">
+<div id="primary" class="content-area">
     <main id="main" class="site-main" role="main">
 
         <header class="page-header">
@@ -102,6 +102,6 @@ get_header();
         <?php //brookhouse_content_nav('nav-below'); ?>
 
     </main><!-- #main -->
-</section><!-- #primary -->
+    </div><!-- #primary -->
 
 <?php get_footer(); ?>

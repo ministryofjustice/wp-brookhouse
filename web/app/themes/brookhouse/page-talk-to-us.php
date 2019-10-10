@@ -5,7 +5,7 @@ global $post;
 $moj_the_slug = str_replace('-', '_', $post->post_name);
 ?>
 
-<section id="primary" class="content-area">
+<div id="primary" class="content-area">
     <main id="main" class="site-main documents-main" role="main">
         <h1 class="locale-updates"><?= do_shortcode('[ttu__title]') ?></h1>
         <div class="locale-updates">
@@ -37,7 +37,7 @@ $moj_the_slug = str_replace('-', '_', $post->post_name);
             ?>
         </div>
     </main>
-</section>
+</div>
 
 <?php
 get_footer();
