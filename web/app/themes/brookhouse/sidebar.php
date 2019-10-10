@@ -7,10 +7,10 @@
 ?>
 <div id="secondary" class="widget-area" role="complementary">
     <div class="call-cta">
-        <a href="tel:02076334149" target="_blank">
+        <a href="tel:02076334149">
             <img src="<?php echo get_template_directory_uri(); ?>/dist/img/call-for-info.svg" alt="Call with information regarding the Brook House Investigation">
         </a>
-        <a href="tel:02076334149" target="_blank">
+        <a href="tel:02076334149">
             020 7633 4149
         </a>
     </div>

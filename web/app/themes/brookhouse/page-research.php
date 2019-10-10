@@ -61,7 +61,7 @@ get_header();
 
         <h1><?php _e('Relevant Materials', 'brookhouse') ?></h1>
 
-        <p><?= get_field('research_page_intro_text') ?></p>
+        <?= get_field('research_page_intro_text') ?>
 
         <h4><?php _e('Available publications', '') ?></h4>
 
