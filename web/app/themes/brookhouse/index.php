@@ -24,7 +24,7 @@ get_header();
         }
         ?>
     </div>
-    <main id="main" class="site-main" role="main">
+    <main id="main" class="site-main">
         <div id="main-content">
 
             <h1>Brook House Investigations</h1>

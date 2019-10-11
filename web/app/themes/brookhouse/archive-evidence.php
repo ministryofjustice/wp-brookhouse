@@ -9,7 +9,7 @@ get_header();
 <?php get_sidebar(); ?>
 
 <div id="primary" class="content-area">
-    <main id="main" class="site-main" role="main">
+    <main id="main" class="site-main">
 
         <header class="page-header">
             <h1 class="page-title">Evidence</h1>

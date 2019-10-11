@@ -10,7 +10,7 @@ $moj_the_slug = str_replace('-', '_', $post->post_name);
 ?>
 
 <div id="primary" class="content-area">
-    <main id="main" class="site-main documents-main" role="main">
+    <main id="main" class="site-main documents-main">
         <h1 class="locale-updates"><?= do_shortcode('[ttu_' . $moj_the_slug . '_title]') ?></h1>
         <div class="locale-updates">
             <?php

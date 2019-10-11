@@ -10,7 +10,7 @@ get_header();
 <?php $s = get_search_query(); ?>
 
 <div id="primary" class="content-area">
-    <main id="main" class="site-main" role="main">
+    <main id="main" class="site-main">
 
         <header class="page-header">
             <h1 class="page-title"><?php printf(__('Search Results for: %s', 'brookhouse'), '<span>' . get_search_query() . '</span>'); ?></h1>

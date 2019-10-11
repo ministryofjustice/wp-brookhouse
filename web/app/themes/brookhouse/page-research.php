@@ -12,7 +12,7 @@ get_header();
 <?php get_sidebar(); ?>
 
 <div id="primary" class="content-area">
-    <main id="main" class="site-main documents-main" role="main">
+    <main id="main" class="site-main documents-main">
 
         <!--<h1><?php /*_e('Rulings', 'brookhouse') */ ?></h1>
 

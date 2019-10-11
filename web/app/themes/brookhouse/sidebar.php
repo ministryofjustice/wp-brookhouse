@@ -5,7 +5,7 @@
  * @package brookhouse
  */
 ?>
-<div id="secondary" class="widget-area" role="complementary">
+<div id="secondary" class="widget-area">
     <div class="call-cta">
         <a href="tel:02076334149">
             <img src="<?php echo get_template_directory_uri(); ?>/dist/img/call-for-info.svg" alt="Call with information regarding the Brook House Investigation">
