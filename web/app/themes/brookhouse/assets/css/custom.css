@@ -3,15 +3,20 @@
    Author     : ryanajarrett
 */
 
+
 /* General */
 
-a, a:visited {
+a,
+a:visited {
     text-decoration: none;
     color: rgb(238, 113, 2);
     transition: all 0.3s ease;
 }
 
-a:focus, a:active, button:focus, button:active {
+a:focus,
+a:active,
+button:focus,
+button:active {
     outline: 2px solid #02c4ed;
 }
 
@@ -28,7 +33,7 @@ a.button {
 }
 
 a.button.large {
-    font-size:1.6em;
+    font-size: 1.6em;
     padding: 10px 15px;
 }
 
@@ -42,8 +47,12 @@ a.button.large {
     margin: 0 auto;
 }
 
-
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     font-family: 'Montserrat', sans-serif;
 }
 
@@ -95,7 +104,9 @@ h4 {
     float: left;
 }
 
+
 /* Footer */
+
 footer.site-footer {
     width: 100%;
     background-color: #fff;
@@ -124,6 +135,7 @@ footer.site-footer {
 
 
 /* Homepage */
+
 #main-content p {
     -webkit-margin-before: 1em;
     -webkit-margin-after: 1em;
@@ -152,7 +164,9 @@ footer.site-footer {
     display: none;
 }
 
+
 /* Pages */
+
 .page #primary {
     max-width: 765px;
     float: none;
@@ -202,7 +216,9 @@ article.page ul li {
     border: 1px solid #efefef;
 }
 
+
 /* Hearings */
+
 #main-hearings {
     margin-bottom: 30px;
 }
@@ -227,7 +243,7 @@ article.page ul li {
 .hearing-entry .session-link {
     width: 25%;
     display: inline-block;
-    color: #999;
+    color: #757575;
 }
 
 .hearing-entry .session-link a {
@@ -319,17 +335,22 @@ article.page ul li {
     padding: 0.3em 0;
 }
 
-.page-hearings .entry-content ul li ul li, .page-documents-and-rulings .entry-content ul li {
+.page-hearings .entry-content ul li ul li,
+.page-documents-and-rulings .entry-content ul li {
     font-size: 0.9em;
     font-weight: normal;
 }
 
-.page-hearings article.page ul, .page-documents-and-rulings article.page ul {
+.page-hearings article.page ul,
+.page-documents-and-rulings article.page ul {
     margin-top: 0;
 }
 
+
 /* Evidence */
-#main-evidence h4, .post-type-archive h4 {
+
+#main-evidence h4,
+.post-type-archive h4 {
     color: black;
     font-weight: normal;
     border-bottom: 2px solid #666;
@@ -398,7 +419,8 @@ article.page ul li {
     line-height: 14px;
 }
 
-.post-type-archive-evidence .search-criteria, .post-type-archive-evidence .search-results {
+.post-type-archive-evidence .search-criteria,
+.post-type-archive-evidence .search-results {
     margin: 15px 0;
     overflow: hidden;
 }
@@ -422,15 +444,15 @@ article.page ul li {
     border: none;
 }
 
-.results-line > .col {
+.results-line>.col {
     flex: 1;
 }
 
-.results-line > .col-1 {
+.results-line>.col-1 {
     flex: 1;
 }
 
-.results-line > .col-2 {
+.results-line>.col-2 {
     flex-grow: 2;
 }
 
@@ -446,7 +468,9 @@ article.page ul li {
     display: none;
 }
 
+
 /* Documents and rulings */
+
 .documents-main h4 {
     color: black;
     font-weight: normal;
@@ -456,7 +480,9 @@ article.page ul li {
     margin-bottom: 15px;
 }
 
+
 /* Lightbox */
+
 #blackout {
     position: fixed;
     top: 0;
@@ -473,7 +499,8 @@ article.page ul li {
     display: inline-block;
     height: 100%;
     vertical-align: middle;
-    margin-right: -0.25em; /* Adjusts for spacing */
+    margin-right: -0.25em;
+    /* Adjusts for spacing */
 }
 
 #blackout #popup {
@@ -494,7 +521,9 @@ article.page ul li {
     background-color: #333;
 }
 
+
 /* Twitter link */
+
 .call-cta {
     text-align: center;
     padding: 0 0 9px;
@@ -539,7 +568,9 @@ article.page ul li {
     right: 0;
 }
 
+
 /* Search form */
+
 #secondary .search-form {
     margin: 10px 5px;
 }
@@ -555,7 +586,9 @@ article.page ul li {
     padding-top: 4px;
 }
 
+
 /* Search results */
+
 .search-results h1.entry-title {
     font-size: 1em;
     color: black;
@@ -578,13 +611,15 @@ article.page ul li {
     -webkit-margin-after: 0.5em;
 }
 
+
 /* Media queries */
+
 @media screen and (max-width: 768px) {
-    .page #primary, #primary {
+    .page #primary,
+    #primary {
         margin-left: 15px;
         padding-right: 0;
     }
-
     #main-boxout {
         float: none;
         width: auto;
@@ -593,49 +628,39 @@ article.page ul li {
         padding: 0 10px;
         display: none;
     }
-
     #main-boxout.responsive {
         display: block;
     }
-
     #main-content {
         max-width: none;
     }
-
     h1 {
         font-size: 2em;
         margin-top: 25px;
     }
-
     h2 {
         font-size: 1.45em;
         -webkit-margin-before: 0.33em;
         -webkit-margin-after: 0.33em;
     }
-
     h3 {
         margin: 5px 0;
     }
-
     p {
         margin-bottom: 0.5em;
         line-height: 1.5;
     }
-
     .highlighted-box {
         margin: -1.5em 0 0;
     }
-
     .ui-accordion .ui-accordion-content {
         overflow: hidden !important;
     }
-
     .ui-accordion .ui-accordion-header {
         font-size: 1em !important;
         font-weight: bold;
         padding-left: 1.4em !important;
     }
-
     /* Responsive menu */
     #secondary {
         position: fixed;
@@ -648,111 +673,87 @@ article.page ul li {
         margin: 0;
         padding-top: 24px;
     }
-
     #secondary.toggled {
         box-shadow: 0px 0px 10px 0px #333;
     }
-
     #secondary.toggled {
         left: 0;
     }
-
     #secondary ul li a {
         margin-bottom: 1px;
     }
-
     #secondary ul {
         margin: 0;
     }
-
     h1.menu-toggle.toggled {
         left: 200px;
     }
-
     .menu-item-home {
         display: block;
     }
-
     /* Documents and rulings page */
     .results-line {
         font-size: 0.9em;
         display: flex;
     }
-
-    .results-line > .col {
+    .results-line>.col {
         flex: 1;
     }
-
-    .results-line > .col-1 {
+    .results-line>.col-1 {
         flex: 1;
     }
-
-    .results-line > .col-2 {
+    .results-line>.col-2 {
         flex: 1;
     }
-
     /* Date formats */
     .short-date {
         display: initial;
     }
-
     .long-date {
         display: none;
     }
-
     /* Hearings page */
     .hearing-entry .session-link {
         width: 47.5%;
         padding: 2px 0;
         margin-bottom: 6px;
     }
-
     .hearing-entry .hearing-date {
         width: auto;
         display: block;
     }
-
     .hearing .entry-header {
         margin-left: -15px;
         margin-right: -15px;
         margin-bottom: 20px;
         text-align: center;
     }
-
     .hearing .entry-header h1 {
         font-size: 1.5em;
     }
-
     .hearing .entry-header h3 {
         font-size: 1.15em;
         margin: 10px 0 0;
     }
-
     .hearing .links-table .col-3 {
         width: 100%;
     }
-
     #evidence-by-date {
         float: none;
     }
-
     #evidence-by-witness {
         padding-right: 0;
     }
-
     .datepicker {
         display: none;
     }
-
     #mobile-date-form {
         display: block;
         margin-bottom: 20px;
     }
-
     .call-cta {
         border-bottom: 1px solid white;
     }
-
     .call-cta a {
         color: white;
     }

@@ -12,7 +12,7 @@ get_header();
 <?php get_sidebar(); ?>
 
 <div id="primary" class="content-area">
-    <main id="main" class="site-main documents-main" role="main">
+    <main id="main" class="site-main documents-main">
 
         <!--<h1><?php /*_e('Rulings', 'brookhouse') */ ?></h1>
 
@@ -61,7 +61,7 @@ get_header();
 
         <h1><?php _e('Relevant Materials', 'brookhouse') ?></h1>
 
-        <p><?= get_field('research_page_intro_text') ?></p>
+        <?= get_field('research_page_intro_text') ?>
 
         <h4><?php _e('Available publications', '') ?></h4>
 

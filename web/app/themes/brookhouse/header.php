@@ -52,7 +52,7 @@
         </div>
     </section>
 
-    <nav id="site-navigation" class="main-navigation" role="navigation">
+    <nav id="site-navigation" class="main-navigation">
         <div id="nav-icon" class="menu-toggle">
             <span></span>
             <span></span>
@@ -62,7 +62,7 @@
 
         <?php //wp_nav_menu( array( 'theme_location' => 'primary' ) );  ?>
     </nav><!-- #site-navigation -->
-    <header id="masthead" class="site-header" role="banner">
+    <header id="masthead" class="site-header">
         <div class="site-branding flex-grid">
             <div class="col grow-three">
                 <a href="<?= esc_url(home_url('/')); ?>" rel="home"><img

@@ -9,8 +9,8 @@ get_header();
 <?php get_sidebar(); ?>
 <?php $s = get_search_query(); ?>
 
-<section id="primary" class="content-area">
-    <main id="main" class="site-main" role="main">
+<div id="primary" class="content-area">
+    <main id="main" class="site-main">
 
         <header class="page-header">
             <h1 class="page-title"><?php printf(__('Search Results for: %s', 'brookhouse'), '<span>' . get_search_query() . '</span>'); ?></h1>
@@ -102,6 +102,6 @@ get_header();
         <?php //brookhouse_content_nav('nav-below'); ?>
 
     </main><!-- #main -->
-</section><!-- #primary -->
+    </div><!-- #primary -->
 
 <?php get_footer(); ?>
