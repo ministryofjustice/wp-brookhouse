@@ -2,6 +2,7 @@
 .idea*
 ._D*
 ._.*
+.sql
 
 # Application
 web/app/plugins/*
