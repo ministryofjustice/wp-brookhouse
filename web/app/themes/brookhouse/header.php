@@ -95,10 +95,12 @@
                     <a href="<?php echo esc_url(home_url('/')); ?>" rel="home">Home</a>
                 </li>
                 <?php
-                if (!is_home()) {
+                if (!is_home() && $post != NULL ) {
+
                     foreach (get_post_ancestors($post->ID) as $ancestor_id) {
                         echo "<li class='breadcrumb-child'><a href='" . get_permalink($ancestor_id) . "'>" . get_the_title($ancestor_id) . "</a></li>";
                     }
+
                     if (is_archive()) {
                         echo "<li class='breadcrumb-child'><a href='" .
                             get_post_type_archive_link(
