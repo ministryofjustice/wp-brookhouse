@@ -383,6 +383,16 @@ body:not(.home) .entry-summary {
     margin: 0 0 1.5em;
 }
 
+.table-title {
+    color: black;
+    font-weight: normal;
+    font-size: 1.1em;
+    border-bottom: 2px solid #666;
+    padding: 2px 0;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+}
+
 
 /* =Asides
 ----------------------------------------------- */

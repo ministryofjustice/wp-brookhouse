@@ -63,7 +63,7 @@ get_header();
 
         <?= get_field('research_page_intro_text') ?>
 
-        <h4><?php _e('Available publications', '') ?></h4>
+        <h2 class="table-title"><?php _e('Available publications', '') ?></h2>
 
         <?php
         $documents = new WP_Query(
