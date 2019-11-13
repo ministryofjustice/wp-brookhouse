@@ -107,6 +107,10 @@ Public themes can be installed using wpackagist.
 
 Theme assets can be built as part of the docker image. Add required commands to `bin/build.sh`.
 
+To view CSS changes in the browser, if it isn't already automatically updating, you'll need to `cd` into `web/app/themes/brookhouse` and run:
+
+`npm run watch`
+
 ### Configure the default theme
 
 Set your theme as the default by adding the following line to `config/application.php`:
