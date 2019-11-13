@@ -1,8 +1,6 @@
-# Template WordPress project
+# Brook house investigation site
 
-Use this template to bootstrap a new WordPress project for use in the MOJ docker hosting environment.
-
-It will provide you with a skeleton WordPress installation which runs locally in docker, and pre-configured with composer for dependency management.
+This is the code for the Brook house investigation site.
 
 ## Features
 
@@ -21,43 +19,40 @@ It will provide you with a skeleton WordPress installation which runs locally in
 
 ## Getting Started
 
-1. Clone this repo to your local machine. Since you'll be using this as a starter for your project, you'll want to delete the `.git` directory.
-    ```bash
-    git clone git@github.com:ministryofjustice/wp-template.git .
-    rm -rf .git
-    ```
-
-2. Create a `.env` file by copying from `.env.example`:
+1. Create a `.env` file by copying from `.env.example`:
     ```bash
     cp .env.example .env
     ```
 
     Set the `SERVER_NAME` variable – it should be your project name, and must always end with `.docker`. This is the hostname that will be used for development on your local machine.
 
-3. Build the project locally. This will install composer dependencies on your local filesystem.
+2. Build the project locally. This will install composer dependencies on your local filesystem.
     ```bash
     make build
     ```
 
     If you experience any errors at this point, it may be due to being unable to access the private composer repository. [More details here](#private-composer-repository).
 
-4. Start the dory proxy, if it's not already running.
+3. Start the dory proxy, if it's not already running.
     ```bash
     dory up
     ```
 
     If you get an error message when trying to start dory, make sure you have docker running.
 
-5. Build and run the docker image.
+4. Build and run the docker image.
     ```bash
     make run
     ```
 
-6. Once the docker image has built and is running, you should be able to access the running container by going to the hostname you specified in `.env` using your web browser.
+5. Once the docker image has built and is running, you should be able to access the running container by going to the hostname you specified in `.env` using your web browser.
 
-    You will need to run through the WordPress installation wizard in your browser.
 
-    The WordPress admin area will be accessible at `/wp/wp-admin`.
+6. You will now need to get a copy of the database. Refer to internal documentation on how to do this.
+
+
+7. Lastly, run `git status`, and then `git add` the `.gitkeep` file that's in the uploads file.
+
 
 ## Composer + WordPress plugins
 
@@ -98,10 +93,6 @@ The private composer repository [composer.wp.dsd.io](https://composer.wp.dsd.io)
 Access to this repository is restricted. Refer to internal documentation for further details.
 
 ## Theme
-
-Put your theme files in `web/app/themes`.
-
-Public themes can be installed using wpackagist.
 
 ### Building theme assets
 
