@@ -51,7 +51,7 @@ This is the code for the Brook house investigation site.
 6. You will now need to get a copy of the database. Refer to internal documentation on how to do this.
 
 
-7. Lastly, run `git status`, and then `git add` the `.gitkeep` file that's in the uploads file.
+7. Lastly, run `git status`, and then `git add` the `.gitkeep` file that's in the uploads file. This is because the WASM migration will have deleted it before the sync (but we want to keep it.)
 
 
 ## Composer + WordPress plugins
