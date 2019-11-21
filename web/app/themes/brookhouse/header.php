@@ -73,10 +73,10 @@
             <div class="bh-languages col">
                 <ul data-locale="<?= get_locale() ?>">
                     <li data-locale="en_GB"><a href="<?= moj_get_page_uri() ?>/?locale=en_GB">English (UK)</a></li>
-                    <li data-locale="ar"><a href="<?= moj_get_page_uri() ?>/?locale=ar" class="locale-text-enlarge">عربى</a></li>
-                    <li data-locale="ur"><a href="<?= moj_get_page_uri() ?>/?locale=ur" class="locale-text-enlarge">اردو</a></li>
-                    <li data-locale="fa_IR"><a href="<?= moj_get_page_uri() ?>/?locale=fa_IR" class="locale-text-enlarge">فارسی</a></li>
-                    <li data-locale="sq"><a href="<?= moj_get_page_uri() ?>/?locale=sq">Shqiptar</a></li>
+                    <li data-locale="ar"><a href="<?= moj_get_page_uri() ?>/?locale=ar" lang="ar" class="locale-text-enlarge">عربى</a></li>
+                    <li data-locale="ur"><a href="<?= moj_get_page_uri() ?>/?locale=ur" lang="ur" class="locale-text-enlarge">اردو</a></li>
+                    <li data-locale="fa_IR"><a href="<?= moj_get_page_uri() ?>/?locale=fa_IR" lang="fa_IR" class="locale-text-enlarge">فارسی</a></li>
+                    <li data-locale="sq"><a href="<?= moj_get_page_uri() ?>/?locale=sq" lang="sq">Shqiptar</a></li>
                 </ul>
             </div>
         </div>
