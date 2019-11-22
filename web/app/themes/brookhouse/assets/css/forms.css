@@ -116,3 +116,7 @@ textarea {
     color: #cc0000;
     font-weight: bold
 }
+
+.wpcf7-form-control-wrap {
+    position: static;
+}
