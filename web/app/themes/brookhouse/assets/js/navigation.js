@@ -46,10 +46,11 @@ $(document).on("click", '#nav-icon', function (e) {
 
 
 jQuery(document).ready(function ($) {
-    var isTouchDevice = 'ontouchstart' in document.documentElement;
+    //var isTouchDevice = 'ontouchstart' in document.documentElement;
 
     $('#nav-icon').click(function () {
         $(this).toggleClass('open');
+        $('html').toggleClass('open');
     });
 
     $("body").click(function () {
@@ -107,4 +108,3 @@ $(document).on("click", "#popup .close a, #blackout", function (e) {
         $(this).remove();
     });
 });
-

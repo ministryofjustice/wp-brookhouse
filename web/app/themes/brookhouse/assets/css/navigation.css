@@ -10,6 +10,13 @@
     margin: 10px 15px 0 0;
 }
 
+#secondary.toggled {
+    width: 100%;
+    overflow-y: scroll;
+    height: 100%;
+    padding-top: 0;
+}
+
 
 /* =Menu
 ----------------------------------------------- */
@@ -17,6 +24,7 @@
 .main-navigation {
     position: fixed;
     z-index: 6;
+    width: 100%;
 }
 
 .main-navigation ul {
@@ -159,6 +167,10 @@ div.menu-toggle {
     -o-transition: .5s ease-in-out;
     transition: .5s ease-in-out;
     cursor: pointer;
+    background: none;
+    border: none;
+    box-sizing: border-box;
+    height: 19px;
 }
 
 #nav-icon span {
@@ -193,7 +205,9 @@ div.menu-toggle {
 }
 
 #nav-icon.open {
-    left: 175px;
+    position: fixed;
+    left: unset;
+    right: 0;
 }
 
 #nav-icon.open span:nth-child(1) {
@@ -259,3 +273,7 @@ div.menu-toggle {
 /*.home .menu-item-27 {
     display: none;
 }*/
+
+body.open, html.open {
+    overflow: hidden;
+}
