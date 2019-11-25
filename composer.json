@@ -1,5 +1,5 @@
 {
-    "name": "ministryofjustice/wp-template",
+    "name": "ministryofjustice/wp-brookhouse",
     "type": "project",
     "description": "A starter project for WordPress in MOJ using docker",
     "config": {

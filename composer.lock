@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "f7266e1949de510f0a0f727c91b2a00d",
+    "content-hash": "362c7670ca362bda0567306643ac90f3",
     "packages": [
         {
             "name": "acf/advanced-custom-fields-pro",
@@ -12,29 +12,30 @@
             "dist": {
                 "type": "zip",
                 "url": "https://composer.wp.dsd.io/dist/acf/advanced-custom-fields-pro/acf-advanced-custom-fields-pro-5.8.1.zip",
+                "reference": null,
                 "shasum": "1ba6174e31db0d3c2728d7bd5258c621d8eb9391"
             },
             "type": "wordpress-plugin"
         },
         {
             "name": "browscap/browscap-php",
-            "version": "4.2.0",
+            "version": "4.2.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/browscap/browscap-php.git",
-                "reference": "b6ca3db5df6015ecae8cdd3a488cd53ab1a31e49"
+                "reference": "f37794ae64b9ee53cef725b8c368aa5ca114f374"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/browscap/browscap-php/zipball/b6ca3db5df6015ecae8cdd3a488cd53ab1a31e49",
-                "reference": "b6ca3db5df6015ecae8cdd3a488cd53ab1a31e49",
+                "url": "https://api.github.com/repos/browscap/browscap-php/zipball/f37794ae64b9ee53cef725b8c368aa5ca114f374",
+                "reference": "f37794ae64b9ee53cef725b8c368aa5ca114f374",
                 "shasum": ""
             },
             "require": {
                 "daverandom/exceptional-json": "^1.0.4",
                 "ext-json": "*",
                 "guzzlehttp/guzzle": "^6.2",
-                "monolog/monolog": "^1.23",
+                "monolog/monolog": "^1.23 || ^2.0",
                 "php": ">=7.1.0,<7.4.0",
                 "psr/simple-cache": "^1.0",
                 "roave/doctrine-simplecache": "^1.1 || ^2.0",
@@ -44,7 +45,7 @@
             "require-dev": {
                 "friendsofphp/php-cs-fixer": "^2.13",
                 "mikey179/vfsstream": "^1.6",
-                "pepakriz/phpstan-exception-rules": "^0.3",
+                "pepakriz/phpstan-exception-rules": "^0.3 || ^0.4",
                 "phpstan/phpstan": "^0.10",
                 "phpstan/phpstan-beberlei-assert": "^0.10",
                 "phpstan/phpstan-deprecation-rules": "^0.10",
@@ -90,7 +91,7 @@
                 "get_browser",
                 "user agent"
             ],
-            "time": "2019-01-18T08:53:28+00:00"
+            "time": "2019-10-18T08:06:44+00:00"
         },
         {
             "name": "composer/installers",
@@ -254,16 +255,16 @@
         },
         {
             "name": "doctrine/cache",
-            "version": "v1.8.0",
+            "version": "1.9.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/cache.git",
-                "reference": "d768d58baee9a4862ca783840eca1b9add7a7f57"
+                "reference": "89a5c76c39c292f7798f964ab3c836c3f8192a55"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/cache/zipball/d768d58baee9a4862ca783840eca1b9add7a7f57",
-                "reference": "d768d58baee9a4862ca783840eca1b9add7a7f57",
+                "url": "https://api.github.com/repos/doctrine/cache/zipball/89a5c76c39c292f7798f964ab3c836c3f8192a55",
+                "reference": "89a5c76c39c292f7798f964ab3c836c3f8192a55",
                 "shasum": ""
             },
             "require": {
@@ -274,7 +275,7 @@
             },
             "require-dev": {
                 "alcaeus/mongo-php-adapter": "^1.1",
-                "doctrine/coding-standard": "^4.0",
+                "doctrine/coding-standard": "^6.0",
                 "mongodb/mongodb": "^1.1",
                 "phpunit/phpunit": "^7.0",
                 "predis/predis": "~1.0"
@@ -285,7 +286,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.8.x-dev"
+                    "dev-master": "1.9.x-dev"
                 }
             },
             "autoload": {
@@ -299,16 +300,16 @@
             ],
             "authors": [
                 {
+                    "name": "Guilherme Blanco",
+                    "email": "guilhermeblanco@gmail.com"
+                },
+                {
                     "name": "Roman Borschel",
                     "email": "roman@code-factory.org"
                 },
                 {
                     "name": "Benjamin Eberlei",
                     "email": "kontakt@beberlei.de"
-                },
-                {
-                    "name": "Guilherme Blanco",
-                    "email": "guilhermeblanco@gmail.com"
                 },
                 {
                     "name": "Jonathan Wage",
@@ -319,37 +320,46 @@
                     "email": "schmittjoh@gmail.com"
                 }
             ],
-            "description": "Caching library offering an object-oriented API for many cache backends",
-            "homepage": "https://www.doctrine-project.org",
+            "description": "PHP Doctrine Cache library is a popular cache implementation that supports many different drivers such as redis, memcache, apc, mongodb and others.",
+            "homepage": "https://www.doctrine-project.org/projects/cache.html",
             "keywords": [
+                "abstraction",
+                "apcu",
                 "cache",
-                "caching"
+                "caching",
+                "couchdb",
+                "memcached",
+                "php",
+                "redis",
+                "riak",
+                "xcache"
             ],
-            "time": "2018-08-21T18:01:43+00:00"
+            "time": "2019-11-15T14:31:57+00:00"
         },
         {
             "name": "guzzlehttp/guzzle",
-            "version": "6.3.3",
+            "version": "6.4.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/guzzle/guzzle.git",
-                "reference": "407b0cb880ace85c9b63c5f9551db498cb2d50ba"
+                "reference": "0895c932405407fd3a7368b6910c09a24d26db11"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/guzzle/guzzle/zipball/407b0cb880ace85c9b63c5f9551db498cb2d50ba",
-                "reference": "407b0cb880ace85c9b63c5f9551db498cb2d50ba",
+                "url": "https://api.github.com/repos/guzzle/guzzle/zipball/0895c932405407fd3a7368b6910c09a24d26db11",
+                "reference": "0895c932405407fd3a7368b6910c09a24d26db11",
                 "shasum": ""
             },
             "require": {
+                "ext-json": "*",
                 "guzzlehttp/promises": "^1.0",
-                "guzzlehttp/psr7": "^1.4",
+                "guzzlehttp/psr7": "^1.6.1",
                 "php": ">=5.5"
             },
             "require-dev": {
                 "ext-curl": "*",
                 "phpunit/phpunit": "^4.8.35 || ^5.7 || ^6.4 || ^7.0",
-                "psr/log": "^1.0"
+                "psr/log": "^1.1"
             },
             "suggest": {
                 "psr/log": "Required for using the Log middleware"
@@ -361,12 +371,12 @@
                 }
             },
             "autoload": {
-                "files": [
-                    "src/functions_include.php"
-                ],
                 "psr-4": {
                     "GuzzleHttp\\": "src/"
-                }
+                },
+                "files": [
+                    "src/functions_include.php"
+                ]
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
@@ -390,7 +400,7 @@
                 "rest",
                 "web service"
             ],
-            "time": "2018-04-22T15:46:56+00:00"
+            "time": "2019-10-23T15:58:00+00:00"
         },
         {
             "name": "guzzlehttp/promises",
@@ -516,20 +526,20 @@
         },
         {
             "name": "johnpbloch/wordpress",
-            "version": "5.2.4",
+            "version": "5.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/johnpbloch/wordpress.git",
-                "reference": "33fca34d16818a8d893d374eecd5c8c46cab6e88"
+                "reference": "2b710cf99daf1c219948cd6ee4719ccfbd12e109"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/johnpbloch/wordpress/zipball/33fca34d16818a8d893d374eecd5c8c46cab6e88",
-                "reference": "33fca34d16818a8d893d374eecd5c8c46cab6e88",
+                "url": "https://api.github.com/repos/johnpbloch/wordpress/zipball/2b710cf99daf1c219948cd6ee4719ccfbd12e109",
+                "reference": "2b710cf99daf1c219948cd6ee4719ccfbd12e109",
                 "shasum": ""
             },
             "require": {
-                "johnpbloch/wordpress-core": "5.2.4",
+                "johnpbloch/wordpress-core": "5.3.0",
                 "johnpbloch/wordpress-core-installer": "^1.0",
                 "php": ">=5.6.20"
             },
@@ -551,27 +561,27 @@
                 "cms",
                 "wordpress"
             ],
-            "time": "2019-10-14T20:47:31+00:00"
+            "time": "2019-11-12T20:45:58+00:00"
         },
         {
             "name": "johnpbloch/wordpress-core",
-            "version": "5.2.4",
+            "version": "5.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/johnpbloch/wordpress-core.git",
-                "reference": "01530fea56649a4040971fc614baa546273d964c"
+                "reference": "17ddddaf049e82655c6d3831ca787350807b0566"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/johnpbloch/wordpress-core/zipball/01530fea56649a4040971fc614baa546273d964c",
-                "reference": "01530fea56649a4040971fc614baa546273d964c",
+                "url": "https://api.github.com/repos/johnpbloch/wordpress-core/zipball/17ddddaf049e82655c6d3831ca787350807b0566",
+                "reference": "17ddddaf049e82655c6d3831ca787350807b0566",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.6.20"
             },
             "provide": {
-                "wordpress/core-implementation": "5.2.4"
+                "wordpress/core-implementation": "5.3.0"
             },
             "type": "wordpress-core",
             "notification-url": "https://packagist.org/downloads/",
@@ -591,7 +601,7 @@
                 "cms",
                 "wordpress"
             ],
-            "time": "2019-10-14T20:47:26+00:00"
+            "time": "2019-11-12T20:45:53+00:00"
         },
         {
             "name": "johnpbloch/wordpress-core-installer",
@@ -644,10 +654,12 @@
         },
         {
             "name": "koodimonni-language/core-en_gb",
-            "version": "5.2.4",
+            "version": "5.3",
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/translation/core/5.2.4/en_GB.zip"
+                "url": "https://downloads.wordpress.org/translation/core/5.3/en_GB.zip",
+                "reference": null,
+                "shasum": null
             },
             "require": {
                 "koodimonni/composer-dropin-installer": ">=0.2.3"
@@ -748,22 +760,43 @@
         },
         {
             "name": "ministryofjustice/wp-moj-components",
-            "version": "2.0.0",
+            "version": "3.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/ministryofjustice/wp-moj-components.git",
-                "reference": "03588073d9e5cc1b2593c4cdced71595fbb6cce5"
+                "reference": "e761d303414e29983c9e0317d94eeb67b6bd03e9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://composer.wp.dsd.io/dist/ministryofjustice/wp-moj-components/ministryofjustice-wp-moj-components-03588073d9e5cc1b2593c4cdced71595fbb6cce5-zip-11175a.zip",
-                "reference": "03588073d9e5cc1b2593c4cdced71595fbb6cce5",
-                "shasum": "d9ef650c0fb485c0cd3182bd715624de142732a7"
+                "url": "https://composer.wp.dsd.io/dist/ministryofjustice/wp-moj-components/ministryofjustice-wp-moj-components-e761d303414e29983c9e0317d94eeb67b6bd03e9-zip-ff939d.zip",
+                "reference": "e761d303414e29983c9e0317d94eeb67b6bd03e9",
+                "shasum": "b1d9c72c1dce889d30a87572b36fc0496e40f13d"
             },
             "require": {
                 "composer/installers": "^1.0"
             },
+            "require-dev": {
+                "10up/wp_mock": "0.4.2",
+                "phpmd/phpmd": "^2.7",
+                "squizlabs/php_codesniffer": "^3.5"
+            },
             "type": "wordpress-muplugin",
+            "autoload": {
+                "psr-4": {
+                    "component\\Introduce\\": "component/Introduce/",
+                    "component\\Security\\": "component/Security/"
+                }
+            },
+            "scripts": {
+                "test": [
+                    "vendor/bin/phpunit",
+                    "vendor/bin/phpcs -p",
+                    "vendor/bin/phpmd component/ text cleancode,codesize,controversial,design,naming,unusedcode"
+                ],
+                "coverage": [
+                    "vendor/bin/phpunit --coverage-html coverage --whitelist component"
+                ]
+            },
             "authors": [
                 {
                     "name": "Damien Wilson",
@@ -772,10 +805,10 @@
             ],
             "description": "A plugin to introduce global functions to a collection of WP sites",
             "support": {
-                "source": "https://github.com/ministryofjustice/wp-moj-components/tree/2.0.0",
+                "source": "https://github.com/ministryofjustice/wp-moj-components/tree/3.0.1",
                 "issues": "https://github.com/ministryofjustice/wp-moj-components/issues"
             },
-            "time": "2019-09-25T12:44:25+00:00"
+            "time": "2019-11-12T23:26:43+00:00"
         },
         {
             "name": "ministryofjustice/wp-rewrite-media-to-s3",
@@ -849,21 +882,21 @@
         },
         {
             "name": "monolog/monolog",
-            "version": "1.25.1",
+            "version": "2.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Seldaek/monolog.git",
-                "reference": "70e65a5470a42cfec1a7da00d30edb6e617e8dcf"
+                "reference": "f9d56fd2f5533322caccdfcddbb56aedd622ef1c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Seldaek/monolog/zipball/70e65a5470a42cfec1a7da00d30edb6e617e8dcf",
-                "reference": "70e65a5470a42cfec1a7da00d30edb6e617e8dcf",
+                "url": "https://api.github.com/repos/Seldaek/monolog/zipball/f9d56fd2f5533322caccdfcddbb56aedd622ef1c",
+                "reference": "f9d56fd2f5533322caccdfcddbb56aedd622ef1c",
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.3.0",
-                "psr/log": "~1.0"
+                "php": "^7.2",
+                "psr/log": "^1.0.1"
             },
             "provide": {
                 "psr/log-implementation": "1.0.0"
@@ -871,33 +904,36 @@
             "require-dev": {
                 "aws/aws-sdk-php": "^2.4.9 || ^3.0",
                 "doctrine/couchdb": "~1.0@dev",
-                "graylog2/gelf-php": "~1.0",
-                "jakub-onderka/php-parallel-lint": "0.9",
+                "elasticsearch/elasticsearch": "^6.0",
+                "graylog2/gelf-php": "^1.4.2",
+                "jakub-onderka/php-parallel-lint": "^0.9",
                 "php-amqplib/php-amqplib": "~2.4",
                 "php-console/php-console": "^3.1.3",
-                "phpunit/phpunit": "~4.5",
-                "phpunit/phpunit-mock-objects": "2.3.0",
+                "phpspec/prophecy": "^1.6.1",
+                "phpunit/phpunit": "^8.3",
+                "predis/predis": "^1.1",
+                "rollbar/rollbar": "^1.3",
                 "ruflin/elastica": ">=0.90 <3.0",
-                "sentry/sentry": "^0.13",
                 "swiftmailer/swiftmailer": "^5.3|^6.0"
             },
             "suggest": {
                 "aws/aws-sdk-php": "Allow sending log messages to AWS services like DynamoDB",
                 "doctrine/couchdb": "Allow sending log messages to a CouchDB server",
+                "elasticsearch/elasticsearch": "Allow sending log messages to an Elasticsearch server via official client",
                 "ext-amqp": "Allow sending log messages to an AMQP server (1.0+ required)",
-                "ext-mongo": "Allow sending log messages to a MongoDB server",
+                "ext-mbstring": "Allow to work properly with unicode symbols",
+                "ext-mongodb": "Allow sending log messages to a MongoDB server (via driver)",
                 "graylog2/gelf-php": "Allow sending log messages to a GrayLog2 server",
-                "mongodb/mongodb": "Allow sending log messages to a MongoDB server via PHP Driver",
+                "mongodb/mongodb": "Allow sending log messages to a MongoDB server (via library)",
                 "php-amqplib/php-amqplib": "Allow sending log messages to an AMQP server using php-amqplib",
                 "php-console/php-console": "Allow sending log messages to Google Chrome",
                 "rollbar/rollbar": "Allow sending log messages to Rollbar",
-                "ruflin/elastica": "Allow sending log messages to an Elastic Search server",
-                "sentry/sentry": "Allow sending log messages to a Sentry server"
+                "ruflin/elastica": "Allow sending log messages to an Elastic Search server"
             },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "2.0.x-dev"
+                    "dev-master": "2.x-dev"
                 }
             },
             "autoload": {
@@ -923,7 +959,7 @@
                 "logging",
                 "psr-3"
             ],
-            "time": "2019-09-06T13:49:17+00:00"
+            "time": "2019-11-13T10:27:43+00:00"
         },
         {
             "name": "mustangostang/spyc",
@@ -1020,16 +1056,16 @@
         },
         {
             "name": "piwik/device-detector",
-            "version": "3.12.0",
+            "version": "3.12.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/matomo-org/device-detector.git",
-                "reference": "a698de2c57d8e106b8f8e54671b4bf794dc9698e"
+                "reference": "72630c0cc012da96fe9fb842e7af480ffa740b76"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/matomo-org/device-detector/zipball/a698de2c57d8e106b8f8e54671b4bf794dc9698e",
-                "reference": "a698de2c57d8e106b8f8e54671b4bf794dc9698e",
+                "url": "https://api.github.com/repos/matomo-org/device-detector/zipball/72630c0cc012da96fe9fb842e7af480ffa740b76",
+                "reference": "72630c0cc012da96fe9fb842e7af480ffa740b76",
                 "shasum": ""
             },
             "require": {
@@ -1071,7 +1107,7 @@
                 "parser",
                 "useragent"
             ],
-            "time": "2019-07-22T14:35:14+00:00"
+            "time": "2019-10-24T15:38:52+00:00"
         },
         {
             "name": "psr/container",
@@ -1174,16 +1210,16 @@
         },
         {
             "name": "psr/log",
-            "version": "1.1.0",
+            "version": "1.1.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/php-fig/log.git",
-                "reference": "6c001f1daafa3a3ac1d8ff69ee4db8e799a654dd"
+                "reference": "446d54b4cb6bf489fc9d75f55843658e6f25d801"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/php-fig/log/zipball/6c001f1daafa3a3ac1d8ff69ee4db8e799a654dd",
-                "reference": "6c001f1daafa3a3ac1d8ff69ee4db8e799a654dd",
+                "url": "https://api.github.com/repos/php-fig/log/zipball/446d54b4cb6bf489fc9d75f55843658e6f25d801",
+                "reference": "446d54b4cb6bf489fc9d75f55843658e6f25d801",
                 "shasum": ""
             },
             "require": {
@@ -1192,7 +1228,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.0.x-dev"
+                    "dev-master": "1.1.x-dev"
                 }
             },
             "autoload": {
@@ -1217,7 +1253,7 @@
                 "psr",
                 "psr-3"
             ],
-            "time": "2018-11-20T15:27:04+00:00"
+            "time": "2019-11-01T11:05:21+00:00"
         },
         {
             "name": "psr/simple-cache",
@@ -1309,32 +1345,33 @@
         },
         {
             "name": "roave/doctrine-simplecache",
-            "version": "2.2.0",
+            "version": "2.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Roave/DoctrineSimpleCache.git",
-                "reference": "1ad494f47812cf63226ad60bb3b47bb37a2771cd"
+                "reference": "165599198031cf2a14b52bc7de6eca970e9dfdf5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Roave/DoctrineSimpleCache/zipball/1ad494f47812cf63226ad60bb3b47bb37a2771cd",
-                "reference": "1ad494f47812cf63226ad60bb3b47bb37a2771cd",
+                "url": "https://api.github.com/repos/Roave/DoctrineSimpleCache/zipball/165599198031cf2a14b52bc7de6eca970e9dfdf5",
+                "reference": "165599198031cf2a14b52bc7de6eca970e9dfdf5",
                 "shasum": ""
             },
             "require": {
                 "doctrine/cache": "^1.7",
-                "php": "^7.1,<7.4",
+                "php": "^7.2,<7.5",
                 "psr/simple-cache": "^1.0"
             },
             "provide": {
                 "psr/simple-cache-implementation": "1.0"
             },
             "require-dev": {
-                "cache/integration-tests": "dev-master#05f9717",
-                "cache/tag-interop": "dev-master#992b7ed",
-                "infection/infection": "^0.11.2",
-                "phpunit/phpunit": "^6.5 || ^7.0",
-                "symfony/console": "^3.4 || ^4.2"
+                "cache/integration-tests": "dev-master",
+                "cache/tag-interop": "dev-master",
+                "infection/infection": "^0.14.2",
+                "phpunit/phpunit": "^8.4",
+                "symfony/console": "^4.3",
+                "symfony/phpunit-bridge": "^4.4@dev"
             },
             "type": "library",
             "autoload": {
@@ -1356,7 +1393,7 @@
                 }
             ],
             "description": "Doctrine Cache adapter for PSR-16 Simple Cache",
-            "time": "2019-01-24T09:43:58+00:00"
+            "time": "2019-10-23T17:43:38+00:00"
         },
         {
             "name": "roots/wp-password-bcrypt",
@@ -1417,27 +1454,28 @@
         },
         {
             "name": "symfony/console",
-            "version": "v4.3.5",
+            "version": "v4.4.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/console.git",
-                "reference": "929ddf360d401b958f611d44e726094ab46a7369"
+                "reference": "35d9077f495c6d184d9930f7a7ecbd1ad13c7ab8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/console/zipball/929ddf360d401b958f611d44e726094ab46a7369",
-                "reference": "929ddf360d401b958f611d44e726094ab46a7369",
+                "url": "https://api.github.com/repos/symfony/console/zipball/35d9077f495c6d184d9930f7a7ecbd1ad13c7ab8",
+                "reference": "35d9077f495c6d184d9930f7a7ecbd1ad13c7ab8",
                 "shasum": ""
             },
             "require": {
                 "php": "^7.1.3",
                 "symfony/polyfill-mbstring": "~1.0",
                 "symfony/polyfill-php73": "^1.8",
-                "symfony/service-contracts": "^1.1"
+                "symfony/service-contracts": "^1.1|^2"
             },
             "conflict": {
                 "symfony/dependency-injection": "<3.4",
-                "symfony/event-dispatcher": "<4.3",
+                "symfony/event-dispatcher": "<4.3|>=5",
+                "symfony/lock": "<4.4",
                 "symfony/process": "<3.3"
             },
             "provide": {
@@ -1445,12 +1483,12 @@
             },
             "require-dev": {
                 "psr/log": "~1.0",
-                "symfony/config": "~3.4|~4.0",
-                "symfony/dependency-injection": "~3.4|~4.0",
+                "symfony/config": "^3.4|^4.0|^5.0",
+                "symfony/dependency-injection": "^3.4|^4.0|^5.0",
                 "symfony/event-dispatcher": "^4.3",
-                "symfony/lock": "~3.4|~4.0",
-                "symfony/process": "~3.4|~4.0",
-                "symfony/var-dumper": "^4.3"
+                "symfony/lock": "^4.4|^5.0",
+                "symfony/process": "^3.4|^4.0|^5.0",
+                "symfony/var-dumper": "^4.3|^5.0"
             },
             "suggest": {
                 "psr/log": "For using the console logger",
@@ -1461,7 +1499,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "4.3-dev"
+                    "dev-master": "4.4-dev"
                 }
             },
             "autoload": {
@@ -1488,20 +1526,20 @@
             ],
             "description": "Symfony Console Component",
             "homepage": "https://symfony.com",
-            "time": "2019-10-07T12:36:49+00:00"
+            "time": "2019-11-13T07:39:40+00:00"
         },
         {
             "name": "symfony/filesystem",
-            "version": "v4.3.5",
+            "version": "v4.4.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/filesystem.git",
-                "reference": "9abbb7ef96a51f4d7e69627bc6f63307994e4263"
+                "reference": "d12b01cba60be77b583c9af660007211e3909854"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/filesystem/zipball/9abbb7ef96a51f4d7e69627bc6f63307994e4263",
-                "reference": "9abbb7ef96a51f4d7e69627bc6f63307994e4263",
+                "url": "https://api.github.com/repos/symfony/filesystem/zipball/d12b01cba60be77b583c9af660007211e3909854",
+                "reference": "d12b01cba60be77b583c9af660007211e3909854",
                 "shasum": ""
             },
             "require": {
@@ -1511,7 +1549,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "4.3-dev"
+                    "dev-master": "4.4-dev"
                 }
             },
             "autoload": {
@@ -1538,7 +1576,7 @@
             ],
             "description": "Symfony Filesystem Component",
             "homepage": "https://symfony.com",
-            "time": "2019-08-20T14:07:54+00:00"
+            "time": "2019-11-12T14:51:11+00:00"
         },
         {
             "name": "symfony/polyfill-ctype",
@@ -1717,20 +1755,20 @@
         },
         {
             "name": "symfony/service-contracts",
-            "version": "v1.1.7",
+            "version": "v2.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/service-contracts.git",
-                "reference": "ffcde9615dc5bb4825b9f6aed07716f1f57faae0"
+                "reference": "9d99e1556417bf227a62e14856d630672bf10eaf"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/service-contracts/zipball/ffcde9615dc5bb4825b9f6aed07716f1f57faae0",
-                "reference": "ffcde9615dc5bb4825b9f6aed07716f1f57faae0",
+                "url": "https://api.github.com/repos/symfony/service-contracts/zipball/9d99e1556417bf227a62e14856d630672bf10eaf",
+                "reference": "9d99e1556417bf227a62e14856d630672bf10eaf",
                 "shasum": ""
             },
             "require": {
-                "php": "^7.1.3",
+                "php": "^7.2.9",
                 "psr/container": "^1.0"
             },
             "suggest": {
@@ -1739,7 +1777,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.1-dev"
+                    "dev-master": "2.0-dev"
                 }
             },
             "autoload": {
@@ -1771,7 +1809,7 @@
                 "interoperability",
                 "standards"
             ],
-            "time": "2019-09-17T11:12:18+00:00"
+            "time": "2019-11-09T09:18:34+00:00"
         },
         {
             "name": "thadafinser/package-info",
@@ -2000,7 +2038,9 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/classic-editor.1.5.zip"
+                "url": "https://downloads.wordpress.org/plugin/classic-editor.1.5.zip",
+                "reference": null,
+                "shasum": null
             },
             "require": {
                 "composer/installers": "~1.0"
@@ -2010,15 +2050,17 @@
         },
         {
             "name": "wpackagist-plugin/contact-form-7",
-            "version": "5.1.4",
+            "version": "5.1.5",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/contact-form-7/",
-                "reference": "tags/5.1.4"
+                "reference": "tags/5.1.5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/contact-form-7.5.1.4.zip"
+                "url": "https://downloads.wordpress.org/plugin/contact-form-7.5.1.5.zip",
+                "reference": null,
+                "shasum": null
             },
             "require": {
                 "composer/installers": "~1.0"
@@ -2036,7 +2078,9 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/fast-user-switching.zip?timestamp=1551360022"
+                "url": "https://downloads.wordpress.org/plugin/fast-user-switching.zip?timestamp=1551360022",
+                "reference": null,
+                "shasum": null
             },
             "require": {
                 "composer/installers": "~1.0"
@@ -2054,7 +2098,9 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/google-analytics-dashboard-for-wp.5.3.9.zip"
+                "url": "https://downloads.wordpress.org/plugin/google-analytics-dashboard-for-wp.5.3.9.zip",
+                "reference": null,
+                "shasum": null
             },
             "require": {
                 "composer/installers": "~1.0"
@@ -2072,7 +2118,9 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/wp-accessibility.1.6.10.zip"
+                "url": "https://downloads.wordpress.org/plugin/wp-accessibility.1.6.10.zip",
+                "reference": null,
+                "shasum": null
             },
             "require": {
                 "composer/installers": "~1.0"
@@ -2084,16 +2132,16 @@
     "packages-dev": [
         {
             "name": "squizlabs/php_codesniffer",
-            "version": "3.5.1",
+            "version": "3.5.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/squizlabs/PHP_CodeSniffer.git",
-                "reference": "82cd0f854ceca17731d6d019c7098e3755c45060"
+                "reference": "65b12cdeaaa6cd276d4c3033a95b9b88b12701e7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/squizlabs/PHP_CodeSniffer/zipball/82cd0f854ceca17731d6d019c7098e3755c45060",
-                "reference": "82cd0f854ceca17731d6d019c7098e3755c45060",
+                "url": "https://api.github.com/repos/squizlabs/PHP_CodeSniffer/zipball/65b12cdeaaa6cd276d4c3033a95b9b88b12701e7",
+                "reference": "65b12cdeaaa6cd276d4c3033a95b9b88b12701e7",
                 "shasum": ""
             },
             "require": {
@@ -2131,7 +2179,7 @@
                 "phpcs",
                 "standards"
             ],
-            "time": "2019-10-16T21:14:26+00:00"
+            "time": "2019-10-28T04:36:32+00:00"
         }
     ],
     "aliases": [],
