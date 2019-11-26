@@ -53,11 +53,11 @@
     </section>
 
     <nav id="site-navigation" class="main-navigation">
-        <div id="nav-icon" class="menu-toggle">
+        <button id="nav-icon" class="menu-toggle">
             <span></span>
             <span></span>
             <span></span>
-        </div>
+        </button>
         <a class="skip-link screen-reader-text" href="#content"><?php _e('Skip to content', 'brookhouse'); ?></a>
 
         <?php //wp_nav_menu( array( 'theme_location' => 'primary' ) );  ?>

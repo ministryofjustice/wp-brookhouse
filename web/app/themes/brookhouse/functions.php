@@ -163,13 +163,7 @@ function brookhouse_scripts()
     wp_enqueue_style('bh-style', moj_get_asset('bh-css')); // Default stylesheet
     wp_enqueue_style('bh-style-custom', moj_get_asset('custom-css'), array('bh-style')); // Custom stylesheet
 
-    wp_enqueue_script(
-        'js',
-        moj_get_asset('js'),
-        array('jquery'),
-        null,
-        true
-    );
+    wp_enqueue_script('js', moj_get_asset('js'), array('jquery'), null, true);
 
     if (is_singular() && comments_open() && get_option('thread_comments')) {
         wp_enqueue_script('comment-reply');
