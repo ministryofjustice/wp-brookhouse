@@ -1,3 +1,11 @@
+/*.home .menu-item-27 {
+    display: none;
+}*/
+
+body.open, html.nav-open {
+    overflow: hidden;
+}
+
 #primary {
     float: none;
     overflow: hidden;
@@ -220,7 +228,6 @@ div.menu-toggle {
 
 #nav-icon.open span:nth-child(2) {
     opacity: 0;
-    left: -230px;
 }
 
 #nav-icon.open span:nth-child(3) {
@@ -268,12 +275,4 @@ div.menu-toggle {
 
 #secondary ul.sub-menu {
     margin: 0 0 0 20px;
-}
-
-/*.home .menu-item-27 {
-    display: none;
-}*/
-
-body.open, html.open {
-    overflow: hidden;
 }

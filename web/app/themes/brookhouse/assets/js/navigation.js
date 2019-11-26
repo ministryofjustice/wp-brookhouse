@@ -38,28 +38,16 @@
 //    };
 //})();
 
-// Slide out menu for mobile view
-$(document).on("click", '#nav-icon', function (e) {
-    $('#secondary').toggleClass('toggled');
-    $('#site-navigation div.menu-toggle').first().toggleClass('toggled');
-});
-
 
 jQuery(document).ready(function ($) {
-    //var isTouchDevice = 'ontouchstart' in document.documentElement;
 
-    $('#nav-icon').click(function () {
+    // Slide out menu for mobile view
+    $('nav').on("click", '#nav-icon', function (e) {
+        e.preventDefault();
         $(this).toggleClass('open');
-        $('html').toggleClass('open');
+        $('html').toggleClass('nav-open');
+        $('#secondary').toggleClass('toggled');
     });
-
-    $("body").click(function () {
-        $(this).toggleClass('open');
-    });
-
-    if (isTouchDevice) {
-        console.log('This is a touch device!')
-    }
 
     // submenu
     $('#menu-main-nav ul li ul.sub-menu li a').click(function (e) {
