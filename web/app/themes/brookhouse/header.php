@@ -66,7 +66,7 @@
         <div class="site-branding flex-grid">
             <div class="col grow-three">
                 <a href="<?= esc_url(home_url('/')); ?>" rel="home"><img
-                        src="<?= get_template_directory_uri(); ?>/dist/img/ppo-logo.svg"
+                        src="<?= get_template_directory_uri(); ?>/dist/img/brookhouse-logo.png"
                         alt="<?php bloginfo('name'); ?>"></a>
                 <a href="<?= esc_url(home_url('/')); ?>" rel="home" class="site-title"><span><?= get_bloginfo(); ?></span></a>
             </div>
