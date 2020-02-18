@@ -64,7 +64,7 @@
     </nav><!-- #site-navigation -->
     <header id="masthead" class="site-header">
         <div class="site-branding flex-grid">
-            <div class="col grow-three">
+            <div class="col">
                 <a href="<?= esc_url(home_url('/')); ?>" rel="home"><img
                         src="<?= get_template_directory_uri(); ?>/dist/img/brookhouse-logo.png"
                         alt="<?php bloginfo('name'); ?>" class="site-header__logo"></a>

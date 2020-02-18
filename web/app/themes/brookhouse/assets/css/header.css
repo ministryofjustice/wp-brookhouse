@@ -90,22 +90,27 @@
     margin: 5px auto 0;
 }
 
-.site-branding img {
+.site-header__logo {
     max-width: 10rem;
     float: left;
-    margin-left: 1%;
-    margin-right: 1%;
+    margin-left: 1rem;
+    margin-right: 1rem;
 }
 
-
-.site-title {
-    font-family: Montserrat, cursive;
-    padding: 15px;
-    display:inline-block;
+.site-header__phone-number {
+    margin-top: 1.5rem;
+    padding: 1rem;
 }
-.site-title span {
-    display: block;
-    padding-left: 15px
+
+.site-header__phone-number--image {
+    max-height: 4rem;
+    vertical-align: bottom;
+}
+
+.site-header__phone-number--text {
+    font-size: 1.2em;
+    font-weight: 700;
+    padding-left: .5rem;
 }
 
 #tagline {
@@ -160,6 +165,10 @@
     .tagline {
         font-size: 1.9em;
         padding: 25px 100px 35px;
+    }
+
+    .site-header__phone-number {
+        margin-top: 0;
     }
 }
 
