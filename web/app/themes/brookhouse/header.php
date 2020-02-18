@@ -64,11 +64,16 @@
     </nav><!-- #site-navigation -->
     <header id="masthead" class="site-header">
         <div class="site-branding flex-grid">
-            <div class="col grow-three">
+            <div class="col">
                 <a href="<?= esc_url(home_url('/')); ?>" rel="home"><img
                         src="<?= get_template_directory_uri(); ?>/dist/img/brookhouse-logo.png"
-                        alt="<?php bloginfo('name'); ?>"></a>
-                <a href="<?= esc_url(home_url('/')); ?>" rel="home" class="site-title"><span><?= get_bloginfo(); ?></span></a>
+                        alt="<?php bloginfo('name'); ?>" class="site-header__logo"></a>
+            </div>
+            <div class="col site-header__phone-number">
+                <a href="tel:02076334149">
+                    <img class="site-header__phone-number--image" src="<?php echo get_template_directory_uri(); ?>/dist/img/call-for-info.svg" alt="Call with information regarding the Brook House Investigation">
+                    <span class="site-header__phone-number--text"><?= get_field('telephone_number', 'option') ?></span>
+                </a>
             </div>
             <div class="bh-languages col">
                 <ul data-locale="<?= get_locale() ?>">

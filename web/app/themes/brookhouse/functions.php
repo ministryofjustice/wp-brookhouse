@@ -583,3 +583,21 @@ function moj_get_page_uri()
 }
 
 include('inc/locale-shortcodes.php');
+
+add_action('init', 'homesettings_option_pages');
+function homesettings_option_pages()
+{
+
+    if( function_exists('acf_add_options_page') ) {
+
+        acf_add_options_page(array(
+            'page_title'    => __('Header Settings'),
+            'menu_title'    => __('Header Settings'),
+            'menu_slug'     => 'header-settings',
+            'capability'    => 'edit_posts',
+            'redirect'      => false
+        ));
+
+    }
+
+}
