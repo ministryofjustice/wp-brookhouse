@@ -1,0 +1,50 @@
+{
+    "key": "group_5e4d1eb9475b7",
+    "title": "Document Listing Options",
+    "fields": [
+        {
+            "key": "field_5e4d1ec3171cd",
+            "label": "Listing Document Type",
+            "name": "listing_document_type",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "corporate-documents": "Corporate Documents",
+                "media-releases": "Media Releases",
+                "other-publications": "Other Publications"
+            },
+            "default_value": [],
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 0,
+            "return_format": "value",
+            "ajax": 0,
+            "placeholder": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_template",
+                "operator": "==",
+                "value": "page-document-listing.php"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "",
+    "modified": 1582113921
+}
