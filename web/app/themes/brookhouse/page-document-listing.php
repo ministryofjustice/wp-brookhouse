@@ -55,23 +55,44 @@ get_header();
                                 <?php
 
                                 foreach ($documents as $doc) {
-
-                                    $document_upload = get_field('document_upload', $doc->ID);
-
-                                    if (!empty($document_upload)) { ?>
-                                        <div class="results-line">
-                                            <a href="<?php echo $document_upload['url']; ?>"> <?php echo $doc->post_title; ?></a>
-
-                                        </div>
-                                        <?php
-                                    }
-
+                                    include( locate_template( 'content-document-list-item.php', false, true ) );
                                 }
 
                             }
 
                         }
 
+                    }
+                    else {
+                        $documents = get_posts(
+                            array(
+                                'post_type' => 'document',
+                                'posts_per_page' => -1,
+                                'meta_query' => array(
+                                    array(
+                                        'key'     => 'document_type_to_upload',
+                                        'value'   => $doc_type,
+                                    ),
+                                ),
+                                'orderby'   => 'meta_value_num',
+                                'meta_key'  => 'publish_date',
+                                'order'   => 'DESC',
+                            )
+                        );
+
+                        if (is_array($documents) && !empty($documents)) {
+
+                            foreach ($documents as $doc) {
+
+                                include( locate_template( 'content-document-list-item.php', false, true ) );
+                            }
+
+                        }
+                        else { ?>
+                            <p>No Documents Found</p>
+                        <?php
+
+                        }
                     }
                 }
 
