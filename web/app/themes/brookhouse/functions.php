@@ -606,3 +606,9 @@ function homesettings_option_pages()
     }
 
 }
+
+add_filter('acf/load_field/name=publish_date', 'set_default_publish_date');
+function set_default_publish_date($field) {
+    $field['default_value'] = date('Ymd');
+    return $field;
+}
