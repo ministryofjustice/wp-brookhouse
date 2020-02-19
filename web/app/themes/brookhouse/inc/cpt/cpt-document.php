@@ -51,7 +51,7 @@ function brookhouse_ctp_document_init()
 
     ];
 
-    register_post_type('Document', $args);
+    register_post_type('document', $args);
 }
 
 /**
