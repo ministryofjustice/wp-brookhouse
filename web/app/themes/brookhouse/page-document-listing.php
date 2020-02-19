@@ -55,7 +55,7 @@ get_header();
                                 <?php
 
                                 foreach ($documents as $doc) {
-                                    include( locate_template( 'content-document-list-item.php', false, true ) );
+                                    include( locate_template( 'content-document-list-item.php', false, false ) );
                                 }
 
                             }
@@ -84,7 +84,7 @@ get_header();
 
                             foreach ($documents as $doc) {
 
-                                include( locate_template( 'content-document-list-item.php', false, true ) );
+                                include( locate_template( 'content-document-list-item.php', false, false ) );
                             }
 
                         }
