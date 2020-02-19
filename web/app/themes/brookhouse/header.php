@@ -1,4 +1,5 @@
 <?php
+
 /**
  * The Header for our theme.
  *
@@ -6,6 +7,7 @@
  *
  * @package brookhouse
  */
+
 ?><!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 <head>
@@ -41,17 +43,6 @@
 <body <?php body_class('locale-' . get_locale()); ?>>
 <div id="page" class="hfeed site">
     <?php do_action('before'); ?>
-
-    <section id="topbar">
-        <div class="site-branding flex-grid">
-            <div class="col"></div>
-            <div class="col"></div>
-            <div class="col">
-                <a href="/talk-to-us" class="button"><span><?php _e('Talk to us', 'brookhouse') ?></span></a>
-            </div>
-        </div>
-    </section>
-
     <nav id="site-navigation" class="main-navigation">
         <button id="nav-icon" class="menu-toggle">
             <span></span>
@@ -100,8 +91,7 @@
                     <a href="<?php echo esc_url(home_url('/')); ?>" rel="home">Home</a>
                 </li>
                 <?php
-                if (!is_home() && $post != NULL ) {
-
+                if (!is_home() && $post != null) {
                     foreach (get_post_ancestors($post->ID) as $ancestor_id) {
                         echo "<li class='breadcrumb-child'><a href='" . get_permalink($ancestor_id) . "'>" . get_the_title($ancestor_id) . "</a></li>";
                     }
