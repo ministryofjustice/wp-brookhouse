@@ -1,84 +1,73 @@
 <?php
 
+/**
+ * Brookhouse custom post type 'Document'
+ *
+ * @package brookhouse
+ */
+
+/**
+*
+* Register the Document custom post type
+*
+* */
+add_action('init', 'brookhouse_ctp_document_init');
+
 function brookhouse_ctp_document_init()
 {
-    $labels = array(
-        'name' => 'Research',
-        'singular_name' => 'Research item',
+    global $brookhouseTaxonomies;
+
+    $labels = [
+        'name' => 'Documents',
+        'singular_name' => 'Document',
         'add_new' => 'Add New',
         'add_new_item' => 'Add New',
-        'edit_item' => 'Edit Research Entry',
+        'edit_item' => 'Edit Document Entry',
         'new_item' => 'New Entry',
-        'all_items' => 'View All Research',
+        'all_items' => 'View All Documents',
         'view_item' => 'View Entries',
-        'search_items' => 'Search Research',
+        'search_items' => 'Search Document',
         'not_found' => 'No entries found',
-        'not_found_in_trash' => 'No research entries found in Bin',
+        'not_found_in_trash' => 'No Document entries found in Bin',
         'parent_item_colon' => '',
-        'menu_name' => 'Research'
-    );
+        'menu_name' => 'Documents'
+    ];
 
-    $args = array(
+    $args = [
         'labels' => $labels,
         'public' => true,
         'publicly_queryable' => true,
         'show_ui' => true,
         'show_in_menu' => true,
         'query_var' => true,
-        'rewrite' => array('slug' => 'document'),
+        'rewrite' => array('slug' => 'documents'),
         'capability_type' => 'post',
         'has_archive' => false,
         'hierarchical' => false,
         'menu_position' => null,
-        'supports' => array('title')
-    );
+        'menu_icon' => 'dashicons-media-document',
+        'supports' => array('title'),
+        'taxonomies' => $brookhouseTaxonomies
 
-    register_post_type('research', $args);
+    ];
+
+    register_post_type('document', $args);
 }
-
-add_action('init', 'brookhouse_ctp_document_init');
 
 /**
- * Initialize the meta boxes.
- */
-function brookhouse_add_document_meta_boxes()
-{
-    $document_metabox = array(
-        'id' => 'document_metabox_hearing',
-        'title' => 'Research Details',
-        'pages' => array('research'),
-        'context' => 'normal',
-        'priority' => 'high',
-        'fields' => array(
-            array(
-                'id' => 'document_type',
-                'label' => 'Document Type',
-                'type' => 'select',
-                'choices' => array(
-                    array(
-                        'label' => 'Document',
-                        'value' => 'document'
-                    ),
-                    array (
-                        'label' => 'Ruling',
-                        'value' => 'ruling'
-                    )
-                )
-            ),
-            array(
-                'id' => 'document_date',
-                'label' => 'Document Date',
-                'type' => 'text',
-                'class' => 'datepicker',
-            ),
-            array(
-                'id' => 'document_url',
-                'label' => 'Document URL',
-                'type' => 'upload'
-            )
-        )
-    );
-    ot_register_meta_box($document_metabox);
-}
+*
+* Remove side meta boxes on Document entry admin page - these have been replaced in ACF with ACF fields
+*
+* */
+add_action('do_meta_boxes', 'wpdocs_remove_plugin_metaboxes');
 
-//add_action('admin_init', 'brookhouse_add_document_meta_boxes');
+function wpdocs_remove_plugin_metaboxes()
+{
+    global $brookhouseTaxonomies;
+
+    if (count($brookhouseTaxonomies) > 0) {
+        remove_meta_box('corporate-documentsdiv', 'Document', 'side');
+        remove_meta_box('media-releasesdiv', 'Document', 'side');
+        remove_meta_box('other-publicationsdiv', 'Document', 'side');
+    }
+}

@@ -258,6 +258,11 @@ add_action('wp_head', 'add_ie_workarounds');
 require get_template_directory() . '/inc/template-tags.php';
 
 /**
+ * Custom taxonomies
+ */
+require get_template_directory() . '/inc/taxonomies.php';
+
+/**
  * Template redirect rules (hooks to "template_redirect")
  */
 require get_template_directory() . '/inc/template-redirects.php';
