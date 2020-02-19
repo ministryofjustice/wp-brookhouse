@@ -21,6 +21,7 @@ get_header();
 
             if (!empty($doc_type)) { ?>
 
+
                 <?php
 
                 if (taxonomy_exists($doc_type)) {
@@ -28,31 +29,38 @@ get_header();
                         'taxonomy' => $doc_type
                     ));
 
-
                     if (is_array($doc_categories) && !empty($doc_categories)) {
 
                         foreach ($doc_categories as $category) { ?>
-                            <h2 class="table-title"><?php $category->name; ?></h2>
-
                             <?php
 
                             $documents = get_posts(
                                 array(
                                     'post_type' => 'document',
                                     'posts_per_page' => -1,
+                                    'tax_query' => array(
+                                        array(
+                                            'taxonomy' => $doc_type,
+                                            'field'    => 'slug',
+                                            'terms'    => $category->slug,
+                                        ),
+                                    ),
                                 )
                             );
 
-                            if (is_array($doc_categories) && !empty($documents)) {
+                            if (is_array($documents) && !empty($documents)) { ?>
+
+                                <h2 class="table-title"><?php echo $category->name; ?></h2>
+
+                                <?php
 
                                 foreach ($documents as $doc) {
 
-                                    $document_url = get_field('research_document_url', get_the_ID())
-                                        ?? get_field('research_document_file', get_the_ID());
+                                    $document_upload = get_field('document_upload', $doc->ID);
 
-                                    if ($document_url) { ?>
+                                    if (!empty($document_upload)) { ?>
                                         <div class="results-line">
-                                            <a href="<?php echo $document_url; ?>"> <?php echo $doc->post_title; ?></a>
+                                            <a href="<?php echo $document_upload['url']; ?>"> <?php echo $doc->post_title; ?></a>
 
                                         </div>
                                         <?php
