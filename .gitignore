@@ -30,3 +30,5 @@ web/.htaccess
 # Composer
 vendor/*
 !vendor/.gitkeep
+
+web/app/db.php
