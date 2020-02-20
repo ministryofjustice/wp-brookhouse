@@ -1,0 +1,90 @@
+@import url("colors.css");
+@import url("locale.css");
+@import url("flex.css");
+@import url("header.css");
+@import url("navigation.css");
+@import url("forms.css");
+@import url("custom.css");
+
+/* General */
+
+a,
+a:visited {
+    text-decoration: none;
+    color: rgb(238, 113, 2);
+    transition: all 0.3s ease;
+}
+
+a:focus,
+a:active,
+button:focus,
+button:active {
+    outline: 2px solid #02c4ed;
+}
+
+a:hover {
+    color: rgb(238, 113, 2);
+    text-decoration: underline;
+}
+
+a.button {
+    display: inline-block;
+    padding: 4px 15px 5px;
+    color: #f1f2f2;
+    background-color: rgb(238, 113, 2);
+}
+
+a.button.large {
+    font-size: 1.6em;
+    padding: 10px 15px;
+}
+
+.full-width-button a.button {
+    text-align: center;
+    width: 90%;
+}
+
+#content {
+    max-width: 990px;
+    margin: 0 auto;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Montserrat', sans-serif;
+}
+
+h1 {
+    font-size: 2.1em;
+    color: #333;
+    font-weight: normal;
+    margin-top: 30px;
+    margin-bottom: 22px;
+}
+
+h2 {
+    font-size: 1.85em;
+    color: rgb(238, 113, 2);
+    font-weight: normal;
+    clear: both;
+    /*-webkit-margin-before: 0.83em;*/
+    -webkit-margin-after: 0.83em;
+}
+
+h3 {
+    font-size: 1.4em;
+    color: #333;
+    font-weight: normal;
+    -webkit-margin-before: 1em;
+    -webkit-margin-after: 1em;
+}
+
+h4 {
+    font-size: 1.1em;
+    color: rgb(238, 113, 2);
+    font-weight: bold;
+}

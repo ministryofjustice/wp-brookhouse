@@ -11,8 +11,10 @@
 </div><!-- #content -->
 
 <footer id="colophon" class="site-footer">
-    <div id="footer-nav">
-        <?php wp_nav_menu(array('theme_location' => 'footer')); ?>
+    <div id="footer-nav" class="flex-grid">
+        <div class="col">Column 1</div>
+        <div class="col">Column 2</div>
+        <div class="col">Column 3</div>
     </div>
 </footer><!-- #colophon -->
 </div><!-- #page -->
