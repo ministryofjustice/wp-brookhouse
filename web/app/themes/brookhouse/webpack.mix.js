@@ -17,6 +17,7 @@ mix_.setPublicPath('./dist')
     .js(_asset + 'js/faqs.js', 'dist/js/faqs.min.js')
     .copy(_asset + 'js/*.min.js', 'dist/js/')
     .styles([
+        _asset + 'css/colors.css',
         _asset + 'css/locale.css',
         _asset + 'css/flex.css',
         _asset + 'css/header.css',

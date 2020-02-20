@@ -3,13 +3,12 @@
    Author     : ryanajarrett
 */
 
-
 /* General */
 
 a,
 a:visited {
     text-decoration: none;
-    color: rgb(238, 113, 2);
+    color: #62848C;
     transition: all 0.3s ease;
 }
 
@@ -17,11 +16,17 @@ a:focus,
 a:active,
 button:focus,
 button:active {
-    outline: 2px solid #02c4ed;
+    outline: 2px solid #ffdd00;
+    color: #0b0c0c;
+}
+
+a:focus,
+button:focus {
+    background-color: #ffdd00;
 }
 
 a:hover {
-    color: rgb(238, 113, 2);
+    color: #203940;
     text-decoration: underline;
 }
 
@@ -29,7 +34,7 @@ a.button {
     display: inline-block;
     padding: 4px 15px 5px;
     color: #f1f2f2;
-    background-color: rgb(238, 113, 2);
+    background-color: #847462;
 }
 
 a.button.large {
@@ -57,7 +62,7 @@ h6 {
 }
 
 h1 {
-    font-size: 2.1em;
+    font-size: 2.5em;
     color: #333;
     font-weight: normal;
     margin-top: 30px;
@@ -65,8 +70,8 @@ h1 {
 }
 
 h2 {
-    font-size: 1.85em;
-    color: rgb(238, 113, 2);
+    font-size: 2.2em;
+    color: #847462;
     font-weight: normal;
     clear: both;
     /*-webkit-margin-before: 0.83em;*/
@@ -83,7 +88,7 @@ h3 {
 
 h4 {
     font-size: 1.1em;
-    color: rgb(238, 113, 2);
+    color: #847462;
     font-weight: bold;
 }
 
@@ -109,13 +114,13 @@ h4 {
 
 footer.site-footer {
     width: 100%;
-    background-color: #fff;
+    border-top: 10px solid #666;
+    background-color: #efefef;
+    padding-bottom:100px;
 }
 
 #footer-nav {
     width: 100%;
-    background-color: #eee;
-    border-top: 10px solid #666;
     margin-top: 15px;
 }
 
@@ -193,7 +198,7 @@ article.page ul li {
 
 .faqs h2 {
     width: 100%;
-    border-top: 1px solid rgb(238, 113, 2);
+    border-top: 1px solid #847462;
     font-size: 1.4em;
     padding-top: 10px;
     padding-bottom: 10px;
@@ -204,7 +209,7 @@ article.page ul li {
 .biography {
     width: 100%;
     clear: both;
-    border-bottom: 1px solid rgb(238, 113, 2);
+    border-bottom: 1px solid #847462;
     min-height: 205px;
     padding-bottom: 10px;
     margin-bottom: 30px;
@@ -247,7 +252,7 @@ article.page ul li {
 }
 
 .hearing-entry .session-link a {
-    color: rgb(238, 113, 2);
+    color: #847462;
     padding: 4px 0;
 }
 
@@ -444,15 +449,15 @@ article.page ul li {
     border: none;
 }
 
-.results-line>.col {
+.results-line > .col {
     flex: 1;
 }
 
-.results-line>.col-1 {
+.results-line > .col-1 {
     flex: 1;
 }
 
-.results-line>.col-2 {
+.results-line > .col-2 {
     flex-grow: 2;
 }
 
@@ -620,6 +625,7 @@ article.page ul li {
         margin-left: 15px;
         padding-right: 0;
     }
+
     #main-boxout {
         float: none;
         width: auto;
@@ -628,39 +634,49 @@ article.page ul li {
         padding: 0 10px;
         display: none;
     }
+
     #main-boxout.responsive {
         display: block;
     }
+
     #main-content {
         max-width: none;
     }
+
     h1 {
         font-size: 2em;
         margin-top: 25px;
     }
+
     h2 {
         font-size: 1.45em;
         -webkit-margin-before: 0.33em;
         -webkit-margin-after: 0.33em;
     }
+
     h3 {
         margin: 5px 0;
     }
+
     p {
         margin-bottom: 0.5em;
         line-height: 1.5;
     }
+
     .highlighted-box {
         margin: -1.5em 0 0;
     }
+
     .ui-accordion .ui-accordion-content {
         overflow: hidden !important;
     }
+
     .ui-accordion .ui-accordion-header {
         font-size: 1em !important;
         font-weight: bold;
         padding-left: 1.4em !important;
     }
+
     /* Responsive menu */
     #secondary {
         position: fixed;
@@ -673,87 +689,111 @@ article.page ul li {
         margin: 0;
         padding-top: 24px;
     }
+
     #secondary.toggled {
         box-shadow: 0px 0px 10px 0px #333;
     }
+
     #secondary.toggled {
         left: 0;
     }
+
     #secondary ul li a {
         margin-bottom: 1px;
     }
+
     #secondary ul {
         margin: 0;
     }
+
     h1.menu-toggle.toggled {
         left: 200px;
     }
+
     .menu-item-home {
         display: block;
     }
+
     /* Documents and rulings page */
     .results-line {
         font-size: 0.9em;
         display: flex;
     }
-    .results-line>.col {
+
+    .results-line > .col {
         flex: 1;
     }
-    .results-line>.col-1 {
+
+    .results-line > .col-1 {
         flex: 1;
     }
-    .results-line>.col-2 {
+
+    .results-line > .col-2 {
         flex: 1;
     }
+
     /* Date formats */
     .short-date {
         display: initial;
     }
+
     .long-date {
         display: none;
     }
+
     /* Hearings page */
     .hearing-entry .session-link {
         width: 47.5%;
         padding: 2px 0;
         margin-bottom: 6px;
     }
+
     .hearing-entry .hearing-date {
         width: auto;
         display: block;
     }
+
     .hearing .entry-header {
         margin-left: -15px;
         margin-right: -15px;
         margin-bottom: 20px;
         text-align: center;
     }
+
     .hearing .entry-header h1 {
         font-size: 1.5em;
     }
+
     .hearing .entry-header h3 {
         font-size: 1.15em;
         margin: 10px 0 0;
     }
+
     .hearing .links-table .col-3 {
         width: 100%;
     }
+
     #evidence-by-date {
         float: none;
     }
+
     #evidence-by-witness {
         padding-right: 0;
     }
+
     .datepicker {
         display: none;
     }
+
     #mobile-date-form {
         display: block;
         margin-bottom: 20px;
     }
+
     .call-cta {
         border-bottom: 1px solid white;
     }
+
     .call-cta a {
         color: white;
     }

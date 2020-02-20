@@ -75,36 +75,37 @@ add_action('after_setup_theme', 'brookhouse_setup');
  */
 function moj_get_asset($handle)
 {
-    $get_assets = file_get_contents(get_template_directory() . '/dist/mix-manifest.json');
+    $dist_dir = get_template_directory() . '/dist/';
+    $get_assets = file_get_contents( $dist_dir. 'mix-manifest.json', true);
     $manifest = json_decode($get_assets, true);
 
     $assets = array(
-        'bh-css' => '/dist' . $manifest['/css/style.min.css'],
-        'custom-css' => '/dist' . $manifest['/css/custom.min.css'],
-        'jquery-ui' => '/dist' . $manifest['/css/jquery-ui.min.css'],
-        'js' => '/dist' . $manifest['/js/main.min.js'],
-        'admin-js' => '/dist' . $manifest['/js/custom-admin.min.js'],
-        'admin-css' => '/dist' . $manifest['/css/custom-admin.min.css'],
-        'moment' => '/dist' . $manifest['/js/moment.min.js'],
-        'combodate' => '/dist' . $manifest['/js/combodate.min.js'],
-        'faq-accordion' => '/dist' . $manifest['/js/faqs.min.js'],
-        'ie8' => '/dist' . $manifest['/js/ie8.js'],
+        'bh-css' => $manifest['/css/style.min.css'],
+        'custom-css' => $manifest['/css/custom.min.css'],
+        'jquery-ui' => $manifest['/css/jquery-ui.min.css'],
+        'js' => $manifest['/js/main.min.js'],
+        'admin-js' => $manifest['/js/custom-admin.min.js'],
+        'admin-css' =>  $manifest['/css/custom-admin.min.css'],
+        'moment' => $manifest['/js/moment.min.js'],
+        'combodate' => $manifest['/js/combodate.min.js'],
+        'faq-accordion' => $manifest['/js/faqs.min.js'],
+        'ie8' => $manifest['/js/ie8.js'],
 
         // always use non-protocol URL's
-        'jquery' => '//ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js',
-        'jquery-migrate' => '//code.jquery.com/jquery-migrate-3.0.1.min.js',
-        'g-fonts' => '//fonts.googleapis.com/css?family=Comfortaa|Montserrat:400,700'
+        'jquery' => 'https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js',
+        'jquery-migrate' => 'https://code.jquery.com/jquery-migrate-3.0.1.min.js',
+        'g-fonts' => 'https://fonts.googleapis.com/css?family=Comfortaa|Montserrat:400,700'
     );
 
-    if (strpos($assets[$handle], '//') === 0) {
+    if (strpos($assets[$handle], 'https') === 0) {
         return $assets[$handle];
     }
 
     // create the file system path for the file requested.
-    $file_system_path = get_template_directory() . strstr($assets[$handle], '?', true);
+    $file_system_path = $dist_dir . strstr($assets[$handle], '?', true);
 
     if (file_exists($file_system_path)) {
-        return get_template_directory_uri() . $assets[$handle];
+        return get_template_directory_uri() . '/dist' . $assets[$handle];
     }
 
     return false;

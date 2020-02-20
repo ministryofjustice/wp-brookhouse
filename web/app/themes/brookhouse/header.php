@@ -57,15 +57,16 @@
         <div class="site-branding flex-grid">
             <div class="col">
                 <a href="<?= esc_url(home_url('/')); ?>" rel="home"><img
-                        src="<?= get_template_directory_uri(); ?>/dist/img/brookhouse-logo.png"
+                        src="<?= get_template_directory_uri(); ?>/dist/img/brookhouse-logo.svg"
                         alt="<?php bloginfo('name'); ?>" class="site-header__logo"></a>
+                <div class="site-header__phone-number">
+                    <a href="tel:02076334149">
+                        <img class="site-header__phone-number--image" src="<?php echo get_template_directory_uri(); ?>/dist/img/call-for-info.svg" alt="Call with information regarding the Brook House Investigation">
+                        <span class="site-header__phone-number--text"><?= get_field('telephone_number', 'option') ?></span>
+                    </a>
+                </div>
             </div>
-            <div class="col site-header__phone-number">
-                <a href="tel:02076334149">
-                    <img class="site-header__phone-number--image" src="<?php echo get_template_directory_uri(); ?>/dist/img/call-for-info.svg" alt="Call with information regarding the Brook House Investigation">
-                    <span class="site-header__phone-number--text"><?= get_field('telephone_number', 'option') ?></span>
-                </a>
-            </div>
+
             <div class="bh-languages col">
                 <ul data-locale="<?= get_locale() ?>">
                     <li data-locale="en_GB"><a href="<?= moj_get_page_uri() ?>/?locale=en_GB">English (UK)</a></li>

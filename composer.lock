@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "362c7670ca362bda0567306643ac90f3",
+    "content-hash": "b94b5f4049711251a9dacdb58e5d0712",
     "packages": [
         {
             "name": "acf/advanced-custom-fields-pro",
@@ -2083,24 +2083,6 @@
             "homepage": "https://wordpress.org/plugins/fast-user-switching/"
         },
         {
-            "name": "wpackagist-plugin/google-analytics-dashboard-for-wp",
-            "version": "6.0.1",
-            "source": {
-                "type": "svn",
-                "url": "https://plugins.svn.wordpress.org/google-analytics-dashboard-for-wp/",
-                "reference": "tags/6.0.1"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/google-analytics-dashboard-for-wp.6.0.1.zip"
-            },
-            "require": {
-                "composer/installers": "~1.0"
-            },
-            "type": "wordpress-plugin",
-            "homepage": "https://wordpress.org/plugins/google-analytics-dashboard-for-wp/"
-        },
-        {
             "name": "wpackagist-plugin/wp-accessibility",
             "version": "1.7.0",
             "source": {
@@ -2117,6 +2099,24 @@
             },
             "type": "wordpress-plugin",
             "homepage": "https://wordpress.org/plugins/wp-accessibility/"
+        },
+        {
+            "name": "wpackagist-plugin/wp-analytify",
+            "version": "2.2.13",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/wp-analytify/",
+                "reference": "tags/2.2.13"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/wp-analytify.2.2.13.zip"
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/wp-analytify/"
         }
     ],
     "packages-dev": [
