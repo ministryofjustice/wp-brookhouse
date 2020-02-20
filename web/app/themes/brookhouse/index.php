@@ -11,9 +11,8 @@
  * @package brookhouse
  */
 get_header();
+get_sidebar(); 
 ?>
-
-<?php get_sidebar(); ?>
 
 <div id="primary" class="content-area">
     <div id="main-boxout">
@@ -50,4 +49,5 @@ get_header();
 
 </div><!-- #primary -->
 
-<?php get_footer(); ?>
+<?php 
+get_footer();
