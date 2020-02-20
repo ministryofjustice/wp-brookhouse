@@ -606,3 +606,35 @@ function homesettings_option_pages()
     }
 
 }
+
+function register_my_menu() {
+  register_nav_menu('languages-menu',__( 'Languages Menu' ));
+}
+add_action( 'init', 'register_my_menu' );
+
+
+// Adds content into a navbar menu item
+// Issue: can access get_field but can't add lang, as can't access the $atts stuff
+add_filter('wp_nav_menu_objects', 'my_wp_nav_menu_objects', 10, 2);
+
+function my_wp_nav_menu_objects( $items, $args ) {
+	foreach( $items as &$item ) {
+        $language = get_field('language_character_code', $item);
+
+        if( $language ) {
+			$atts['lang'] = $language;
+        }
+	}
+	return $items;
+}
+
+// Adds lang attribute to menu item
+// Issue: can't access get_field, potentially because it isn't pointed to a page
+function add_class_to_all_menu_anchors( $atts ) {
+    $language = get_field("language_character_code");
+    if ( $language ) {
+        $atts['lang'] = $language;
+    }
+    return $atts;
+}
+add_filter( 'nav_menu_link_attributes', 'add_class_to_all_menu_anchors', 10 );

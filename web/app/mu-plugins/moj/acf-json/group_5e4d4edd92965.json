@@ -1,0 +1,43 @@
+{
+    "key": "group_5e4d4edd92965",
+    "title": "Language menu character codes",
+    "fields": [
+        {
+            "key": "field_5e4d4ee95daed",
+            "label": "Language character code",
+            "name": "language_character_code",
+            "type": "text",
+            "instructions": "Add in the correct language code for the language you want to add. You can search for this code at this site: https:\/\/r12a.github.io\/app-subtags\/\r\n\r\nEnter in the language you want to search for against 'Find'. The code will appear in the search results table, next to the name of the language you want to add. It will be a couple of letters long - for example, French is 'fr'",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "nav_menu_item",
+                "operator": "==",
+                "value": "3"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "",
+    "modified": 1582135992
+}
