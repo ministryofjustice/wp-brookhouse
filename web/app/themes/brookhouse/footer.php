@@ -11,6 +11,7 @@
 </div><!-- #content -->
 
 <footer id="colophon" class="site-footer">
+    <?php wp_nav_menu( array( 'theme_location' => 'languages-menu' ) ); ?>
     <div id="footer-nav">
         <?php wp_nav_menu(array('theme_location' => 'footer')); ?>
     </div>

@@ -22,7 +22,8 @@ mix_.setPublicPath('./dist')
         _asset + 'css/header.css',
         _asset + 'css/navigation.css',
         _asset + 'css/forms.css',
-        _asset + 'css/custom.css'
+        _asset + 'css/custom.css',
+        _asset + 'css/footer.css',
     ], 'dist/css/custom.min.css')
     .styles(_asset + 'css/custom-admin.css', 'dist/css/custom-admin.min.css')
     .styles(_asset + 'css/jquery-ui.css', 'dist/css/jquery-ui.min.css')
