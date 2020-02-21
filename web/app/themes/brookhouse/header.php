@@ -39,10 +39,12 @@ $moj_bh_phone_number_link = prepend_country_code_to_number($moj_bh_phone_number)
     </nav><!-- #site-navigation -->
     <header id="masthead" class="site-header">
         <div class="site-branding flex-grid">
-            <div class="col">
-                <a href="<?= esc_url(home_url('/')); ?>" rel="home"><img
-                        src="<?= get_template_directory_uri(); ?>/dist/img/brookhouse-logo.svg"
-                        alt="<?php bloginfo('name'); ?>" class="site-header__logo"></a>
+            <div class="col branding">
+                <a href="<?= esc_url(home_url('/')); ?>" rel="home" class="site-header__logo">
+                    <img src="<?= get_template_directory_uri(); ?>/dist/img/brookhouse-logo.svg"
+                        alt="<?php bloginfo('name'); ?>">
+                </a>
+
                 <div class="site-header__phone-number">
                     <a href="tel:<?= $moj_bh_phone_number_link ?>">
                         <img class="site-header__phone-number--image"
