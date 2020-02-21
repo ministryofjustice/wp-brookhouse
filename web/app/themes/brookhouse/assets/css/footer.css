@@ -1,0 +1,14 @@
+.menu-languages-container {
+  border-top: 1px solid black;
+}
+
+.menu-languages-container .menu-item {
+  display: inline-block;
+  padding: 1rem;
+}
+
+.menu-languages-container #menu-languages {
+  max-width: 90rem;
+  margin: 0 auto;
+  padding: 1rem;
+}

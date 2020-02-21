@@ -581,6 +581,34 @@ function homesettings_option_pages()
     }
 }
 
+function register_my_menu()
+{
+    register_nav_menu('languages-menu', __('Languages Menu'));
+}
+add_action('init', 'register_my_menu');
+
+
+// Adds user-input lang attribute to Language menu list items
+add_filter('wp_nav_menu_items', 'new_nav_menu_items', 10, 2);
+function new_nav_menu_items($items_list, $args)
+{
+    if ($args->theme_location == "languages-menu") {
+        $nav_items = wp_get_nav_menu_items($args->menu);
+        $items_list = "";
+
+        foreach ($nav_items as $item) {
+            $languages = get_field('language_character_code', $item);
+            $items_list = $items_list
+                . '<li class="menu-item">'
+                . '<a lang="'.$languages.'" href="' . $item->url . '">'
+                .  $item->post_title
+                . '</a>'
+                . '</li>';
+        }
+    }
+    return $items_list;
+}
+
 add_filter('acf/load_field/name=publish_date', 'set_default_publish_date');
 function set_default_publish_date($field)
 {

@@ -10,6 +10,8 @@
 
 </div><!-- #content -->
 
+<?php wp_nav_menu( array( 'theme_location' => 'languages-menu' ) ); ?>
+
 <footer id="colophon" class="site-footer">
     <div id="footer-nav" class="flex-grid">
         <div class="col">Column 1</div>
