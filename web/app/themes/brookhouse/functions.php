@@ -615,3 +615,20 @@ function set_default_publish_date($field)
     $field['default_value'] = date('Ymd');
     return $field;
 }
+
+/**
+ * Convert a phone number to an international format. Used in tel: links
+ * @param string $phone_number
+ * @param string $code
+ * @return String
+ */
+function prepend_country_code_to_number($phone_number, $code = '+44')
+{
+    // contact telephone number
+    $number_link = $phone_number;
+    if (strpos($phone_number, '0') === 0) {
+        $number_link = $code . substr($phone_number, 1);
+    }
+
+    return $number_link;
+}
