@@ -48,7 +48,7 @@
             <span>&nbsp;</span>
             <span>&nbsp;</span>
             <span>&nbsp;</span>
-            <div class="">Open navigation</div>
+            <div style="display:none">Open navigation</div>
         </button>
         <a class="skip-link screen-reader-text" href="#content"><?php _e('Skip to content', 'brookhouse'); ?></a>
 
