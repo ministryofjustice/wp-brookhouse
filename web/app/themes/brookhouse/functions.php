@@ -76,7 +76,7 @@ add_action('after_setup_theme', 'brookhouse_setup');
 function moj_get_asset($handle)
 {
     $dist_dir = get_template_directory() . '/dist/';
-    $get_assets = file_get_contents( $dist_dir. 'mix-manifest.json', true);
+    $get_assets = file_get_contents($dist_dir . 'mix-manifest.json', true);
     $manifest = json_decode($get_assets, true);
 
     $assets = array(
@@ -85,7 +85,7 @@ function moj_get_asset($handle)
         'jquery-ui' => $manifest['/css/jquery-ui.min.css'],
         'js' => $manifest['/js/main.min.js'],
         'admin-js' => $manifest['/js/custom-admin.min.js'],
-        'admin-css' =>  $manifest['/css/custom-admin.min.css'],
+        'admin-css' => $manifest['/css/custom-admin.min.css'],
         'moment' => $manifest['/js/moment.min.js'],
         'combodate' => $manifest['/js/combodate.min.js'],
         'faq-accordion' => $manifest['/js/faqs.min.js'],
@@ -306,20 +306,20 @@ function hearing_unique_post_slug($slug, $post_ID, $post_status, $post_type)
 {
     if ('hearing' == $post_type) {
         $slug = date(
-            'Y-m-d',
-            strtotime(
-                get_post_meta(
-                    $post_ID,
-                    'hearing_date',
-                    true
+                'Y-m-d',
+                strtotime(
+                    get_post_meta(
+                        $post_ID,
+                        'hearing_date',
+                        true
+                    )
                 )
             )
-        )
-        . get_post_meta(
-            $post_ID,
-            'hearing_session',
-            true
-        );
+            . get_post_meta(
+                $post_ID,
+                'hearing_session',
+                true
+            );
     }
     return $slug;
 }
@@ -337,15 +337,15 @@ function change_title($data, $postarr)
     // Change title if post type is hearing
     if (isset($_POST['post_type']) && $_POST['post_type'] == 'hearing') {
         $title = date(
-            'l j F Y',
-            strtotime(
-                $postarr['hearing_date']
+                'l j F Y',
+                strtotime(
+                    $postarr['hearing_date']
+                )
             )
-        )
-        . " "
-        . strtoupper(
-            $postarr['hearing_session']
-        ) . " Session";
+            . " "
+            . strtoupper(
+                $postarr['hearing_session']
+            ) . " Session";
 
         $data['post_title'] = $title;
 
@@ -552,35 +552,12 @@ function reset_hearing_slugs()
         wp_update_post(array(
             'ID' => get_the_ID()
         ));
-//    hearing_unique_post_slug(null,$hearing->ID,null,'hearing');
     }
 }
 
 if (isset($_GET['reset']) && $_GET['reset'] == 'hearing-slugs') {
     reset_hearing_slugs();
 }
-
-
-/**
- * Get the current version of WP
- *
- * This is provided for external resources to resolve the current wp_version
- *
- * @return string
- */
-function moj_wp_version()
-{
-    global $wp_version;
-
-    return $wp_version;
-}
-
-add_action('rest_api_init', function () {
-    register_rest_route('moj', '/version', array(
-        'methods' => 'GET',
-        'callback' => 'moj_wp_version'
-    ));
-});
 
 function moj_get_page_uri()
 {
@@ -593,23 +570,20 @@ include('inc/locale-shortcodes.php');
 add_action('init', 'homesettings_option_pages');
 function homesettings_option_pages()
 {
-
-    if( function_exists('acf_add_options_page') ) {
-
+    if (function_exists('acf_add_options_page')) {
         acf_add_options_page(array(
-            'page_title'    => __('Header Settings'),
-            'menu_title'    => __('Header Settings'),
-            'menu_slug'     => 'header-settings',
-            'capability'    => 'edit_posts',
-            'redirect'      => false
+            'page_title' => __('Header Settings'),
+            'menu_title' => __('Header Settings'),
+            'menu_slug' => 'header-settings',
+            'capability' => 'edit_posts',
+            'redirect' => false
         ));
-
     }
-
 }
 
 add_filter('acf/load_field/name=publish_date', 'set_default_publish_date');
-function set_default_publish_date($field) {
+function set_default_publish_date($field)
+{
     $field['default_value'] = date('Ymd');
     return $field;
 }
