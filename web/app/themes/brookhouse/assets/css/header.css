@@ -82,7 +82,7 @@
 }
 
 .home #masthead {
-    border-bottom-width: 8px;
+    border-bottom-width: 6px;
 }
 
 .site-branding,
@@ -117,7 +117,7 @@
 }
 
 #tagline {
-    background-color:#d6dfe9;
+    background-color:#eadfde;
     /*background: -moz-linear-gradient(251deg, #d6dfe9 0%, #b8c8dc 100%); !* ff3.6+ *!
     background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #d6dfe9), color-stop(100%, #b8c8dc)); !* safari4+,chrome *!
     background: -webkit-linear-gradient(251deg, #d6dfe9 0%, #b8c8dc 100%); !* safari5.1+,chrome10+ *!
