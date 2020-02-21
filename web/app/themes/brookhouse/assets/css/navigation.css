@@ -139,6 +139,10 @@ body.open, html.nav-open {
     white-space: nowrap;
 }
 
+#breadcrumbs ul li a {
+    color: #2b2b2b;
+}
+
 #breadcrumbs ul li.breadcrumb-child {
     /*margin-right: 5px;*/
 }

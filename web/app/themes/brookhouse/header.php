@@ -45,9 +45,10 @@
     <?php do_action('before'); ?>
     <nav id="site-navigation" class="main-navigation">
         <button id="nav-icon" class="menu-toggle">
-            <span></span>
-            <span></span>
-            <span></span>
+            <span>&nbsp;</span>
+            <span>&nbsp;</span>
+            <span>&nbsp;</span>
+            <div class="">Open navigation</div>
         </button>
         <a class="skip-link screen-reader-text" href="#content"><?php _e('Skip to content', 'brookhouse'); ?></a>
 
