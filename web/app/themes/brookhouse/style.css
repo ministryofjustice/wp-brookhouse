@@ -360,7 +360,6 @@ a:active {
 }
 
 body:not(.home) .page-content,
-body:not(.home) .entry-content,
 body:not(.home) .entry-summary {
     margin: -2.6em 0 0;
 }

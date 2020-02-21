@@ -110,7 +110,7 @@ body.open, html.nav-open {
 
 #breadcrumbs-wrapper {
     width: 100%;
-    border-top: 10px solid #666;
+    border-top: 6px solid #666;
     background: #efefef;
     min-height: 35px;
     padding: 0;
@@ -139,6 +139,10 @@ body.open, html.nav-open {
     white-space: nowrap;
 }
 
+#breadcrumbs ul li a {
+    color: #2b2b2b;
+}
+
 #breadcrumbs ul li.breadcrumb-child {
     /*margin-right: 5px;*/
 }
@@ -164,8 +168,8 @@ div.menu-toggle {
 /* Nav Sidebar */
 #nav-icon {
     position: relative;
-    top: 5px;
-    left: 4px;
+    top: 7px;
+    right: 6px;
     -webkit-transform: rotate(0deg);
     -moz-transform: rotate(0deg);
     -o-transform: rotate(0deg);
@@ -178,7 +182,8 @@ div.menu-toggle {
     background: none;
     border: none;
     box-sizing: border-box;
-    height: 19px;
+    height: 22px;
+    float: right;
 }
 
 #nav-icon span {
@@ -186,7 +191,7 @@ div.menu-toggle {
     position: absolute;
     height: 3px;
     width: 100%;
-    background: #ffffff;
+    background: #2d2d2d;
     border-radius: 3px;
     opacity: 1;
     left: 0;
@@ -237,7 +242,9 @@ div.menu-toggle {
     -o-transform: rotate(-135deg);
     transform: rotate(-135deg);
 }
-
+#nav-icon.open span {
+    background-color: #ffffff;
+}
 #secondary ul {
     padding: 0;
     list-style: none;
@@ -246,22 +253,29 @@ div.menu-toggle {
 
 #secondary ul li a {
     display: block;
-    background-color: #666;
+    background-color: #b8c8dc;
     padding: 12px 15px 12px 15px;
     margin-bottom: 2px;
-    color: #f1f2f2;
+    color: #2b2b2b;
 }
 
 /*#secondary ul.sub-menu li.menu-item > a {
     background-color: #999;
 }*/
 
+#secondary ul li.menu-item > a:focus,
+#secondary ul.sub-menu li.menu-item > a:focus,
+.home #secondary ul li.menu-item-27 > a:focus {
+    background-color: #ffdd00;
+    color: #0b0c0c;
+}
+
 #secondary ul li.menu-item:hover > a {
-    background-color: #999;
+    background-color: #d6dfe9;
 }
 
 #secondary ul.sub-menu li.menu-item:hover > a {
-    background-color: #999;
+    background-color: #d6dfe9;
 }
 
 #secondary ul li.current-menu-item > a,
@@ -269,7 +283,7 @@ div.menu-toggle {
 #secondary ul li.current-menu-item:hover > a,
 #secondary ul.sub-menu li.current-menu-item:hover > a,
 #secondary ul.sub-menu li.current-menu-item > a {
-    background-color: #ed7004;
+    background-color: #2b2b2b;
     color: #fff;
 }
 

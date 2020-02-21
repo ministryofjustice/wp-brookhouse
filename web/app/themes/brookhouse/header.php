@@ -1,4 +1,5 @@
 <?php
+
 /**
  * The Header for our theme.
  *
@@ -6,6 +7,7 @@
  *
  * @package brookhouse
  */
+
 ?><!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 <head>
@@ -41,22 +43,12 @@
 <body <?php body_class('locale-' . get_locale()); ?>>
 <div id="page" class="hfeed site">
     <?php do_action('before'); ?>
-
-    <section id="topbar">
-        <div class="site-branding flex-grid">
-            <div class="col"></div>
-            <div class="col"></div>
-            <div class="col">
-                <a href="/talk-to-us" class="button"><span><?php _e('Talk to us', 'brookhouse') ?></span></a>
-            </div>
-        </div>
-    </section>
-
     <nav id="site-navigation" class="main-navigation">
         <button id="nav-icon" class="menu-toggle">
-            <span></span>
-            <span></span>
-            <span></span>
+            <span>&nbsp;</span>
+            <span>&nbsp;</span>
+            <span>&nbsp;</span>
+            <div style="display:none">Open navigation</div>
         </button>
         <a class="skip-link screen-reader-text" href="#content"><?php _e('Skip to content', 'brookhouse'); ?></a>
 
@@ -66,15 +58,16 @@
         <div class="site-branding flex-grid">
             <div class="col">
                 <a href="<?= esc_url(home_url('/')); ?>" rel="home"><img
-                        src="<?= get_template_directory_uri(); ?>/dist/img/brookhouse-logo.png"
+                        src="<?= get_template_directory_uri(); ?>/dist/img/brookhouse-logo.svg"
                         alt="<?php bloginfo('name'); ?>" class="site-header__logo"></a>
+                <div class="site-header__phone-number">
+                    <a href="tel:02076334149">
+                        <img class="site-header__phone-number--image" src="<?php echo get_template_directory_uri(); ?>/dist/img/call-for-info.svg" alt="Call with information regarding the Brook House Investigation">
+                        <span class="site-header__phone-number--text"><?= get_field('telephone_number', 'option') ?></span>
+                    </a>
+                </div>
             </div>
-            <div class="col site-header__phone-number">
-                <a href="tel:02076334149">
-                    <img class="site-header__phone-number--image" src="<?php echo get_template_directory_uri(); ?>/dist/img/call-for-info.svg" alt="Call with information regarding the Brook House Investigation">
-                    <span class="site-header__phone-number--text"><?= get_field('telephone_number', 'option') ?></span>
-                </a>
-            </div>
+
             <div class="bh-languages col">
                 <ul data-locale="<?= get_locale() ?>">
                     <li data-locale="en_GB"><a href="<?= moj_get_page_uri() ?>/?locale=en_GB">English (UK)</a></li>
@@ -100,8 +93,7 @@
                     <a href="<?php echo esc_url(home_url('/')); ?>" rel="home">Home</a>
                 </li>
                 <?php
-                if (!is_home() && $post != NULL ) {
-
+                if (!is_home() && $post != null) {
                     foreach (get_post_ancestors($post->ID) as $ancestor_id) {
                         echo "<li class='breadcrumb-child'><a href='" . get_permalink($ancestor_id) . "'>" . get_the_title($ancestor_id) . "</a></li>";
                     }

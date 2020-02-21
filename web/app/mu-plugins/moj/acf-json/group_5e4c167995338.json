@@ -16,9 +16,9 @@
                 "id": ""
             },
             "choices": {
-                "Corporate document": "Corporate document",
-                "Media release": "Media release",
-                "Other publication": "Other publication"
+                "corporate-documents": "Corporate document",
+                "media-releases": "Media release",
+                "other-publications": "Other publication"
             },
             "default_value": [],
             "allow_null": 0,
@@ -52,8 +52,8 @@
             "taxonomy": "corporate-documents",
             "field_type": "checkbox",
             "add_term": 1,
-            "save_terms": 0,
-            "load_terms": 0,
+            "save_terms": 1,
+            "load_terms": 1,
             "return_format": "id",
             "multiple": 0,
             "allow_null": 0
@@ -82,8 +82,8 @@
             "taxonomy": "other-publications",
             "field_type": "checkbox",
             "add_term": 1,
-            "save_terms": 0,
-            "load_terms": 0,
+            "save_terms": 1,
+            "load_terms": 1,
             "return_format": "id",
             "multiple": 0,
             "allow_null": 0
@@ -112,19 +112,37 @@
             "taxonomy": "media-releases",
             "field_type": "checkbox",
             "add_term": 1,
-            "save_terms": 0,
-            "load_terms": 0,
+            "save_terms": 1,
+            "load_terms": 1,
             "return_format": "id",
             "multiple": 0,
             "allow_null": 0
         },
         {
+            "key": "field_5e4d6cd90a45e",
+            "label": "Publish Date",
+            "name": "publish_date",
+            "type": "date_picker",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "display_format": "d\/m\/Y",
+            "return_format": "d\/m\/Y",
+            "first_day": 1,
+            "default_value": "20200219"
+        },
+        {
             "key": "field_5e4c169cfb12e",
             "label": "Upload the document:",
-            "name": "brookhouse_ctp_document_upload",
+            "name": "document_upload",
             "type": "file",
             "instructions": "",
-            "required": 0,
+            "required": 1,
             "conditional_logic": 0,
             "wrapper": {
                 "width": "",
@@ -155,5 +173,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1582120666
+    "modified": 1582133443
 }

@@ -75,36 +75,37 @@ add_action('after_setup_theme', 'brookhouse_setup');
  */
 function moj_get_asset($handle)
 {
-    $get_assets = file_get_contents(get_template_directory() . '/dist/mix-manifest.json');
+    $dist_dir = get_template_directory() . '/dist/';
+    $get_assets = file_get_contents($dist_dir . 'mix-manifest.json', true);
     $manifest = json_decode($get_assets, true);
 
     $assets = array(
-        'bh-css' => '/dist' . $manifest['/css/style.min.css'],
-        'custom-css' => '/dist' . $manifest['/css/custom.min.css'],
-        'jquery-ui' => '/dist' . $manifest['/css/jquery-ui.min.css'],
-        'js' => '/dist' . $manifest['/js/main.min.js'],
-        'admin-js' => '/dist' . $manifest['/js/custom-admin.min.js'],
-        'admin-css' => '/dist' . $manifest['/css/custom-admin.min.css'],
-        'moment' => '/dist' . $manifest['/js/moment.min.js'],
-        'combodate' => '/dist' . $manifest['/js/combodate.min.js'],
-        'faq-accordion' => '/dist' . $manifest['/js/faqs.min.js'],
-        'ie8' => '/dist' . $manifest['/js/ie8.js'],
+        'bh-css' => $manifest['/css/style.min.css'],
+        'custom-css' => $manifest['/css/custom.min.css'],
+        'jquery-ui' => $manifest['/css/jquery-ui.min.css'],
+        'js' => $manifest['/js/main.min.js'],
+        'admin-js' => $manifest['/js/custom-admin.min.js'],
+        'admin-css' => $manifest['/css/custom-admin.min.css'],
+        'moment' => $manifest['/js/moment.min.js'],
+        'combodate' => $manifest['/js/combodate.min.js'],
+        'faq-accordion' => $manifest['/js/faqs.min.js'],
+        'ie8' => $manifest['/js/ie8.js'],
 
         // always use non-protocol URL's
-        'jquery' => '//ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js',
-        'jquery-migrate' => '//code.jquery.com/jquery-migrate-3.0.1.min.js',
-        'g-fonts' => '//fonts.googleapis.com/css?family=Comfortaa|Montserrat:400,700'
+        'jquery' => 'https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js',
+        'jquery-migrate' => 'https://code.jquery.com/jquery-migrate-3.0.1.min.js',
+        'g-fonts' => 'https://fonts.googleapis.com/css?family=Comfortaa|Montserrat:400,700'
     );
 
-    if (strpos($assets[$handle], '//') === 0) {
+    if (strpos($assets[$handle], 'https') === 0) {
         return $assets[$handle];
     }
 
     // create the file system path for the file requested.
-    $file_system_path = get_template_directory() . strstr($assets[$handle], '?', true);
+    $file_system_path = $dist_dir . strstr($assets[$handle], '?', true);
 
     if (file_exists($file_system_path)) {
-        return get_template_directory_uri() . $assets[$handle];
+        return get_template_directory_uri() . '/dist' . $assets[$handle];
     }
 
     return false;
@@ -305,20 +306,20 @@ function hearing_unique_post_slug($slug, $post_ID, $post_status, $post_type)
 {
     if ('hearing' == $post_type) {
         $slug = date(
-            'Y-m-d',
-            strtotime(
-                get_post_meta(
-                    $post_ID,
-                    'hearing_date',
-                    true
+                'Y-m-d',
+                strtotime(
+                    get_post_meta(
+                        $post_ID,
+                        'hearing_date',
+                        true
+                    )
                 )
             )
-        )
-        . get_post_meta(
-            $post_ID,
-            'hearing_session',
-            true
-        );
+            . get_post_meta(
+                $post_ID,
+                'hearing_session',
+                true
+            );
     }
     return $slug;
 }
@@ -336,15 +337,15 @@ function change_title($data, $postarr)
     // Change title if post type is hearing
     if (isset($_POST['post_type']) && $_POST['post_type'] == 'hearing') {
         $title = date(
-            'l j F Y',
-            strtotime(
-                $postarr['hearing_date']
+                'l j F Y',
+                strtotime(
+                    $postarr['hearing_date']
+                )
             )
-        )
-        . " "
-        . strtoupper(
-            $postarr['hearing_session']
-        ) . " Session";
+            . " "
+            . strtoupper(
+                $postarr['hearing_session']
+            ) . " Session";
 
         $data['post_title'] = $title;
 
@@ -551,35 +552,12 @@ function reset_hearing_slugs()
         wp_update_post(array(
             'ID' => get_the_ID()
         ));
-//    hearing_unique_post_slug(null,$hearing->ID,null,'hearing');
     }
 }
 
 if (isset($_GET['reset']) && $_GET['reset'] == 'hearing-slugs') {
     reset_hearing_slugs();
 }
-
-
-/**
- * Get the current version of WP
- *
- * This is provided for external resources to resolve the current wp_version
- *
- * @return string
- */
-function moj_wp_version()
-{
-    global $wp_version;
-
-    return $wp_version;
-}
-
-add_action('rest_api_init', function () {
-    register_rest_route('moj', '/version', array(
-        'methods' => 'GET',
-        'callback' => 'moj_wp_version'
-    ));
-});
 
 function moj_get_page_uri()
 {
@@ -594,11 +572,11 @@ function homesettings_option_pages()
 {
     if (function_exists('acf_add_options_page')) {
         acf_add_options_page(array(
-            'page_title'    => __('Header Settings'),
-            'menu_title'    => __('Header Settings'),
-            'menu_slug'     => 'header-settings',
-            'capability'    => 'edit_posts',
-            'redirect'      => false
+            'page_title' => __('Header Settings'),
+            'menu_title' => __('Header Settings'),
+            'menu_slug' => 'header-settings',
+            'capability' => 'edit_posts',
+            'redirect' => false
         ));
     }
 }
@@ -629,4 +607,11 @@ function new_nav_menu_items($items_list, $args)
         }
     }
     return $items_list;
+}
+
+add_filter('acf/load_field/name=publish_date', 'set_default_publish_date');
+function set_default_publish_date($field)
+{
+    $field['default_value'] = date('Ymd');
+    return $field;
 }

@@ -76,30 +76,33 @@
 /* Header */
 #masthead {
     width: 100%;
-    background-color: #e8e8e2;
-    padding: 50px 0 15px 0;
-    border-bottom: 20px solid #333;
+    background-color: #ffffff;
+    padding: 20px 0 15px 0;
+    border-bottom: 12px solid #2d2d2d;
 }
 
 .home #masthead {
-    border-bottom-width: 10px;
+    border-bottom-width: 8px;
 }
 
-.site-branding {
+.site-branding,
+#footer-nav {
     max-width: 990px;
     margin: 5px auto 0;
 }
 
 .site-header__logo {
-    max-width: 10rem;
+    max-width: 19rem;
     float: left;
-    margin-left: 1rem;
-    margin-right: 1rem;
+    margin-left: -2rem;
+    margin-right: 0;
+    margin-top: -1rem;
 }
 
 .site-header__phone-number {
     margin-top: 1.5rem;
     padding: 1rem;
+    align-self: flex-end;
 }
 
 .site-header__phone-number--image {
@@ -114,13 +117,14 @@
 }
 
 #tagline {
-    background: -moz-linear-gradient(251deg, #02c4ed 0%, #0084a1 100%); /* ff3.6+ */
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #02c4ed), color-stop(100%, #0084a1)); /* safari4+,chrome */
-    background: -webkit-linear-gradient(251deg, #02c4ed 0%, #0084a1 100%); /* safari5.1+,chrome10+ */
-    background: -o-linear-gradient(251deg, #02c4ed 0%, #0084a1 100%); /* opera 11.10+ */
-    background: -ms-linear-gradient(251deg, #02c4ed 0%, #0084a1 100%); /* ie10+ */
-    background: linear-gradient(199deg, #02c4ed 0%, #0084a1 100%); /* w3c */
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#02c4ed', endColorstr='#0084a1', GradientType=0); /* ie6-9 */
+    background-color:#d6dfe9;
+    /*background: -moz-linear-gradient(251deg, #d6dfe9 0%, #b8c8dc 100%); !* ff3.6+ *!
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #d6dfe9), color-stop(100%, #b8c8dc)); !* safari4+,chrome *!
+    background: -webkit-linear-gradient(251deg, #d6dfe9 0%, #b8c8dc 100%); !* safari5.1+,chrome10+ *!
+    background: -o-linear-gradient(251deg, #d6dfe9 0%, #b8c8dc 100%); !* opera 11.10+ *!
+    background: -ms-linear-gradient(251deg, #d6dfe9 0%, #b8c8dc 100%); !* ie10+ *!
+    background: linear-gradient(199deg, #d6dfe9 0%, #b8c8dc 100%); !* w3c *!
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#d6dfe9', endColorstr='#b8c8dc', GradientType=0); !* ie6-9 *!*/
     padding: 1px;
 }
 
@@ -128,7 +132,7 @@
     padding: 25px 100px 35px;
     text-align: center;
     font-size: 2.1em;
-    color: #fff;
+    color: #2b2b2b;
     font-family: 'Montserrat', sans-serif;
     font-weight: 400;
     line-height: 1.4em;

@@ -1,52 +1,27 @@
 /**
  * navigation.js
  *
- * Handles toggling the navigation menu for small screens.
  */
-//(function() {
-//    var container, button, menu, secondary;
-//
-//    container = document.getElementById('site-navigation');
-//    if (!container)
-//        return;
-//
-//    button = container.getElementsByTagName('h1')[0];
-//    if ('undefined' === typeof button)
-//        return;
-//
-//    secondary = document.getElementById('secondary');
-//    menu = secondary.getElementsByTagName('ul')[0];
-//
-//    // Hide menu toggle button if menu is empty and return early.
-//    if ('undefined' === typeof menu) {
-//        button.style.display = 'none';
-//        return;
-//    }
-//
-//    if (-1 === menu.className.indexOf('nav-menu'))
-//        menu.className += ' nav-menu';
-//
-//    button.onclick = function() {
-//        if (-1 !== secondary.className.indexOf('toggled')) {
-//            secondary.className = secondary.className.replace(' toggled', '');
-//            button.className = button.className.replace(' toggled', '');
-//        }
-//        else {
-//            secondary.className += ' toggled';
-//            button.className += ' toggled';
-//        }
-//    };
-//})();
-
 
 jQuery(document).ready(function ($) {
-
     // Slide out menu for mobile view
-    $('nav').on("click", '#nav-icon', function (e) {
-        e.preventDefault();
-        $(this).toggleClass('open');
-        $('html').toggleClass('nav-open');
-        $('#secondary').toggleClass('toggled');
+    // hack to fix double click registered on #nav-icon
+    var theFirst = 1;
+    $('#nav-icon').click(function (e) {
+        var _that = $(this);
+        if (theFirst === 1) {
+            theFirst = 2;
+            setTimeout(function () {
+                e.preventDefault();
+
+                _that.toggleClass('open');
+                $('html').toggleClass('nav-open');
+                $('#secondary').toggleClass('toggled');
+
+                theFirst = 1;
+                return false;
+            }, 10);
+        }
     });
 
     // submenu
