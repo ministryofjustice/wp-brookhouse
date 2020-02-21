@@ -592,9 +592,7 @@ include('inc/locale-shortcodes.php');
 add_action('init', 'homesettings_option_pages');
 function homesettings_option_pages()
 {
-
-    if( function_exists('acf_add_options_page') ) {
-
+    if (function_exists('acf_add_options_page')) {
         acf_add_options_page(array(
             'page_title'    => __('Header Settings'),
             'menu_title'    => __('Header Settings'),
@@ -602,39 +600,33 @@ function homesettings_option_pages()
             'capability'    => 'edit_posts',
             'redirect'      => false
         ));
-
     }
-
 }
 
-function register_my_menu() {
-  register_nav_menu('languages-menu',__( 'Languages Menu' ));
+function register_my_menu()
+{
+    register_nav_menu('languages-menu', __('Languages Menu'));
 }
-add_action( 'init', 'register_my_menu' );
+add_action('init', 'register_my_menu');
 
 
-// Adds content into a navbar menu item
-// Issue: can access get_field but can't add lang, as can't access the $atts stuff
-add_filter('wp_nav_menu_objects', 'my_wp_nav_menu_objects', 10, 2);
+// Adds user-input lang attribute to Language menu list items
+add_filter('wp_nav_menu_items', 'new_nav_menu_items', 10, 2);
+function new_nav_menu_items($items_list, $args)
+{
+    if ($args->theme_location == "languages-menu") {
+        $nav_items = wp_get_nav_menu_items($args->menu);
+        $items_list = "";
 
-function my_wp_nav_menu_objects( $items, $args ) {
-	foreach( $items as &$item ) {
-        $language = get_field('language_character_code', $item);
-
-        if( $language ) {
-			$atts['lang'] = $language;
+        foreach ($nav_items as $item) {
+            $languages = get_field('language_character_code', $item);
+            $items_list = $items_list
+                . '<li class="menu-item">'
+                . '<a lang="'.$languages.'" href="' . $item->url . '">'
+                .  $item->post_title
+                . '</a>'
+                . '</li>';
         }
-	}
-	return $items;
-}
-
-// Adds lang attribute to menu item
-// Issue: can't access get_field, potentially because it isn't pointed to a page
-function add_class_to_all_menu_anchors( $atts ) {
-    $language = get_field("language_character_code");
-    if ( $language ) {
-        $atts['lang'] = $language;
     }
-    return $atts;
+    return $items_list;
 }
-add_filter( 'nav_menu_link_attributes', 'add_class_to_all_menu_anchors', 10 );
