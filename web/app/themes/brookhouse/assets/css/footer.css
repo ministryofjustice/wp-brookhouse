@@ -12,3 +12,34 @@
   margin: 0 auto;
   padding: 1rem;
 }
+
+
+/* Footer */
+
+footer.site-footer {
+  width: 100%;
+  border-top: 10px solid #666;
+  background-color: #efefef;
+  padding-bottom:100px;
+}
+
+#footer-nav {
+  width: 100%;
+  margin-top: 15px;
+}
+
+#footer-nav h2 {
+  font-weight: bold;
+  color: #333;
+  font-size: 1.5em;
+}
+
+#footer-nav ul.footer-menu {
+  list-style: none;
+  margin: 0;
+
+}
+
+#footer-nav ul.footer-menu li {
+  margin-bottom: 10px;
+}
