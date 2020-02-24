@@ -296,7 +296,7 @@
             {
                 "param": "options_page",
                 "operator": "==",
-                "value": "Footer-settings"
+                "value": "footer-settings"
             }
         ]
     ],
@@ -308,5 +308,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1582548657
+    "modified": 1582555462
 }
