@@ -32,6 +32,12 @@ footer.site-footer {
   font-weight: bold;
   color: #333;
   font-size: 1.5em;
+  margin-bottom: 10px;
+  border: 0;
+}
+
+#footer-nav col {
+  padding-left: 15px;
 }
 
 #footer-nav ul.footer-menu {
