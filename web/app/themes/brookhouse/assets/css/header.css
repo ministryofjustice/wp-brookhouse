@@ -82,7 +82,7 @@
 }
 
 .home #masthead {
-    border-bottom-width: 8px;
+    border-bottom-width: 6px;
 }
 
 .site-branding,
@@ -92,17 +92,27 @@
 }
 
 .site-header__logo {
-    max-width: 19rem;
     float: left;
-    margin-left: -2rem;
+    display:block;
+    width: 19rem;
+}
+.site-header__logo > img {
+    width: inherit;
+    margin-left: 1rem;
     margin-right: 0;
     margin-top: -1rem;
 }
 
 .site-header__phone-number {
-    margin-top: 1.5rem;
     padding: 1rem;
-    align-self: flex-end;
+    display: block;
+    margin-top: 14px;
+    margin-left: 3.4rem;
+    font-size: 2rem;
+}
+.site-header__phone-number > a {
+    height: 4rem;
+    display: inline-block;
 }
 
 .site-header__phone-number--image {
@@ -111,13 +121,13 @@
 }
 
 .site-header__phone-number--text {
-    font-size: 1.2em;
     font-weight: 700;
     padding-left: .5rem;
+    letter-spacing: 0.1rem;
 }
 
 #tagline {
-    background-color:#d6dfe9;
+    background-color:#eadfde;
     /*background: -moz-linear-gradient(251deg, #d6dfe9 0%, #b8c8dc 100%); !* ff3.6+ *!
     background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #d6dfe9), color-stop(100%, #b8c8dc)); !* safari4+,chrome *!
     background: -webkit-linear-gradient(251deg, #d6dfe9 0%, #b8c8dc 100%); !* safari5.1+,chrome10+ *!
@@ -148,11 +158,29 @@
         font-size: 1.7em;
         padding: 25px 25px 35px;
     }
+    .site-header__logo {
+        float: none;
+        margin-right:2rem;
+    }
+    .site-header__logo > img {
+        margin-left: 1rem;
+    }
+    .site-header__phone-number--text {
+        font-size: 1.2em;
+    }
 }
 
 @media screen and (min-width: 650px) {
     .site-title {
         font-size: 1.8em;
+    }
+
+    .site-header__logo {
+        margin-right:2rem;
+    }
+
+    .site-header__phone-number--text {
+        font-size: 1.4em;
     }
 
     .tagline {
@@ -171,6 +199,10 @@
         padding: 25px 100px 35px;
     }
 
+    .flex-grid .branding {
+        flex-grow: 2;
+    }
+
     .site-header__phone-number {
         margin-top: 0;
     }
@@ -179,6 +211,14 @@
 @media screen and (min-width: 830px) {
     .site-title {
         font-size: 1.7em;
+    }
+
+    .site-header__logo > img {
+        margin-left: -2rem;
+    }
+
+    .site-header__phone-number--text {
+        font-size: 2.8rem;
     }
 
     .tagline {
@@ -190,6 +230,9 @@
 @media screen and (min-width: 1000px) {
     .site-title {
         font-size: 2em;
+    }
+    .site-header__phone-number {
+        margin-left:0;
     }
 
     .tagline {

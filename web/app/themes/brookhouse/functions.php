@@ -50,7 +50,7 @@ if (!function_exists('brookhouse_setup')) {
         // This theme uses wp_nav_menu() in one location.
         register_nav_menus(array(
             'primary' => __('Primary Menu', 'brookhouse'),
-            'footer' => __('Footer Menu', 'brookhouse')
+            'languages-menu' =>  __('Languages Menu', 'brookhouse')
         ));
 
         // Enable support for Post Formats.
@@ -299,62 +299,6 @@ add_filter('ot_show_pages', '__return_false');
 require_once('option-tree/ot-loader.php');
 load_template(trailingslashit(get_template_directory()) . 'inc/theme-options.php');
 
-/* Create custom slugs for hearings */
-add_filter('wp_unique_post_slug', 'hearing_unique_post_slug', 10, 4);
-
-function hearing_unique_post_slug($slug, $post_ID, $post_status, $post_type)
-{
-    if ('hearing' == $post_type) {
-        $slug = date(
-                'Y-m-d',
-                strtotime(
-                    get_post_meta(
-                        $post_ID,
-                        'hearing_date',
-                        true
-                    )
-                )
-            )
-            . get_post_meta(
-                $post_ID,
-                'hearing_session',
-                true
-            );
-    }
-    return $slug;
-}
-
-/* Create custom title for hearings */
-add_filter('wp_insert_post_data', 'change_title', 99, 2);
-
-function change_title($data, $postarr)
-{
-    // If it is our form has not been submitted, so we dont want to do anything
-    if (defined('DOING_AUTOSAVE') && DOING_AUTOSAVE) {
-        return;
-    }
-
-    // Change title if post type is hearing
-    if (isset($_POST['post_type']) && $_POST['post_type'] == 'hearing') {
-        $title = date(
-                'l j F Y',
-                strtotime(
-                    $postarr['hearing_date']
-                )
-            )
-            . " "
-            . strtoupper(
-                $postarr['hearing_session']
-            ) . " Session";
-
-        $data['post_title'] = $title;
-
-        $slug = date('Y-m-d', strtotime($postarr['hearing_date'])) . $postarr['hearing_session'];
-        $data['post_name'] = $slug;
-    }
-    return $data;
-}
-
 // Get attachment ID from src(url)
 function get_attachment_id_from_src($image_src)
 {
@@ -405,121 +349,6 @@ function special_nav_class($classes, $item)
     return $classes;
 }
 
-// Customise post list views for CPTs
-// Hearings
-add_filter('manage_hearing_posts_columns', 'hearing_custom_columns');
-add_filter('manage_hearing_posts_custom_column', 'hearing_custom_content', 10, 2);
-
-function hearing_custom_columns($defaults)
-{
-    $defaults = array();
-    $defaults['cb'] = '<input type="checkbox" />';
-    $defaults['hearing_date'] = 'Hearing Date';
-    $defaults['am_session'] = 'AM Session';
-    $defaults['pm_session'] = 'PM Session';
-    return $defaults;
-}
-
-function hearing_custom_content($column_name, $post_ID)
-{
-    switch ($column_name) {
-        case 'hearing_date':
-            echo date('l j F Y', strtotime(get_post_meta($post_ID, 'hearing_date', true)));
-            break;
-        case 'am_session':
-            if (get_post_meta($post_ID, 'hearing_session', true) == 'am') {
-                edit_post_link('Edit', '', '', $post_ID);
-            } else {
-                echo "-";
-            }
-            break;
-        case 'pm_session':
-            if (get_post_meta($post_ID, 'hearing_session', true) == 'pm') {
-                edit_post_link('Edit', '', '', $post_ID);
-            } else {
-                echo "-";
-            }
-            break;
-        default:
-            echo "other";
-    }
-}
-
-// Register the column as sortable
-function sort_column_register_sortable($columns)
-{
-    $columns['hearing_date'] = 'hearing_date';
-    return $columns;
-}
-
-add_filter('manage_edit-hearing_sortable_columns', 'sort_column_register_sortable');
-
-add_filter('request', 'hearing_date_column_orderby');
-
-function hearing_date_column_orderby($vars)
-{
-    if (isset($vars['orderby']) && 'hearing_date' == $vars['orderby']) {
-        $vars = array_merge($vars, array(
-            'meta_key' => 'hearing_date',
-            //'orderby' => 'meta_value_num', // does not work
-            'orderby' => 'meta_value'
-            //'order' => 'asc' // don't use this; blocks toggle UI
-        ));
-    }
-    return $vars;
-}
-
-// Add filter to change query for hearing edit list screen in wp-admin
-if (is_admin() && isset($_GET['post_type']) && $_GET['post_type'] == 'hearing') {
-//    add_filter('posts_request', 'hearings_request');
-}
-
-function hearings_request($request)
-{
-    $request = "Select Distinct
-        99999999 As ID,
-  hearing_dates.meta_value,
-  am_sessions.post_id As am_id,
-  pm_sessions.post_id
-  From
-  (Select Distinct
-    brookhouse.wp_postmeta.meta_value,
-    brookhouse.wp_postmeta.post_id
-  From
-    brookhouse.wp_postmeta
-  Where
-    brookhouse.wp_postmeta.meta_key = 'hearing_date') As hearing_dates
-  Left Join
-  (Select
-    brookhouse.wp_postmeta.post_id,
-    brookhouse.wp_postmeta.meta_value,
-    wp_postmeta1.meta_value As am_hearing_date
-  From
-    brookhouse.wp_postmeta Inner Join
-    brookhouse.wp_postmeta wp_postmeta1 On brookhouse.wp_postmeta.post_id =
-      wp_postmeta1.post_id
-  Where
-    brookhouse.wp_postmeta.meta_value = 'am' And
-    brookhouse.wp_postmeta.meta_key = 'hearing_session' And
-    wp_postmeta1.meta_key = 'hearing_date') As am_sessions
-    On hearing_dates.meta_value = am_sessions.am_hearing_date Left Join
-  (Select
-    brookhouse.wp_postmeta.post_id,
-    brookhouse.wp_postmeta.meta_value,
-    wp_postmeta1.meta_value As pm_hearing_date
-  From
-    brookhouse.wp_postmeta Inner Join
-    brookhouse.wp_postmeta wp_postmeta1 On brookhouse.wp_postmeta.post_id =
-      wp_postmeta1.post_id
-  Where
-    brookhouse.wp_postmeta.meta_value = 'pm' And
-    brookhouse.wp_postmeta.meta_key = 'hearing_session' And
-    wp_postmeta1.meta_key = 'hearing_date') As pm_sessions
-    On hearing_dates.meta_value = pm_sessions.pm_hearing_date Inner Join
-  brookhouse.wp_posts On hearing_dates.post_id = brookhouse.wp_posts.ID";
-    return $request;
-}
-
 // Allow editors access to theme options
 $_the_roles = new WP_Roles();
 $_the_roles->add_cap('editor', 'edit_theme_options');
@@ -536,29 +365,6 @@ function add_slug_body_class($classes)
 
 add_filter('body_class', 'add_slug_body_class');
 
-function reset_hearing_slugs()
-{
-    $hearings = new WP_Query(
-        array(
-            'post_type' => 'hearing',
-            'orderby' => 'meta_value',
-            'meta_key' => 'hearing_date',
-            'posts_per_page' => -1,
-            'post_status' => 'publish'
-        )
-    );
-    while ($hearings->have_posts()) {
-        $hearings->the_post();
-        wp_update_post(array(
-            'ID' => get_the_ID()
-        ));
-    }
-}
-
-if (isset($_GET['reset']) && $_GET['reset'] == 'hearing-slugs') {
-    reset_hearing_slugs();
-}
-
 function moj_get_page_uri()
 {
     global $wp;
@@ -566,6 +372,7 @@ function moj_get_page_uri()
 }
 
 include('inc/locale-shortcodes.php');
+include('inc/acf-nav-menu-field.php');
 
 add_action('init', 'homesettings_option_pages');
 function homesettings_option_pages()
@@ -578,15 +385,16 @@ function homesettings_option_pages()
             'capability' => 'edit_posts',
             'redirect' => false
         ));
+
+        acf_add_options_page(array(
+            'page_title' => __('Footer Settings'),
+            'menu_title' => __('Footer Settings'),
+            'menu_slug' => 'footer-settings',
+            'capability' => 'edit_posts',
+            'redirect' => false
+        ));
     }
 }
-
-function register_my_menu()
-{
-    register_nav_menu('languages-menu', __('Languages Menu'));
-}
-add_action('init', 'register_my_menu');
-
 
 // Adds user-input lang attribute to Language menu list items
 add_filter('wp_nav_menu_items', 'new_nav_menu_items', 10, 2);
@@ -614,4 +422,21 @@ function set_default_publish_date($field)
 {
     $field['default_value'] = date('Ymd');
     return $field;
+}
+
+/**
+ * Convert a phone number to an international format. Used in tel: links
+ * @param string $phone_number
+ * @param string $code
+ * @return String
+ */
+function prepend_country_code_to_number($phone_number, $code = '+44')
+{
+    // contact telephone number
+    $number_link = $phone_number;
+    if (strpos($phone_number, '0') === 0) {
+        $number_link = $code . substr($phone_number, 1);
+    }
+
+    return $number_link;
 }

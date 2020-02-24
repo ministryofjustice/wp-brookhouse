@@ -8,6 +8,11 @@
  * @package brookhouse
  */
 
+
+// contact telephone number
+$moj_bh_phone_number = get_field('telephone_number', 'option');
+$moj_bh_phone_number_link = prepend_country_code_to_number($moj_bh_phone_number);
+
 ?><!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 <head>
@@ -18,26 +23,6 @@
     <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>">
 
     <?php wp_head(); ?>
-
-    <?php if ($_SERVER["SERVER_NAME"] == "brookhouseinvestigations.independent.gov.uk") { ?>
-        <script>
-            (function (i, s, o, g, r, a, m) {
-                i['GoogleAnalyticsObject'] = r;
-                i[r] = i[r] || function () {
-                    (i[r].q = i[r].q || []).push(arguments)
-                }, i[r].l = 1 * new Date();
-                a = s.createElement(o),
-                    m = s.getElementsByTagName(o)[0];
-                a.async = 1;
-                a.src = g;
-                m.parentNode.insertBefore(a, m)
-            })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
-
-            ga('create', 'UA-46373102-1', 'independent.gov.uk');
-            ga('send', 'pageview');
-
-        </script>
-    <?php } ?>
 </head>
 
 <body <?php body_class('locale-' . get_locale()); ?>>
@@ -51,19 +36,21 @@
             <div style="display:none">Open navigation</div>
         </button>
         <a class="skip-link screen-reader-text" href="#content"><?php _e('Skip to content', 'brookhouse'); ?></a>
-
-        <?php //wp_nav_menu( array( 'theme_location' => 'primary' ) );  ?>
     </nav><!-- #site-navigation -->
     <header id="masthead" class="site-header">
         <div class="site-branding flex-grid">
-            <div class="col">
-                <a href="<?= esc_url(home_url('/')); ?>" rel="home"><img
-                        src="<?= get_template_directory_uri(); ?>/dist/img/brookhouse-logo.svg"
-                        alt="<?php bloginfo('name'); ?>" class="site-header__logo"></a>
+            <div class="col branding">
+                <a href="<?= esc_url(home_url('/')); ?>" rel="home" class="site-header__logo">
+                    <img src="<?= get_template_directory_uri(); ?>/dist/img/brookhouse-logo.svg"
+                        alt="<?php bloginfo('name'); ?>">
+                </a>
+
                 <div class="site-header__phone-number">
-                    <a href="tel:02076334149">
-                        <img class="site-header__phone-number--image" src="<?php echo get_template_directory_uri(); ?>/dist/img/call-for-info.svg" alt="Call with information regarding the Brook House Investigation">
-                        <span class="site-header__phone-number--text"><?= get_field('telephone_number', 'option') ?></span>
+                    <a href="tel:<?= $moj_bh_phone_number_link ?>">
+                        <img class="site-header__phone-number--image"
+                             src="<?php echo get_template_directory_uri(); ?>/dist/img/call-for-info.svg"
+                             alt="Call with information regarding the Brook House Investigation">
+                        <span class="site-header__phone-number--text"><?= $moj_bh_phone_number ?></span>
                     </a>
                 </div>
             </div>
@@ -71,9 +58,12 @@
             <div class="bh-languages col">
                 <ul data-locale="<?= get_locale() ?>">
                     <li data-locale="en_GB"><a href="<?= moj_get_page_uri() ?>/?locale=en_GB">English (UK)</a></li>
-                    <li data-locale="ar"><a href="<?= moj_get_page_uri() ?>/?locale=ar" lang="ar" class="locale-text-enlarge">عربى</a></li>
-                    <li data-locale="ur"><a href="<?= moj_get_page_uri() ?>/?locale=ur" lang="ur" class="locale-text-enlarge">اردو</a></li>
-                    <li data-locale="fa_IR"><a href="<?= moj_get_page_uri() ?>/?locale=fa_IR" lang="fa_IR" class="locale-text-enlarge">فارسی</a></li>
+                    <li data-locale="ar"><a href="<?= moj_get_page_uri() ?>/?locale=ar" lang="ar"
+                                            class="locale-text-enlarge">عربى</a></li>
+                    <li data-locale="ur"><a href="<?= moj_get_page_uri() ?>/?locale=ur" lang="ur"
+                                            class="locale-text-enlarge">اردو</a></li>
+                    <li data-locale="fa_IR"><a href="<?= moj_get_page_uri() ?>/?locale=fa_IR" lang="fa_IR"
+                                               class="locale-text-enlarge">فارسی</a></li>
                     <li data-locale="sq"><a href="<?= moj_get_page_uri() ?>/?locale=sq" lang="sq">Shqiptar</a></li>
                 </ul>
             </div>
@@ -82,7 +72,8 @@
     <?php if (is_front_page()) { ?>
         <section id="tagline">
             <div class="site-branding tagline">
-                <?php _e('An independent investigation into the potential mistreatment of detainees at Brook House IRC in 2017', 'brookhouse'); ?>
+                <?php _e('An independent investigation into the potential mistreatment of detainees at Brook House IRC in 2017',
+                    'brookhouse'); ?>
             </div>
         </section>
     <?php } ?>

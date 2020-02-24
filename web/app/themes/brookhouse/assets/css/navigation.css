@@ -117,6 +117,10 @@ body.open, html.nav-open {
     overflow: hidden;
 }
 
+body:not(.home) #breadcrumbs-wrapper {
+    border-top: 6px solid #847462;
+}
+
 #breadcrumbs {
     max-width: 990px;
     margin: 10px auto;
