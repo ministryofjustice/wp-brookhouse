@@ -36,7 +36,7 @@ footer.site-footer {
   border: 0;
 }
 
-#footer-nav col {
+#footer-nav .col {
   padding-left: 15px;
 }
 
@@ -48,4 +48,10 @@ footer.site-footer {
 
 #footer-nav ul.footer-menu li {
   margin-bottom: 10px;
+}
+
+@media screen and (min-width: 1000px) {
+  #footer-nav .col {
+    padding-left: 0px;
+  }
 }
