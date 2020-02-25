@@ -80,8 +80,7 @@ function moj_get_asset($handle)
     $manifest = json_decode($get_assets, true);
 
     $assets = array(
-        'bh-css' => $manifest['/css/style.min.css'],
-        'custom-css' => $manifest['/css/custom.min.css'],
+        'main-css' => $manifest['/css/main.min.css'],
         'jquery-ui' => $manifest['/css/jquery-ui.min.css'],
         'js' => $manifest['/js/main.min.js'],
         'admin-js' => $manifest['/js/custom-admin.min.js'],
@@ -161,8 +160,8 @@ function brookhouse_scripts()
     wp_register_style('jquery-ui', moj_get_asset('jquery-ui'));
 
     wp_enqueue_style('g-fonts', moj_get_asset('g-fonts')); // Custom stylesheet
-    wp_enqueue_style('bh-style', moj_get_asset('bh-css')); // Default stylesheet
-    wp_enqueue_style('bh-style-custom', moj_get_asset('custom-css'), array('bh-style')); // Custom stylesheet
+
+    wp_enqueue_style('main-styles', moj_get_asset('main-css')); // Default stylesheet
 
     wp_enqueue_script('js', moj_get_asset('js'), array('jquery'), null, true);
 

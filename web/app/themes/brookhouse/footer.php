@@ -13,7 +13,7 @@
 <?php wp_nav_menu(array('theme_location' => 'languages-menu')); ?>
 
 <footer id="footer" class="site-footer">
-    <div id="footer-nav" class="flex-grid">
+    <div id="footer-nav" class="footer-columns-wrapper flex-grid">
         <div class="col">
             <?php
 
