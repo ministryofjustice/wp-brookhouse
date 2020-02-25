@@ -1,0 +1,104 @@
+/* Header */
+
+#masthead {
+  width: 100%;
+  background-color: $white;
+  padding: 20px 0 15px 0;
+  border-bottom: 12px solid $grey-dark;
+
+  .home & {
+    border-bottom-width: 6px;
+  }
+
+  .site-branding {
+    max-width: 990px;
+    margin: 5px auto 0;
+
+    &.flex-grid .branding {
+
+      @media screen and (min-width: 769px) {
+        flex-grow: 2;
+      }
+    }
+
+    .site-header__logo {
+      float: left;
+      display: block;
+      width: 19rem;
+
+      @media screen and (max-width: 649px) {
+        float: none;
+        margin-right: 2rem;
+      }
+
+      @media screen and (min-width: 650px) {
+        margin-right: 2rem;
+      }
+
+      img {
+        width: inherit;
+        margin-left: 1rem;
+        margin-right: 0;
+        margin-top: -1rem;
+
+        @media screen and (max-width: 649px) {
+          margin-left: 1rem;
+        }
+
+        @media screen and (min-width: 830px) {
+          margin-left: -2rem;
+        }
+      }
+
+    }
+
+    .site-header__phone-number {
+      padding: 1rem;
+      display: block;
+      margin-top: 14px;
+      margin-left: 3.4rem;
+      font-size: 2rem;
+
+      @media screen and (min-width: 769px) {
+        margin-top: 0;
+      }
+
+      @media screen and (min-width: 1000px) {
+        margin-left: 0;
+      }
+
+      a {
+        height: 4rem;
+        display: inline-block;
+      }
+
+      &--image {
+        max-height: 4rem;
+        vertical-align: bottom;
+      }
+
+      &--text {
+        font-weight: 700;
+        padding-left: .5rem;
+        letter-spacing: 0.1rem;
+
+        @media screen and (max-width: 649px) {
+          font-size: 1.2em;
+        }
+
+        @media screen and (min-width: 650px) {
+          font-size: 1.4em;
+        }
+
+        @media screen and (min-width: 830px) {
+          font-size: 2.8rem;
+        }
+      }
+    }
+
+  }
+
+  .bh-languages {
+    text-align: right;
+  }
+}

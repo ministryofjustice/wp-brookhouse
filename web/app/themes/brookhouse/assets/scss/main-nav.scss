@@ -1,0 +1,182 @@
+/* Main Navigation  - Currently using secondary menu*/
+
+//Burger Menu - not used on desktop
+.main-navigation {
+  position: fixed;
+  z-index: 6;
+  width: 100%;
+
+  &.toggled .nav-menu {
+    @media screen and (max-width: 769px) {
+      display: block;
+    }
+  }
+
+  #nav-icon {
+    position: relative;
+    top: 7px;
+    right: 6px;
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+    -webkit-transition: .5s ease-in-out;
+    -moz-transition: .5s ease-in-out;
+    -o-transition: .5s ease-in-out;
+    transition: .5s ease-in-out;
+    cursor: pointer;
+    background: none;
+    border: none;
+    box-sizing: border-box;
+    height: 22px;
+    float: right;
+
+    &.open {
+      position: fixed;
+      left: unset;
+      right: 0;
+
+      span {
+        background-color: $white;
+
+        &:nth-child(1) {
+          top: 7px;
+          -webkit-transform: rotate(135deg);
+          -moz-transform: rotate(135deg);
+          -o-transform: rotate(135deg);
+          transform: rotate(135deg);
+        }
+
+        &:nth-child(2) {
+          opacity: 0;
+        }
+
+        &:nth-child(3) {
+          top: 7px;
+          -webkit-transform: rotate(-135deg);
+          -moz-transform: rotate(-135deg);
+          -o-transform: rotate(-135deg);
+          transform: rotate(-135deg);
+        }
+      }
+    }
+
+    span {
+      display: block;
+      position: absolute;
+      height: 3px;
+      width: 100%;
+      background: $grey-dark;
+      border-radius: 3px;
+      opacity: 1;
+      left: 0;
+      -webkit-transform: rotate(0deg);
+      -moz-transform: rotate(0deg);
+      -o-transform: rotate(0deg);
+      transform: rotate(0deg);
+      -webkit-transition: .5s ease-in-out;
+      -moz-transition: .5s ease-in-out;
+      -o-transition: .5s ease-in-out;
+      transition: .5s ease-in-out;
+
+      &:nth-child(1) {
+        top: 0px;
+      }
+
+      &:nth-child(2) {
+        top: 8px;
+      }
+
+      &:nth-child(3) {
+        top: 16px;
+      }
+    }
+  }
+
+  .menu-toggle {
+    cursor: pointer;
+    display: none;
+
+    @media screen and (max-width: 769px) {
+      display: block;
+    }
+  }
+
+}
+
+body.open, html.nav-open {
+  overflow: hidden;
+}
+
+#secondary {
+  width: 200px;
+  float: left;
+  margin: 10px 15px 0 0;
+
+  @media screen and (max-width: 768px) {
+    position: fixed;
+    top: 0;
+    left: -200px;
+    background-color: #666;
+    height: 100%;
+    -webkit-transition: left 0.5s ease;
+    z-index: 5;
+    margin: 0;
+    padding-top: 24px;
+  }
+
+  &.toggled {
+    width: 100%;
+    overflow-y: scroll;
+    height: 100%;
+    padding-top: 0;
+
+    @media screen and (max-width: 768px) {
+      box-shadow: 0px 0px 10px 0px $grey-dark;
+      left: 0;
+    }
+  }
+
+  ul {
+    padding: 0;
+    list-style: none;
+    margin: 10px 0 20px;
+
+    @media screen and (max-width: 768px) {
+      margin: 0;
+    }
+
+    &.sub-menu {
+      margin: 0 0 0 20px;
+    }
+
+    li {
+
+      &:hover > a {
+        background-color: $blue-light;
+      }
+
+      &.current-menu-item > a {
+        background-color: $grey-dark;
+        color: $white;
+      }
+
+      a {
+        display: block;
+        background-color: $blue-pale;
+        padding: 12px 15px 12px 15px;
+        margin-bottom: 2px;
+        color: $grey-dark;
+
+        @media screen and (max-width: 768px) {
+          margin-bottom: 1px;
+        }
+        &:focus {
+          background-color: $yellow;
+          color: $black;
+        }
+      }
+
+    }
+  }
+}
