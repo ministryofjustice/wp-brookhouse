@@ -18,19 +18,9 @@ mix_.setPublicPath('./dist')
     .sass(_asset + 'sass/errors/404.sass', 'dist/css/404.css')
     .sass(_asset + 'sass/errors/error-page.sass', 'dist/css/error-page.css')
     .copy(_asset + 'js/*.min.js', 'dist/js/')
-    .styles([
-        _asset + 'css/colors.css',
-        _asset + 'css/locale.css',
-        _asset + 'css/flex.css',
-        _asset + 'css/header.css',
-        _asset + 'css/navigation.css',
-        _asset + 'css/forms.css',
-        _asset + 'css/custom.css',
-        _asset + 'css/footer.css',
-    ], 'dist/css/custom.min.css')
+    .sass(_asset + '/scss/style.scss',  'dist/css/main.min.css')
     .styles(_asset + 'css/custom-admin.css', 'dist/css/custom-admin.min.css')
     .styles(_asset + 'css/jquery-ui.css', 'dist/css/jquery-ui.min.css')
-    .styles('style.css', 'dist/css/style.min.css')
     .copy(_asset + 'img/*', 'dist/img/');
 
 if (mix_.inProduction()) {

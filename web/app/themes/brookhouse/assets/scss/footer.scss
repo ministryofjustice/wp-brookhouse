@@ -1,0 +1,43 @@
+/* Footer - Has a 3 column Layout */
+
+footer.site-footer {
+
+  width: 100%;
+  border-top: 10px solid $grey;
+  background-color: $grey-light;
+  padding-bottom: 100px;
+
+  .footer-columns-wrapper {
+    width: 100%;
+    max-width: 990px;
+    margin: 15px auto 0;
+
+    .col {
+
+      padding-left: 15px;
+
+      @media screen and (min-width: 1000px) {
+        padding-left: 0px;
+      }
+
+      h2 {
+        font-weight: bold;
+        color: #333;
+        font-size: 1.5em;
+        margin-bottom: 10px;
+        border: 0;
+      }
+
+      ul.footer-menu {
+        list-style: none;
+        margin: 0;
+
+        li {
+          margin-bottom: 10px;
+        }
+
+      }
+
+    }
+  }
+}

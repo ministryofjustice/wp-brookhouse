@@ -1,0 +1,290 @@
+/* General Styles */
+
+.beige {
+  color: $beige;
+}
+
+.beige-light {
+  color: $beige-light;
+}
+
+.beige-dark {
+  color: $beige-dark;
+}
+
+.blue {
+  color: $blue;
+}
+
+.blue-pale {
+  color: $blue-pale;
+}
+
+.blue-light {
+  color: $blue-light;
+}
+
+.grey-dark {
+  color: $grey-dark;
+}
+
+.black {
+  color: $black;
+}
+
+.red {
+  color: $red;
+  font-weight: bold
+}
+
+
+a,
+a:visited {
+  text-decoration: none;
+  color: $blue;
+  transition: all 0.3s ease;
+
+}
+
+a:focus,
+a:active,
+button:focus,
+button:active {
+  outline: 2px solid $yellow;
+  color: $black;
+  background-color: $yellow;
+}
+
+a:hover {
+  color: $teal;
+  text-decoration: underline;
+}
+
+a.button {
+  display: inline-block;
+  padding: 4px 15px 5px;
+  color: $white;
+  background-color: $beige-dark;
+}
+
+a.button.large {
+  font-size: 1.6em;
+  padding: 10px 15px;
+}
+
+.full-width-button a.button {
+  text-align: center;
+  width: 90%;
+}
+
+
+#primary {
+  float: none;
+  overflow: hidden;
+  margin-right: 15px;
+
+  @media screen and (max-width: 768px) {
+    margin-left: 15px;
+    padding-right: 0;
+  }
+}
+
+.page #primary {
+  max-width: 765px;
+  float: none;
+  overflow: hidden;
+  padding-right: 15px;
+
+  @media screen and (max-width: 768px) {
+    margin-left: 15px;
+    padding-right: 0;
+  }
+}
+
+#content {
+  max-width: 990px;
+  margin: 0 auto;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Montserrat', sans-serif;
+}
+
+h1 {
+  font-size: 2.5em;
+  color: $grey-dark;
+  font-weight: normal;
+  margin-top: 30px;
+  margin-bottom: 22px;
+
+  @media screen and (max-width: 768px) {
+    font-size: 2em;
+    margin-top: 25px;
+  }
+}
+
+h2 {
+  font-size: 2.2em;
+  color: $beige-dark;
+  font-weight: normal;
+  clear: both;
+  -webkit-margin-after: 0.83em;
+
+  @media screen and (max-width: 768px) {
+      font-size: 1.45em;
+      -webkit-margin-before: 0.33em;
+      -webkit-margin-after: 0.33em;
+  }
+}
+
+h3 {
+  font-size: 1.4em;
+  color: #333;
+  font-weight: normal;
+  -webkit-margin-before: 1em;
+  -webkit-margin-after: 1em;
+
+  @media screen and (max-width: 768px) {
+    margin: 5px 0;
+  }
+}
+
+h4 {
+  font-size: 1.1em;
+  color: $beige-dark;
+  font-weight: bold;
+}
+
+p {
+  @media screen and (max-width: 768px) {
+    margin-bottom: 0.5em;
+    line-height: 1.5;
+  }
+}
+
+#main {
+  float: none;
+  overflow: hidden;
+}
+
+article.page ul {
+  margin: 15px 0 15px 0;
+  padding: 0;
+  list-style: none;
+}
+
+article.page ul li {
+  margin: 10px 10px 10px 0;
+  padding: 0 0 0 20px;
+  background: url(../img/bullet-point-7x7.gif) no-repeat 0 7px;
+  line-height: 1.5em;
+}
+
+.results-line {
+  display: flex;
+  padding: 12px 0;
+  border-bottom: 1px solid #efefef;
+  -webkit-transition: background-color 0.3s ease;
+  -moz-transition: background-color 0.3s ease;
+  -ms-transition: background-color 0.3s ease;
+  -o-transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease;
+
+  @media screen and (max-width: 768px) {
+    font-size: 0.9em;
+    display: flex;
+  }
+}
+
+.results-line:hover {
+  background-color: #FFFFE0;
+}
+
+.results-line:last-child {
+  border: none;
+}
+
+.external-link {
+  position: relative;
+  padding-right: 20px;
+  display: inline-block;
+}
+
+.external-link:before {
+  content: " ";
+  background-image: url('../img/external-link-alt.png');
+  -webkit-background-size: contain;
+  background-size: contain;
+  width: 15px;
+  height: 15px;
+  display: inline-block;
+  position: absolute;
+  top: 2px;
+  right: 0;
+}
+
+
+/* Search form */
+
+#secondary .search-form {
+  margin: 10px 5px;
+}
+
+#secondary .search-form .search-field {
+  width: 135px;
+  font-size: 0.8em;
+}
+
+#secondary .search-form .search-submit {
+  font-size: 0.8em;
+  height: 21px;
+  padding-top: 4px;
+}
+
+
+/* Search results */
+
+.search-results h1.entry-title {
+  font-size: 1em;
+  color: black;
+  margin-top: 0;
+}
+
+.search-results h1.entry-title a {
+  color: black;
+}
+
+.search-results h2 {
+  font-size: 1.5em;
+  -webkit-margin-before: 0.7em;
+  -webkit-margin-after: 0.5em;
+}
+
+.search-results .no-results {
+  font-size: 1em;
+  -webkit-margin-before: 0.7em;
+  -webkit-margin-after: 0.5em;
+}
+
+
+/* Media queries */
+
+@media screen and (max-width: 768px) {
+
+  .ui-accordion .ui-accordion-content {
+    overflow: hidden !important;
+  }
+
+  .ui-accordion .ui-accordion-header {
+    font-size: 1em !important;
+    font-weight: bold;
+    padding-left: 1.4em !important;
+  }
+
+}
+

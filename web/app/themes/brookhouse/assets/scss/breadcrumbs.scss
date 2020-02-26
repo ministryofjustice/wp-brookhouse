@@ -1,0 +1,48 @@
+/* Breadcrumbs */
+
+#breadcrumbs-wrapper {
+  width: 100%;
+  border-top: 6px solid $grey;
+  background: $grey-light;
+  min-height: 35px;
+  padding: 0;
+  overflow: hidden;
+
+  #breadcrumbs {
+    max-width: 990px;
+    margin: 10px auto;
+    font-size: 0.9em;
+    height: 0;
+
+    ul {
+      padding: 0;
+      margin: 0 17px 10px;
+
+      li {
+        display: inline-block;
+        *display: inline;
+        *zoom: 1;
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+        white-space: nowrap;
+
+        &.breadcrumb-child:before {
+          content: "» ";
+          margin-left: 5px;
+        }
+
+        a {
+          color: $grey-dark;
+        }
+
+      }
+    }
+
+  }
+
+  body:not(.home) & {
+    border-top: 6px solid $beige-dark;
+  }
+
+}
