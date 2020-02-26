@@ -40,7 +40,7 @@
                     {
                         "field": "field_5e4cfd26442cb",
                         "operator": "==",
-                        "value": "Corporate document"
+                        "value": "corporate-documents"
                     }
                 ]
             ],
@@ -70,7 +70,7 @@
                     {
                         "field": "field_5e4cfd26442cb",
                         "operator": "==",
-                        "value": "Other publication"
+                        "value": "other-publications"
                     }
                 ]
             ],
@@ -100,7 +100,7 @@
                     {
                         "field": "field_5e4cfd26442cb",
                         "operator": "==",
-                        "value": "Media release"
+                        "value": "media-releases"
                     }
                 ]
             ],
@@ -134,7 +134,7 @@
             "display_format": "d\/m\/Y",
             "return_format": "d\/m\/Y",
             "first_day": 1,
-            "default_value": "20200219"
+            "default_value": "20200226"
         },
         {
             "key": "field_5e4c169cfb12e",
@@ -173,5 +173,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1582133443
+    "modified": 1582733353
 }
