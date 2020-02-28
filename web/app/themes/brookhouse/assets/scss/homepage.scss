@@ -1,0 +1,48 @@
+/* Home Page Specific Styles */
+
+.cta-section {
+
+  @media screen and (min-width: 769px) {
+    margin-bottom: 10px;
+  }
+
+  .cta_block {
+    background: $beige-light;
+    padding: 15px 15px;
+    margin-bottom: 15px;
+
+    @media screen and (min-width: 769px) {
+      width: 50%;
+    }
+
+    &:first-child {
+
+      @media screen and (min-width: 769px) {
+        margin-right: 20px;
+      }
+    }
+
+
+    h3 {
+      -webkit-margin-before: 0em;
+      -webkit-margin-after: 0em;
+      margin-bottom: 15px;
+      color: $grey-dark;
+
+    }
+
+    .cta_block_link {
+      color: $white;
+      background: $beige-dark;
+      padding: 10px;
+      display: inline-block;
+
+      &:focus {
+        color: $black;
+        background: $yellow;
+      }
+    }
+
+  }
+}
+
