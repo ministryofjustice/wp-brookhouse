@@ -8,13 +8,14 @@
  * @package brookhouse
  */
 
-
 // contact telephone number
 $moj_bh_phone_number = get_field('telephone_number', 'option');
 $moj_bh_phone_number_link = prepend_country_code_to_number($moj_bh_phone_number);
 
-?><!DOCTYPE html>
+?>
+<!DOCTYPE html>
 <html <?php language_attributes(); ?>>
+
 <head>
     <meta charset="<?php bloginfo('charset'); ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -26,6 +27,15 @@ $moj_bh_phone_number_link = prepend_country_code_to_number($moj_bh_phone_number)
 </head>
 
 <body <?php body_class('locale-' . get_locale()); ?>>
+
+    <?php
+
+/**
+ * MoJ hook in our themes to allow content to be hooked and placed
+ * at the top of the page but still within the body
+ *  */
+do_action('after_body_open_tag'); ?>
+
 <div id="page" class="hfeed site">
     <?php do_action('before'); ?>
     <nav id="site-navigation" class="main-navigation">
@@ -48,8 +58,8 @@ $moj_bh_phone_number_link = prepend_country_code_to_number($moj_bh_phone_number)
                 <div class="site-header__phone-number">
                     <a href="tel:<?= $moj_bh_phone_number_link ?>">
                         <img class="site-header__phone-number--image"
-                             src="<?php echo get_template_directory_uri(); ?>/dist/img/call-for-info.svg"
-                             alt="Call with information regarding the Brook House Investigation">
+                            src="<?php echo get_template_directory_uri(); ?>/dist/img/call-for-info.svg"
+                            alt="Call with information regarding the Brook House Investigation">
                         <span class="site-header__phone-number--text"><?= $moj_bh_phone_number ?></span>
                     </a>
                 </div>
@@ -61,12 +71,14 @@ $moj_bh_phone_number_link = prepend_country_code_to_number($moj_bh_phone_number)
         </div>
     </header><!-- #masthead -->
     <?php if (is_front_page()) { ?>
-        <section id="tagline">
-            <div class="site-branding tagline">
-                <?php _e('An independent investigation into the potential mistreatment of detainees at Brook House IRC in 2017',
-                    'brookhouse'); ?>
-            </div>
-        </section>
+    <section id="tagline">
+        <div class="site-branding tagline">
+            <?php _e(
+                'An independent investigation into the potential mistreatment of detainees at Brook House IRC in 2017',
+                'brookhouse'
+            ); ?>
+        </div>
+    </section>
     <?php } ?>
     <section id="breadcrumbs-wrapper">
         <div id="breadcrumbs">
@@ -75,57 +87,57 @@ $moj_bh_phone_number_link = prepend_country_code_to_number($moj_bh_phone_number)
                     <a href="<?php echo esc_url(home_url('/')); ?>" rel="home">Home</a>
                 </li>
                 <?php
-                if (!is_home() && $post != null) {
-                    foreach (get_post_ancestors($post->ID) as $ancestor_id) {
-                        echo "<li class='breadcrumb-child'><a href='" . get_permalink($ancestor_id) . "'>" . get_the_title($ancestor_id) . "</a></li>";
-                    }
+            if (!is_home() && $post != null) {
+                foreach (get_post_ancestors($post->ID) as $ancestor_id) {
+                    echo "<li class='breadcrumb-child'><a href='" . get_permalink($ancestor_id) . "'>" . get_the_title($ancestor_id) . "</a></li>";
+                }
 
-                    if (is_archive()) {
+                if (is_archive()) {
+                    echo "<li class='breadcrumb-child'><a href='" .
+                        get_post_type_archive_link(
+                            $wp_query->query['post_type']
+                        ) . "'>" .
+                        post_type_archive_title(
+                            '',
+                            false
+                        ) . "</a></li> ";
+                    if (is_post_type_archive('evidence') && get_query_var('witness')) {
+                        $witness = get_term_by('slug', get_query_var("witness"), "witness");
                         echo "<li class='breadcrumb-child'><a href='" .
-                            get_post_type_archive_link(
-                                $wp_query->query['post_type']
-                            ) . "'>" .
-                            post_type_archive_title(
-                                '',
-                                false
-                            ) . "</a></li> ";
-                        if (is_post_type_archive('evidence') && get_query_var('witness')) {
-                            $witness = get_term_by('slug', get_query_var("witness"), "witness");
-                            echo "<li class='breadcrumb-child'><a href='" .
-                                get_permalink(
-                                    get_page_by_title(
-                                        'evidence'
-                                    )
-                                ) . "?witness=" . get_query_var('witness') . "'> Witness: " . $witness->name . "</a></li>";
-                        } elseif (is_post_type_archive('evidence') && get_query_var('hdate')) {
-                            echo "<li class='breadcrumb-child'><a href='" .
-                                get_permalink(
-                                    get_page_by_title(
-                                        'evidence'
-                                    )
-                                ) . "?hdate=" .
-                                get_query_var(
-                                    'hdate'
-                                ) . "'> Date: " .
-                                date(
-                                    'l j F Y',
-                                    strtotime($_GET['hdate'])
-                                ) . "</a></li>";
-                        }
+                            get_permalink(
+                                get_page_by_title(
+                                    'evidence'
+                                )
+                            ) . "?witness=" . get_query_var('witness') . "'> Witness: " . $witness->name . "</a></li>";
+                    } elseif (is_post_type_archive('evidence') && get_query_var('hdate')) {
+                        echo "<li class='breadcrumb-child'><a href='" .
+                            get_permalink(
+                                get_page_by_title(
+                                    'evidence'
+                                )
+                            ) . "?hdate=" .
+                            get_query_var(
+                                'hdate'
+                            ) . "'> Date: " .
+                            date(
+                                'l j F Y',
+                                strtotime($_GET['hdate'])
+                            ) . "</a></li>";
+                    }
+                } else {
+                    if (is_search()) {
+                        echo "<li class='breadcrumb-child'>Search Results for: " . get_search_query() . "</li>";
                     } else {
-                        if (is_search()) {
-                            echo "<li class='breadcrumb-child'>Search Results for: " . get_search_query() . "</li>";
-                        } else {
-                            if (is_singular('hearing')) {
-                                echo "<li class='breadcrumb-child'><a href='" . get_permalink(get_page_by_title('hearings')) . "'>Hearings</a> </li>";
-                            }
-                            echo "<li class='breadcrumb-child'><a href='" . get_permalink() . "'>" . get_the_title() . "</a></li>";
+                        if (is_singular('hearing')) {
+                            echo "<li class='breadcrumb-child'><a href='" . get_permalink(get_page_by_title('hearings')) . "'>Hearings</a> </li>";
                         }
+                        echo "<li class='breadcrumb-child'><a href='" . get_permalink() . "'>" . get_the_title() . "</a></li>";
                     }
                 }
-                ?>
+            }
+            ?>
             </ul>
         </div>
     </section>
 
-    <div id="content" class="site-content">
+<div id="content" class="site-content">
