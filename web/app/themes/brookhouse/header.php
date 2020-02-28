@@ -70,16 +70,21 @@ $moj_bh_phone_number_link = prepend_country_code_to_number($moj_bh_phone_number)
                 </div>
             </div>
         </header><!-- #masthead -->
-        <?php if (is_front_page()) { ?>
-        <section id="tagline">
-            <div class="site-branding tagline">
-                <?php _e(
-                    'An independent investigation into the potential mistreatment of detainees at Brook House IRC in 2017',
-                    'brookhouse'
-                ); ?>
-            </div>
-        </section>
-        <?php } ?>
+        <?php if (is_front_page()) {
+
+            $banner_text  = get_field('header_banner_text');
+
+            if(!empty($banner_text)){
+            ?>
+                <section id="tagline">
+                    <div class="site-branding tagline">
+                        <?php echo $banner_text; ?>
+                    </div>
+                </section>
+             <?php
+                }
+            }
+            ?>
         <section id="breadcrumbs-wrapper">
             <div id="breadcrumbs">
                 <ul>
