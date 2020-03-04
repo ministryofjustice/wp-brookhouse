@@ -1,6 +1,6 @@
 {
     "key": "group_5e57e3916479c",
-    "title": "Home Page Content",
+    "title": "CTA Section Content",
     "fields": [
         {
             "key": "field_5e57e781057e5",
@@ -173,6 +173,13 @@
                 "operator": "==",
                 "value": "page-homepage.php"
             }
+        ],
+        [
+            {
+                "param": "page_template",
+                "operator": "==",
+                "value": "page-cta.php"
+            }
         ]
     ],
     "menu_order": 0,
@@ -183,5 +190,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1582880540
+    "modified": 1583334646
 }
