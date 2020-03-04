@@ -1,6 +1,6 @@
 <?php
 
-/* Template Name: Home Page */
+/* Template Name: CTA Page */
 
 get_header();
 get_sidebar();
