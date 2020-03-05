@@ -6,7 +6,8 @@ mix_.setPublicPath('./dist')
     .js([
         _asset + 'js/navigation.js',
         _asset + 'js/skip-link-focus-fix.js',
-        _asset + 'js/global.js'
+        _asset + 'js/global.js',
+        _asset + 'js/document-listing.js'
     ], 'js/main.min.js')
     .js(_asset + 'js/IE8.js', 'dist/js/ie8.js')
     .js([

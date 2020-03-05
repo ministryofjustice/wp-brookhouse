@@ -29,68 +29,99 @@ get_header();
                         'taxonomy' => $doc_type
                     ));
 
-                    if (is_array($doc_categories) && !empty($doc_categories)) {
-
-                        foreach ($doc_categories as $category) { ?>
+                    if (is_array($doc_categories) && !empty($doc_categories)) { ?>
+                        <div class="doc-listing-filters">
+                            <h3>Document List Filters</h3>
+                            <div class="doc-listing-cat-filter-wrapper">
+                                <label for="doc-cat-filter">Document Category</label>
+                                <select id="doc-cat-filter">
+                                    <option value="">All categories</option>
+                                    <?php foreach ($doc_categories as $category) { ?>
+                                        <option value="<?php echo $category->term_id; ?>"><?php echo $category->name; ?></option>
+                                        <?php
+                                    }
+                                    ?>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="document-list">
                             <?php
 
-                            $documents = get_posts(
-                                array(
-                                    'post_type' => 'document',
-                                    'posts_per_page' => -1,
-                                    'tax_query' => array(
-                                        array(
-                                            'taxonomy' => $doc_type,
-                                            'field'    => 'slug',
-                                            'terms'    => $category->slug,
-                                        ),
-                                    ),
-                                )
-                            );
 
-                            if (is_array($documents) && !empty($documents)) { ?>
-
-                                <h2 class="table-title"><?php echo $category->name; ?></h2>
-
+                            foreach ($doc_categories as $category) { ?>
                                 <?php
 
-                                foreach ($documents as $doc) {
-                                    include( locate_template( 'content-document-list-item.php', false, false ) );
+                                $documents = get_posts(
+                                    array(
+                                        'post_type' => 'document',
+                                        'posts_per_page' => -1,
+                                        'tax_query' => array(
+                                            array(
+                                                'taxonomy' => $doc_type,
+                                                'field' => 'slug',
+                                                'terms' => $category->slug,
+                                            ),
+                                        ),
+                                        'orderby' => 'meta_value_num',
+                                        'meta_key' => 'publish_date',
+                                        'order' => 'DESC',
+                                    )
+                                );
+
+                                if (is_array($documents) && !empty($documents)) { ?>
+                                    <div id="doc-cat-<?php echo $category->term_id; ?>"
+                                         class="document-list-by-category">
+                                        <h2><?php echo $category->name; ?></h2>
+
+                                        <?php
+
+                                        foreach ($documents as $doc) {
+                                            include(locate_template('content-document-list-item.php', false, false));
+                                        }
+                                        ?>
+                                    </div>
+                                    <?php
+
                                 }
 
                             }
+                            ?>
+                        </div>
+                        <?php
 
-                        }
-
-                    }
-                    else {
+                    } else {
                         $documents = get_posts(
                             array(
                                 'post_type' => 'document',
                                 'posts_per_page' => -1,
                                 'meta_query' => array(
                                     array(
-                                        'key'     => 'document_type_to_upload',
-                                        'value'   => $doc_type,
+                                        'key' => 'document_type_to_upload',
+                                        'value' => $doc_type,
                                     ),
                                 ),
-                                'orderby'   => 'meta_value_num',
-                                'meta_key'  => 'publish_date',
-                                'order'   => 'DESC',
+                                'orderby' => 'meta_value_num',
+                                'meta_key' => 'publish_date',
+                                'order' => 'DESC',
                             )
                         );
 
-                        if (is_array($documents) && !empty($documents)) {
+                        if (is_array($documents) && !empty($documents)) { ?>
 
-                            foreach ($documents as $doc) {
+                            <div class="document-list">
 
-                                include( locate_template( 'content-document-list-item.php', false, false ) );
-                            }
+                                <?php
+                                foreach ($documents as $doc) {
 
-                        }
-                        else { ?>
+                                    include(locate_template('content-document-list-item.php', false, false));
+                                }
+                                ?>
+                            </div>
+                            <?php
+
+                        } else { ?>
                             <p>No Documents Found</p>
-                        <?php
+                            <?php
 
                         }
                     }
