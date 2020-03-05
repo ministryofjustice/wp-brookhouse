@@ -295,7 +295,7 @@ require get_template_directory() . '/inc/custom-admin-ajax.php';
 add_filter('ot_theme_mode', '__return_true');
 add_filter('ot_show_pages', '__return_true');
 add_filter('ot_show_pages', '__return_false');
-require_once('option-tree/ot-loader.php');
+
 load_template(trailingslashit(get_template_directory()) . 'inc/theme-options.php');
 
 // Get attachment ID from src(url)
