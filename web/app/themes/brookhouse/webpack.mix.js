@@ -14,7 +14,6 @@ mix_.setPublicPath('./dist')
         _asset + 'js/field_date.js',
     ], 'dist/js/custom-admin.min.js')
     .js(_asset + 'js/combodate.js', 'dist/js/combodate.min.js')
-    .js(_asset + 'js/faqs.js', 'dist/js/faqs.min.js')
     .sass(_asset + 'scss/error-pages/errors/404.sass', 'dist/css/404.css')
     .sass(_asset + 'scss/error-pages/errors/error-page.sass', 'dist/css/error-page.css')
     .copy(_asset + 'js/*.min.js', 'dist/js/')
