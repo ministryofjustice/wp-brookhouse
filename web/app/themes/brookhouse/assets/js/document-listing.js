@@ -3,18 +3,19 @@
  */
 jQuery(document).ready(function ($) {
 
-    $('#doc-cat-filter').change(function () {
-        var category = $(this).val();
+    if ($('#doc-cat-filter').length) {
+        $('#doc-cat-filter').change(function () {
+            var category = $(this).val();
 
-        if (category.length) {
-            $('.document-list-by-category').hide();
-            $('#doc-cat-' + category).show();
+            if (category.length) {
+                $('.document-list-by-category').hide();
+                $('#doc-cat-' + category).show();
 
-        } else {
-            $('.document-list-by-category').show();
-        }
+            } else {
+                $('.document-list-by-category').show();
+            }
 
-    });
-
+        });
+    }
 
 });
