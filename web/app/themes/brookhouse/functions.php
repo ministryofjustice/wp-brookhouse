@@ -388,3 +388,16 @@ function prepend_country_code_to_number($phone_number, $code = '+44')
 
     return $number_link;
 }
+
+/**
+ * Adds a modification filter to CF7 that permits outside shortcode processing
+ * @param $form
+ * @return string
+ */
+function moj_wpcf7_form_elements($form)
+{
+    $form = do_shortcode($form);
+    return $form;
+}
+
+add_filter('wpcf7_form_elements', 'moj_wpcf7_form_elements');
