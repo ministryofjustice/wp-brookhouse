@@ -87,7 +87,6 @@ function moj_get_asset($handle)
         'admin-css' => $manifest['/css/custom-admin.min.css'],
         'moment' => $manifest['/js/moment.min.js'],
         'combodate' => $manifest['/js/combodate.min.js'],
-        'faq-accordion' => $manifest['/js/faqs.min.js'],
         'ie8' => $manifest['/js/ie8.js'],
 
         // always use non-protocol URL's
@@ -167,42 +166,6 @@ function brookhouse_scripts()
 
     if (is_singular() && comments_open() && get_option('thread_comments')) {
         wp_enqueue_script('comment-reply');
-    }
-
-    if (is_page('hearings')) {
-        wp_enqueue_script('jquery-ui-accordion');
-        wp_enqueue_style('bh-jquery-ui');
-    }
-
-    if (is_page('evidence') || is_post_type_archive('evidence')) {
-        wp_enqueue_script('jquery-ui-datepicker');
-        wp_enqueue_script(
-            'moment',
-            moj_get_asset('moment'),
-            array('jquery'),
-            null,
-            true
-        );
-        wp_enqueue_script(
-            'combodate',
-            moj_get_asset('combodate'),
-            array('moment'),
-            null,
-            true
-        );
-        wp_enqueue_style('jquery-ui');
-    }
-
-    if (is_page('about-the-investigation')) {
-        wp_enqueue_script('jquery-ui-accordion');
-        wp_enqueue_script(
-            'faq-accordion',
-            moj_get_asset('faq-accordion'),
-            array('jquery-ui-accordion', 'jquery'),
-            null,
-            true
-        );
-        wp_enqueue_style('bh-jquery-ui');
     }
 }
 
@@ -315,19 +278,6 @@ function brookhouse_query_vars($q_vars)
     return $q_vars;
 }
 
-// Filter evidence by date from query_var
-function meta_filter_evidence($query)
-{
-    if (isset($_GET['hdate']) && $query->query['post_type'] == 'evidence') {
-        // $query is the WP_Query object, set is simply a method of the WP_Query class that sets a query var parameter
-        $query->set('meta_key', 'evidence_hearing_date');
-        $query->set('meta_value', $_GET['hdate']);
-    }
-    return $query;
-}
-
-add_filter('pre_get_posts', 'meta_filter_evidence');
-
 // Customise wp menu so that to make active menu items for archive and CPTs
 add_filter('nav_menu_css_class', 'special_nav_class', 10, 2);
 
@@ -370,7 +320,6 @@ function moj_get_page_uri()
     return home_url($wp->request);
 }
 
-include('inc/locale-shortcodes.php');
 include('inc/acf-nav-menu-field.php');
 
 add_action('init', 'homesettings_option_pages');
