@@ -1,6 +1,6 @@
 {
     "key": "group_5e458b21dfd7a",
-    "title": "Homepage header",
+    "title": "Header Settings",
     "fields": [
         {
             "key": "field_5e458b5ae4f87",
@@ -22,6 +22,21 @@
             "min": "",
             "max": "",
             "step": ""
+        },
+        {
+            "key": "field_5e6254c0fbb21",
+            "label": "Header Link",
+            "name": "header_link",
+            "type": "link",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array"
         }
     ],
     "location": [
@@ -41,5 +56,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "Content to go in the header on the homepage",
-    "modified": 1582043924
+    "modified": 1583502547
 }
