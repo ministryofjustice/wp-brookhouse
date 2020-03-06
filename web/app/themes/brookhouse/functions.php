@@ -251,16 +251,6 @@ require get_template_directory() . '/inc/cpt/cpt-document.php';
 /* Taxonomy declarations */
 require get_template_directory() . '/inc/tax/tax-witness.php';
 
-/* Admin AJAX functions */
-require get_template_directory() . '/inc/custom-admin-ajax.php';
-
-/* Adds OptionTree Theme Mode */
-add_filter('ot_theme_mode', '__return_true');
-add_filter('ot_show_pages', '__return_true');
-add_filter('ot_show_pages', '__return_false');
-
-load_template(trailingslashit(get_template_directory()) . 'inc/theme-options.php');
-
 // Get attachment ID from src(url)
 function get_attachment_id_from_src($image_src)
 {
