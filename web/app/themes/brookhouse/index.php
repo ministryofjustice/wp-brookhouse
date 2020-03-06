@@ -15,38 +15,6 @@ get_sidebar();
 ?>
 
 <div id="primary" class="content-area">
-    <div id="main-boxout">
-        <h2>Latest News</h2>
-        <?php
-        if (function_exists('ot_get_option')) {
-            echo ot_get_option('boxout_text');
-        }
-        ?>
-    </div>
-    <main id="main" class="site-main">
-        <div id="main-content">
-
-            <h1>Brook House Investigations</h1>
-
-            <div class="highlighted-box">
-                <?php
-                if (function_exists('ot_get_option')) {
-                    echo ot_get_option('main_text');
-                }
-                ?>
-            </div>
-
-        </div>
-    </main><!-- #main -->
-    <div id="main-boxout" class="responsive">
-        <h2>Latest News</h2>
-        <?php
-        if (function_exists('ot_get_option')) {
-            echo ot_get_option('boxout_text');
-        }
-        ?>
-    </div>
-
 </div><!-- #primary -->
 
 <?php 

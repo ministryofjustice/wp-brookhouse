@@ -12,6 +12,8 @@
 $moj_bh_phone_number = get_field('telephone_number', 'option');
 $moj_bh_phone_number_link = prepend_country_code_to_number($moj_bh_phone_number);
 
+$moj_bh_header_link = get_field('header_link', 'option');
+
 ?>
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
@@ -65,9 +67,11 @@ $moj_bh_phone_number_link = prepend_country_code_to_number($moj_bh_phone_number)
                     </div>
                 </div>
 
+                <?php if(!empty($moj_bh_header_link)){ ?>
                 <div class="bh-languages col">
-                    <a href="#menu-languages">Languages</a>
+                    <a href="<?php echo $moj_bh_header_link['url']; ?>"><?php echo $moj_bh_header_link['title']; ?></a>
                 </div>
+                <?php } ?>
             </div>
         </header><!-- #masthead -->
         <?php if (is_front_page()) {
