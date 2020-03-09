@@ -51,7 +51,7 @@ function brookhouse_create_document_taxonomies()
             'rewrite'           => array( 'slug' => $taxonomy )
             );
 
-            register_taxonomy($taxonomy, 'Document', $args);
+            register_taxonomy($taxonomy, 'Documents', $args);
         }
     }
 }

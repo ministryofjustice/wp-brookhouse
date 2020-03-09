@@ -5,7 +5,7 @@
         {
             "key": "field_5e624c52ac9d1",
             "label": "Hearing date",
-            "name": "hearing-date",
+            "name": "hearing_date",
             "type": "date_picker",
             "instructions": "",
             "required": 0,
@@ -22,7 +22,7 @@
         {
             "key": "field_5e624c7b614fd",
             "label": "Hearing time",
-            "name": "hearing-time",
+            "name": "hearing_time",
             "type": "time_picker",
             "instructions": "",
             "required": 0,
@@ -38,7 +38,7 @@
         {
             "key": "field_5e624c0cf98e2",
             "label": "Additional hearing information",
-            "name": "hearing-information",
+            "name": "hearing_body_text",
             "type": "wysiwyg",
             "instructions": "",
             "required": 0,
@@ -56,8 +56,8 @@
         },
         {
             "key": "field_5e624bad929c8",
-            "label": "Hearing document section",
-            "name": "hearing-documents",
+            "label": "Hearing document",
+            "name": "hearing_document",
             "type": "repeater",
             "instructions": "Multiple documents can be added by adding row.",
             "required": 0,
@@ -93,6 +93,62 @@
                     "mime_types": ""
                 }
             ]
+        },
+        {
+            "key": "field_5e663010aaadc",
+            "label": "Hearing link",
+            "name": "hearing_link",
+            "type": "repeater",
+            "instructions": "Multiple links to videos can be added by adding row.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "collapsed": "",
+            "min": 0,
+            "max": 0,
+            "layout": "table",
+            "button_label": "",
+            "sub_fields": [
+                {
+                    "key": "field_5e6633bed1a64",
+                    "label": "Hearing link title",
+                    "name": "hearing_link_title",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": ""
+                },
+                {
+                    "key": "field_5e663010aaadd",
+                    "label": "Add hearing link URL",
+                    "name": "hearing_link_url",
+                    "type": "url",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": ""
+                }
+            ]
         }
     ],
     "location": [
@@ -112,5 +168,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1583505321
+    "modified": 1583760562
 }

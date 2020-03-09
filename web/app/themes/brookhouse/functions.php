@@ -240,12 +240,12 @@ require get_template_directory() . '/inc/customizer.php';
  */
 require get_template_directory() . '/inc/jetpack.php';
 
-/* Custom Post Type declarations */
-require get_template_directory() . '/inc/cpt/cpt-document.php';
-require get_template_directory() . '/inc/cpt/cpt-hearing.php';
-
 /* Taxonomy declarations */
 require get_template_directory() . '/inc/taxonomies.php';
+
+/* Custom Post Type declarations */
+require get_template_directory() . '/inc/cpt/cpt-documents.php';
+require get_template_directory() . '/inc/cpt/cpt-hearings.php';
 
 // Get attachment ID from src(url)
 function get_attachment_id_from_src($image_src)
