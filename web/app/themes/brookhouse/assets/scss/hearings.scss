@@ -1,36 +1,44 @@
 /* Hearings */
 
-
 .hearings {
-  border-bottom: 2px solid#847462;
+    border-bottom: 2px solid#847462;
 
-  h2,
-  h3 {
-    margin-bottom: 6px;
-  }
-
-  .col {
-    margin: 18px 0;
-
-    .hearing_bodytext,
-    .hearing_document,
-    .hearing_link {
-      padding: 0;
+    h2,
+    h3 {
+        margin-bottom: 6px;
     }
 
-    .hearing_links,
-    .hearing_document {
-      padding-bottom: 6px;
-      margin-bottom: 12px;
-    }
-  }
+    .col {
+        margin: 18px 0;
 
-  @media screen and (max-width: 649px) {
-    .hearing_time,
-    .hearing_date {
-      padding: 0;
+        .hearing_bodytext,
+        .hearing_document,
+        .hearing_link {
+            padding: 0;
+        }
+
+        .hearing_links,
+        .hearing_document {
+            padding-bottom: 6px;
+            margin-bottom: 12px;
+        }
     }
-  }
+
+    @media screen and (max-width: 649px) {
+
+        .hearing_time,
+        .hearing_date {
+            padding: 0;
+        }
+    }
 
 }
 
+.hearings-template-default {
+
+    .hearing_links,
+    .hearing_document {
+        padding-bottom: 6px;
+        margin-bottom: 12px;
+    }
+}
