@@ -51,7 +51,7 @@ function brookhouse_ctp_document_init()
 
     ];
 
-    register_post_type('document', $args);
+    register_post_type('documents', $args);
 }
 
 /**
@@ -66,8 +66,8 @@ function wpdocs_remove_plugin_metaboxes()
     global $brookhouseTaxonomies;
 
     if (count($brookhouseTaxonomies) > 0) {
-        remove_meta_box('corporate-documentsdiv', 'Document', 'side');
-        remove_meta_box('media-releasesdiv', 'Document', 'side');
-        remove_meta_box('other-publicationsdiv', 'Document', 'side');
+        remove_meta_box('corporate-documentsdiv', 'Documents', 'side');
+        remove_meta_box('media-releasesdiv', 'Documents', 'side');
+        remove_meta_box('other-publicationsdiv', 'Documents', 'side');
     }
 }

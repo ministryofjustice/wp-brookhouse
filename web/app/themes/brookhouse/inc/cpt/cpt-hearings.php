@@ -25,7 +25,7 @@ function brookhouse_ctp_hearing_init()
         'new_item' => 'New Entry',
         'all_items' => 'View All Hearings',
         'view_item' => 'View Entries',
-        'search_items' => 'Search Hearing',
+        'search_items' => 'Search Hearings',
         'not_found' => 'No entries found',
         'not_found_in_trash' => 'No Hearing entries found in Bin',
         'parent_item_colon' => '',
@@ -48,23 +48,5 @@ function brookhouse_ctp_hearing_init()
         'supports' => array('title'),
     ];
 
-    register_post_type('hearing', $args);
+    register_post_type('hearings', $args);
 }
-
-/**
-*
-* Remove side meta boxes on Document entry admin page - these have been replaced in ACF with ACF fields
-*
-* */
-//add_action('do_meta_boxes', 'wpdocs_remove_plugin_metaboxes');
-
-// function wpdocs_remove_plugin_metaboxes()
-// {
-//     global $brookhouseTaxonomies;
-
-//     if (count($brookhouseTaxonomies) > 0) {
-//         remove_meta_box('corporate-documentsdiv', 'Document', 'side');
-//         remove_meta_box('media-releasesdiv', 'Document', 'side');
-//         remove_meta_box('other-publicationsdiv', 'Document', 'side');
-//     }
-// }
