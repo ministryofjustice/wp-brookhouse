@@ -134,7 +134,7 @@
             "display_format": "d\/m\/Y",
             "return_format": "d\/m\/Y",
             "first_day": 1,
-            "default_value": "20200226"
+            "default_value": "20200309"
         },
         {
             "key": "field_5e4c169cfb12e",
@@ -161,7 +161,7 @@
             {
                 "param": "post_type",
                 "operator": "==",
-                "value": "document"
+                "value": "documents"
             }
         ]
     ],
@@ -173,5 +173,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1582733353
+    "modified": 1583765248
 }

@@ -8,7 +8,7 @@
             "name": "hearing_date",
             "type": "date_picker",
             "instructions": "",
-            "required": 0,
+            "required": 1,
             "conditional_logic": 0,
             "wrapper": {
                 "width": "",
@@ -74,9 +74,28 @@
             "button_label": "",
             "sub_fields": [
                 {
+                    "key": "field_5e666585907cc",
+                    "label": "File title",
+                    "name": "hearing_file_title",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": ""
+                },
+                {
                     "key": "field_5e624d756cfbd",
                     "label": "Add hearing document",
-                    "name": "hearing-file",
+                    "name": "hearing_file_url",
                     "type": "file",
                     "instructions": "",
                     "required": 0,
@@ -86,7 +105,7 @@
                         "class": "",
                         "id": ""
                     },
-                    "return_format": "array",
+                    "return_format": "url",
                     "library": "all",
                     "min_size": "",
                     "max_size": "",
@@ -156,7 +175,7 @@
             {
                 "param": "post_type",
                 "operator": "==",
-                "value": "hearing"
+                "value": "hearings"
             }
         ]
     ],
@@ -168,5 +187,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1583760562
+    "modified": 1583773607
 }
