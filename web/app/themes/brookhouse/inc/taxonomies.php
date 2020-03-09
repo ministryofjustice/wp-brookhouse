@@ -14,7 +14,7 @@ $brookhouseTaxonomies = [
 
 /**
 *
-* Register the taxonomies
+* Register the taxonomies used in the document section
 *
 * */
 add_action('init', 'brookhouse_create_document_taxonomies');
