@@ -1,9 +1,16 @@
-/* Tag Line */
+/* Search Styles */
 
 .search {
 
   article {
     border-bottom: 2px solid $beige-dark;
+  }
+
+  .search-submit {
+    background: $beige-dark;
+    padding: 10px 18px;
+    color: $white;
+    border: none;
   }
 
 }

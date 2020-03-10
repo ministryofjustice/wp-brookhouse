@@ -13,14 +13,18 @@ get_header();
 <div id="primary" class="content-area">
     <main id="main" class="site-main">
 
-        <?php if ( have_posts() ) : ?>
-
         <header class="page-header">
             <h1 class="page-title">
                 <?php _e( 'Search results for: ', 'brookhouse' ); ?>
                 <span class="page-description"><?php echo get_search_query(); ?></span>
             </h1>
         </header><!-- .page-header -->
+
+        <div class="">
+            <?php get_search_form(); ?>
+        </div>
+
+        <?php if ( have_posts() ) : ?>
 
         <?php
 			// Start the Loop.

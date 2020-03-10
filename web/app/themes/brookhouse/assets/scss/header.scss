@@ -99,6 +99,26 @@
   }
 
   .bh-languages {
-    text-align: right;
+
+    text-align: center;
+
+    @media screen and (min-width: 769px) {
+      text-align: right;
+    }
+  }
+
+  .site-header-search-form {
+    text-align: center;
+
+    @media screen and (min-width: 769px) {
+      text-align: right;
+    }
+
+    .search-submit {
+      background: $beige-dark;
+      padding: 10px 18px;
+      color: $white;
+      border: none;
+    }
   }
 }
