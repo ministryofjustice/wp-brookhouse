@@ -7,8 +7,7 @@
 get_header();
 ?>
 <?php get_sidebar(); ?>
-<?php $s = get_search_query();
-?>
+<?php $s = get_search_query(); ?>
 
 <div id="primary" class="content-area">
     <main id="main" class="site-main">
@@ -69,25 +68,25 @@ get_header();
                 'total' => $wp_query->max_num_pages,
                 'prev_text' => '<span class="screen-reader-text">' . __(
                         'Search results - previous page',
-                        'justicejobs'
-                    ) . '</span><span aria-hidden="true">' . __('PREV', 'justicejobs') . '</span>',
+                        'brookhouse'
+                    ) . '</span><span aria-hidden="true">' . __('PREV', 'brookhouse') . '</span>',
                 'next_text' => '<span class="screen-reader-text"> ' . __(
                         'Search results',
-                        'justicejobs'
+                        'brookhouse'
                     ) . ' -  </span>' . __(
                         'NEXT',
-                        'justicejobs'
+                        'brookhouse'
                     ) . ' <span class="screen-reader-text">' . __(
                         'page',
-                        'justicejobs'
+                        'brookhouse'
                     ) . '</span>',
                 'before_page_number' => '<span class="screen-reader-text">' . __(
                         'Search results - page',
-                        'justicejobs'
+                        'brookhouse'
                     ) . '</span>',
                 'after_page_number' => '<span class="screen-reader-text"> ' . __(
                         ' of ',
-                        'justicejobs'
+                        'brookhouse'
                     ) . __($wp_query->max_num_pages) . '</span>'
             ));
 
