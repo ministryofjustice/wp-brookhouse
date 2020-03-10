@@ -67,11 +67,17 @@ $moj_bh_header_link = get_field('header_link', 'option');
                     </div>
                 </div>
 
-                <?php if(!empty($moj_bh_header_link)){ ?>
-                <div class="bh-languages col">
-                    <a href="<?php echo $moj_bh_header_link['url']; ?>"><?php echo $moj_bh_header_link['title']; ?></a>
-                </div>
-                <?php } ?>
+                <div class="col">
+                    <?php if(!empty($moj_bh_header_link)){ ?>
+                        <div class="bh-languages">
+                            <a href="<?php echo $moj_bh_header_link['url']; ?>"><?php echo $moj_bh_header_link['title']; ?></a>
+                        </div>
+                    <?php } ?>
+
+                    <div class="site-header-search-form">
+                        <?php get_search_form(); ?>
+                    </div>
+
             </div>
         </header><!-- #masthead -->
         <?php if (is_front_page()) {
@@ -97,53 +103,52 @@ $moj_bh_header_link = get_field('header_link', 'option');
                     </li>
                     <?php
                     if (!is_home() && $post != null) {
+
                         foreach (get_post_ancestors($post->ID) as $ancestor_id) {
                             echo "<li class='breadcrumb-child'><a href='" . get_permalink($ancestor_id) . "'>" . get_the_title($ancestor_id) . "</a></li>";
                         }
-
-                        if (is_archive()) {
+                    }
+                    else if (is_archive()) {
+                        echo "<li class='breadcrumb-child'><a href='" .
+                            get_post_type_archive_link(
+                                $wp_query->query['post_type']
+                            ) . "'>" .
+                            post_type_archive_title(
+                                '',
+                                false
+                            ) . "</a></li> ";
+                        if (is_post_type_archive('evidence') && get_query_var('witness')) {
+                            $witness = get_term_by('slug', get_query_var("witness"), "witness");
                             echo "<li class='breadcrumb-child'><a href='" .
-                                get_post_type_archive_link(
-                                    $wp_query->query['post_type']
-                                ) . "'>" .
-                                post_type_archive_title(
-                                    '',
-                                    false
-                                ) . "</a></li> ";
-                            if (is_post_type_archive('evidence') && get_query_var('witness')) {
-                                $witness = get_term_by('slug', get_query_var("witness"), "witness");
-                                echo "<li class='breadcrumb-child'><a href='" .
-                                    get_permalink(
-                                        get_page_by_title(
-                                            'evidence'
-                                        )
-                                    ) . "?witness=" . get_query_var('witness') . "'> Witness: " . $witness->name . "</a></li>";
-                            } elseif (is_post_type_archive('evidence') && get_query_var('hdate')) {
-                                echo "<li class='breadcrumb-child'><a href='" .
-                                    get_permalink(
-                                        get_page_by_title(
-                                            'evidence'
-                                        )
-                                    ) . "?hdate=" .
-                                    get_query_var(
-                                        'hdate'
-                                    ) . "'> Date: " .
-                                    date(
-                                        'l j F Y',
-                                        strtotime($_GET['hdate'])
-                                    ) . "</a></li>";
-                            }
+                                get_permalink(
+                                    get_page_by_title(
+                                        'evidence'
+                                    )
+                                ) . "?witness=" . get_query_var('witness') . "'> Witness: " . $witness->name . "</a></li>";
+                        } elseif (is_post_type_archive('evidence') && get_query_var('hdate')) {
+                            echo "<li class='breadcrumb-child'><a href='" .
+                                get_permalink(
+                                    get_page_by_title(
+                                        'evidence'
+                                    )
+                                ) . "?hdate=" .
+                                get_query_var(
+                                    'hdate'
+                                ) . "'> Date: " .
+                                date(
+                                    'l j F Y',
+                                    strtotime($_GET['hdate'])
+                                ) . "</a></li>";
+                        }
+                    } else {
+
+                        if (is_search()) {
+                            echo "<li class='breadcrumb-child'>Search Results for: " . get_search_query() . "</li>";
                         } else {
-                            if (is_search()) {
-                                echo "<li class='breadcrumb-child'>Search Results for: " . get_search_query() . "</li>";
-                            } else {
-                                if (is_singular('hearing')) {
-                                    echo "<li class='breadcrumb-child'><a href='" . get_permalink(get_page_by_title('hearings')) . "'>Hearings</a> </li>";
-                                }
-                                echo "<li class='breadcrumb-child'><a href='" . get_permalink() . "'>" . get_the_title() . "</a></li>";
-                            }
+                            echo "<li class='breadcrumb-child'><a href='" . get_permalink() . "'>" . get_the_title() . "</a></li>";
                         }
                     }
+
                     ?>
                 </ul>
             </div>

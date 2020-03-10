@@ -13,95 +13,90 @@ get_header();
     <main id="main" class="site-main">
 
         <header class="page-header">
-            <h1 class="page-title"><?php printf(__('Search Results for: %s', 'brookhouse'), '<span>' . get_search_query() . '</span>'); ?></h1>
+            <h1 class="page-title">
+                <?php _e('Search results for: ', 'brookhouse'); ?>
+                <span class="page-description"><?php echo get_search_query(); ?></span>
+            </h1>
         </header><!-- .page-header -->
 
-        <?php /* Start the Loop */ ?>
+        <div class="">
+            <?php get_search_form(); ?>
+        </div>
 
-        <h2>Relevant Hearings</h2>
-        <?php
-        $hearings_results = new WP_Query(array(
-            'post_type' => 'hearing',
-            's' => $s,
-        ));
-        if (function_exists('relevanssi_do_query')) {
-            relevanssi_do_query($hearings_results);
-        }
-        ?>
-        <?php if ($hearings_results->have_posts()) : ?>
-            <?php //while ($hearings_results->have_posts()) : $hearings_results->the_post(); ?>
+        <?php if (have_posts()) : ?>
 
-                <?php //get_template_part('content', 'search'); ?>
+            <?php
+            // Start the Loop.
+            while (have_posts()) :
+                the_post(); ?>
 
-                <?php
+                <article <?php post_class(); ?>>
+                    <?php
 
-                // Check var for to see if month/year has changed
-                $cur_day = null;
-                // Toggle var for applying row highlight
-                $highlight = true;
+                    $result_title = get_the_title();
 
-                // Generate list of hearings, broken down by date
-                while ($hearings_results->have_posts()) {
-                    $hearings_results->the_post();
-                    // Tracks if current hearing date has am/pm sessions
-                    $hearing_am = $hearing_pm = false;
-                    if (isset($hearings_results->posts[$hearings_results->current_post + 1])) {
-                        $next_post = $hearings_results->posts[ $hearings_results->current_post + 1];
+                    if (get_post_type() === 'document') {
+                        $document_upload = get_field('document_upload');
+                        $ext = pathinfo($document_upload['url'], PATHINFO_EXTENSION);
+                        $result_title .= ' (' . $ext . ')';
                     } else {
-                        $next_post = false;
+                        $result_url = get_permalink();
                     }
+                    ?>
+                    <header>
+                        <h2 class="entry-title"><a href="<?php echo $result_url; ?>"><?php echo $result_title; ?></a>
+                        </h2>
+                    </header>
+                    <div class="entry-summary">
+                        <?php the_excerpt(); ?>
+                    </div>
+                </article>
 
-                    $session = get_post_meta($post->ID, "hearing_session", true);
-                    ${"hearing_$session"} = get_permalink($post->ID);
-                    if ($next_post && get_post_meta($post->ID, 'hearing_date', true) == get_post_meta($next_post->ID, 'hearing_date', true)) {
-                        $session = get_post_meta($next_post->ID, "hearing_session", true);
-                        ${"hearing_$session"} = get_permalink($next_post->ID);
-                        ?>
-                        <div class='hearing-entry<?php echo ($highlight ? " shaded" : ""); ?>'>
-                            <span class='hearing-date'><?php echo date('l j F Y', strtotime(get_post_meta($post->ID, 'hearing_date', true))); ?></span>
-                            <span class='session-link'><a href="<?php echo $hearing_am; ?>">AM Session</a></span>
-                            <span class='session-link'><a href="<?php echo $hearing_pm; ?>">PM Session</a></span>
-                        </div>
-                        <?php
-                        $hearings_results->the_post();
-                    } else {
-                        ?>
-                        <div class='hearing-entry<?php echo ($highlight ? " shaded" : ""); ?>'>
-                            <span class='hearing-date'><?php echo date('l j F Y', strtotime(get_post_meta($post->ID, 'hearing_date', true))); ?></span>
-                            <span class='session-link'><?php if ($hearing_am) { ?><a href="<?php echo $hearing_am; ?>">AM Session</a><?php } else { ?>–<?php } ?></span>
-                            <span class='session-link'><?php if ($hearing_pm) { ?><a href="<?php echo $hearing_pm; ?>">PM Session</a><?php } else { ?>–<?php } ?></span>
-                        </div>
-                        <?php
-                    }
-
-                    $highlight = !$highlight;
-                }
-                ?>
-
-            <?php //endwhile; ?>
-        <?php else: ?>
-            <p class='no-results'>No matching hearings found.</p>
-        <?php endif; ?>
+            <?php
 
 
-        <h2>Relevant Evidence</h2>
-        <?php
+            endwhile;
 
-        query_posts(array(
-            'post_type' => 'evidence',
-            's' => $s
-        ));
-        if (function_exists('relevanssi_do_query')) {
-            relevanssi_do_query($wp_query);
-        }
-        get_template_part('list-evidence');
-        wp_reset_query();
+            global $wp_query;
 
+            $big = 999999999; // need an unlikely integer
+            echo paginate_links(array(
+                'base' => str_replace($big, '%#%', get_pagenum_link($big)),
+                'format' => '?paged=%#%',
+                'mid_size' => 2,
+                'current' => max(1, get_query_var('paged')),
+                'total' => $wp_query->max_num_pages,
+                'prev_text' => '<span class="screen-reader-text">' . __(
+                        'Search results - previous page',
+                        'brookhouse'
+                    ) . '</span><span aria-hidden="true">' . __('PREV', 'brookhouse') . '</span>',
+                'next_text' => '<span class="screen-reader-text"> ' . __(
+                        'Search results',
+                        'brookhouse'
+                    ) . ' -  </span>' . __(
+                        'NEXT',
+                        'brookhouse'
+                    ) . ' <span class="screen-reader-text">' . __(
+                        'page',
+                        'brookhouse'
+                    ) . '</span>',
+                'before_page_number' => '<span class="screen-reader-text">' . __(
+                        'Search results - page',
+                        'brookhouse'
+                    ) . '</span>',
+                'after_page_number' => '<span class="screen-reader-text"> ' . __(
+                        ' of ',
+                        'brookhouse'
+                    ) . __($wp_query->max_num_pages) . '</span>'
+            ));
+
+
+        else :
+            echo "No Results found";
+
+        endif;
         ?>
-
-        <?php //brookhouse_content_nav('nav-below'); ?>
-
     </main><!-- #main -->
-    </div><!-- #primary -->
+</div><!-- #primary -->
 
 <?php get_footer(); ?>
