@@ -67,12 +67,16 @@ $moj_bh_header_link = get_field('header_link', 'option');
                     </div>
                 </div>
 
-                <?php if(!empty($moj_bh_header_link)){ ?>
-                    <a href="<?php echo $moj_bh_header_link['url']; ?>"><?php echo $moj_bh_header_link['title']; ?></a>
-                </div>
-                <?php } ?>
+                <div class="col">
+                    <?php if(!empty($moj_bh_header_link)){ ?>
+                        <div class="bh-languages">
+                            <a href="<?php echo $moj_bh_header_link['url']; ?>"><?php echo $moj_bh_header_link['title']; ?></a>
+                        </div>
+                    <?php } ?>
 
-                <?php get_search_form(); ?>
+                    <div class="site-header-search-form">
+                        <?php get_search_form(); ?>
+                    </div>
 
             </div>
         </header><!-- #masthead -->
