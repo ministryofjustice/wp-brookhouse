@@ -53,10 +53,10 @@ get_header();
                 </article>
 
             <?php
-
-
             endwhile;
-
+            ?>
+            <div class="search-navigation">
+           <?php
             global $wp_query;
 
             $big = 999999999; // need an unlikely integer
@@ -89,8 +89,10 @@ get_header();
                         'brookhouse'
                     ) . __($wp_query->max_num_pages) . '</span>'
             ));
-
-
+                ?>
+            </div>
+        <?php
+        
         else :
             echo "No Results found";
 
