@@ -9,6 +9,11 @@
 @import 'forms';
 @import 'footer';
 @import 'general';
-@import 'homepage';
 @import 'search';
+
+@import 'components/cta-section';
+
+@import 'page-templates/document-listing';
+
+/* To delete */
 @import 'old';

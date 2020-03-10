@@ -185,30 +185,6 @@ article.page ul li {
   line-height: 1.5em;
 }
 
-.results-line {
-  display: flex;
-  padding: 12px 0;
-  border-bottom: 1px solid #efefef;
-  -webkit-transition: background-color 0.3s ease;
-  -moz-transition: background-color 0.3s ease;
-  -ms-transition: background-color 0.3s ease;
-  -o-transition: background-color 0.3s ease;
-  transition: background-color 0.3s ease;
-
-  @media screen and (max-width: 768px) {
-    font-size: 0.9em;
-    display: flex;
-  }
-}
-
-.results-line:hover {
-  background-color: #FFFFE0;
-}
-
-.results-line:last-child {
-  border: none;
-}
-
 .external-link {
   position: relative;
   padding-right: 20px;

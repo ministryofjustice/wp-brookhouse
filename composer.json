@@ -35,6 +35,7 @@
         "wpackagist-plugin/classic-editor": "*",
         "wpackagist-plugin/fast-user-switching": "*",
         "wpackagist-plugin/contact-form-7": "*",
+        "wpackagist-plugin/maintenance":"^3.85",
         "ministryofjustice/wp-user-roles": "*",
         "thadafinser/user-agent-parser": "^2.0",
         "browscap/browscap-php": "^4.2",
