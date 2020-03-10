@@ -24,7 +24,6 @@ get_sidebar();
             ?>
 
         <h1><?php echo the_title(); ?></h1>
-
         <div class="hearing_date"><?php _e($hearing_date); ?></div>
         <div class="hearing_time"><?php _e($hearing_time); ?></div>
         <p class="hearing_bodytext"><?php _e($hearing_body_text); ?></p>
