@@ -9,6 +9,14 @@
         width: 100%;
         margin-bottom: 30px;
 
+        // reset for chrome
+        h2,
+        h3 {
+            margin: 0;
+            padding: 0;
+        }
+
+
         h2 {
             font-size: 1.4em;
         }
@@ -22,7 +30,7 @@
 
     table tr {
         background-color: $grey-light;
-        border: 2px solid #fff;
+        border: 2px solid $white;
         padding: .35em;
     }
 
@@ -30,6 +38,16 @@
     table td {
         padding: .625em;
         text-align: left;
+    }
+
+    table th {
+        background-color: #404040;
+        color: white;
+        border: 2px solid $white;
+    }
+
+    table td {
+        border: 2px solid $white;
     }
 
     // "date" column width
@@ -48,6 +66,10 @@
     }
 
     @media screen and (max-width: 600px) {
+        table caption {
+            padding: .625em 0;
+        }
+
         table thead {
             border: none;
             clip: rect(0 0 0 0);
@@ -61,18 +83,31 @@
 
         table tr {
             display: block;
-            margin-bottom: 12px;
+            margin-bottom: 6px;
+            border: none;
+            padding: 0;
         }
 
         table td {
-            border-bottom: 1px solid #ddd;
+            border:1px solid white; 
             display: block;
-            text-align: right;
+        }
+
+        table td:last-child {
+            border-bottom: none;
         }
 
         table td::before {
             content: attr(data-label);
             float: left;
+            margin-right: 6px;
+            margin-bottom: 6px;
+            font-weight: bold;
+        }
+
+        [data-label="Date"] {
+            background-color: #404040;
+            color: white;
         }
     }
 
@@ -82,10 +117,17 @@
 }
 
 .hearings-template-default {
+    #main {
+        margin-bottom: 12px;
+    }
 
     .hearing_links,
     .hearing_document {
         padding-bottom: 6px;
         margin-bottom: 12px;
+    }
+
+    h3 {
+        margin: 8px 0;
     }
 }

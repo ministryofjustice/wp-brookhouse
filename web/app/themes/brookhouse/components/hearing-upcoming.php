@@ -5,20 +5,20 @@
 // Get today's date so we can see what's coming up
 $today = date('Ymd');
 
-$args_compare = array (
+$args_compare = [
     'post_type' => 'hearings',
     'meta_key' => 'hearing_date',
     'orderby' => 'meta_value_num',
     'order' => 'ASC',
     'posts_per_page' => 2,
     'post_status' => 'publish',
-    'meta_query' => array(
-        array(
+    'meta_query' => [
+        [
             'key'     => 'hearing_date',
             'compare' => '>=',
             'value'   => $today,
-        ))
-);
+        ]]
+    ];
 
 $query_upcoming = new WP_Query($args_compare);
 ?>

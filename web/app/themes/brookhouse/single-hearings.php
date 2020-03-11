@@ -12,72 +12,41 @@ get_sidebar();
 <div id="primary" class="content-area">
     <main id="main" class="site-main">
 
-        <?php while (have_posts()) :
+    <?php 
+    
+    if (have_posts()) :
+        while (have_posts()) :
             the_post();
-            
-            // Get ACF hearing fields
-            $hearing_date = get_field('hearing_date');
-            $hearing_time = get_field('hearing_time');
-            $hearing_body_text = get_field('hearing_body_text');
-            $hearing_document = get_field('hearing_document');
-            $hearing_link = get_field('hearing_link');
-            ?>
 
-        <h1><?php echo the_title(); ?></h1>
-        <div class="hearing_date"><?php _e($hearing_date); ?></div>
-        <div class="hearing_time"><?php _e($hearing_time); ?></div>
-        <p class="hearing_bodytext"><?php _e($hearing_body_text); ?></p>
+            the_title('<h1>', '</h1>');
+            the_content('<p>', '</p>');
+        endwhile;
+    else :
+        _e('<p>' . esc_html_e('Sorry, no posts available.') . '</p>');
+    endif;
 
-            <?php
-            
-            /**
-             * Document listing
-             */
-            if ($hearing_document) {
-                _e('<div class="hearing_document">');
+    // ACF hearing fields
+    $hearing_date = get_field('hearing_date');
+    $hearing_time = get_field('hearing_time');
+    $hearing_body_text = get_field('hearing_body_text');
+    
+    _e('<span>'. $hearing_date . '</span><br>');
+    _e('<span>'. $hearing_time . '</span>');
+    _e('<p>' . $hearing_body_text . '</p>');
 
-                // Loop through the documents
-                if (have_rows('hearing_document')) :
-                    _e('<h2>Documents</h2>');
+    include(locate_template('components/hearing-link-section.php', false, false)); ?>
 
-                    while (have_rows('hearing_document')) :
-                            the_row();
+    <h3>Hearing location</h3>
 
-                            $hearing_file_title = get_sub_field('hearing_file_title');
-                            $hearing_file_url = get_sub_field('hearing_file_url');
+    <address>
+    Brook House Inquiry<br>
+    The International Dispute Resolution Centre<br>
+    70 Fleet Street<br>
+    London<br>
+    EC4Y 1EU<br>
+    </address>
 
-                            _e('<a href="' . $hearing_file_url . '">' . $hearing_file_title . '</a><br>');
-                    endwhile;
-                else :
-                    // no rows found
-                endif;
-                _e('</div>');
-            }
-
-            /**
-             * Hearing link listing
-             */
-            if ($hearing_link) {
-                    _e('<div class="hearing_link">');
-
-                // Loop through and echo out the links
-                if (have_rows('hearing_link')) :
-                    _e('<h2>Hearing links</h2>');
-
-                    while (have_rows('hearing_link')) :
-                        the_row();
-
-                        $hearing_link_title = get_sub_field('hearing_link_title');
-                        $hearing_link_url = get_sub_field('hearing_link_url');
-
-                        _e('<a href="' . $hearing_link_url . '">' . $hearing_link_title . '</a><br>');
-                    endwhile;
-                else :
-                    // no rows found
-                endif;
-                    _e('</div>');
-            }
-        endwhile; // end of the loop. ?>
+    <a href="https://www.google.com/maps/place/International+Dispute+Resolution+Centre+Ltd/@51.5139923,-0.1094127,17z/data=!3m1!4b1!4m5!3m4!1s0x487604b2b87d2383:0x3ef3ecd74c455098!8m2!3d51.513989!4d-0.107224">Find on Google maps</a>
 
     </main><!-- #main -->
 </div><!-- #primary -->
