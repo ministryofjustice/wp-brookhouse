@@ -53,7 +53,7 @@ get_header();
 
                                 $documents = get_posts(
                                     array(
-                                        'post_type' => 'document',
+                                        'post_type' => 'documents',
                                         'posts_per_page' => -1,
                                         'tax_query' => array(
                                             array(
@@ -92,7 +92,7 @@ get_header();
                     } else {
                         $documents = get_posts(
                             array(
-                                'post_type' => 'document',
+                                'post_type' => 'documents',
                                 'posts_per_page' => -1,
                                 'meta_query' => array(
                                     array(
