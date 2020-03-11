@@ -12,7 +12,7 @@ get_sidebar();
 <div id="primary" class="content-area">
     <main id="main" class="site-main">
 
-    <?php 
+    <?php
     
     if (have_posts()) :
         while (have_posts()) :
@@ -30,8 +30,8 @@ get_sidebar();
     $hearing_time = get_field('hearing_time');
     $hearing_body_text = get_field('hearing_body_text');
     
-    _e('<span>'. $hearing_date . '</span><br>');
-    _e('<span>'. $hearing_time . '</span>');
+    _e('<span>' . $hearing_date . '</span><br>');
+    _e('<span>' . $hearing_time . '</span>');
     _e('<p>' . $hearing_body_text . '</p>');
 
     include(locate_template('components/hearing-link-section.php', false, false)); ?>
