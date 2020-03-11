@@ -2,14 +2,14 @@
 
 /* Component: Hearing link section */
 
-$args = array (
+$args = [
     'post_type' => 'hearings',
     'meta_key' => 'hearing_date',
     'orderby' => 'meta_value_num',
-    'order' => 'ASC',
+    'order' => 'DESC',
     'posts_per_page' => -1,
     'post_status' => 'publish'
-);
+];
 
 $query = new WP_Query($args);
 ?>
@@ -48,7 +48,7 @@ $query = new WP_Query($args);
         </tr>
     </tbody>
 
-    <?php
+        <?php
     endwhile;
     wp_reset_query();
     ?>
