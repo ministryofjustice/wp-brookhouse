@@ -47,7 +47,7 @@ $moj_bh_header_link = get_field('header_link', 'option');
                 <span>&nbsp;</span>
                 <div style="display:none">Open navigation</div>
             </button>
-            <a class="skip-link screen-reader-text" href="#content"><?php _e('Skip to content', 'brookhouse'); ?></a>
+            <a class="skip-link screen-reader-text" href="#main"><?php _e('Skip to content', 'brookhouse'); ?></a>
         </nav><!-- #site-navigation -->
         <header id="masthead" class="site-header">
             <div class="site-branding flex-grid">
