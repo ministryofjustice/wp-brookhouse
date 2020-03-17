@@ -13,6 +13,14 @@ get_sidebar();
                 the_post(); ?>
                 <?php get_template_part('content', 'page'); ?>
                 <?php get_template_part('components/cta-section'); ?>
+                <div class="flex-grid">
+                    <div class="col">
+                        <?php get_template_part('components/latest-documents'); ?>
+                    </div>
+                    <div class="col">
+                        <?php get_template_part('components/latest-news'); ?>
+                    </div>
+                </div>
             <?php endwhile; // end of the loop. ?>
 
 
