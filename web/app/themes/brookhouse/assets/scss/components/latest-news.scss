@@ -1,0 +1,31 @@
+/* Latest News Section Styles */
+
+.latest-news-section {
+
+  h3 {
+    border-bottom: 3px solid $beige-dark;
+    margin-bottom: 0px;
+  }
+
+  .none-found {
+    margin-top: 15px;
+  }
+
+
+  .news-list {
+    .news-list-item {
+      padding: 12px 0;
+      border-bottom: 1px solid $grey-light;
+
+      &:hover {
+        background-color: #FFFFE0;
+      }
+
+      &:last-child {
+        border: none;
+      }
+    }
+  }
+
+}
+
