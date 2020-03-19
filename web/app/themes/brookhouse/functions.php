@@ -382,3 +382,13 @@ function moj_wpcf7_form_elements($form)
 }
 
 add_filter('wpcf7_form_elements', 'moj_wpcf7_form_elements');
+
+function brookhouse_set_home_wp_title( $title )
+{
+    if ( ( is_home() || is_front_page() ) ) {
+        $title = __( 'Home', 'brookhouse' ) . ' | ' . get_bloginfo( 'name' );
+    }
+    return $title;
+}
+
+add_filter( 'wp_title', 'brookhouse_set_home_wp_title' );
