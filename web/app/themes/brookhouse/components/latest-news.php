@@ -5,7 +5,7 @@
 ?>
     <div class="latest-news-section">
 
-        <h3><?php _e('Latest News', 'brookhouse'); ?></h3>
+        <h2><?php _e('Latest News', 'brookhouse'); ?></h2>
 
         <?php
         $articles = get_posts(

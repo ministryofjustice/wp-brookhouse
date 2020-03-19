@@ -4,7 +4,7 @@
 ?>
     <div class="latest-documents-section">
 
-        <h3><?php _e('Latest Documents', 'brookhouse'); ?></h3>
+        <h2><?php _e('Latest Documents', 'brookhouse'); ?></h2>
 
         <?php
         $documents = get_posts(
