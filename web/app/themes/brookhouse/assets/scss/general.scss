@@ -172,17 +172,23 @@ p {
   overflow: hidden;
 }
 
-article.page ul {
-  margin: 15px 0 15px 0;
-  padding: 0;
-  list-style: none;
-}
+article {
+  .entry-content {
+    table {
+      th {
+        border-bottom: 1px solid $grey-dark;
+        padding: 10px 5px;
+        vertical-align: middle;
+      }
 
-article.page ul li {
-  margin: 10px 10px 10px 0;
-  padding: 0 0 0 20px;
-  background: url(../img/bullet-point-7x7.gif) no-repeat 0 7px;
-  line-height: 1.5em;
+      td {
+        border-bottom: 1px solid $grey-dark;
+        padding: 10px 5px;
+        width: 25%;
+        vertical-align: middle;
+      }
+    }
+  }
 }
 
 .external-link {
