@@ -50,7 +50,7 @@ if (!function_exists('brookhouse_setup')) {
         // This theme uses wp_nav_menu() in one location.
         register_nav_menus(array(
             'primary' => __('Primary Menu', 'brookhouse'),
-            'languages-menu' =>  __('Languages Menu', 'brookhouse')
+            'languages-menu' => __('Languages Menu', 'brookhouse')
         ));
 
         // Enable support for Post Formats.
@@ -337,8 +337,8 @@ function new_nav_menu_items($items_list, $args)
             $languages = get_field('language_character_code', $item);
             $items_list = $items_list
                 . '<li class="menu-item">'
-                . '<a lang="'.$languages.'" href="' . $item->url . '">'
-                .  $item->post_title
+                . '<a lang="' . $languages . '" href="' . $item->url . '">'
+                . $item->post_title
                 . '</a>'
                 . '</li>';
         }
@@ -383,12 +383,12 @@ function moj_wpcf7_form_elements($form)
 
 add_filter('wpcf7_form_elements', 'moj_wpcf7_form_elements');
 
-function brookhouse_set_home_wp_title( $title )
+function brookhouse_set_home_wp_title($title)
 {
-    if ( ( is_home() || is_front_page() ) ) {
-        $title = __( 'Home', 'brookhouse' ) . ' | ' . get_bloginfo( 'name' );
+    if ((is_front_page())) {
+        $title = __('Home', 'brookhouse') . ' | ' . get_bloginfo('name');
     }
     return $title;
 }
 
-add_filter( 'wp_title', 'brookhouse_set_home_wp_title' );
+add_filter('wp_title', 'brookhouse_set_home_wp_title');
