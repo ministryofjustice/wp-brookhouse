@@ -31,7 +31,7 @@ get_header();
 
                     if (is_array($doc_categories) && !empty($doc_categories)) { ?>
                         <div class="doc-listing-filters">
-                            <h3>Document List Filters</h3>
+                            <h2>Document List Filters</h2>
                             <div class="doc-listing-cat-filter-wrapper">
                                 <label for="doc-cat-filter">Document Category</label>
                                 <select id="doc-cat-filter">
