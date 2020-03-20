@@ -10,7 +10,7 @@
 
 </div><!-- #content -->
 
-<h2 class="hidden">Languages</h2>
+<h2 class="hidden"><?php _e('Languages', 'brookhouse'); ?></h2>
 <?php wp_nav_menu(array('theme_location' => 'languages-menu')); ?>
 
 <footer id="footer" class="site-footer">
