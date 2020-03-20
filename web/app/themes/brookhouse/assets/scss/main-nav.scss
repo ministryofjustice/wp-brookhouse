@@ -5,6 +5,11 @@
   position: fixed;
   z-index: 6;
   width: 100%;
+  background: $white;
+
+  @media screen and (min-width: 770px) {
+    background: none;
+  }
 
   &.toggled .nav-menu {
     @media screen and (max-width: 769px) {
@@ -30,11 +35,13 @@
     box-sizing: border-box;
     height: 22px;
     float: right;
+    margin: 10px 0;
 
     &.open {
       position: fixed;
       left: unset;
       right: 0;
+      margin: 0;
 
       span {
         background-color: $white;
