@@ -114,11 +114,23 @@
       text-align: right;
     }
 
+    .search-field {
+      &:focus {
+        outline: 2px solid $yellow-focus;
+      }
+    }
+
     .search-submit {
       background: $beige-dark;
       padding: 10px 12px;
       color: $white;
       border: none;
+
+      &:focus {
+        outline: 2px solid $yellow-focus;
+        background: $yellow-focus;
+        color: $black;
+      }
     }
   }
 }
