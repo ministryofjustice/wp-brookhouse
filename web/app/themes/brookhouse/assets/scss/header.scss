@@ -3,8 +3,12 @@
 #masthead {
   width: 100%;
   background-color: $white;
-  padding: 20px 0 15px 0;
+  padding: 40px 0 15px 0;
   border-bottom: 12px solid $grey-dark;
+
+  @media screen and (min-width: 770px) {
+    padding: 20px 0 15px 0;
+  }
 
   .home & {
     border-bottom-width: 6px;
