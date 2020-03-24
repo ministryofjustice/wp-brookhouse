@@ -1,0 +1,43 @@
+{
+    "key": "group_5e78f5d395ff9",
+    "title": "Page language",
+    "fields": [
+        {
+            "key": "field_5e78f5e593c91",
+            "label": "page-language",
+            "name": "page-language",
+            "type": "text",
+            "instructions": "If you're entering text in a different language, enter that language's language code here. If it's English, leave this blank.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "page_template",
+                "operator": "==",
+                "value": "default"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "acf_after_title",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "",
+    "modified": 1584986307
+}
