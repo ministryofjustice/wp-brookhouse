@@ -6,7 +6,7 @@
             "key": "field_5e458b5ae4f87",
             "label": "Brookhouse Investigation telephone number",
             "name": "telephone_number",
-            "type": "number",
+            "type": "text",
             "instructions": "Add in the telephone number you'd like to appear at the top of the homepage.",
             "required": 1,
             "conditional_logic": 0,
@@ -16,12 +16,10 @@
                 "id": ""
             },
             "default_value": "",
+            "maxlength": "",
             "placeholder": "",
             "prepend": "",
-            "append": "",
-            "min": "",
-            "max": "",
-            "step": ""
+            "append": ""
         },
         {
             "key": "field_5e6254c0fbb21",
@@ -56,5 +54,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "Content to go in the header on the homepage",
-    "modified": 1583502547
+    "modified": 1585056873
 }
