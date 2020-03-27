@@ -15,6 +15,10 @@ textarea {
   border: 2px solid #353535;
   transition: all 0.3s ease;
   padding: 10px;
+
+  &:focus {
+    outline: 2px solid $yellow-focus;
+  }
 }
 
 input[type="text"],
@@ -43,6 +47,11 @@ input[type="submit"] {
   padding: 14px 18px;
   color: #fff;
   border: none;
+
+  &:focus {
+    background: $yellow-focus;
+    color: $black;
+  }
 }
 
 button:hover,
@@ -52,15 +61,6 @@ input[type="submit"]:hover {
   cursor: pointer;
   background-color: #017c43;
 }
-
-button:focus,
-input[type="button"]:focus,
-input[type="reset"]:focus,
-input[type="submit"]:focus,
-button:active,
-input[type="button"]:active,
-input[type="reset"]:active,
-input[type="submit"]:active {}
 
 input[type="checkbox"],
 input[type="radio"] {
@@ -113,12 +113,6 @@ input[type="search"]:focus,
 textarea:focus {
   color: #111;
 }
-
-input[type="text"],
-input[type="email"],
-input[type="url"],
-input[type="password"],
-input[type="search"] {}
 
 textarea {
   overflow: auto;
