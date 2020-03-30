@@ -1,0 +1,141 @@
+{
+    "key": "group_5e8217f0b57d6",
+    "title": "Evidence information",
+    "fields": [
+        {
+            "key": "field_5e8217f0c00f1",
+            "label": "Evidence type:",
+            "name": "evidence_type_to_upload",
+            "type": "select",
+            "instructions": "Choose the type of evidence you are uploading.",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "oral-evidence": "Oral evidence",
+                "written-evidence": "Written evidence",
+                "hearing-transcript-evidence": "Hearing transcript"
+            },
+            "default_value": [],
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 1,
+            "ajax": 0,
+            "return_format": "value",
+            "placeholder": ""
+        },
+        {
+            "key": "field_5e8217f0c0173",
+            "label": "Evidence format:",
+            "name": "evidence_format",
+            "type": "select",
+            "instructions": "Choose the format of the evidence:",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "evidence_document": "Document",
+                "evidence_audio": "Audio",
+                "evidence_video": "Video"
+            },
+            "default_value": [],
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 0,
+            "return_format": "value",
+            "ajax": 0,
+            "placeholder": ""
+        },
+        {
+            "key": "field_5e8217f0c01f2",
+            "label": "Witness type:",
+            "name": "evidence_witness_type",
+            "type": "select",
+            "instructions": "Choose what category the witness falls into:",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "evidence_detainee": "Detainee",
+                "evidence_staff_member": "Staff member",
+                "evidence_expert": "Expert",
+                "evidence_government": "Government",
+                "evidence_provider": "Provider",
+                "evidence_union": "Union"
+            },
+            "default_value": [],
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 0,
+            "return_format": "value",
+            "ajax": 0,
+            "placeholder": ""
+        },
+        {
+            "key": "field_5e8217f0c02f9",
+            "label": "Publish Date",
+            "name": "evidence_publish_date",
+            "type": "date_picker",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "display_format": "d\/m\/Y",
+            "return_format": "d\/m\/Y",
+            "first_day": 1
+        },
+        {
+            "key": "field_5e8217f0c0378",
+            "label": "Upload the document:",
+            "name": "evidence_upload",
+            "type": "file",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array",
+            "library": "all",
+            "min_size": "",
+            "max_size": "",
+            "mime_types": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "evidence"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "",
+    "modified": 1585584575
+}

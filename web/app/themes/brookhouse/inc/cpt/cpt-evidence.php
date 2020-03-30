@@ -13,7 +13,7 @@
 * */
 add_action('init', 'brookhouse_ctp_evidence_init');
 
-function brookhouse_ctp_document_init()
+function brookhouse_ctp_evidence_init()
 {
     global $brookhouseTaxonomies;
 
