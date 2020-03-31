@@ -92,7 +92,7 @@ get_header();
                     } else {
                         $documents = get_posts(
                             array(
-                                'post_type' => 'documents',
+                                'post_type' => 'evidence',
                                 'posts_per_page' => -1,
                                 'meta_query' => array(
                                     array(
@@ -101,7 +101,7 @@ get_header();
                                     ),
                                 ),
                                 'orderby' => 'meta_value_num',
-                                'meta_key' => 'publish_date',
+                                'meta_key' => 'evidence_publish_date',
                                 'order' => 'DESC',
                             )
                         );

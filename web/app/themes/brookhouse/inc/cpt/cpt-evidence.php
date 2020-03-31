@@ -15,7 +15,7 @@ add_action('init', 'brookhouse_ctp_evidence_init');
 
 function brookhouse_ctp_evidence_init()
 {
-    global $brookhouseTaxonomies;
+    global $evidenceTaxonomies;
 
     $labels = [
         'name' => 'Evidence',
@@ -47,7 +47,7 @@ function brookhouse_ctp_evidence_init()
         'menu_position' => null,
         'menu_icon' => 'dashicons-playlist-audio',
         'supports' => array('title'),
-        'taxonomies' => $brookhouseTaxonomies
+        'taxonomies' => $evidenceTaxonomies
 
     ];
 
