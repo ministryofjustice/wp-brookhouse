@@ -59,9 +59,9 @@ function brookhouse_ctp_document_init()
 * Remove side meta boxes on Document entry admin page - these have been replaced in ACF with ACF fields
 *
 * */
-add_action('do_meta_boxes', 'wpdocs_remove_plugin_metaboxes');
+add_action('do_meta_boxes', 'wpdocs_remove_plugin_metaboxes_documents');
 
-function wpdocs_remove_plugin_metaboxes()
+function wpdocs_remove_plugin_metaboxes_documents()
 {
     global $documentTaxonomies;
 
