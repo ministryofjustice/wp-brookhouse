@@ -13,7 +13,7 @@ get_header();
 
             <h1><?php the_title(); ?></h1>
             <?php the_content(); ?>
-
+            <ul>
                 <?php
                     $query = new WP_Query( array( 'post_type' => 'evidence', 'paged' => $paged ) );
 
@@ -21,8 +21,9 @@ get_header();
                         while ( $query->have_posts() ) : $query->the_post();
                             include(locate_template('content-evidence-list-item.php', false, false));
                     endwhile; wp_reset_postdata();
-                else :
-            endif; ?>
+                    else :
+                endif; ?>
+            </ul>
 
         <?php endwhile; // end of the loop. ?>
     </main>

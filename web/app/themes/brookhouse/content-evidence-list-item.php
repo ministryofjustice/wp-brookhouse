@@ -3,33 +3,36 @@
     $evidenceFormat = get_field( "evidence_format" );
     $witnessType = get_field( "evidence_witness_type" );
     $evidenceDate = get_field( "evidence_publish_date" );
+    $timeStamp = date("Y-m-j", strtotime($evidenceDate));
     $evidenceUpload = get_field( "evidence_upload" );
     $evidenceUrl = $evidenceUpload['url'];
     $fileSize = $evidenceUpload['filesize'];
     $fileType = pathinfo($evidenceUrl, PATHINFO_EXTENSION);
 ?>
 
-<div class="entry">
+<li class="entry">
     <h2 class="title"><?php the_title(); ?></h2>
 
-    <?php if ($evidenceType) { ?>
-        <p>Evidence type: <?php echo $evidenceType[0]->name; ?></p>
-    <?php } ?>
+    <dl>
+        <?php if ($evidenceType) { ?>
+            <dt>Type: </dt> <dd><?php echo $evidenceType[0]->name; ?></dd>
+        <?php } ?>
 
-    <?php if ($evidenceFormat) { ?>
-        <p>Evidence format: <?php echo $evidenceFormat[0]->name; ?></p>
-    <?php } ?>
+        <?php if ($evidenceFormat) { ?>
+            <dt>Format: </dt> <dd><?php echo $evidenceFormat[0]->name; ?></dd>
+        <?php } ?>
 
-    <?php if ($witnessType) { ?>
-        <p>Witness type: <?php echo $witnessType[0]->name; ?></p>
-    <?php } ?>
+        <?php if ($witnessType) { ?>
+            <dt>Witness: </dt> <dd><?php echo $witnessType[0]->name; ?></dd>
+        <?php } ?>
 
-    <?php if ($evidenceDate) { ?>
-        <p>Evidence publication date: <?php echo $evidenceDate ?></p>
-    <?php } ?>
+        <?php if ($evidenceDate) { ?>
+            <dt>Published: </dt> <dd><time datetime="<?php echo $timeStamp; ?>"><?php echo $evidenceDate ?></time></dd>
+        <?php } ?>
+    </dl>
 
      <?php if ($evidenceUpload) { ?>
        <a href="<?php echo $evidenceUrl; ?>"> View <?php the_title() ?> [<?php echo strtoupper($fileType); ?>, <?php echo round($fileSize/1000); ?>kb]</a>
     <?php } ?>
 
-</div>
+</li>
