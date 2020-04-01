@@ -17,16 +17,12 @@ get_header();
                 <?php
                     $query = new WP_Query( array( 'post_type' => 'evidence', 'paged' => $paged ) );
 
-                    if ( $query->have_posts() ) : ?>
-                    <?php while ( $query->have_posts() ) : $query->the_post(); ?>
-
-                        <?php include(locate_template('content-evidence-list-item.php', false, false)); ?>
-
-                    <?php endwhile; wp_reset_postdata(); ?>
-                    <!-- show pagination here -->
-                <?php else : ?>
-                    <!-- show 404 error here -->
-            <?php endif; ?>
+                    if ( $query->have_posts() ) :
+                        while ( $query->have_posts() ) : $query->the_post();
+                            include(locate_template('content-evidence-list-item.php', false, false));
+                    endwhile; wp_reset_postdata();
+                else :
+            endif; ?>
 
         <?php endwhile; // end of the loop. ?>
     </main>
