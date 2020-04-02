@@ -18,9 +18,9 @@
             "taxonomy": "evidence-type",
             "field_type": "checkbox",
             "add_term": 1,
-            "save_terms": 0,
-            "load_terms": 0,
-            "return_format": "id",
+            "save_terms": 1,
+            "load_terms": 1,
+            "return_format": "object",
             "multiple": 0,
             "allow_null": 0
         },
@@ -40,9 +40,9 @@
             "taxonomy": "evidence-format",
             "field_type": "checkbox",
             "add_term": 1,
-            "save_terms": 0,
-            "load_terms": 0,
-            "return_format": "id",
+            "save_terms": 1,
+            "load_terms": 1,
+            "return_format": "object",
             "multiple": 0,
             "allow_null": 0
         },
@@ -62,9 +62,9 @@
             "taxonomy": "witness-type",
             "field_type": "checkbox",
             "add_term": 1,
-            "save_terms": 0,
-            "load_terms": 0,
-            "return_format": "id",
+            "save_terms": 1,
+            "load_terms": 1,
+            "return_format": "object",
             "multiple": 0,
             "allow_null": 0
         },
@@ -122,5 +122,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1585665763
+    "modified": 1585748714
 }
