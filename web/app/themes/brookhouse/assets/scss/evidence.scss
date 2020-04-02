@@ -1,7 +1,7 @@
 .evidence {
   &__list {
     list-style-type: none;
-    margin: 0;
+    margin: 0 0 4rem 0;
 
     @supports (display: grid) {
         display: grid;
@@ -11,19 +11,17 @@
 
   &__item {
     border: 1px solid black;
-    background: palegoldenrod;
+    background: $beige-light;
     margin: 1.5rem;
     padding: 2rem;
     line-height: 1.5;
     float: left;
     width: 24rem;
+    cursor: pointer;
 
     @supports (display: grid) {
         width: unset;
         float: unset;
-    }
-
-    &--wrapper {
     }
 
     &--term {
@@ -37,6 +35,17 @@
     &--definition {
       margin: 0;
       display: inline;
+    }
+
+    &--heading {
+      color: $black;
+      font-size: 2rem;
+      margin-bottom: 1.5rem;
+    }
+
+    &--link {
+      margin-top: 2rem;
+      display: inline-block;
     }
   }
 }

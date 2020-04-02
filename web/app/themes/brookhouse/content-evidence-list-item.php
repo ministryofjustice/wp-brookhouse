@@ -10,8 +10,8 @@
     $fileType = pathinfo($evidenceUrl, PATHINFO_EXTENSION);
 ?>
 
-<li class="evidence__item">
-    <h2 class="title"><?php the_title(); ?></h2>
+<li class="evidence__item js-evidence-item">
+    <h2 class="evidence__item--heading"><?php the_title(); ?></h2>
 
     <dl>
         <?php if ($evidenceType) { ?>
@@ -48,7 +48,7 @@
     </dl>
 
      <?php if ($evidenceUpload) { ?>
-       <a href="<?php echo $evidenceUrl; ?>"> View <?php the_title() ?> [<?php echo strtoupper($fileType); ?>, <?php echo round($fileSize/1000); ?>kb]</a>
+       <a class="evidence__item--link" href="<?php echo $evidenceUrl; ?>"> View <?php the_title() ?> [<?php echo strtoupper($fileType); ?>, <?php echo round($fileSize/1000); ?>kb]</a>
     <?php } ?>
 
 </li>
