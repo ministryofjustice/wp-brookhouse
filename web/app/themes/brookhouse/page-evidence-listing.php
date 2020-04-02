@@ -13,7 +13,7 @@ get_header();
 
             <h1><?php the_title(); ?></h1>
             <?php the_content(); ?>
-            <ul>
+            <ul class="evidence__list">
                 <?php
                     $query = new WP_Query( array( 'post_type' => 'evidence', 'paged' => $paged ) );
 

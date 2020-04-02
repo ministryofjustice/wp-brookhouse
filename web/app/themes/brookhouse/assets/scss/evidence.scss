@@ -1,0 +1,42 @@
+.evidence {
+  &__list {
+    list-style-type: none;
+    margin: 0;
+
+    @supports (display: grid) {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(24rem, 1fr));
+    }
+  }
+
+  &__item {
+    border: 1px solid black;
+    background: palegoldenrod;
+    margin: 1.5rem;
+    padding: 2rem;
+    line-height: 1.5;
+    float: left;
+    width: 24rem;
+
+    @supports (display: grid) {
+        width: unset;
+        float: unset;
+    }
+
+    &--wrapper {
+    }
+
+    &--term {
+      display: inline;
+
+      &::after {
+        content: ":";
+      }
+    }
+
+    &--definition {
+      margin: 0;
+      display: inline;
+    }
+  }
+}

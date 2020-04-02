@@ -10,24 +10,40 @@
     $fileType = pathinfo($evidenceUrl, PATHINFO_EXTENSION);
 ?>
 
-<li class="entry">
+<li class="evidence__item">
     <h2 class="title"><?php the_title(); ?></h2>
 
     <dl>
         <?php if ($evidenceType) { ?>
-            <dt>Type: </dt> <dd><?php echo $evidenceType[0]->name; ?></dd>
+            <div class="evidence__item--wrapper">
+                <dt class="evidence__item--term">Type</dt>
+                <dd class="evidence__item--definition"><?php echo $evidenceType[0]->name; ?></dd>
+            </div>
         <?php } ?>
 
         <?php if ($evidenceFormat) { ?>
-            <dt>Format: </dt> <dd><?php echo $evidenceFormat[0]->name; ?></dd>
+            <div class="evidence__item--wrapper">
+                <dt class="evidence__item--term">Format</dt>
+                <dd class="evidence__item--definition"><?php echo $evidenceFormat[0]->name; ?></dd>
+            </div>
         <?php } ?>
 
         <?php if ($witnessType) { ?>
-            <dt>Witness: </dt> <dd><?php echo $witnessType[0]->name; ?></dd>
+            <div class="evidence__item--wrapper">
+                <dt class="evidence__item--term">Witness</dt>
+                <dd class="evidence__item--definition"><?php echo $witnessType[0]->name; ?></dd>
+            </div>
         <?php } ?>
 
         <?php if ($evidenceDate) { ?>
-            <dt>Published: </dt> <dd><time datetime="<?php echo $timeStamp; ?>"><?php echo $evidenceDate ?></time></dd>
+            <div class="evidence__item--wrapper">
+                <dt class="evidence__item--term">Published</dt>
+                <dd class="evidence__item--definition">
+                    <time datetime="<?php echo $timeStamp; ?>">
+                        <?php echo $evidenceDate ?>
+                    </time>
+                </dd>
+            </div>
         <?php } ?>
     </dl>
 
