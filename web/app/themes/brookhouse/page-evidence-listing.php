@@ -16,7 +16,7 @@ get_header();
 
             <?php $query = new WP_Query( array( 'post_type' => 'evidence', 'paged' => $paged ) ); ?>
 
-                <div>
+                <div id="js-evidence-filter">
                     <legend>Evidence categories</legend>
                     <?php
 
@@ -36,8 +36,8 @@ get_header();
                         <?php foreach ( $evidenceType as $term) { ?>
                             <div class="govuk-checkboxes">
                                 <div class="govuk-checkboxes__item">
-                                    <input class="govuk-checkboxes__input" id="<?php echo $term->name; ?>" name="evidence-type" type="checkbox" value="<?php echo $term->name; ?>">
-                                    <label class="govuk-label govuk-checkboxes__label" for="<?php echo $term->name; ?>">
+                                    <input class="govuk-checkboxes__input" id="<?php echo $term->slug; ?>" name="evidence-type" type="checkbox" value="<?php echo $term->slug; ?>">
+                                    <label class="govuk-label govuk-checkboxes__label" for="<?php echo $term->slug; ?>">
                                     <?php echo $term->name; ?>
                                     </label>
                                 </div>
@@ -58,8 +58,8 @@ get_header();
                         <?php foreach ( $evidenceFormat as $term) { ?>
                             <div class="govuk-checkboxes">
                                 <div class="govuk-checkboxes__item">
-                                    <input class="govuk-checkboxes__input" id="<?php echo $term->name; ?>" name="evidence-format" type="checkbox" value="<?php echo $term->name; ?>">
-                                    <label class="govuk-label govuk-checkboxes__label" for="<?php echo $term->name; ?>">
+                                    <input class="govuk-checkboxes__input" id="<?php echo $term->slug; ?>" name="evidence-format" type="checkbox" value="<?php echo $term->slug; ?>">
+                                    <label class="govuk-label govuk-checkboxes__label" for="<?php echo $term->slug; ?>">
                                     <?php echo $term->name; ?>
                                     </label>
                                 </div>
@@ -77,11 +77,11 @@ get_header();
                         Select all that you'd like to see.
                         </span>
 
-                        <?php foreach ( $evidenceType as $term) { ?>
+                        <?php foreach ( $witnessType as $term) { ?>
                             <div class="govuk-checkboxes">
                                 <div class="govuk-checkboxes__item">
-                                    <input class="govuk-checkboxes__input" id="<?php echo $term->name; ?>" name="witness-type" type="checkbox" value="<?php echo $term->name; ?>">
-                                    <label class="govuk-label govuk-checkboxes__label" for="<?php echo $term->name; ?>">
+                                    <input class="govuk-checkboxes__input" id="<?php echo $term->slug; ?>" name="witness-type" type="checkbox" value="<?php echo $term->slug; ?>">
+                                    <label class="govuk-label govuk-checkboxes__label" for="<?php echo $term->slug; ?>">
                                     <?php echo $term->name; ?>
                                     </label>
                                 </div>

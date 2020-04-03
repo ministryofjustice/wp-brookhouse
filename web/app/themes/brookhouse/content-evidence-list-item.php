@@ -11,9 +11,9 @@
 ?>
 
 <li class="evidence__item js-evidence-item"
-    data-evidence-type="<?php echo $evidenceType[0]->name; ?>"
-    data-evidence-format="<?php echo $evidenceFormat[0]->name; ?>"
-    data-witness-type="<?php echo $witnessType[0]->name; ?>"
+    data-evidence-type="<?php echo $evidenceType[0]->slug; ?>"
+    data-evidence-format="<?php echo $evidenceFormat[0]->slug; ?>"
+    data-witness-type="<?php echo $witnessType[0]->slug; ?>"
 >
     <h2 class="evidence__item--heading"><?php the_title(); ?></h2>
 
