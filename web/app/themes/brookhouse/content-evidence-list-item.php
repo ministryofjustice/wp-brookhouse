@@ -10,7 +10,11 @@
     $fileType = pathinfo($evidenceUrl, PATHINFO_EXTENSION);
 ?>
 
-<li class="evidence__item js-evidence-item">
+<li class="evidence__item js-evidence-item"
+    data-evidence-type="<?php echo $evidenceType[0]->name; ?>"
+    data-evidence-format="<?php echo $evidenceFormat[0]->name; ?>"
+    data-witness-type="<?php echo $witnessType[0]->name; ?>"
+>
     <h2 class="evidence__item--heading"><?php the_title(); ?></h2>
 
     <dl>

@@ -13,18 +13,95 @@ get_header();
 
             <h1><?php the_title(); ?></h1>
             <?php the_content(); ?>
-            <ul class="evidence__list">
-                <?php
-                    $query = new WP_Query( array( 'post_type' => 'evidence', 'paged' => $paged ) );
 
+            <?php $query = new WP_Query( array( 'post_type' => 'evidence', 'paged' => $paged ) ); ?>
+
+                <div>
+                    <legend>Evidence categories</legend>
+                    <?php
+
+                    $evidenceType = get_terms('evidence-type');
+                    $evidenceFormat = get_terms('evidence-format');
+                    $witnessType = get_terms('witness-type');
+                    ?>
+
+                    <fieldset class="govuk-fieldset" aria-describedby="evidence-type-hint">
+                        <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+                            Evidence type
+                        </legend>
+                        <span id="evidence-type-hint" class="govuk-hint">
+                        Select all that you'd like to see.
+                        </span>
+
+                        <?php foreach ( $evidenceType as $term) { ?>
+                            <div class="govuk-checkboxes">
+                                <div class="govuk-checkboxes__item">
+                                    <input class="govuk-checkboxes__input" id="<?php echo $term->name; ?>" name="evidence-type" type="checkbox" value="<?php echo $term->name; ?>">
+                                    <label class="govuk-label govuk-checkboxes__label" for="<?php echo $term->name; ?>">
+                                    <?php echo $term->name; ?>
+                                    </label>
+                                </div>
+                            </div>
+                        <?php
+                        }
+                        ?>
+                    </fieldset>
+
+                    <fieldset class="govuk-fieldset" aria-describedby="evidence-format-hint">
+                        <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+                            Evidence format
+                        </legend>
+                        <span id="evidence-format-hint" class="govuk-hint">
+                        Select all that you'd like to see.
+                        </span>
+
+                        <?php foreach ( $evidenceFormat as $term) { ?>
+                            <div class="govuk-checkboxes">
+                                <div class="govuk-checkboxes__item">
+                                    <input class="govuk-checkboxes__input" id="<?php echo $term->name; ?>" name="evidence-format" type="checkbox" value="<?php echo $term->name; ?>">
+                                    <label class="govuk-label govuk-checkboxes__label" for="<?php echo $term->name; ?>">
+                                    <?php echo $term->name; ?>
+                                    </label>
+                                </div>
+                            </div>
+                        <?php
+                        }
+                        ?>
+                    </fieldset>
+
+                    <fieldset class="govuk-fieldset" aria-describedby="witness-type-hint">
+                        <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+                            Evidence type
+                        </legend>
+                        <span id="witness-type-hint" class="govuk-hint">
+                        Select all that you'd like to see.
+                        </span>
+
+                        <?php foreach ( $evidenceType as $term) { ?>
+                            <div class="govuk-checkboxes">
+                                <div class="govuk-checkboxes__item">
+                                    <input class="govuk-checkboxes__input" id="<?php echo $term->name; ?>" name="witness-type" type="checkbox" value="<?php echo $term->name; ?>">
+                                    <label class="govuk-label govuk-checkboxes__label" for="<?php echo $term->name; ?>">
+                                    <?php echo $term->name; ?>
+                                    </label>
+                                </div>
+                            </div>
+                        <?php
+                        }
+                        ?>
+                    </fieldset>
+                </div>
+
+                <ul class="evidence__list">
+                <?php
                     if ( $query->have_posts() ) :
                         while ( $query->have_posts() ) : $query->the_post();
                             include(locate_template('content-evidence-list-item.php', false, false));
-                    endwhile; wp_reset_postdata();
-                    else :
-                endif; ?>
+                        endwhile; wp_reset_postdata();
+                        else :
+                    endif;
+                ?>
             </ul>
-
         <?php endwhile; // end of the loop. ?>
     </main>
 </div>
