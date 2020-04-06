@@ -1,7 +1,5 @@
 /* This is based off of Heydon Pickering's Inclusive Components:
-
-https://inclusive-components.design/cards/
-
+  https://inclusive-components.design/cards/
 */
 
 const cards = document.querySelectorAll('.js-evidence-item');
@@ -20,7 +18,6 @@ Array.prototype.forEach.call(cards, card => {
 // JavaScript is enabled, so the no JS-warning is removed
 document.getElementById('js-evidence-filter').style.display = "block";
 document.getElementById('js-turned-off').style.display = "none";
-
 
 jQuery(document).ready(function ($) {
 
@@ -45,11 +42,8 @@ jQuery(document).ready(function ($) {
   })
 
   if ($('#js-evidence-filter').length) {
-    $('#js-evidence-filter').change(function () {
-
-      // TO-DO: Is it possible to make this run on only the changed one?
+    $('input[type=checkbox]').change(function () {
       $('input[type=checkbox]').each(function () {
-
         // Checks if it's already there and if it is, removes it
         if ($(this).prop("checked")) {
           var value = $(this).val();
@@ -80,7 +74,6 @@ jQuery(document).ready(function ($) {
       } else {
         $('.evidence__item').show();
       }
-
     });
   }
 });
