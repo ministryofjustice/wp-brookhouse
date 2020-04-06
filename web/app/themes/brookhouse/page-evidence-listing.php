@@ -16,9 +16,9 @@ get_header();
 
             <?php $query = new WP_Query( array( 'post_type' => 'evidence', 'paged' => $paged ) ); ?>
 
-            <p id="js-turned-off">Please turn JavaScript on in your browser, to enable the filter functionality.</p>
+            <p id="js-turned-off"><?php _e('Please turn JavaScript on in your browser, to enable the filter functionality.', 'brookhouse'); ?></p>
             <div id="js-evidence-filter">
-                <p>Select the categories that you'd like to see</p>
+                <p><?php _e('Select the categories that you would like to see.', 'brookhouse'); ?></p>
                     <div class="evidence__filter">
 
                         <?php
@@ -29,7 +29,7 @@ get_header();
 
                         <fieldset class="govuk-fieldset evidence__fieldset">
                             <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
-                                Evidence type
+                                <?php _e('Evidence type', 'brookhouse'); ?>
                             </legend>
 
                             <?php foreach ( $evidenceType as $term) { ?>
@@ -48,7 +48,7 @@ get_header();
 
                         <fieldset class="govuk-fieldset evidence__fieldset">
                             <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
-                                Evidence format
+                                <?php _e('Evidence format', 'brookhouse'); ?>
                             </legend>
 
                             <?php foreach ( $evidenceFormat as $term) { ?>
@@ -67,7 +67,7 @@ get_header();
 
                         <fieldset class="govuk-fieldset evidence__fieldset evidence__fieldset--witness">
                             <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
-                                Witness type
+                                <?php _e('Witness type', 'brookhouse'); ?>
                             </legend>
 
                             <?php foreach ( $witnessType as $term) { ?>
