@@ -33,6 +33,14 @@
             <?php
 
         }
+        $news_posts_count = wp_count_posts();
+
+        if ($news_posts_count->publish > 1) { ?>
+            <div class="news-archive-link">
+                <a href="<?php echo get_permalink(get_option('page_for_posts')); ?>"><?php _e('View news archive', 'brookhouse'); ?></a>
+            </div>
+            <?php
+        }
         ?>
 
     </div>

@@ -1,0 +1,23 @@
+/* Hearings */
+
+.blog {
+    .news-list {
+        article {
+            border-bottom: 2px solid $beige-dark;
+
+            h2 {
+                font-size: 1.5em;
+            }
+        }
+    }
+
+    .news-navigation {
+        margin-bottom: 15px;
+
+        .current {
+            font-weight: bold;
+        }
+    }
+
+
+}
