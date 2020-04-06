@@ -67,7 +67,7 @@ get_header();
 
                         <fieldset class="govuk-fieldset evidence__fieldset evidence__fieldset--witness">
                             <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
-                                Evidence type
+                                Witness type
                             </legend>
 
                             <?php foreach ( $witnessType as $term) { ?>
