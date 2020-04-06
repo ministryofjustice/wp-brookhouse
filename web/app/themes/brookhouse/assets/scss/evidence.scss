@@ -64,13 +64,6 @@
       width: 30%;
       display: inline-block;
     }
-    &--witness {
-      @supports (display: flex) {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
-      }
-    }
   }
 }
 
