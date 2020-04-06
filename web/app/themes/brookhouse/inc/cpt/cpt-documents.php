@@ -15,7 +15,7 @@ add_action('init', 'brookhouse_ctp_document_init');
 
 function brookhouse_ctp_document_init()
 {
-    global $brookhouseTaxonomies;
+    global $documentTaxonomies;
 
     $labels = [
         'name' => 'Documents',
@@ -47,7 +47,7 @@ function brookhouse_ctp_document_init()
         'menu_position' => null,
         'menu_icon' => 'dashicons-media-document',
         'supports' => array('title'),
-        'taxonomies' => $brookhouseTaxonomies
+        'taxonomies' => $documentTaxonomies
 
     ];
 
@@ -59,13 +59,13 @@ function brookhouse_ctp_document_init()
 * Remove side meta boxes on Document entry admin page - these have been replaced in ACF with ACF fields
 *
 * */
-add_action('do_meta_boxes', 'wpdocs_remove_plugin_metaboxes');
+add_action('do_meta_boxes', 'wpdocs_remove_plugin_metaboxes_documents');
 
-function wpdocs_remove_plugin_metaboxes()
+function wpdocs_remove_plugin_metaboxes_documents()
 {
-    global $brookhouseTaxonomies;
+    global $documentTaxonomies;
 
-    if (count($brookhouseTaxonomies) > 0) {
+    if (count($documentTaxonomies) > 0) {
         remove_meta_box('corporate-documentsdiv', 'Documents', 'side');
         remove_meta_box('media-releasesdiv', 'Documents', 'side');
         remove_meta_box('other-publicationsdiv', 'Documents', 'side');

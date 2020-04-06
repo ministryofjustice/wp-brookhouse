@@ -241,6 +241,7 @@ require get_template_directory() . '/inc/taxonomies.php';
 /* Custom Post Type declarations */
 require get_template_directory() . '/inc/cpt/cpt-documents.php';
 require get_template_directory() . '/inc/cpt/cpt-hearings.php';
+require get_template_directory() . '/inc/cpt/cpt-evidence.php';
 
 // Get attachment ID from src(url)
 function get_attachment_id_from_src($image_src)
