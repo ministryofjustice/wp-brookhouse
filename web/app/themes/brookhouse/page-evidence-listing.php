@@ -16,83 +16,77 @@ get_header();
 
             <?php $query = new WP_Query( array( 'post_type' => 'evidence', 'paged' => $paged ) ); ?>
 
-                <div id="js-evidence-filter">
-                    <legend>Evidence categories</legend>
-                    <?php
+            <p id="js-turned-off">Please turn JavaScript on in your browser, to enable the filter functionality.</p>
+            <div id="js-evidence-filter">
+                <p>Select the categories that you'd like to see</p>
+                    <div class="evidence__filter">
 
-                    $evidenceType = get_terms('evidence-type');
-                    $evidenceFormat = get_terms('evidence-format');
-                    $witnessType = get_terms('witness-type');
-                    ?>
-
-                    <fieldset class="govuk-fieldset" aria-describedby="evidence-type-hint">
-                        <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
-                            Evidence type
-                        </legend>
-                        <span id="evidence-type-hint" class="govuk-hint">
-                        Select all that you'd like to see.
-                        </span>
-
-                        <?php foreach ( $evidenceType as $term) { ?>
-                            <div class="govuk-checkboxes">
-                                <div class="govuk-checkboxes__item">
-                                    <input class="govuk-checkboxes__input" id="<?php echo $term->slug; ?>" name="evidence-type" type="checkbox" value="<?php echo $term->slug; ?>">
-                                    <label class="govuk-label govuk-checkboxes__label" for="<?php echo $term->slug; ?>">
-                                    <?php echo $term->name; ?>
-                                    </label>
-                                </div>
-                            </div>
                         <?php
-                        }
+                            $evidenceType = get_terms('evidence-type');
+                            $evidenceFormat = get_terms('evidence-format');
+                            $witnessType = get_terms('witness-type');
                         ?>
-                    </fieldset>
 
-                    <fieldset class="govuk-fieldset" aria-describedby="evidence-format-hint">
-                        <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
-                            Evidence format
-                        </legend>
-                        <span id="evidence-format-hint" class="govuk-hint">
-                        Select all that you'd like to see.
-                        </span>
+                        <fieldset class="govuk-fieldset evidence__fieldset">
+                            <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                                Evidence type
+                            </legend>
 
-                        <?php foreach ( $evidenceFormat as $term) { ?>
-                            <div class="govuk-checkboxes">
-                                <div class="govuk-checkboxes__item">
-                                    <input class="govuk-checkboxes__input" id="<?php echo $term->slug; ?>" name="evidence-format" type="checkbox" value="<?php echo $term->slug; ?>">
-                                    <label class="govuk-label govuk-checkboxes__label" for="<?php echo $term->slug; ?>">
-                                    <?php echo $term->name; ?>
-                                    </label>
+                            <?php foreach ( $evidenceType as $term) { ?>
+                                <div class="govuk-checkboxes govuk-checkboxes--small">
+                                    <div class="govuk-checkboxes__item">
+                                        <input class="govuk-checkboxes__input" id="<?php echo $term->slug; ?>" name="evidence-type" type="checkbox" value="<?php echo $term->slug; ?>">
+                                        <label class="govuk-label govuk-checkboxes__label" for="<?php echo $term->slug; ?>">
+                                        <?php echo $term->name; ?>
+                                        </label>
+                                    </div>
                                 </div>
-                            </div>
-                        <?php
-                        }
-                        ?>
-                    </fieldset>
+                            <?php
+                            }
+                            ?>
+                        </fieldset>
 
-                    <fieldset class="govuk-fieldset" aria-describedby="witness-type-hint">
-                        <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
-                            Evidence type
-                        </legend>
-                        <span id="witness-type-hint" class="govuk-hint">
-                        Select all that you'd like to see.
-                        </span>
+                        <fieldset class="govuk-fieldset evidence__fieldset">
+                            <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                                Evidence format
+                            </legend>
 
-                        <?php foreach ( $witnessType as $term) { ?>
-                            <div class="govuk-checkboxes">
-                                <div class="govuk-checkboxes__item">
-                                    <input class="govuk-checkboxes__input" id="<?php echo $term->slug; ?>" name="witness-type" type="checkbox" value="<?php echo $term->slug; ?>">
-                                    <label class="govuk-label govuk-checkboxes__label" for="<?php echo $term->slug; ?>">
-                                    <?php echo $term->name; ?>
-                                    </label>
+                            <?php foreach ( $evidenceFormat as $term) { ?>
+                                <div class="govuk-checkboxes govuk-checkboxes--small">
+                                    <div class="govuk-checkboxes__item">
+                                        <input class="govuk-checkboxes__input" id="<?php echo $term->slug; ?>" name="evidence-format" type="checkbox" value="<?php echo $term->slug; ?>">
+                                        <label class="govuk-label govuk-checkboxes__label" for="<?php echo $term->slug; ?>">
+                                        <?php echo $term->name; ?>
+                                        </label>
+                                    </div>
                                 </div>
-                            </div>
-                        <?php
-                        }
-                        ?>
-                    </fieldset>
+                            <?php
+                            }
+                            ?>
+                        </fieldset>
+
+                        <fieldset class="govuk-fieldset evidence__fieldset evidence__fieldset--witness">
+                            <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                                Evidence type
+                            </legend>
+
+                            <?php foreach ( $witnessType as $term) { ?>
+                                <div class="govuk-checkboxes govuk-checkboxes--small">
+                                    <div class="govuk-checkboxes__item">
+                                        <input class="govuk-checkboxes__input" id="<?php echo $term->slug; ?>" name="witness-type" type="checkbox" value="<?php echo $term->slug; ?>">
+                                        <label class="govuk-label govuk-checkboxes__label" for="<?php echo $term->slug; ?>">
+                                        <?php echo $term->name; ?>
+                                        </label>
+                                    </div>
+                                </div>
+                            <?php
+                            }
+                            ?>
+                        </fieldset>
+                    </div>
                 </div>
 
-                <ul class="evidence__list">
+                <ul class="evidence__list" role="region" id="aria-evidence-updates" aria-live="polite">
                 <?php
                     if ( $query->have_posts() ) :
                         while ( $query->have_posts() ) : $query->the_post();

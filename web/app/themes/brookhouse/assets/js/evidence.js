@@ -17,7 +17,10 @@ Array.prototype.forEach.call(cards, card => {
   }
 });
 
-// make show more dynamic!
+// JavaScript is enabled, so the no JS-warning is removed
+document.getElementById('js-evidence-filter').style.display = "block";
+document.getElementById('js-turned-off').style.display = "none";
+
 
 jQuery(document).ready(function ($) {
 
