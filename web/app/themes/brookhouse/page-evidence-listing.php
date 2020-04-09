@@ -14,7 +14,7 @@ get_header();
             <h1><?php the_title(); ?></h1>
             <?php the_content(); ?>
 
-            <?php $query = new WP_Query( array( 'post_type' => 'evidence', 'paged' => $paged ) ); ?>
+            <?php $query = new WP_Query( array( 'post_type' => 'evidence', 'paged' => $paged, 'orderby'   => 'meta_value_num', 'meta_key'  => 'evidence_publish_date' ) ); ?>
 
             <p id="js-turned-off"><?php _e('Please turn JavaScript on in your browser, to enable the filter functionality.', 'brookhouse'); ?></p>
             <div id="js-evidence-filter">
