@@ -16,10 +16,11 @@ get_header();
 
             <?php $query = new WP_Query( array( 'post_type' => 'evidence', 'paged' => $paged, 'orderby'   => 'meta_value_num', 'meta_key'  => 'evidence_publish_date' ) ); ?>
 
-            <p id="js-turned-off"><?php _e('Please turn JavaScript on in your browser, to enable the filter functionality.', 'brookhouse'); ?></p>
-            <div id="js-evidence-filter">
-                <p><?php _e('Select the categories that you would like to see.', 'brookhouse'); ?></p>
-                    <div class="evidence__filter">
+            <?php if ( $query->have_posts() ) : ?>
+                <p id="js-turned-off"><?php _e('Please turn JavaScript on in your browser, to enable the filter functionality.', 'brookhouse'); ?></p>
+                <div id="js-evidence-filter">
+                    <p><?php _e('Select the categories that you would like to see.', 'brookhouse'); ?></p>
+                        <div class="evidence__filter">
 
                         <?php
                             $evidenceType = get_terms('evidence-type');
@@ -86,16 +87,15 @@ get_header();
                     </div>
                 </div>
 
-                <ul class="evidence__list" role="region" id="aria-evidence-updates" aria-live="polite">
-                <?php
-                    if ( $query->have_posts() ) :
-                        while ( $query->have_posts() ) : $query->the_post();
-                            include(locate_template('content-evidence-list-item.php', false, false));
-                        endwhile; wp_reset_postdata();
-                        else :
-                    endif;
-                ?>
-            </ul>
+                    <ul class="evidence__list" role="region" id="aria-evidence-updates" aria-live="polite">
+                    <?php
+                            while ( $query->have_posts() ) : $query->the_post();
+                                include(locate_template('content-evidence-list-item.php', false, false));
+                            endwhile; wp_reset_postdata();
+                            else :
+                        ?>
+                    </ul>
+             <?php endif; ?>
         <?php endwhile; // end of the loop. ?>
     </main>
 </div>
