@@ -129,11 +129,5 @@
 
 <?php wp_footer(); ?>
 
-<script>
-    $(document).bind('touchend', function (e) {
-        $(e.target).trigger('click');
-    });
-</script>
-
 </body>
 </html>
