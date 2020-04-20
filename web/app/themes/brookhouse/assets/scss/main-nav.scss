@@ -5,7 +5,6 @@
   position: fixed;
   z-index: 6;
   width: 100%;
-  background: $white;
 
   @media screen and (min-width: 770px) {
     background: none;
@@ -30,8 +29,9 @@
     -o-transition: .5s ease-in-out;
     transition: .5s ease-in-out;
     cursor: pointer;
-    background: none;
-    border: none;
+    background: $white;
+    border: 0.5rem solid white;
+    border-bottom: 0;
     box-sizing: border-box;
     height: 22px;
     float: right;
