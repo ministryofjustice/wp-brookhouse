@@ -5,7 +5,6 @@ jQuery(document).ready(function ($) {
 
   if (evidencePage.length) {
 
-    console.log(evidencePage);
     document.getElementById('js-evidence-filter').style.display = "block";
     document.getElementById('js-turned-off').style.display = "none";
 
