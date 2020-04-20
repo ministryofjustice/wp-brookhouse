@@ -1,28 +1,34 @@
-/* This is based off of Heydon Pickering's Inclusive Components:
-  https://inclusive-components.design/cards/
-*/
-const evidencePage = document.querySelector('.evidence-main');
+// JavaScript is enabled, so the no JS-warning is removed
 
-if (evidencePage) {
+jQuery(document).ready(function ($) {
+  const evidencePage = $(".evidence-main");
 
-  const cards = document.querySelectorAll('.js-evidence-item');
-  Array.prototype.forEach.call(cards, card => {
-    card.setAttribute("style", "cursor: pointer;");
-    let down, up, link = card.querySelector('a');
-    card.onmousedown = () => down = +new Date();
-    card.onmouseup = () => {
-      up = +new Date();
-      if ((up - down) < 200) {
-        link.click();
+  if (evidencePage.length) {
+
+    console.log(evidencePage);
+    document.getElementById('js-evidence-filter').style.display = "block";
+    document.getElementById('js-turned-off').style.display = "none";
+
+
+    /* This is based off of Heydon Pickering's Inclusive Components:
+      https://inclusive-components.design/cards/
+    */
+
+    const cards = document.querySelectorAll('.js-evidence-item');
+    Array.prototype.forEach.call(cards, card => {
+      card.setAttribute("style", "cursor: pointer;");
+      let down, up, link = card.querySelector('a');
+      card.onmousedown = () => down = +new Date();
+      card.onmouseup = () => {
+        up = +new Date();
+        if ((up - down) < 200) {
+          link.click();
+        }
       }
-    }
-  });
+    });
 
-  // JavaScript is enabled, so the no JS-warning is removed
-  document.getElementById('js-evidence-filter').style.display = "block";
-  document.getElementById('js-turned-off').style.display = "none";
+    /* end code taken from Inclusive Components */
 
-  jQuery(document).ready(function ($) {
 
     var checkedValues = [];
 
@@ -79,5 +85,5 @@ if (evidencePage) {
         }
       });
     }
-  });
-}
+  }
+});
