@@ -11,6 +11,7 @@ set -e
 composer install
 
 
+
 # Build theme assets
 # ~ enter theme path and uncomment the following commands:
 
