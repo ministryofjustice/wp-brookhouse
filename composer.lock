@@ -763,17 +763,17 @@
         },
         {
             "name": "ministryofjustice/wp-moj-components",
-            "version": "3.1.1",
+            "version": "3.1.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/ministryofjustice/wp-moj-components.git",
-                "reference": "41f785c92b795b76e95ac7f6446298576a0aa48f"
+                "reference": "df36b85ae54e0fd49ccde37cda7b06825b4c6595"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://composer.wp.dsd.io/dist/ministryofjustice/wp-moj-components/ministryofjustice-wp-moj-components-41f785c92b795b76e95ac7f6446298576a0aa48f-zip-40af90.zip",
-                "reference": "41f785c92b795b76e95ac7f6446298576a0aa48f",
-                "shasum": "b64040f73849868d24c6b5bd9fd25b7cac5b0bb3"
+                "url": "https://composer.wp.dsd.io/dist/ministryofjustice/wp-moj-components/ministryofjustice-wp-moj-components-df36b85ae54e0fd49ccde37cda7b06825b4c6595-zip-6fef8c.zip",
+                "reference": "df36b85ae54e0fd49ccde37cda7b06825b4c6595",
+                "shasum": "e58161844aaf6786dbcc870dbc9c2d683ebbf76c"
             },
             "require": {
                 "composer/installers": "^1.0"
@@ -808,27 +808,30 @@
             ],
             "description": "A plugin to introduce global functions to a collection of WP sites",
             "support": {
-                "source": "https://github.com/ministryofjustice/wp-moj-components/tree/3.1.1",
+                "source": "https://github.com/ministryofjustice/wp-moj-components/tree/3.1.2",
                 "issues": "https://github.com/ministryofjustice/wp-moj-components/issues"
             },
-            "time": "2020-04-29T12:36:15+00:00"
+            "time": "2020-05-19T10:00:26+00:00"
         },
         {
             "name": "ministryofjustice/wp-rewrite-media-to-s3",
-            "version": "0.2.10",
+            "version": "0.3.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/ministryofjustice/wp-rewrite-media-to-s3.git",
-                "reference": "eafe3b165fe3fa0630b011439317ae3b3b3100e4"
+                "reference": "c65aeaa5beb9498ac316609a20a8fbe99be464d6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://composer.wp.dsd.io/dist/ministryofjustice/wp-rewrite-media-to-s3/ministryofjustice-wp-rewrite-media-to-s3-eafe3b165fe3fa0630b011439317ae3b3b3100e4-zip-3a74e0.zip",
-                "reference": "eafe3b165fe3fa0630b011439317ae3b3b3100e4",
-                "shasum": "2980ada9ac27be3e79d90abfe4ecc84eb83c90d6"
+                "url": "https://composer.wp.dsd.io/dist/ministryofjustice/wp-rewrite-media-to-s3/ministryofjustice-wp-rewrite-media-to-s3-c65aeaa5beb9498ac316609a20a8fbe99be464d6-zip-b81a1e.zip",
+                "reference": "c65aeaa5beb9498ac316609a20a8fbe99be464d6",
+                "shasum": "5b1e9d8b7c41db0910adac6266a9c3837557949f"
             },
             "require": {
                 "composer/installers": "^1.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^9.1"
             },
             "type": "wordpress-plugin",
             "authors": [
@@ -839,10 +842,10 @@
             ],
             "description": "A WordPress plugin which rewrites media attachment URLs to S3.",
             "support": {
-                "source": "https://github.com/ministryofjustice/wp-rewrite-media-to-s3/tree/0.2.10",
+                "source": "https://github.com/ministryofjustice/wp-rewrite-media-to-s3/tree/0.3.1",
                 "issues": "https://github.com/ministryofjustice/wp-rewrite-media-to-s3/issues"
             },
-            "time": "2020-04-09T16:11:27+00:00"
+            "time": "2020-05-14T16:29:40+00:00"
         },
         {
             "name": "ministryofjustice/wp-user-roles",
@@ -1488,16 +1491,16 @@
         },
         {
             "name": "symfony/polyfill-ctype",
-            "version": "v1.15.0",
+            "version": "v1.17.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/polyfill-ctype.git",
-                "reference": "4719fa9c18b0464d399f1a63bf624b42b6fa8d14"
+                "reference": "e94c8b1bbe2bc77507a1056cdb06451c75b427f9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/polyfill-ctype/zipball/4719fa9c18b0464d399f1a63bf624b42b6fa8d14",
-                "reference": "4719fa9c18b0464d399f1a63bf624b42b6fa8d14",
+                "url": "https://api.github.com/repos/symfony/polyfill-ctype/zipball/e94c8b1bbe2bc77507a1056cdb06451c75b427f9",
+                "reference": "e94c8b1bbe2bc77507a1056cdb06451c75b427f9",
                 "shasum": ""
             },
             "require": {
@@ -1509,7 +1512,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.15-dev"
+                    "dev-master": "1.17-dev"
                 }
             },
             "autoload": {
@@ -1542,20 +1545,20 @@
                 "polyfill",
                 "portable"
             ],
-            "time": "2020-02-27T09:26:54+00:00"
+            "time": "2020-05-12T16:14:59+00:00"
         },
         {
             "name": "symfony/polyfill-intl-idn",
-            "version": "v1.15.0",
+            "version": "v1.17.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/polyfill-intl-idn.git",
-                "reference": "47bd6aa45beb1cd7c6a16b7d1810133b728bdfcf"
+                "reference": "3bff59ea7047e925be6b7f2059d60af31bb46d6a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/polyfill-intl-idn/zipball/47bd6aa45beb1cd7c6a16b7d1810133b728bdfcf",
-                "reference": "47bd6aa45beb1cd7c6a16b7d1810133b728bdfcf",
+                "url": "https://api.github.com/repos/symfony/polyfill-intl-idn/zipball/3bff59ea7047e925be6b7f2059d60af31bb46d6a",
+                "reference": "3bff59ea7047e925be6b7f2059d60af31bb46d6a",
                 "shasum": ""
             },
             "require": {
@@ -1569,7 +1572,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.15-dev"
+                    "dev-master": "1.17-dev"
                 }
             },
             "autoload": {
@@ -1604,20 +1607,20 @@
                 "portable",
                 "shim"
             ],
-            "time": "2020-03-09T19:04:49+00:00"
+            "time": "2020-05-12T16:47:27+00:00"
         },
         {
             "name": "symfony/polyfill-mbstring",
-            "version": "v1.15.0",
+            "version": "v1.17.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/polyfill-mbstring.git",
-                "reference": "81ffd3a9c6d707be22e3012b827de1c9775fc5ac"
+                "reference": "fa79b11539418b02fc5e1897267673ba2c19419c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/polyfill-mbstring/zipball/81ffd3a9c6d707be22e3012b827de1c9775fc5ac",
-                "reference": "81ffd3a9c6d707be22e3012b827de1c9775fc5ac",
+                "url": "https://api.github.com/repos/symfony/polyfill-mbstring/zipball/fa79b11539418b02fc5e1897267673ba2c19419c",
+                "reference": "fa79b11539418b02fc5e1897267673ba2c19419c",
                 "shasum": ""
             },
             "require": {
@@ -1629,7 +1632,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.15-dev"
+                    "dev-master": "1.17-dev"
                 }
             },
             "autoload": {
@@ -1663,20 +1666,20 @@
                 "portable",
                 "shim"
             ],
-            "time": "2020-03-09T19:04:49+00:00"
+            "time": "2020-05-12T16:47:27+00:00"
         },
         {
             "name": "symfony/polyfill-php72",
-            "version": "v1.15.0",
+            "version": "v1.17.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/polyfill-php72.git",
-                "reference": "37b0976c78b94856543260ce09b460a7bc852747"
+                "reference": "f048e612a3905f34931127360bdd2def19a5e582"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/polyfill-php72/zipball/37b0976c78b94856543260ce09b460a7bc852747",
-                "reference": "37b0976c78b94856543260ce09b460a7bc852747",
+                "url": "https://api.github.com/repos/symfony/polyfill-php72/zipball/f048e612a3905f34931127360bdd2def19a5e582",
+                "reference": "f048e612a3905f34931127360bdd2def19a5e582",
                 "shasum": ""
             },
             "require": {
@@ -1685,7 +1688,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.15-dev"
+                    "dev-master": "1.17-dev"
                 }
             },
             "autoload": {
@@ -1718,20 +1721,20 @@
                 "portable",
                 "shim"
             ],
-            "time": "2020-02-27T09:26:54+00:00"
+            "time": "2020-05-12T16:47:27+00:00"
         },
         {
             "name": "symfony/polyfill-php73",
-            "version": "v1.15.0",
+            "version": "v1.17.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/polyfill-php73.git",
-                "reference": "0f27e9f464ea3da33cbe7ca3bdf4eb66def9d0f7"
+                "reference": "a760d8964ff79ab9bf057613a5808284ec852ccc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/polyfill-php73/zipball/0f27e9f464ea3da33cbe7ca3bdf4eb66def9d0f7",
-                "reference": "0f27e9f464ea3da33cbe7ca3bdf4eb66def9d0f7",
+                "url": "https://api.github.com/repos/symfony/polyfill-php73/zipball/a760d8964ff79ab9bf057613a5808284ec852ccc",
+                "reference": "a760d8964ff79ab9bf057613a5808284ec852ccc",
                 "shasum": ""
             },
             "require": {
@@ -1740,7 +1743,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.15-dev"
+                    "dev-master": "1.17-dev"
                 }
             },
             "autoload": {
@@ -1776,7 +1779,7 @@
                 "portable",
                 "shim"
             ],
-            "time": "2020-02-27T09:26:54+00:00"
+            "time": "2020-05-12T16:47:27+00:00"
         },
         {
             "name": "symfony/service-contracts",
@@ -2102,15 +2105,15 @@
         },
         {
             "name": "wpackagist-plugin/contact-form-7",
-            "version": "5.1.7",
+            "version": "5.1.8",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/contact-form-7/",
-                "reference": "tags/5.1.7"
+                "reference": "tags/5.1.8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/contact-form-7.5.1.7.zip"
+                "url": "https://downloads.wordpress.org/plugin/contact-form-7.5.1.8.zip"
             },
             "require": {
                 "composer/installers": "~1.0"
