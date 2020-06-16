@@ -33,7 +33,7 @@
         "acf/advanced-custom-fields-pro": "*",
         "wpackagist-plugin/wp-accessibility": "*",
         "wpackagist-plugin/classic-editor": "*",
-        "wpackagist-plugin/fast-user-switching": "*",
+        "wpackagist-plugin/user-switching": "*",
         "wpackagist-plugin/contact-form-7": "*",
         "wpackagist-plugin/maintenance":"^3.85",
         "relevanssi/relevanssi-premium": "*",
