@@ -393,3 +393,31 @@ function brookhouse_set_home_wp_title($title)
 }
 
 add_filter('wp_title', 'brookhouse_set_home_wp_title');
+
+
+function brookhouse_update_sitemap_link($url, $post)
+{
+    if ('documents' == get_post_type($post)) {
+
+        $doc_details = get_post_meta($post->ID, 'document_upload');
+
+
+        if (is_array($doc_details) && is_numeric($doc_details[0])) {
+            $url = wp_get_attachment_url($doc_details[0]);
+        }
+
+    } else if ('evidence' == get_post_type($post)) {
+
+        $doc_details = get_post_meta($post->ID, 'evidence_upload');
+
+
+        if (is_array($doc_details) && is_numeric($doc_details[0])) {
+            $url = wp_get_attachment_url($doc_details[0]);
+        }
+
+    }
+
+
+    return $url;
+}
+add_filter( 'wsp_cpt_link', 'brookhouse_update_sitemap_link', 10, 2 );
