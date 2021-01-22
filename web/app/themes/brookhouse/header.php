@@ -42,14 +42,6 @@ if ( ! function_exists( 'wp_body_open' ) ) {
 wp_body_open();
 ?>
 
-<?php
-
-/**
- * MoJ hook in our themes to allow content to be hooked and placed
- * at the top of the page but still within the body
- *  */
-    do_action('after_body_open_tag'); ?>
-
     <div id="page" class="hfeed site">
         <?php do_action('before'); ?>
         <nav id="site-navigation" class="main-navigation">
