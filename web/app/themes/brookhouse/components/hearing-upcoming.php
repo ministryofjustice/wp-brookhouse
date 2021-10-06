@@ -24,7 +24,7 @@ $query_upcoming = new WP_Query($args_compare);
 ?>
 
 <table>
-    <caption>Up-coming hearings</caption>
+    <caption>Up-coming hearing</caption>
     <thead>
         <tr>
             <th scope="col">Date</th>
