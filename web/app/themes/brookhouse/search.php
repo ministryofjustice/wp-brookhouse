@@ -35,10 +35,11 @@ get_header();
 
                     $result_title = get_the_title();
 
-                    if (get_post_type() === 'document') {
+                    if (get_post_type() === 'documents') {
                         $document_upload = get_field('document_upload');
                         $ext = pathinfo($document_upload['url'], PATHINFO_EXTENSION);
                         $result_title .= ' (' . $ext . ')';
+                        $result_url = $document_upload['url'];
                     } else {
                         $result_url = get_permalink();
                     }
