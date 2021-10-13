@@ -37,7 +37,7 @@
         "wpackagist-plugin/maintenance":"^3.85",
         "relevanssi/relevanssi-premium": "*",
         "ministryofjustice/wp-user-roles": "*",
-        "browscap/browscap-php": "^4.2",
+        "browscap/browscap-php": "*",
         "ministryofjustice/wp-moj-components": "*",
         "ministryofjustice/cookie-compliance-for-wordpress": "*"
     },

@@ -19,7 +19,8 @@ get_header(); ?>
 				<h1 class="page-title">
 					<?php
 						if ( is_category() ) :
-							single_cat_title();
+							echo 'All pages in the topic: ';
+                            single_cat_title();
 
 						elseif ( is_tag() ) :
 							single_tag_title();
@@ -78,12 +79,35 @@ get_header(); ?>
 			<?php /* Start the Loop */ ?>
 			<?php while ( have_posts() ) : the_post(); ?>
 
+            <h2 class="entry-title">
+                <a href="<?php echo get_permalink(get_the_ID()); ?>">
+            <?php the_title(); ?></a>
+            </h2>
+            <br>
+
+
 				<?php
 					/* Include the Post-Format-specific template for the content.
 					 * If you want to override this in a child theme, then include a file
 					 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
 					 */
-					get_template_part( 'content', get_post_format() );
+                    // echo '<a href="';
+
+                    // get_permalink(get_the_ID());
+
+                    // echo '">';
+
+
+
+                    // echo '</a>';
+
+                    the_excerpt();
+                    the_category(', ');
+
+                    echo '<br>';
+                    echo '<hr>';
+                    echo '<br>';
+					//get_template_part( 'content', get_post_format() );
 				?>
 
 			<?php endwhile; ?>

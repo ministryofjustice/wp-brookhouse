@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "bd122dd40509e18ecbcbd9bb8b98e483",
+    "content-hash": "f440b368e054a0b390b3127a8dc99149",
     "packages": [
         {
             "name": "acf/advanced-custom-fields-pro",
@@ -18,16 +18,16 @@
         },
         {
             "name": "browscap/browscap-php",
-            "version": "4.3.0",
+            "version": "5.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/browscap/browscap-php.git",
-                "reference": "476851a1d90bfb74b91cb84ff40ab8a207492132"
+                "reference": "aa6bde6900922102a67a4187db8880c01e228fd8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/browscap/browscap-php/zipball/476851a1d90bfb74b91cb84ff40ab8a207492132",
-                "reference": "476851a1d90bfb74b91cb84ff40ab8a207492132",
+                "url": "https://api.github.com/repos/browscap/browscap-php/zipball/aa6bde6900922102a67a4187db8880c01e228fd8",
+                "reference": "aa6bde6900922102a67a4187db8880c01e228fd8",
                 "shasum": ""
             },
             "require": {
@@ -35,7 +35,7 @@
                 "ext-json": "*",
                 "guzzlehttp/guzzle": "^6.5.2 || ^7.0",
                 "monolog/monolog": "^1.25.3 || ^2.0.2",
-                "php": ">=7.1.0,<7.5.0",
+                "php": ">=7.3.0,<8.1.0",
                 "psr/simple-cache": "^1.0.1",
                 "roave/doctrine-simplecache": "^2.2.0",
                 "symfony/console": "^3.4.36 || ^4.4.2 || ^5.0.2",
@@ -51,7 +51,7 @@
                 "phpstan/phpstan-deprecation-rules": "^0.12.2",
                 "phpstan/phpstan-phpunit": "^0.12.6",
                 "phpstan/phpstan-strict-rules": "^0.12.2",
-                "phpunit/phpunit": "^7.5.20 || ^8.5.2"
+                "phpunit/phpunit": "^9.5.0"
             },
             "suggest": {
                 "ext-curl": "to use curl requests to get the ini file"
@@ -95,20 +95,20 @@
                 "issues": "https://github.com/browscap/browscap-php/issues",
                 "source": "https://github.com/browscap/browscap-php"
             },
-            "time": "2020-08-17T16:30:15+00:00"
+            "time": "2021-01-06T19:02:13+00:00"
         },
         {
             "name": "composer/installers",
-            "version": "v1.11.0",
+            "version": "v1.12.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/composer/installers.git",
-                "reference": "ae03311f45dfe194412081526be2e003960df74b"
+                "reference": "d20a64ed3c94748397ff5973488761b22f6d3f19"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/composer/installers/zipball/ae03311f45dfe194412081526be2e003960df74b",
-                "reference": "ae03311f45dfe194412081526be2e003960df74b",
+                "url": "https://api.github.com/repos/composer/installers/zipball/d20a64ed3c94748397ff5973488761b22f6d3f19",
+                "reference": "d20a64ed3c94748397ff5973488761b22f6d3f19",
                 "shasum": ""
             },
             "require": {
@@ -207,6 +207,7 @@
                 "modx",
                 "moodle",
                 "osclass",
+                "pantheon",
                 "phpbb",
                 "piwik",
                 "ppi",
@@ -229,7 +230,7 @@
             ],
             "support": {
                 "issues": "https://github.com/composer/installers/issues",
-                "source": "https://github.com/composer/installers/tree/v1.11.0"
+                "source": "https://github.com/composer/installers/tree/v1.12.0"
             },
             "funding": [
                 {
@@ -245,7 +246,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2021-04-28T06:42:17+00:00"
+            "time": "2021-09-13T08:19:44+00:00"
         },
         {
             "name": "daverandom/exceptional-json",
@@ -493,16 +494,16 @@
         },
         {
             "name": "guzzlehttp/promises",
-            "version": "1.4.1",
+            "version": "1.5.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/guzzle/promises.git",
-                "reference": "8e7d04f1f6450fef59366c399cfad4b9383aa30d"
+                "reference": "136a635e2b4a49b9d79e9c8fee267ffb257fdba0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/guzzle/promises/zipball/8e7d04f1f6450fef59366c399cfad4b9383aa30d",
-                "reference": "8e7d04f1f6450fef59366c399cfad4b9383aa30d",
+                "url": "https://api.github.com/repos/guzzle/promises/zipball/136a635e2b4a49b9d79e9c8fee267ffb257fdba0",
+                "reference": "136a635e2b4a49b9d79e9c8fee267ffb257fdba0",
                 "shasum": ""
             },
             "require": {
@@ -514,7 +515,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.4-dev"
+                    "dev-master": "1.5-dev"
                 }
             },
             "autoload": {
@@ -531,9 +532,24 @@
             ],
             "authors": [
                 {
+                    "name": "Graham Campbell",
+                    "email": "hello@gjcampbell.co.uk",
+                    "homepage": "https://github.com/GrahamCampbell"
+                },
+                {
                     "name": "Michael Dowling",
                     "email": "mtdowling@gmail.com",
                     "homepage": "https://github.com/mtdowling"
+                },
+                {
+                    "name": "Tobias Nyholm",
+                    "email": "tobias.nyholm@gmail.com",
+                    "homepage": "https://github.com/Nyholm"
+                },
+                {
+                    "name": "Tobias Schultze",
+                    "email": "webmaster@tubo-world.de",
+                    "homepage": "https://github.com/Tobion"
                 }
             ],
             "description": "Guzzle promises library",
@@ -542,22 +558,36 @@
             ],
             "support": {
                 "issues": "https://github.com/guzzle/promises/issues",
-                "source": "https://github.com/guzzle/promises/tree/1.4.1"
+                "source": "https://github.com/guzzle/promises/tree/1.5.0"
             },
-            "time": "2021-03-07T09:25:29+00:00"
+            "funding": [
+                {
+                    "url": "https://github.com/GrahamCampbell",
+                    "type": "github"
+                },
+                {
+                    "url": "https://github.com/Nyholm",
+                    "type": "github"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/guzzlehttp/promises",
+                    "type": "tidelift"
+                }
+            ],
+            "time": "2021-10-07T13:05:22+00:00"
         },
         {
             "name": "guzzlehttp/psr7",
-            "version": "2.0.0",
+            "version": "2.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/guzzle/psr7.git",
-                "reference": "1dc8d9cba3897165e16d12bb13d813afb1eb3fe7"
+                "reference": "089edd38f5b8abba6cb01567c2a8aaa47cec4c72"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/guzzle/psr7/zipball/1dc8d9cba3897165e16d12bb13d813afb1eb3fe7",
-                "reference": "1dc8d9cba3897165e16d12bb13d813afb1eb3fe7",
+                "url": "https://api.github.com/repos/guzzle/psr7/zipball/089edd38f5b8abba6cb01567c2a8aaa47cec4c72",
+                "reference": "089edd38f5b8abba6cb01567c2a8aaa47cec4c72",
                 "shasum": ""
             },
             "require": {
@@ -581,7 +611,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "2.0-dev"
+                    "dev-master": "2.1-dev"
                 }
             },
             "autoload": {
@@ -595,12 +625,33 @@
             ],
             "authors": [
                 {
+                    "name": "Graham Campbell",
+                    "email": "hello@gjcampbell.co.uk",
+                    "homepage": "https://github.com/GrahamCampbell"
+                },
+                {
                     "name": "Michael Dowling",
                     "email": "mtdowling@gmail.com",
                     "homepage": "https://github.com/mtdowling"
                 },
                 {
+                    "name": "George Mponos",
+                    "email": "gmponos@gmail.com",
+                    "homepage": "https://github.com/gmponos"
+                },
+                {
+                    "name": "Tobias Nyholm",
+                    "email": "tobias.nyholm@gmail.com",
+                    "homepage": "https://github.com/Nyholm"
+                },
+                {
+                    "name": "Márk Sági-Kazár",
+                    "email": "mark.sagikazar@gmail.com",
+                    "homepage": "https://github.com/sagikazarmark"
+                },
+                {
                     "name": "Tobias Schultze",
+                    "email": "webmaster@tubo-world.de",
                     "homepage": "https://github.com/Tobion"
                 },
                 {
@@ -622,26 +673,40 @@
             ],
             "support": {
                 "issues": "https://github.com/guzzle/psr7/issues",
-                "source": "https://github.com/guzzle/psr7/tree/2.0.0"
+                "source": "https://github.com/guzzle/psr7/tree/2.1.0"
             },
-            "time": "2021-06-30T20:03:07+00:00"
+            "funding": [
+                {
+                    "url": "https://github.com/GrahamCampbell",
+                    "type": "github"
+                },
+                {
+                    "url": "https://github.com/Nyholm",
+                    "type": "github"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/guzzlehttp/psr7",
+                    "type": "tidelift"
+                }
+            ],
+            "time": "2021-10-06T17:43:30+00:00"
         },
         {
             "name": "johnpbloch/wordpress",
-            "version": "5.8.0",
+            "version": "5.8.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/johnpbloch/wordpress.git",
-                "reference": "e909768a636f7f4eb6951de1da363055aa5d1c69"
+                "reference": "53e4131495e33e514fefe65cdeec39cfadf707cf"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/johnpbloch/wordpress/zipball/e909768a636f7f4eb6951de1da363055aa5d1c69",
-                "reference": "e909768a636f7f4eb6951de1da363055aa5d1c69",
+                "url": "https://api.github.com/repos/johnpbloch/wordpress/zipball/53e4131495e33e514fefe65cdeec39cfadf707cf",
+                "reference": "53e4131495e33e514fefe65cdeec39cfadf707cf",
                 "shasum": ""
             },
             "require": {
-                "johnpbloch/wordpress-core": "5.8.0",
+                "johnpbloch/wordpress-core": "5.8.1",
                 "johnpbloch/wordpress-core-installer": "^1.0 || ^2.0",
                 "php": ">=5.6.20"
             },
@@ -670,20 +735,20 @@
                 "source": "http://core.trac.wordpress.org/browser",
                 "wiki": "http://codex.wordpress.org/"
             },
-            "time": "2021-07-20T16:52:31+00:00"
+            "time": "2021-09-09T02:46:03+00:00"
         },
         {
             "name": "johnpbloch/wordpress-core",
-            "version": "5.8.0",
+            "version": "5.8.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/johnpbloch/wordpress-core.git",
-                "reference": "30d5db01a682521b0a6cc827953f016486504312"
+                "reference": "6b6004e8c16a3b9ebc3ddac29ca8542dfa5ec5ff"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/johnpbloch/wordpress-core/zipball/30d5db01a682521b0a6cc827953f016486504312",
-                "reference": "30d5db01a682521b0a6cc827953f016486504312",
+                "url": "https://api.github.com/repos/johnpbloch/wordpress-core/zipball/6b6004e8c16a3b9ebc3ddac29ca8542dfa5ec5ff",
+                "reference": "6b6004e8c16a3b9ebc3ddac29ca8542dfa5ec5ff",
                 "shasum": ""
             },
             "require": {
@@ -691,7 +756,7 @@
                 "php": ">=5.6.20"
             },
             "provide": {
-                "wordpress/core-implementation": "5.8.0"
+                "wordpress/core-implementation": "5.8.1"
             },
             "type": "wordpress-core",
             "notification-url": "https://packagist.org/downloads/",
@@ -718,7 +783,7 @@
                 "source": "https://core.trac.wordpress.org/browser",
                 "wiki": "https://codex.wordpress.org/"
             },
-            "time": "2021-07-20T16:52:26+00:00"
+            "time": "2021-09-09T02:46:00+00:00"
         },
         {
             "name": "johnpbloch/wordpress-core-installer",
@@ -776,19 +841,19 @@
         },
         {
             "name": "koodimonni-language/core-en_gb",
-            "version": "5.7.2",
+            "version": "5.8.1",
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/translation/core/5.7.2/en_GB.zip"
+                "url": "https://downloads.wordpress.org/translation/core/5.8.1/en_GB.zip"
             },
             "require": {
                 "koodimonni/composer-dropin-installer": ">=0.2.3"
             },
             "type": "wordpress-language",
-            "description": "Wordpress core translation for English (UK) - en_gb",
+            "description": "WordPress core translations for English (UK) - en_gb",
             "keywords": [
                 "Translation",
-                "Wordpress",
+                "WordPress",
                 "core",
                 "en_gb"
             ]
@@ -843,17 +908,17 @@
         },
         {
             "name": "ministryofjustice/cookie-compliance-for-wordpress",
-            "version": "3.1.1",
+            "version": "3.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/ministryofjustice/cookie-compliance-for-wordpress.git",
-                "reference": "9b339f95c063b8140f5e795e9020481a0cfded0a"
+                "reference": "0065651c508bdee40643e225c1aaac5f0e11dae5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://composer.wp.dsd.io/dist/ministryofjustice/cookie-compliance-for-wordpress/ministryofjustice-cookie-compliance-for-wordpress-9b339f95c063b8140f5e795e9020481a0cfded0a-zip-3312cc.zip",
-                "reference": "9b339f95c063b8140f5e795e9020481a0cfded0a",
-                "shasum": "c88814e75c875a738020117d7bc3d6f802634971"
+                "url": "https://composer.wp.dsd.io/dist/ministryofjustice/cookie-compliance-for-wordpress/ministryofjustice-cookie-compliance-for-wordpress-0065651c508bdee40643e225c1aaac5f0e11dae5-zip-43486b.zip",
+                "reference": "0065651c508bdee40643e225c1aaac5f0e11dae5",
+                "shasum": "1f62e06274632bedd5ff6468ca5df9e3b1736f6f"
             },
             "require-dev": {
                 "composer/composer": "*",
@@ -876,10 +941,10 @@
             ],
             "description": "WP plugin that presents visitor with a cookie consent banner and opt-in setting page.",
             "support": {
-                "source": "https://github.com/ministryofjustice/cookie-compliance-for-wordpress/tree/3.1.1",
+                "source": "https://github.com/ministryofjustice/cookie-compliance-for-wordpress/tree/3.2.0",
                 "issues": "https://github.com/ministryofjustice/cookie-compliance-for-wordpress/issues"
             },
-            "time": "2021-08-09T15:26:07+00:00"
+            "time": "2021-09-13T12:45:11+00:00"
         },
         {
             "name": "ministryofjustice/wp-moj-components",
@@ -1028,24 +1093,24 @@
         },
         {
             "name": "monolog/monolog",
-            "version": "2.3.2",
+            "version": "2.3.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Seldaek/monolog.git",
-                "reference": "71312564759a7db5b789296369c1a264efc43aad"
+                "reference": "fd4380d6fc37626e2f799f29d91195040137eba9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Seldaek/monolog/zipball/71312564759a7db5b789296369c1a264efc43aad",
-                "reference": "71312564759a7db5b789296369c1a264efc43aad",
+                "url": "https://api.github.com/repos/Seldaek/monolog/zipball/fd4380d6fc37626e2f799f29d91195040137eba9",
+                "reference": "fd4380d6fc37626e2f799f29d91195040137eba9",
                 "shasum": ""
             },
             "require": {
                 "php": ">=7.2",
-                "psr/log": "^1.0.1"
+                "psr/log": "^1.0.1 || ^2.0 || ^3.0"
             },
             "provide": {
-                "psr/log-implementation": "1.0.0"
+                "psr/log-implementation": "1.0.0 || 2.0.0 || 3.0.0"
             },
             "require-dev": {
                 "aws/aws-sdk-php": "^2.4.9 || ^3.0",
@@ -1053,14 +1118,14 @@
                 "elasticsearch/elasticsearch": "^7",
                 "graylog2/gelf-php": "^1.4.2",
                 "mongodb/mongodb": "^1.8",
-                "php-amqplib/php-amqplib": "~2.4",
+                "php-amqplib/php-amqplib": "~2.4 || ^3",
                 "php-console/php-console": "^3.1.3",
                 "phpspec/prophecy": "^1.6.1",
                 "phpstan/phpstan": "^0.12.91",
                 "phpunit/phpunit": "^8.5",
                 "predis/predis": "^1.1",
                 "rollbar/rollbar": "^1.3",
-                "ruflin/elastica": ">=0.90 <7.0.1",
+                "ruflin/elastica": ">=0.90@dev",
                 "swiftmailer/swiftmailer": "^5.3|^6.0"
             },
             "suggest": {
@@ -1068,8 +1133,11 @@
                 "doctrine/couchdb": "Allow sending log messages to a CouchDB server",
                 "elasticsearch/elasticsearch": "Allow sending log messages to an Elasticsearch server via official client",
                 "ext-amqp": "Allow sending log messages to an AMQP server (1.0+ required)",
+                "ext-curl": "Required to send log messages using the IFTTTHandler, the LogglyHandler, the SendGridHandler, the SlackWebhookHandler or the TelegramBotHandler",
                 "ext-mbstring": "Allow to work properly with unicode symbols",
                 "ext-mongodb": "Allow sending log messages to a MongoDB server (via driver)",
+                "ext-openssl": "Required to send log messages using SSL",
+                "ext-sockets": "Allow sending log messages to a Syslog server (via UDP driver)",
                 "graylog2/gelf-php": "Allow sending log messages to a GrayLog2 server",
                 "mongodb/mongodb": "Allow sending log messages to a MongoDB server (via library)",
                 "php-amqplib/php-amqplib": "Allow sending log messages to an AMQP server using php-amqplib",
@@ -1108,7 +1176,7 @@
             ],
             "support": {
                 "issues": "https://github.com/Seldaek/monolog/issues",
-                "source": "https://github.com/Seldaek/monolog/tree/2.3.2"
+                "source": "https://github.com/Seldaek/monolog/tree/2.3.5"
             },
             "funding": [
                 {
@@ -1120,7 +1188,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2021-07-23T07:42:52+00:00"
+            "time": "2021-10-01T21:08:31+00:00"
         },
         {
             "name": "oscarotero/env",
@@ -2530,16 +2598,16 @@
         },
         {
             "name": "vlucas/phpdotenv",
-            "version": "v2.6.7",
+            "version": "v2.6.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/vlucas/phpdotenv.git",
-                "reference": "b786088918a884258c9e3e27405c6a4cf2ee246e"
+                "reference": "f1e2a35e53abe9322f0ab9ada689967e30055d40"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/vlucas/phpdotenv/zipball/b786088918a884258c9e3e27405c6a4cf2ee246e",
-                "reference": "b786088918a884258c9e3e27405c6a4cf2ee246e",
+                "url": "https://api.github.com/repos/vlucas/phpdotenv/zipball/f1e2a35e53abe9322f0ab9ada689967e30055d40",
+                "reference": "f1e2a35e53abe9322f0ab9ada689967e30055d40",
                 "shasum": ""
             },
             "require": {
@@ -2549,7 +2617,7 @@
             "require-dev": {
                 "ext-filter": "*",
                 "ext-pcre": "*",
-                "phpunit/phpunit": "^4.8.36 || ^5.7.27 || ^6.5.14 || ^7.5.20"
+                "phpunit/phpunit": "^4.8.36 || ^5.7.27 || ^6.5.14 || ^7.5.20 || ^8.5.21"
             },
             "suggest": {
                 "ext-filter": "Required to use the boolean validator.",
@@ -2573,13 +2641,11 @@
             "authors": [
                 {
                     "name": "Graham Campbell",
-                    "email": "graham@alt-three.com",
-                    "homepage": "https://gjcampbell.co.uk/"
+                    "email": "hello@gjcampbell.co.uk"
                 },
                 {
                     "name": "Vance Lucas",
-                    "email": "vance@vancelucas.com",
-                    "homepage": "https://vancelucas.com/"
+                    "email": "vance@vancelucas.com"
                 }
             ],
             "description": "Loads environment variables from `.env` to `getenv()`, `$_ENV` and `$_SERVER` automagically.",
@@ -2590,7 +2656,7 @@
             ],
             "support": {
                 "issues": "https://github.com/vlucas/phpdotenv/issues",
-                "source": "https://github.com/vlucas/phpdotenv/tree/v2.6.7"
+                "source": "https://github.com/vlucas/phpdotenv/tree/v2.6.8"
             },
             "funding": [
                 {
@@ -2602,7 +2668,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2021-01-20T14:39:13+00:00"
+            "time": "2021-10-02T19:02:17+00:00"
         },
         {
             "name": "wpackagist-plugin/analytify-analytics-dashboard-widget",
@@ -2617,7 +2683,7 @@
                 "url": "https://downloads.wordpress.org/plugin/analytify-analytics-dashboard-widget.2.0.1.zip"
             },
             "require": {
-                "composer/installers": "~1.0"
+                "composer/installers": "~1.0 || ~2.0"
             },
             "type": "wordpress-plugin",
             "homepage": "https://wordpress.org/plugins/analytify-analytics-dashboard-widget/"
@@ -2635,25 +2701,25 @@
                 "url": "https://downloads.wordpress.org/plugin/classic-editor.1.6.2.zip"
             },
             "require": {
-                "composer/installers": "~1.0"
+                "composer/installers": "~1.0 || ~2.0"
             },
             "type": "wordpress-plugin",
             "homepage": "https://wordpress.org/plugins/classic-editor/"
         },
         {
             "name": "wpackagist-plugin/contact-form-7",
-            "version": "5.4.2",
+            "version": "5.5.1",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/contact-form-7/",
-                "reference": "tags/5.4.2"
+                "reference": "tags/5.5.1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/contact-form-7.5.4.2.zip"
+                "url": "https://downloads.wordpress.org/plugin/contact-form-7.5.5.1.zip"
             },
             "require": {
-                "composer/installers": "~1.0"
+                "composer/installers": "~1.0 || ~2.0"
             },
             "type": "wordpress-plugin",
             "homepage": "https://wordpress.org/plugins/contact-form-7/"
@@ -2671,7 +2737,7 @@
                 "url": "https://downloads.wordpress.org/plugin/maintenance.3.99.zip"
             },
             "require": {
-                "composer/installers": "~1.0"
+                "composer/installers": "~1.0 || ~2.0"
             },
             "type": "wordpress-plugin",
             "homepage": "https://wordpress.org/plugins/maintenance/"
@@ -2689,25 +2755,25 @@
                 "url": "https://downloads.wordpress.org/plugin/wp-accessibility.1.7.9.zip"
             },
             "require": {
-                "composer/installers": "~1.0"
+                "composer/installers": "~1.0 || ~2.0"
             },
             "type": "wordpress-plugin",
             "homepage": "https://wordpress.org/plugins/wp-accessibility/"
         },
         {
             "name": "wpackagist-plugin/wp-analytify",
-            "version": "4.1.2",
+            "version": "4.1.3",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/wp-analytify/",
-                "reference": "tags/4.1.2"
+                "reference": "tags/4.1.3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/wp-analytify.4.1.2.zip"
+                "url": "https://downloads.wordpress.org/plugin/wp-analytify.4.1.3.zip"
             },
             "require": {
-                "composer/installers": "~1.0"
+                "composer/installers": "~1.0 || ~2.0"
             },
             "type": "wordpress-plugin",
             "homepage": "https://wordpress.org/plugins/wp-analytify/"
@@ -2716,16 +2782,16 @@
     "packages-dev": [
         {
             "name": "squizlabs/php_codesniffer",
-            "version": "3.6.0",
+            "version": "3.6.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/squizlabs/PHP_CodeSniffer.git",
-                "reference": "ffced0d2c8fa8e6cdc4d695a743271fab6c38625"
+                "reference": "f268ca40d54617c6e06757f83f699775c9b3ff2e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/squizlabs/PHP_CodeSniffer/zipball/ffced0d2c8fa8e6cdc4d695a743271fab6c38625",
-                "reference": "ffced0d2c8fa8e6cdc4d695a743271fab6c38625",
+                "url": "https://api.github.com/repos/squizlabs/PHP_CodeSniffer/zipball/f268ca40d54617c6e06757f83f699775c9b3ff2e",
+                "reference": "f268ca40d54617c6e06757f83f699775c9b3ff2e",
                 "shasum": ""
             },
             "require": {
@@ -2768,7 +2834,7 @@
                 "source": "https://github.com/squizlabs/PHP_CodeSniffer",
                 "wiki": "https://github.com/squizlabs/PHP_CodeSniffer/wiki"
             },
-            "time": "2021-04-09T00:54:41+00:00"
+            "time": "2021-10-11T04:00:11+00:00"
         }
     ],
     "aliases": [],
