@@ -79,7 +79,9 @@ wp_body_open();
                     <?php } ?>
 
                     <div class="site-header-search-form">
-                        <?php get_search_form(); ?>
+                        <?php
+                            get_search_form();
+                        ?>
                     </div>
 
             </div>

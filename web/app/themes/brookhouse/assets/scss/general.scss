@@ -241,10 +241,16 @@ article {
   color: black;
 }
 
-.search-results h2 {
+.search-results  h2 {
   font-size: 1.5em;
   -webkit-margin-before: 0.7em;
   -webkit-margin-after: 0.5em;
+}
+
+.archive h2.entry-title {
+    font-size: 1.5em;
+    -webkit-margin-before: 0.7em;
+    -webkit-margin-after: 0.5em;
 }
 
 .search-results .no-results {

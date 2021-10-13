@@ -20,7 +20,7 @@ get_header();
         </header><!-- .page-header -->
 
         <div class="">
-            <?php get_search_form(); ?>
+            <?php get_template_part( 'search-filter' ); ?>
         </div>
 
         <?php if (have_posts()) : ?>
@@ -50,6 +50,8 @@ get_header();
                     </header>
                     <div class="entry-summary">
                         <?php the_excerpt(); ?>
+                        <?php the_category(', '); ?>
+                        <br><br>
                     </div>
                 </article>
 
@@ -93,7 +95,7 @@ get_header();
                 ?>
             </div>
         <?php
-        
+
         else :
             echo "No Results found";
 
