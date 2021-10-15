@@ -69,7 +69,6 @@ get_header();
             ?>
             <div class="search-navigation">
             <?php
-            global $wp_query;
 
             $big = 999999999; // need an unlikely integer
             echo paginate_links(array(
