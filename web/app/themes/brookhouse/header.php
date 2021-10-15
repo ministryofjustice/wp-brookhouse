@@ -31,13 +31,14 @@ $moj_bh_header_link = get_field('header_link', 'option');
 <body <?php body_class('locale-' . get_locale()); ?>>
 
 <?php
-if ( ! function_exists( 'wp_body_open' ) ) {
-	/**
-	 * Open the body tag, pull in any hooked triggers.
-	 **/
-	function wp_body_open() {
-		do_action( 'wp_body_open' );
-	}
+if (! function_exists('wp_body_open')) {
+    /**
+     * Open the body tag, pull in any hooked triggers.
+     **/
+    function wp_body_open()
+    {
+        do_action('wp_body_open');
+    }
 }
 wp_body_open();
 ?>
@@ -72,7 +73,7 @@ wp_body_open();
                 </div>
 
                 <div class="col">
-                    <?php if(!empty($moj_bh_header_link)){ ?>
+                    <?php if (!empty($moj_bh_header_link)) { ?>
                         <div class="bh-languages">
                             <a href="<?php echo $moj_bh_header_link['url']; ?>"><?php echo $moj_bh_header_link['title']; ?></a>
                         </div>
@@ -87,20 +88,19 @@ wp_body_open();
             </div>
         </header><!-- #masthead -->
         <?php if (is_front_page()) {
-
             $banner_text  = get_field('header_banner_text');
 
-            if(!empty($banner_text)){
-            ?>
+            if (!empty($banner_text)) {
+                ?>
                 <section id="tagline">
                     <div class="site-branding tagline">
                         <?php echo $banner_text; ?>
                     </div>
                 </section>
-             <?php
-                }
+                <?php
             }
-            ?>
+        }
+        ?>
         <section id="breadcrumbs-wrapper">
             <div id="breadcrumbs">
                 <ul>
@@ -109,17 +109,12 @@ wp_body_open();
                     </li>
                     <?php
                     if (!is_home() && $post != null) {
-
                         foreach (get_post_ancestors($post->ID) as $ancestor_id) {
                             echo "<li class='breadcrumb-child'><a href='" . get_permalink($ancestor_id) . "'>" . get_the_title($ancestor_id) . "</a></li>";
                         }
-                    }
-                    else if (false) {
-
-
-
+                    } elseif (false) {
                         echo "<li class='breadcrumb-child'><a href='" .
-                            get_post_type_archive_link( $post_type ) . "'>" .
+                            get_post_type_archive_link($post_type) . "'>" .
                             post_type_archive_title(
                                 '',
                                 false
@@ -148,7 +143,6 @@ wp_body_open();
                                 ) . "</a></li>";
                         }
                     } else {
-
                         if (is_search()) {
                             echo "<li class='breadcrumb-child'>Search Results for: " . get_search_query() . "</li>";
                         } else {

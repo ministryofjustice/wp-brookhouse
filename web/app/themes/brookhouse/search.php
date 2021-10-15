@@ -1,9 +1,11 @@
 <?php
+
 /**
  * The template for displaying Search Results pages.
  *
  * @package brookhouse
  */
+
 get_header();
 ?>
 <?php get_sidebar(); ?>
@@ -19,7 +21,7 @@ get_header();
             </h1>
         </header><!-- .page-header -->
 
-        <div><?php get_template_part( 'search-filter' ); ?></div>
+        <div><?php get_template_part('search-filter'); ?></div>
 
         <div>
 
@@ -32,7 +34,6 @@ get_header();
         </div>
 
         <?php if (have_posts()) : ?>
-
             <?php
             // Start the Loop.
             while (have_posts()) :
@@ -63,11 +64,11 @@ get_header();
                     </div>
                 </article>
 
-            <?php
+                <?php
             endwhile;
             ?>
             <div class="search-navigation">
-           <?php
+            <?php
             global $wp_query;
 
             $big = 999999999; // need an unlikely integer
@@ -78,35 +79,33 @@ get_header();
                 'current' => max(1, get_query_var('paged')),
                 'total' => $wp_query->max_num_pages,
                 'prev_text' => '<span class="screen-reader-text">' . __(
-                        'Search results - previous page',
-                        'brookhouse'
-                    ) . '</span><span aria-hidden="true">' . __('PREV', 'brookhouse') . '</span>',
+                    'Search results - previous page',
+                    'brookhouse'
+                ) . '</span><span aria-hidden="true">' . __('PREV', 'brookhouse') . '</span>',
                 'next_text' => '<span class="screen-reader-text"> ' . __(
-                        'Search results',
-                        'brookhouse'
-                    ) . ' -  </span>' . __(
-                        'NEXT',
-                        'brookhouse'
-                    ) . ' <span class="screen-reader-text">' . __(
-                        'page',
-                        'brookhouse'
-                    ) . '</span>',
+                    'Search results',
+                    'brookhouse'
+                ) . ' -  </span>' . __(
+                    'NEXT',
+                    'brookhouse'
+                ) . ' <span class="screen-reader-text">' . __(
+                    'page',
+                    'brookhouse'
+                ) . '</span>',
                 'before_page_number' => '<span class="screen-reader-text">' . __(
-                        'Search results - page',
-                        'brookhouse'
-                    ) . '</span>',
+                    'Search results - page',
+                    'brookhouse'
+                ) . '</span>',
                 'after_page_number' => '<span class="screen-reader-text"> ' . __(
-                        ' of ',
-                        'brookhouse'
-                    ) . __($wp_query->max_num_pages) . '</span>'
+                    ' of ',
+                    'brookhouse'
+                ) . __($wp_query->max_num_pages) . '</span>'
             ));
-                ?>
+            ?>
             </div>
-        <?php
-
+            <?php
         else :
             echo "No Results found";
-
         endif;
         ?>
 
