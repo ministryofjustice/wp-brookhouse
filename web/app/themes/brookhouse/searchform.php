@@ -5,7 +5,8 @@
  * @package brookhouse
  */
 
- // Create conditional that displays a special search form on the search page.
+ // Conditional that only displays search field on all pages except search page
+ // as it already has its own dedicated search fields.
  if (!is_search()) :
 ?>
 
@@ -17,14 +18,6 @@
 	</label>
 	<input type="submit" class="search-submit" value="<?php echo esc_attr_x( 'Search', 'submit button', 'brookhouse' ); ?>">
 </form>
-
-<?php
-
-else :
-
-?>
-
-
 
 <?php
 
