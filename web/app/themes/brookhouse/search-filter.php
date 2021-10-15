@@ -14,11 +14,11 @@ $cat = ( is_category() ) ? get_query_var('cat') : 0;
 
   <div class="input-group" >
 
-    <label class="sr-only"><?php _e('Filter search results by topic:', 'brookhouse'); ?></label>
+    <label class="sr-only" for="category-dropdown"><?php _e('Filter search results by topic:', 'brookhouse'); ?></label>
 
     <br><br>
 
-    <div class="input-group-dropdown">
+    <div class="input-group-dropdown" id="category-dropdown">
         <?php
         wp_dropdown_categories(
             [
@@ -37,9 +37,9 @@ $cat = ( is_category() ) ? get_query_var('cat') : 0;
 
     </div>
 
-    <label style="visibility:hidden; position:absolute;"><?php _e('Search:', 'brookhouse'); ?></label>
+    <label style="visibility:hidden; position:absolute;" for="search-box"><?php _e('Search:', 'brookhouse'); ?></label>
 
-    <input type="search" value="<?php echo get_search_query(); ?>"
+    <input id="search-box" type="search" value="<?php echo get_search_query(); ?>"
     name="s"
     class="search-field form-control input-group-dropdown"
     placeholder="<?php _e('Search by keyword', 'brookhouse'); ?>">
