@@ -114,11 +114,12 @@ wp_body_open();
                             echo "<li class='breadcrumb-child'><a href='" . get_permalink($ancestor_id) . "'>" . get_the_title($ancestor_id) . "</a></li>";
                         }
                     }
-                    else if (is_archive()) {
+                    else if (false) {
+
+
+
                         echo "<li class='breadcrumb-child'><a href='" .
-                            get_post_type_archive_link(
-                                $wp_query->query['post_type']
-                            ) . "'>" .
+                            get_post_type_archive_link( $post_type ) . "'>" .
                             post_type_archive_title(
                                 '',
                                 false

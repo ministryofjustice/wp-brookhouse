@@ -19,8 +19,16 @@ get_header();
             </h1>
         </header><!-- .page-header -->
 
-        <div class="">
-            <?php get_template_part( 'search-filter' ); ?>
+        <div><?php get_template_part( 'search-filter' ); ?></div>
+
+        <div>
+
+        <br>
+        <?php
+            global $wp_query;
+            echo $wp_query->found_posts . ' results found</p>';
+        ?>
+        <hr>
         </div>
 
         <?php if (have_posts()) : ?>
@@ -101,6 +109,7 @@ get_header();
 
         endif;
         ?>
+
     </main><!-- #main -->
 </div><!-- #primary -->
 

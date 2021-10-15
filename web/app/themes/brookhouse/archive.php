@@ -17,6 +17,7 @@ get_header(); ?>
 
 			<header class="page-header">
 				<h1 class="page-title">
+
 					<?php
 						if ( is_category() ) :
 							echo 'All pages in the topic: ';
@@ -67,7 +68,13 @@ get_header(); ?>
 						endif;
 					?>
 				</h1>
+
 				<?php
+
+                    global $wp_query;
+                    echo '<br>';
+                    echo $wp_query->found_posts . ' results found</p>';
+                    echo '<hr>';
 					// Show an optional term description.
 					$term_description = term_description();
 					if ( ! empty( $term_description ) ) :
