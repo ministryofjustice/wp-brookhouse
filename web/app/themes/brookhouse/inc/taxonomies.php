@@ -1,7 +1,7 @@
 <?php
 
 /**
- * document taxonomies
+ * Managing taxonomies across the site
  *
  * @package brookhouse
  */
@@ -10,12 +10,14 @@ $documentTaxonomies = [
     'corporate-documents',
     'media-releases',
     'other-publications',
+    'category'
 ];
 
 $evidenceTaxonomies = [
     'evidence-type',
     'evidence-format',
-    'witness-type'
+    'witness-type',
+    'category'
 ];
 
 /**
@@ -104,4 +106,17 @@ function brookhouse_create_evidence_taxonomies()
             register_taxonomy($taxonomy, 'Evidence', $args);
         }
     }
+}
+
+/**
+*
+* When you add the category taxonomy to a cpt it
+* removes it from the default WP post types, this re-adds it.
+*
+* */
+add_action('init','brookhouse_add_categories_to_existing_post_type');
+
+function brookhouse_add_categories_to_existing_post_type(){
+    register_taxonomy_for_object_type('category', 'post');
+    register_taxonomy_for_object_type('category', 'page');
 }
