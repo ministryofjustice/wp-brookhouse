@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Managing taxonomies across the site
+ * Manage taxonomies
  *
  * @package brookhouse
  */
