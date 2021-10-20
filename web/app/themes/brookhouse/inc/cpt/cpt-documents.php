@@ -47,7 +47,7 @@ function brookhouse_ctp_document_init()
         'menu_position' => null,
         'menu_icon' => 'dashicons-media-document',
         'supports' => array('title'),
-        'taxonomies' => $documentTaxonomies
+        'taxonomies' => array_merge($documentTaxonomies, ['category'])
 
     ];
 
