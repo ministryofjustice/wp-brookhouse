@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Manage taxonomies
+ * Managing taxonomies
  *
  * @package brookhouse
  */
@@ -9,15 +9,13 @@
 $documentTaxonomies = [
     'corporate-documents',
     'media-releases',
-    'other-publications',
-    'category'
+    'other-publications'
 ];
 
 $evidenceTaxonomies = [
     'evidence-type',
     'evidence-format',
-    'witness-type',
-    'category'
+    'witness-type'
 ];
 
 /**
@@ -110,13 +108,12 @@ function brookhouse_create_evidence_taxonomies()
 
 /**
 *
-* When you add the category taxonomy to a cpt it
-* removes it from the default WP post types, this re-adds it.
+* Add category taxonomy to pages
 *
 * */
-add_action('init','brookhouse_add_categories_to_existing_post_type');
+add_action('init', 'brookhouse_add_categories_to_existing_post_type');
 
-function brookhouse_add_categories_to_existing_post_type(){
-    register_taxonomy_for_object_type('category', 'post');
+function brookhouse_add_categories_to_existing_post_type()
+{
     register_taxonomy_for_object_type('category', 'page');
 }
