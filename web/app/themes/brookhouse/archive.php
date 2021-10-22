@@ -8,7 +8,11 @@
  * @package brookhouse
  */
 
-get_header(); ?>
+get_header();
+
+// Get the current selected category to use in WP Query
+$cat = ( is_category() ) ? get_query_var('cat') : 0;
+?>
 <?php get_sidebar(); ?>
 
     <div id="primary" class="content-area">
@@ -72,8 +76,21 @@ get_header(); ?>
             </header><!-- .page-header -->
 
             <?php /* Start the Loop */ ?>
-            <?php while (have_posts()) :
-                the_post(); ?>
+
+            <?php
+
+            $args = [
+                'post_type' => 'any',
+                'post_status' => 'publish',
+                'posts_per_page' => '10',
+                'cat' => $cat
+            ];
+
+            $query = new WP_Query( $args );
+
+            while ( $query->have_posts() ) : $query->the_post();
+
+                ?>
 
             <h2 class="entry-title">
                 <a href="<?php echo get_permalink(get_the_ID()); ?>">
@@ -88,7 +105,11 @@ get_header(); ?>
             <br>
             <hr>
             <br>
-            <?php endwhile; ?>
+            <?php endwhile;
+
+            wp_reset_postdata();
+
+            ?>
 
             <?php brookhouse_content_nav('nav-below'); ?>
 
