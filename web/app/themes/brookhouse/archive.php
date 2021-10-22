@@ -86,9 +86,10 @@ $cat = ( is_category() ) ? get_query_var('cat') : 0;
                 'cat' => $cat
             ];
 
-            $query = new WP_Query( $args );
+            $query = new WP_Query($args);
 
-            while ( $query->have_posts() ) : $query->the_post();
+            while ($query->have_posts()) :
+                $query->the_post();
 
                 ?>
 
@@ -98,10 +99,10 @@ $cat = ( is_category() ) ? get_query_var('cat') : 0;
             </h2>
             <br>
 
-            <?php
+                <?php
                 the_excerpt();
                 the_category(', ');
-            ?>
+                ?>
             <br>
             <hr>
             <br>
