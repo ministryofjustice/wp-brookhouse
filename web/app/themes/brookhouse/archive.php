@@ -9,12 +9,8 @@
  */
 
 get_header();
-
-// Get the current selected category to use in WP Query
-$cat = ( is_category() ) ? get_query_var('cat') : 0;
+get_sidebar();
 ?>
-<?php get_sidebar(); ?>
-
     <div id="primary" class="content-area">
         <main id="main" class="site-main">
 
@@ -64,32 +60,24 @@ $cat = ( is_category() ) ? get_query_var('cat') : 0;
                 <?php
 
                     global $wp_query;
+
                     echo '<br>';
                     echo $wp_query->found_posts . ' results found</p>';
                     echo '<hr>';
                     // Show an optional term description.
                     $term_description = term_description();
+
                 if (! empty($term_description)) :
                     printf('<div class="taxonomy-description">%s</div>', $term_description);
                 endif;
                 ?>
             </header><!-- .page-header -->
 
-            <?php /* Start the Loop */ ?>
-
             <?php
+            /* Start the Loop */
 
-            $args = [
-                'post_type' => 'any',
-                'post_status' => 'publish',
-                'posts_per_page' => '10',
-                'cat' => $cat
-            ];
-
-            $query = new WP_Query($args);
-
-            while ($query->have_posts()) :
-                $query->the_post();
+            while (have_posts()) :
+                the_post();
 
                 ?>
 
@@ -103,21 +91,18 @@ $cat = ( is_category() ) ? get_query_var('cat') : 0;
                 the_excerpt();
                 the_category(', ');
                 ?>
+
             <br>
             <hr>
             <br>
-            <?php endwhile;
 
-            wp_reset_postdata();
-
-            ?>
-
-            <?php brookhouse_content_nav('nav-below'); ?>
-
-        <?php else : ?>
-            <?php get_template_part('content', 'none'); ?>
-
-        <?php endif; ?>
+                <?php
+            endwhile;
+            brookhouse_content_nav('nav-below');
+        else :
+                get_template_part('content', 'none');
+        endif;
+        ?>
 
         </main><!-- #main -->
     </div><!-- #primary -->
