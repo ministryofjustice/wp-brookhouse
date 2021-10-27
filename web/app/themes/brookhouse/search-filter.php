@@ -8,9 +8,10 @@
 
 // Get the current selected category so the correct dropdown is selected
 $cat = ( is_category() ) ? get_query_var('cat') : 0;
+
 ?>
 
-<form id="formfilter" role="search" method="get" action="<?php echo esc_url(home_url('/')); ?>">
+<form role="search" method="get" action="<?php echo esc_url(home_url('/')); ?>">
 
   <div class="input-group" >
 
@@ -18,7 +19,7 @@ $cat = ( is_category() ) ? get_query_var('cat') : 0;
 
     <br><br>
 
-    <div class="input-group-dropdown" id="category-dropdown">
+    <div class="brookhouse-input-group-dropdown" style="display:inline;" id="category-dropdown">
         <?php
         wp_dropdown_categories(
             [
@@ -28,7 +29,7 @@ $cat = ( is_category() ) ? get_query_var('cat') : 0;
                 'selected'        => $cat,
                 'hierarchical'    => true,
                 'query_var'       => true,
-                'class'           => 'dropdown-menu',
+                'class'           => 'category-dropdown-menu',
                 'id'              => 'custom-cat-drop',
                 'value_field'     => 'term_id'
             ]
@@ -37,17 +38,21 @@ $cat = ( is_category() ) ? get_query_var('cat') : 0;
 
     </div>
 
-    <label style="visibility:hidden; position:absolute;" for="search-box"><?php _e('Search:', 'brookhouse'); ?></label>
+    <label style="visibility:hidden; position:absolute;"
+    for="search-box"><?php _e('Search:', 'brookhouse'); ?></label>
 
-    <input id="search-box" type="search" value="<?php echo get_search_query(); ?>"
-    name="s"
-    class="search-field form-control input-group-dropdown"
-    placeholder="<?php _e('Search by keyword', 'brookhouse'); ?>">
+    <div class="brookhouse-search-filter">
 
+    <input type="text" name="s" id="search" value="<?php the_search_query(); ?>" />
+
+    </div>
     <span class="input-group-btn">
-      <button type="submit" class="search-submit btn btn-default"><?php _e('Search', 'brookhouse'); ?></button>
-    <br>
+      <button
+      type="submit"
+      class="search-submit btn btn-default"><?php _e('Search', 'brookhouse');  ?>
+      </button>
     </span>
+
   </div>
 </form>
 
