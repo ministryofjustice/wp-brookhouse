@@ -439,4 +439,3 @@ function brookhouse_add_post_types_to_category($query)
     }
     return;
 }
-
