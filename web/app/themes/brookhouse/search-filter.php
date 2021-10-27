@@ -47,10 +47,7 @@ $cat = ( is_category() ) ? get_query_var('cat') : 0;
 
     </div>
     <span class="input-group-btn">
-      <button
-      type="submit"
-      class="search-submit btn btn-default"><?php _e('Search', 'brookhouse');  ?>
-      </button>
+      <button type="submit" class="search-submit btn btn-default"><?php _e('Search', 'brookhouse');  ?></button>
     </span>
 
   </div>
