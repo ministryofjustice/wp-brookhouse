@@ -28,11 +28,15 @@
         max-width: 400px;
     }
 
+
     .brookhouse-input-group-dropdown {
+        display: inline-flex;
+
         .category-dropdown-menu {
             padding: 7px;
         }
     }
+
 
     @media screen and (max-width: 649px) {
         .brookhouse-search-filter {

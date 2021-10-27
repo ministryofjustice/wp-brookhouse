@@ -19,7 +19,7 @@ $cat = ( is_category() ) ? get_query_var('cat') : 0;
 
     <br><br>
 
-    <div class="brookhouse-input-group-dropdown" style="display:inline;" id="category-dropdown">
+    <div class="brookhouse-input-group-dropdown" id="category-dropdown">
         <?php
         wp_dropdown_categories(
             [
