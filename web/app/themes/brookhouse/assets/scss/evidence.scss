@@ -40,11 +40,15 @@
       color: $black;
       font-size: 2rem;
       margin-bottom: 1.5rem;
+      overflow-wrap: break-word;
+      word-wrap: break-word;
     }
 
     &--link {
       margin-top: 2rem;
-      display: inline-block;
+      display: block;
+      overflow-wrap: break-word;
+      word-wrap: break-word;
     }
   }
   &__filter {
