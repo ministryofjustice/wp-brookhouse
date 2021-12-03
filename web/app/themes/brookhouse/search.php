@@ -43,15 +43,30 @@ get_header();
                     <?php
 
                     $result_title = get_the_title();
+		
+	    	    // document post type - append file extention and search result link opens straight to doc
+                    if (get_post_type() === 'documents' ) {
+			    $document_upload = get_field('document_upload');
 
-                    if (get_post_type() === 'documents') {
-                        $document_upload = get_field('document_upload');
-                        $ext = pathinfo($document_upload['url'], PATHINFO_EXTENSION);
+			    $ext = pathinfo($document_upload['url'], PATHINFO_EXTENSION);
+
                         $result_title .= ' (' . $ext . ')';
                         $result_url = $document_upload['url'];
                     } else {
                         $result_url = get_permalink();
-                    }
+		    }
+		   
+		   // evidence post type 
+		   if (get_post_type() === 'evidence' ) {
+			    $evidence_upload = get_field('evidence_upload');
+			    $ext_evidence = pathinfo($evidence_upload['url'], PATHINFO_EXTENSION);
+
+                        $result_title .= ' (' . $ext_evidence . ')';
+                        $result_url = $evidence_upload['url'];
+                    } else {
+                        $result_url = get_permalink();
+		    }
+
                     ?>
                     <header>
                         <h2 class="entry-title"><a href="<?php echo $result_url; ?>"><?php echo $result_title; ?></a>
