@@ -40,9 +40,9 @@ get_header();
                 the_post(); ?>
 
                 <article <?php post_class(); ?>>
-            <?php
+        <?php
 
-            $result_title = get_the_title();
+        $result_title = get_the_title();
         $result_url = get_permalink();
 
         // Allow list to add post types you want to modify in search results
