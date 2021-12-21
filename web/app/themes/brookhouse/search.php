@@ -40,36 +40,37 @@ get_header();
                 the_post(); ?>
 
                 <article <?php post_class(); ?>>
-                    <?php
+            <?php
 
-                    $result_title = get_the_title();
-		
-	    	    // document post type - append file extention and search result link opens straight to doc
-                    if (get_post_type() === 'documents' ) {
-			    $document_upload = get_field('document_upload');
+            $result_title = get_the_title();
+        $result_url = get_permalink();
 
-			    $ext = pathinfo($document_upload['url'], PATHINFO_EXTENSION);
+        // Allow list to add post types you want to modify in search results
+            $post_types_to_include = ['documents','evidence'];
+            $post_type_in_array = in_array(get_post_type(), $post_types_to_include);
 
-                        $result_title .= ' (' . $ext . ')';
-                        $result_url = $document_upload['url'];
-                    } else {
-                        $result_url = get_permalink();
-		    }
-		   
-		   // evidence post type 
-		   if (get_post_type() === 'evidence' ) {
-			    $evidence_upload = get_field('evidence_upload');
-			    $ext_evidence = pathinfo($evidence_upload['url'], PATHINFO_EXTENSION);
+            if ($post_type_in_array) {
+                $evidence_upload = get_field('evidence_upload')?? false;
+                $document_upload = get_field('document_upload')?? false;
 
-                        $result_title .= ' (' . $ext_evidence . ')';
-                        $result_url = $evidence_upload['url'];
-                    } else {
-                        $result_url = get_permalink();
-		    }
+                $acf_url = '';
 
-                    ?>
+                if ($evidence_upload) {
+                    $acf_url = $evidence_upload['url'];
+                }
+
+                if ($document_upload) {
+                    $acf_url = $document_upload['url'];
+                }
+
+                $ext = pathinfo($acf_url, PATHINFO_EXTENSION);
+                $result_title .= ' (' . $ext . ')';
+                $result_url = $acf_url;
+            }
+
+            ?>
                     <header>
-                        <h2 class="entry-title"><a href="<?php echo $result_url; ?>"><?php echo $result_title; ?></a>
+                        <h2 class="entry-title"><a href="<?php echo esc_url($result_url); ?>"><?php echo $result_title; ?></a>
                         </h2>
                     </header>
                     <div class="entry-summary">
