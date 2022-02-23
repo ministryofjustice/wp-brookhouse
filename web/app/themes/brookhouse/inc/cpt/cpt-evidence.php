@@ -47,7 +47,7 @@ function brookhouse_ctp_evidence_init()
         'menu_position' => null,
         'menu_icon' => 'dashicons-playlist-audio',
         'supports' => array('title'),
-        'taxonomies' => $evidenceTaxonomies
+        'taxonomies' => array_merge($evidenceTaxonomies, ['category'])
 
     ];
 

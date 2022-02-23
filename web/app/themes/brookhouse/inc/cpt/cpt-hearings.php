@@ -46,6 +46,7 @@ function brookhouse_ctp_hearing_init()
         'menu_position' => null,
         'menu_icon' => 'dashicons-id-alt',
         'supports' => array('title'),
+        'taxonomies' => ['category']
     ];
 
     register_post_type('hearings', $args);

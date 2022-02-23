@@ -1,7 +1,7 @@
 <?php
 
 /**
- * document taxonomies
+ * Managing taxonomies
  *
  * @package brookhouse
  */
@@ -9,7 +9,7 @@
 $documentTaxonomies = [
     'corporate-documents',
     'media-releases',
-    'other-publications',
+    'other-publications'
 ];
 
 $evidenceTaxonomies = [
@@ -104,4 +104,16 @@ function brookhouse_create_evidence_taxonomies()
             register_taxonomy($taxonomy, 'Evidence', $args);
         }
     }
+}
+
+/**
+*
+* Add category taxonomy to pages
+*
+* */
+add_action('init', 'brookhouse_add_categories_to_existing_post_type');
+
+function brookhouse_add_categories_to_existing_post_type()
+{
+    register_taxonomy_for_object_type('category', 'page');
 }

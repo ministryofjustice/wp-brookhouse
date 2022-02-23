@@ -421,3 +421,21 @@ function brookhouse_update_sitemap_link($url, $post)
     return $url;
 }
 add_filter( 'wsp_cpt_link', 'brookhouse_update_sitemap_link', 10, 2 );
+
+
+/**
+ * Return the main WP query with all post types included in category
+ */
+add_action('pre_get_posts', 'brookhouse_add_post_types_to_category');
+
+function brookhouse_add_post_types_to_category($query)
+{
+
+    if ($query->is_main_query() && !is_admin()) {
+
+        if ($query->is_tag || $query->is_category) {
+            $query->set('post_type', 'any');
+        }
+    }
+    return;
+}
