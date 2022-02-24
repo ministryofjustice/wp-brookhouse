@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "9863579f4f559b0de7b8b522dd9e2356",
+    "content-hash": "3c418303007aaf8a744aab9dc41d8a8c",
     "packages": [
         {
             "name": "acf/advanced-custom-fields-pro",
@@ -2871,15 +2871,15 @@
         },
         {
             "name": "wpackagist-plugin/maintenance",
-            "version": "3.99",
+            "version": "4.05",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/maintenance/",
-                "reference": "tags/3.99"
+                "reference": "tags/4.05"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/maintenance.3.99.zip"
+                "url": "https://downloads.wordpress.org/plugin/maintenance.4.05.zip"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
