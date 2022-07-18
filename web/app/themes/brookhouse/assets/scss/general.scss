@@ -188,6 +188,22 @@ article {
         vertical-align: middle;
       }
     }
+      .wp-block-table:not(.is-style-stripes) table {
+          border: 1px solid;
+
+          th,td {
+              &:not(:last-child) {
+                  border-right: 1px solid $grey-dark;
+              }
+          }
+          th,
+          tr:not(:last-child) td{
+              border-bottom: 1px solid $grey-dark;
+          }
+          tfoot td {
+              border-top: 1px solid $grey-dark;
+          }
+      }
   }
 }
 
