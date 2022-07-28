@@ -22,7 +22,6 @@ get_sidebar('report');
 
             <?php get_template_part('content', 'report'); ?>
             <?php get_template_part('components/report-next-prev-nav'); ?>
-            <?php get_template_part('components/cta-section'); ?>
 
             <?php
                 if (!empty($page_lang)) { ?>

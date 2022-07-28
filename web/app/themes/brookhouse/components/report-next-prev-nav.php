@@ -15,6 +15,8 @@ $pages = get_pages($pages_args);
 $count = 0;
 $prev_page = '';
 $next_page = '';
+
+//Look for current page in page list to determine next and prev page
 foreach ($pages as $report_page) {
     if (get_the_ID() == $report_page->ID) {
 

@@ -1,7 +1,7 @@
 <?php
 
 /**
- * The template used for displaying page content in page.php
+ * The template used for displaying page content in page-report.php
  *
  * @package brookhouse
  */
@@ -14,13 +14,7 @@
         <h1><?= get_the_title() ?></h1>
         <?php get_template_part('components/report-next-prev-nav'); ?>
         <?php
-        the_content();
-
-        wp_link_pages(array(
-            'before' => '<div class="page-links">' . __('Pages:', 'brookhouse'),
-            'after' => '</div>',
-        ));
+            the_content();
         ?>
     </div><!-- .entry-content -->
-    <?php //edit_post_link( __( 'Edit', 'brookhouse' ), '<footer class="entry-meta"><span class="edit-link">', '</span></footer>' ); ?>
 </article><!-- #post-## -->
