@@ -1,5 +1,6 @@
 # Editor
 .idea*
+.DS_*
 ._D*
 ._.*
 .sql
