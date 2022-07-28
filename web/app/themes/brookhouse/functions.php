@@ -88,6 +88,7 @@ function moj_get_asset($handle)
         'moment' => $manifest['/js/moment.min.js'],
         'combodate' => $manifest['/js/combodate.min.js'],
         'ie8' => $manifest['/js/ie8.js'],
+        'restrict-embed-blocks' => $manifest['/js/restrict-embed-blocks.js'],
 
         // always use non-protocol URL's
         'jquery' => 'https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js',
@@ -214,6 +215,12 @@ function add_ie_workarounds()
 }
 
 add_action('wp_head', 'add_ie_workarounds');
+
+
+/**
+ *  Restricts core Gutenberg Block in editor
+ */
+require get_template_directory() . '/inc/restrict-blocks.php';
 
 /**
  * Custom template tags for this theme.
