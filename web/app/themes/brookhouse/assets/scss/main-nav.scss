@@ -44,7 +44,7 @@
       margin: 0;
 
       span {
-        background-color: $white;
+        background-color: $grey-dark;
 
         &:nth-child(1) {
           top: 7px;
@@ -153,7 +153,9 @@ body.open, html.nav-open {
       margin: 0;
     }
 
-    &.sub-menu {
+    &.sub-menu,
+    &.children
+    {
       margin: 0 0 0 20px;
     }
 
@@ -163,7 +165,8 @@ body.open, html.nav-open {
         background-color: $blue-light;
       }
 
-      &.current-menu-item > a {
+      &.current-menu-item > a,
+      &.current_page_item > a {
         background-color: $grey-dark;
         color: $white;
       }

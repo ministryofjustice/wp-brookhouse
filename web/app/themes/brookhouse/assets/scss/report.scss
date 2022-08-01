@@ -1,0 +1,65 @@
+/* Report Page Template Styles */
+
+//Report navigation sidebar
+#secondary.sidebar-report {
+
+    @media screen and (min-width: 770px) {
+        margin-top: 30px;
+    }
+
+    h2 {
+        display: none;
+        @media screen and (min-width: 770px) {
+            display: block;
+        }
+    }
+
+    ul li {
+        .children {
+            @media screen and (min-width: 770px) {
+                display: none;
+            }
+
+        }
+    }
+    ul li.current_page_item,
+    ul li.current_page_ancestor {
+        .children {
+
+            @media screen and (min-width: 770px) {
+                display: block;
+            }
+
+        }
+    }
+
+    .report-menu-back-link {
+        @media screen and (min-width: 770px) {
+            display: none;
+        }
+    }
+}
+
+//Report Previous and Next Navigation
+.report_next_prev_nav {
+    margin-bottom: 20px;
+    a {
+        color: $white;
+        background: $beige-dark;
+        padding: 10px;
+        display: inline-block;
+
+        @media screen and (max-width: 768px) {
+            width: 43%;
+        }
+
+        &:visited {
+            color: $white;
+        }
+
+        &:focus {
+            color: $black;
+            background: $yellow;
+        }
+    }
+}

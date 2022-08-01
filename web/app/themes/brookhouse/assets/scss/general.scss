@@ -101,6 +101,10 @@ a.button.large {
   }
 }
 
+.page.page-template-page-full-width #primary {
+    max-width: 100%;
+}
+
 #content {
   max-width: 990px;
   margin: 0 auto;

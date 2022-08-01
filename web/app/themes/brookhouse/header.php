@@ -46,12 +46,14 @@ wp_body_open();
     <div id="page" class="hfeed site">
         <?php do_action('before'); ?>
         <nav id="site-navigation" class="main-navigation">
-            <button id="nav-icon" class="menu-toggle">
-                <span>&nbsp;</span>
-                <span>&nbsp;</span>
-                <span>&nbsp;</span>
-                <div style="display:none">Open navigation</div>
-            </button>
+            <?php if(!is_page_template('page-full-width.php')){ ?>
+                <button id="nav-icon" class="menu-toggle">
+                    <span>&nbsp;</span>
+                    <span>&nbsp;</span>
+                    <span>&nbsp;</span>
+                    <div style="display:none">Open navigation</div>
+                </button>
+            <?php } ?>
             <a class="skip-link screen-reader-text" href="#main"><?php _e('Skip to content', 'brookhouse'); ?></a>
         </nav><!-- #site-navigation -->
         <header id="masthead" class="site-header">
@@ -109,7 +111,8 @@ wp_body_open();
                     </li>
                     <?php
                     if (!is_home() && $post != null) {
-                        foreach (get_post_ancestors($post->ID) as $ancestor_id) {
+                        $ancestors = array_reverse(get_post_ancestors($post->ID));//reverse otherwise in wrong order
+                        foreach ($ancestors as $ancestor_id) {
                             echo "<li class='breadcrumb-child'><a href='" . get_permalink($ancestor_id) . "'>" . get_the_title($ancestor_id) . "</a></li>";
                         }
                     } elseif (is_archive()) {
