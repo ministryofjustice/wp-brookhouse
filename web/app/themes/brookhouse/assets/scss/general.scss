@@ -310,3 +310,22 @@ article {
   position: absolute;
   width: 1px;
 }
+
+/*Column Styling */
+
+.wp-block-column {
+    h2:first-child,
+    h3:first-child,
+    h4:first-child{
+        margin-top: 0; //allows titles to sit at top of column
+    }
+}
+
+/* Footnotes styling **/
+
+.site-content ol.footnotes {
+    margin-left: 2em;
+    li {
+         font-size: 100%;
+     }
+}
