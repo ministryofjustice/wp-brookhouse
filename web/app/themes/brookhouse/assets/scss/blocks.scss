@@ -1,0 +1,29 @@
+/* Button Styling */
+.wp-block-button {
+    .wp-block-button__link {
+        color: $white;
+        background: $beige-dark;
+        padding: 10px;
+        border-radius: 0;
+        font-size: 1em;
+
+        &:visited {
+            color: $white;
+        }
+
+        &:focus {
+            color: $black;
+            background: $yellow;
+        }
+    }
+}
+
+/* Column Block Styling */
+
+.wp-block-column {
+    h2:first-child,
+    h3:first-child,
+    h4:first-child{
+        margin-top: 0; //allows titles to sit at top of column
+    }
+}

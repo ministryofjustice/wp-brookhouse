@@ -81,6 +81,7 @@ function moj_get_asset($handle)
 
     $assets = array(
         'main-css' => $manifest['/css/main.min.css'],
+        'gutenberg-css' => $manifest['/css/style-gutenburg.min.css'],
         'jquery-ui' => $manifest['/css/jquery-ui.min.css'],
         'js' => $manifest['/js/main.min.js'],
         'admin-js' => $manifest['/js/custom-admin.min.js'],
@@ -446,3 +447,11 @@ function brookhouse_add_post_types_to_category($query)
     }
     return;
 }
+
+
+function brookhouse_gutenberg_editor_styles() {
+
+    wp_enqueue_style('hale-gutenburg-style', moj_get_asset('gutenberg-css'));
+}
+
+add_action( 'enqueue_block_editor_assets', 'brookhouse_gutenberg_editor_styles', 100 );
