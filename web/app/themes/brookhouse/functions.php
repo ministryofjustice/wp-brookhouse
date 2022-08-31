@@ -451,7 +451,7 @@ function brookhouse_add_post_types_to_category($query)
 
 function brookhouse_gutenberg_editor_styles() {
 
-    wp_enqueue_style('hale-gutenburg-style', moj_get_asset('gutenberg-css'));
+    wp_enqueue_style('brookhouse-gutenburg-style', moj_get_asset('gutenberg-css'));
 }
 
 add_action( 'enqueue_block_editor_assets', 'brookhouse_gutenberg_editor_styles', 100 );
