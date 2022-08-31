@@ -21,6 +21,13 @@
             "gradients": [],
             "link": false,
             "palette": []
+        },
+        "blocks": {
+            "core/button": {
+                "border": {
+                    "radius": false
+                }
+            }
         }
     }
 }
