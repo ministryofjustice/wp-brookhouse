@@ -310,3 +310,12 @@ article {
   position: absolute;
   width: 1px;
 }
+
+/* Footnotes styling **/
+
+.site-content ol.footnotes {
+    margin-left: 2em;
+    li {
+         font-size: 100%;
+     }
+}

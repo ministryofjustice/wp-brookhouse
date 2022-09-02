@@ -1,0 +1,35 @@
+{
+    "version": 1,
+    "settings": {
+        "typography": {
+            "customFontSize": false,
+            "dropCap": false,
+            "fontFamilies": [],
+            "fontSizes": [],
+            "fontStyle": false,
+            "fontWeight": false,
+            "letterSpacing": false,
+            "lineHeight": false,
+            "textDecoration": false,
+            "textTransform": false
+        },
+        "color": {
+            "custom": false,
+            "customDuotone": false,
+            "customGradient": false,
+            "duotone": [],
+            "gradients": [],
+            "link": false,
+            "palette": []
+        },
+        "blocks": {
+            "core/button": {
+                "border": {
+                    "radius": false
+                }
+            }
+        }
+    }
+}
+
+
