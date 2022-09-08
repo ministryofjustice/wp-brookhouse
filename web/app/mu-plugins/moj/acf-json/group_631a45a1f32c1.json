@@ -7,7 +7,7 @@
             "label": "Banner Active",
             "name": "banner_active",
             "type": "true_false",
-            "instructions": "If anything is entered, it will be linked to via a \"more information\" link at the bottom of the banner.",
+            "instructions": "",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -64,7 +64,7 @@
             "label": "Banner Link Destination",
             "name": "banner_link_destination",
             "type": "url",
-            "instructions": "",
+            "instructions": "If anything is entered, it will be linked to via a \"more information\" link at the bottom of the banner.",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -81,7 +81,7 @@
             {
                 "param": "options_page",
                 "operator": "==",
-                "value": "emergency-banner-settings"
+                "value": "header-settings"
             }
         ]
     ],
@@ -94,5 +94,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1662666264
+    "modified": 1662667202
 }
