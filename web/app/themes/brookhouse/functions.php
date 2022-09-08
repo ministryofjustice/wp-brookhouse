@@ -246,6 +246,11 @@ require get_template_directory() . '/inc/jetpack.php';
 /* Taxonomy declarations */
 require get_template_directory() . '/inc/taxonomies.php';
 
+/**
+ * Emergency banner
+ */
+require 'inc/emergency-banner-settings.php';
+
 /* Custom Post Type declarations */
 require get_template_directory() . '/inc/cpt/cpt-documents.php';
 require get_template_directory() . '/inc/cpt/cpt-hearings.php';
