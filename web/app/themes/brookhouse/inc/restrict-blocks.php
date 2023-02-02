@@ -18,7 +18,8 @@ function brookhouse_allowed_block_types($allowed_blocks)
         'core/legacy-widget',
         'core/embed',
         'core/button',
-        'core/buttons'
+        'core/buttons',
+        'core/freeform'
     );
 
     return $allowed_blocks;
